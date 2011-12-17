@@ -1,0 +1,25 @@
+<module rename-to="MySampleApplication">
+
+    <!-- Inherit the core Web Toolkit stuff.                  -->
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.google.gwt.junit.JUnit"/>
+
+
+    <!--<stylesheet src="style/mySample.css"/>-->
+
+    <!--<source path="client" excludes="**/*Test.java" />-->
+    <source path='client'/>
+    <source path='shared'/>
+
+    <set-property name="user.agent" value="gecko1_8"/>
+
+
+    <!-- Specify the app entry point class.                   -->
+    <entry-point class='com.netnumeri.client.MySampleApplication'/>
+
+
+    <!-- Specify the app servlets.                   -->
+    <servlet path='/MySampleApplicationService' class='com.netnumeri.server.service.MySampleApplicationServiceImpl'/>
+    <servlet path="/GetBugService" class="com.netnumeri.server.service.GetBugServiceImpl"/>
+
+</module>

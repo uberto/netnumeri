@@ -1,0 +1,54 @@
+/** Add css rules here for your application. */
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+body, td, a, div, .p {
+    font-family: arial, sans-serif
+}
+
+div#wrapper {
+    text-align: center;
+}
+
+.FlexTable {
+
+    width: 90%;
+    border-top: 1px solid #e5eff8;
+    border-right: 1px solid #e5eff8;
+    margin: 1em auto;
+    border-collapse: collapse;
+
+}
+
+.FlexTable-OddRow {
+    background-color: #f9fcfe;
+}
+
+.FlexTable-EvenRow {
+    background-color: #f4f9fe;
+}
+
+.FlexTable-ColumnLabel {
+    color: #66a3d3;
+    padding: 3px;
+}
+
+.FlexTable-ColumnLabelCell {
+
+    background-color: #f4f9fe;
+    text-align: center;
+    font: bold 1.2em/2em sans-serif;
+    color: #66a3d3;
+}
+
+.FlexTable-Cell {
+    color: #678197;
+    border-bottom: 1px solid #e5eff8;
+    border-left: 1px solid #e5eff8;
+    padding: .3em 1em;
+    text-align: center;
+}
