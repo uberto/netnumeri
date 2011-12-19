@@ -78,6 +78,48 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="google-app-engine">
+        <modules>
+          <module name="netnumeri">
+            <files>
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Showcase/war/WEB-INF/appengine-web.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+      <facet-type id="jpa">
+        <modules>
+          <module name="netnumeri">
+            <files>
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/java/META-INF/persistence.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/webapp/WEB-INF/classes/META-INF/persistence.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/MobileWebApp/src/main/java/META-INF/persistence.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+      <facet-type id="web">
+        <modules>
+          <module name="netnumeri">
+            <files>
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/DynaTable/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/DynaTableRf/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/webapp/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Hello/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/JSON/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/LogExample/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Mail/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/MobileWebApp/src/main/webapp/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Showcase/war/WEB-INF/web.xml" />
+              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Validation/war/WEB-INF/web.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="FireworksProject">
     <option name="expectedTestCaseNameRegex" />
     <option name="maxMemory" />
@@ -279,14 +321,21 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-    <library name="gwt-user">
+    <library name="gwt">
       <CLASSES>
-        <root url="jar://$USER_HOME$/google/gwt-2.2.0/gwt-user.jar!/" />
+        <root url="file://$PROJECT_DIR$/lib/gwt-2.4.0" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/google/gwt-2.2.0/gwt-user.jar!/" />
-      </SOURCES>
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/gwt-2.4.0" recursive="false" />
+    </library>
+    <library name="junit">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/junit4.5" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" />
     </library>
     <library name="project-lib">
       <CLASSES>
