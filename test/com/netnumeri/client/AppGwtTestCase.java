@@ -8,7 +8,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 public abstract class AppGwtTestCase extends GWTTestCase {
 
 
-    protected MySampleApplication app;
+    protected DerivativesApplication app;
 
     public AppGwtTestCase() {
     }
@@ -37,7 +37,7 @@ public abstract class AppGwtTestCase extends GWTTestCase {
 
         assertNotNull(RootPanel.get("slot1"));
 
-        app = new MySampleApplication();
+        app = new DerivativesApplication();
         assertNotNull(app);
         app.onModuleLoad();
 

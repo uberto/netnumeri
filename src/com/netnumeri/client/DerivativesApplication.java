@@ -8,7 +8,7 @@ import com.netnumeri.client.service.MySampleApplicationService;
 import com.netnumeri.client.view.BugListViewFlexTable;
 
 
-public class MySampleApplication implements EntryPoint {
+public class DerivativesApplication implements EntryPoint {
 
 
     public String message = "Hello, World!";

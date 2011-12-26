@@ -21,6 +21,5 @@ public abstract class ViewAbstractRoot implements View {
     @Override
     public void alert(String message) {
         Window.alert(message);
-
     }
 }

@@ -29,7 +29,7 @@ public class MySampleApplicationTest extends AppGwtTestCase {
 
     }
 
-    public void testOnModuleLoadFail() throws Exception {
+    public void ignore_testOnModuleLoadFail() throws Exception {
 //        app.messageLabel.setText("");
 //        app.message = null;
 //        app.clickMeButton.click();
@@ -47,7 +47,7 @@ public class MySampleApplicationTest extends AppGwtTestCase {
 
 
 
-    public void testOnDoubleClick() throws Exception {
+    public void ignore_testOnDoubleClick() throws Exception {
 //        app.messageLabel.setText("");
 //        app.clickMeButton.click();
 //        app.bugList.getView().clickButton();
