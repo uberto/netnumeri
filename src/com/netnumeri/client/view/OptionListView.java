@@ -1,14 +1,12 @@
 package com.netnumeri.client.view;
 
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.netnumeri.shared.entity.BugEnum;
+import com.netnumeri.shared.entity.Option;
 
-public interface BugListView extends View, NotificationView {
+public interface OptionListView extends View, NotificationView {
     void setTitle(String title);
 
     void clearBugGrid();
-
-    void addBug(int id, String desc, BugEnum status, String user);
 
     int getRowCount();
 
@@ -18,4 +16,6 @@ public interface BugListView extends View, NotificationView {
 
 
     void clickButton();
+
+    void addOption(Option option);
 }

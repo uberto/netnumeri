@@ -4,8 +4,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.BugFormPresenter;
 import com.netnumeri.client.service.GetBugServiceAsync;
 import com.netnumeri.client.view.BugFormView;
-import com.netnumeri.shared.entity.Bug;
-import com.netnumeri.shared.entity.BugEnum;
+import com.netnumeri.shared.StubsForTests;
+import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import org.junit.After;
 import org.junit.Before;
@@ -47,19 +47,16 @@ public class BugFormPresenterTest {
     @Test
     public void success(){
         GetEntitiesResponse resp = new GetEntitiesResponse();
-        Bug dummyBug = createDummyBug();
-        resp.add(dummyBug);
-        resp.add(dummyBug);
-        resp.add(dummyBug);
+        Option option = StubsForTests.createDummyOption();
+        resp.add(option);
+        resp.add(option);
+        resp.add(option);
 //        pres.populateForm(resp);
 //
 //        verify(view).clearBugGrid();
-//        verify(view, times(3)).addBug(dummyBug.getId(), dummyBug.getDesc(), dummyBug.getStatus(), dummyBug.getUser());
+//        verify(view, times(3)).addBug(option.getId(), option.getDesc(), option.getStatus(), option.getUser());
 
     }
 
-    private Bug createDummyBug() {
-        return new Bug(101, "test desc", BugEnum.WORKING, "uberto");
-    }
 
 }

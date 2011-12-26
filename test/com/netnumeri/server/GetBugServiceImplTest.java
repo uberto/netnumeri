@@ -1,14 +1,16 @@
 package com.netnumeri.server;
 
+import com.netnumeri.server.persistence.DataFetcher;
 import com.netnumeri.server.service.GetBugServiceImpl;
-import com.netnumeri.shared.entity.Bug;
-import com.netnumeri.shared.entity.BugEnum;
+import com.netnumeri.shared.StubsForTests;
+import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsEqual.equalTo;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class GetBugServiceImplTest {
@@ -16,8 +18,17 @@ public class GetBugServiceImplTest {
 
     @Before
     public void setup() {
-        serv = new GetBugServiceImpl();
+        serv = new GetBugServiceImpl(createOptionFetcher());
 
+    }
+
+    private DataFetcher<Option> createOptionFetcher() {
+        return new DataFetcher<Option>() {
+            @Override
+            public List<Option> fetch(String query) {
+                return StubsForTests.createDummyOptionList();
+            }
+        };
     }
 
 
@@ -25,27 +36,12 @@ public class GetBugServiceImplTest {
     public void testGetEntities() throws Exception {
 
         final GetEntitiesResponse expectedRes = new GetEntitiesResponse();
-        Bug b = new Bug(1, "null pointer", BugEnum.OPEN, "uberto");
-        expectedRes.add(b);
-        Bug b2 = new Bug(2, "stack trace", BugEnum.WORKING, "uberto");
-        expectedRes.add(b2);
-
+        expectedRes.addAll(StubsForTests.createDummyOptionList());
 
         GetEntitiesResponse res = serv.getEntities("");
 
-        assertThat(res.getEntityList(), equalTo(expectedRes.getEntityList()));
+        assertThat(res, is(expectedRes));
 
-    }
-
-
-    @Test
-    public void createBug() {
-        Bug b = new Bug(2, "stack trace", BugEnum.WORKING, "uberto");
-
-        assertThat(b.getId(), is(2));
-        assertThat(b.getDesc(), is("stack trace"));
-        assertThat(b.getStatus(), is(BugEnum.WORKING));
-        assertThat(b.getUser(), is("uberto"));
     }
 
 }

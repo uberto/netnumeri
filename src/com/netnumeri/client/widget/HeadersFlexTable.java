@@ -5,9 +5,9 @@ import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-public class BugFlexTable extends FlexTable {
+public class HeadersFlexTable extends FlexTable {
 
-    public BugFlexTable() {
+    public HeadersFlexTable() {
 
         setCellSpacing(0);
         addStyleName("FlexTable");

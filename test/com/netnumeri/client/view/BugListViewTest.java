@@ -6,12 +6,12 @@ import com.netnumeri.client.AppGwtTestCase;
 
 public class BugListViewTest extends AppGwtTestCase {
 
-    private BugListView bugList;
+    private OptionListView bugList;
 
     @Override
     public void gwtSetUp() throws Exception {
         super.gwtSetUp();
-        bugList = new BugListViewFlexTable();
+        bugList = new OptionListViewFlexTable();
     }
 
 

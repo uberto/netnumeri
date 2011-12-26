@@ -5,22 +5,22 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.service.GetBugServiceAsync;
 import com.netnumeri.client.service.MySampleApplicationServiceAsync;
-import com.netnumeri.client.view.BugListView;
+import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.client.view.NotificationView;
-import com.netnumeri.shared.entity.Bug;
+import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 
 import java.util.List;
 
-public class BugListPresenter extends PresenterWithView<BugListView> {
+public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
-    private BugListView view;
+    private OptionListView view;
     private GetBugServiceAsync bugListService;
     private MyAsyncCallback asyncCallback;
     private MySampleApplicationServiceAsync messageService;
 
 
-    public BugListPresenter(BugListView view, GetBugServiceAsync serv, MySampleApplicationServiceAsync messageService) {
+    public OptionListPresenter(OptionListView view, GetBugServiceAsync serv, MySampleApplicationServiceAsync messageService) {
         super(view);
         this.view = view;
         bugListService = serv;
@@ -58,9 +58,9 @@ public class BugListPresenter extends PresenterWithView<BugListView> {
         view.clearBugGrid();
 
 
-        List<Bug> bugList = response.getEntityList();
-        for (Bug bug : bugList) {
-            view.addBug(bug.getId(), bug.getDesc(), bug.getStatus(), bug.getUser());
+        List<Option> optionList = response.getEntityList();
+        for (Option option : optionList) {
+            view.addOption(option);
         }
     }
 
@@ -77,7 +77,7 @@ public class BugListPresenter extends PresenterWithView<BugListView> {
         };
     }
 
-    public BugListView getView() {
+    public OptionListView getView() {
         return view;
     }
 

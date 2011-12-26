@@ -5,12 +5,12 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.netnumeri.client.widget.BugFlexTable;
-import com.netnumeri.shared.entity.BugEnum;
+import com.netnumeri.client.widget.HeadersFlexTable;
+import com.netnumeri.shared.entity.Option;
 
-public class BugListViewFlexTable extends ViewAbstractRoot implements BugListView {
+public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionListView {
 
-    BugFlexTable flexTable = new BugFlexTable();
+    HeadersFlexTable flexTable = new HeadersFlexTable();
     public Button clickMeButton = new Button("Click me");
     public Label messageLabel = new Label();
 
@@ -30,7 +30,14 @@ public class BugListViewFlexTable extends ViewAbstractRoot implements BugListVie
 //        return flexTable;
 
     private void addHeaders() {
-        flexTable.addHeaders("bug id", "description", "status", "assigned to");
+        flexTable.addHeaders("Name", "Stock", "Type", "Due to", "Strike");
+    }
+
+
+    @Override
+    public void addOption(Option option) {
+        flexTable.addRow(option.getOptionName(), option.getStockTicket(), option.getType().toString(), option.getDateDue().toString(), option.getStrike().toString());
+
     }
 
 
@@ -39,10 +46,6 @@ public class BugListViewFlexTable extends ViewAbstractRoot implements BugListVie
         flexTable.clear();
         flexTable.removeAllRows();
         addHeaders();
-    }
-
-    public void addBug(int id, String desc, BugEnum status, String user) {
-        flexTable.addRow("" + id, desc, status.name(), user);
     }
 
     @Override
