@@ -2,10 +2,10 @@ package com.netnumeri.client.presenter;
 
 import com.netnumeri.client.view.View;
 
-public abstract class PresenterWithView implements Presenter{
-    private View view;
+public abstract class PresenterWithView<T extends View> implements Presenter{
+    private T view;
 
-    public PresenterWithView(View view) {
+    public PresenterWithView(T view) {
         this.view = view;
     }
 
@@ -17,4 +17,7 @@ public abstract class PresenterWithView implements Presenter{
     }
 
 
+    public T getView() {
+        return view;
+    }
 }

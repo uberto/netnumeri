@@ -2,18 +2,26 @@ package com.netnumeri.client;
 
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.netnumeri.client.presenter.BugListPresenter;
+import com.netnumeri.client.presenter.PresenterWithView;
+import com.netnumeri.client.view.BugListView;
 
 
 public class MySampleApplicationTest extends AppGwtTestCase {
 
     public void testOnModuleLoad() throws Exception {
-//        app.messageLabel.setText("");
+        PresenterWithView presenter = app.getCurrentPresenter();
+        assertEquals(presenter.getClass(), BugListPresenter.class);
+        BugListPresenter bugListPresenter = (BugListPresenter) presenter;
+
+        final BugListView view = bugListPresenter.getView();
+        view.setMessageText("");
         assertEquals(1, RootPanel.get("slot1").getWidgetCount());
-//        app.clickMeButton.click();
+        view.clickButton();
 
         asyncTestValidation(new Timer() {
             public void run() {
-//                assertEquals("Client said: \"Hello, World!\"Server answered: \"Hi!\"", app.messageLabel.getText());
+                assertEquals("Client said: \"Hello, World!\"<br></br>Server answered: \"Hi!\"", view.getMessageText());
                 finishTest();
             }
         });

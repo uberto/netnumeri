@@ -11,7 +11,11 @@ public interface BugListView extends View, NotificationView {
     void addBug(int id, String desc, BugEnum status, String user);
 
     int getRowCount();
+
     int getCellCount(int row);
 
     void addClickHandler(ClickHandler clickHandler);
+
+
+    void clickButton();
 }

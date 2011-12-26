@@ -12,7 +12,7 @@ import com.netnumeri.shared.service.GetEntitiesResponse;
 
 import java.util.List;
 
-public class BugListPresenter extends PresenterWithView {
+public class BugListPresenter extends PresenterWithView<BugListView> {
 
     private BugListView view;
     private GetBugServiceAsync bugListService;

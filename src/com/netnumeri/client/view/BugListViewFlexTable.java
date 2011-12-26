@@ -61,6 +61,13 @@ public class BugListViewFlexTable extends ViewAbstractRoot implements BugListVie
     }
 
     @Override
+    public void clickButton() {
+        clickMeButton.click();
+
+
+    }
+
+    @Override
     protected void placeInPanel(Panel panel) {
         panel.add(flexTable);
                 RootPanel.get("slot1").add(clickMeButton);
