@@ -326,6 +326,48 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+    <library name="appengine">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/geronimo-jta_1.1_spec-1.1.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-core-1.1.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jakarta-standard-1.1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jakarta-jstl-1.1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/jdo2-api-2.3-eb.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-jpa-1.1.5.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/asm-3.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-enhancer-1.1.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/agent/appengine-agentruntime.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/geronimo-jpa_3.0_spec-1.1.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api-stubs.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-local-runtime.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/google_sql.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/appengine-remote-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/appengine-tools-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api-labs.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-api-labs-1.6.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/override/appengine-dev-jdk-overrides.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-api-1.0-sdk-1.6.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-jasper-el-6.0.29.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/jsr107cache-1.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-jasper-6.0.29.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-jsr107cache-1.6.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-tomcat-juli-6.0.29.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-ant-launcher-1.7.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/el-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-ant-1.7.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/appengine-local-runtime-shared.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/servlet-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/agent/appengine-agent.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp-api.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/agent/appengine-agentimpl.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/orm/datanucleus-appengine-1.0.10.final.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/testing/appengine-testing.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jasper-jdt-6.0.29.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="gwt">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/gwt-2.4.0" />

@@ -22,7 +22,7 @@ import com.google.gwt.sample.expenses.client.style.Styles;
 import com.google.gwt.user.client.ui.AbstractImagePrototype;
 
 /**
- * An enum describing the approval status.
+ * An enumer describing the approval status.
  */
 public enum Approval {
   BLANK("", "inherit", Styles.resources().blankIcon()), APPROVED("Approved",

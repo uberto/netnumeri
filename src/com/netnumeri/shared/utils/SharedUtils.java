@@ -3,7 +3,7 @@ package com.netnumeri.shared.utils;
 import com.google.gwt.i18n.client.CurrencyData;
 import com.google.gwt.i18n.client.CurrencyList;
 import com.google.gwt.i18n.client.NumberFormat;
-import com.netnumeri.shared.enums.CurrencyEnum;
+import com.netnumeri.shared.finance.enums.CurrencyEnum;
 
 import java.util.Date;
 

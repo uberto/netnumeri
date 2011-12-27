@@ -1,6 +1,5 @@
 package com.netnumeri.shared.pojoc;
 
-
 import com.netnumeri.shared.pojoc.field.*;
 
 import java.util.Date;

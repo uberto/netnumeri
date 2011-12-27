@@ -1,8 +1,9 @@
-package com.netnumeri.shared.enums;
+package com.netnumeri.shared.enumer;
 
-import com.google.gwt.user.client.ui.SuggestOracle.Suggestion;
 
-public enum CurrencyEnum implements Suggestion {
+import com.google.gwt.user.client.ui.SuggestOracle;
+
+public enum CurrencyEnum implements SuggestOracle.Suggestion {
     AED("United Arab Emirates, Dirhams"),
     AFN("Afghanistan, Afghanis"),
     ALL("Albania, Leke"),
