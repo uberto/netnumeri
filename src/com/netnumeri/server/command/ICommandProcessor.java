@@ -9,5 +9,6 @@ import com.netnumeri.shared.utils.ClientWarningException;
 public interface ICommandProcessor {
 
 	public <REQUEST extends CommandRequest,
-            RESPONSE extends CommandResponse> CommandResponse process(User user, BusinessAccount ba, REQUEST request) throws ClientWarningException;
+            RESPONSE extends CommandResponse> CommandResponse process(User user, BusinessAccount ba, REQUEST request)
+            throws ClientWarningException;
 }
