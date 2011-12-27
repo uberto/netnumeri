@@ -21,6 +21,6 @@
 
     <!-- Specify the app servlets.                   -->
     <servlet path='/MySampleApplicationService' class='com.netnumeri.server.service.MySampleApplicationServiceImpl'/>
-    <servlet path="/GetBugService" class="com.netnumeri.server.service.GetBugServiceImpl"/>
+    <servlet path="/GetOptionService" class="com.netnumeri.server.service.GetOptionServiceImpl"/>
 
 </module>

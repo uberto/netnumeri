@@ -1,26 +1,27 @@
 package com.netnumeri.client.service;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.google.gwt.core.client.GWT;
+import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntityResponse;
 
-@RemoteServiceRelativePath("GetBugService")
-public interface GetBugService extends RemoteService {
+@RemoteServiceRelativePath("GetOptionService")
+public interface GetOptionService extends RemoteService {
 
-    GetEntitiesResponse getEntities(String query);
+    GetEntitiesResponse<Option> getEntities(String query);
 
-    GetEntityResponse getEntity(String query);
+    GetEntityResponse<Option> getEntity(String query);
 
     /**
      * Utility/Convenience class.
      * Use GetBugService.App.getInstance() to access static instance of getBugServiceAsync
      */
     public static class App {
-        private static final GetBugServiceAsync ourInstance = (GetBugServiceAsync) GWT.create(GetBugService.class);
+        private static final GetOptionServiceAsync ourInstance = (GetOptionServiceAsync) GWT.create(GetOptionService.class);
 
-        public static GetBugServiceAsync getInstance() {
+        public static GetOptionServiceAsync getInstance() {
             return ourInstance;
         }
     }

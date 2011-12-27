@@ -3,10 +3,10 @@ package com.netnumeri.client.presenter;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.netnumeri.client.service.GetBugServiceAsync;
+import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.service.MySampleApplicationServiceAsync;
-import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.client.view.NotificationView;
+import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 
@@ -15,12 +15,12 @@ import java.util.List;
 public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
     private OptionListView view;
-    private GetBugServiceAsync bugListService;
+    private GetOptionServiceAsync bugListService;
     private MyAsyncCallback asyncCallback;
     private MySampleApplicationServiceAsync messageService;
 
 
-    public OptionListPresenter(OptionListView view, GetBugServiceAsync serv, MySampleApplicationServiceAsync messageService) {
+    public OptionListPresenter(OptionListView view, GetOptionServiceAsync serv, MySampleApplicationServiceAsync messageService) {
         super(view);
         this.view = view;
         bugListService = serv;
@@ -39,7 +39,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
         super.activate();
         view.setTitle("Active bugs");
 
-        bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse>() {
+        bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
 
             @Override
             public void onFailure(Throwable caught) {
@@ -47,14 +47,14 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
             }
 
             @Override
-            public void onSuccess(GetEntitiesResponse response) {
+            public void onSuccess(GetEntitiesResponse<Option> response) {
                 populateGrid(response);
             }
         });
 
     }
 
-    public void populateGrid(GetEntitiesResponse response) {
+    public void populateGrid(GetEntitiesResponse<Option> response) {
         view.clearBugGrid();
 
 

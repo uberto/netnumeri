@@ -10,8 +10,8 @@
         <servlet-class>com.netnumeri.server.service.MySampleApplicationServiceImpl</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>GetBugService</servlet-name>
-        <servlet-class>com.netnumeri.server.service.GetBugServiceImpl</servlet-class>
+        <servlet-name>GetOptionService</servlet-name>
+        <servlet-class>com.netnumeri.server.service.GetOptionServiceImpl</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MySampleApplicationService</servlet-name>
@@ -19,8 +19,8 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>GetBugService</servlet-name>
-        <url-pattern>/MySampleApplication/GetBugService</url-pattern>
+        <servlet-name>GetOptionService</servlet-name>
+        <url-pattern>/MySampleApplication/GetOptionService</url-pattern>
     </servlet-mapping>
 
 

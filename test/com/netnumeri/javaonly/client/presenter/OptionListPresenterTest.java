@@ -3,12 +3,12 @@ package com.netnumeri.javaonly.client.presenter;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.OptionListPresenter;
-import com.netnumeri.client.service.GetBugServiceAsync;
+import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.service.GetEntitiesResponse;
+import com.netnumeri.shared.service.GetOptionsResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,10 +19,10 @@ import org.mockito.stubbing.Answer;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
-public class BugListPresenterTest {
+public class OptionListPresenterTest {
     private OptionListPresenter pres;
     public OptionListView view = mock(OptionListView.class);
-    public GetBugServiceAsync service = mock(GetBugServiceAsync.class);
+    public GetOptionServiceAsync service = mock(GetOptionServiceAsync.class);
     public MySampleApplicationServiceAsync messageService = mock(MySampleApplicationServiceAsync.class);
     private ClickAnswer answer;
 
@@ -80,7 +80,7 @@ public class BugListPresenterTest {
 
     @Test
     public void success(){
-        GetEntitiesResponse resp = new GetEntitiesResponse();
+        GetOptionsResponse resp = new GetOptionsResponse();
         Option dummyOption = StubsForTests.createDummyOption();
         resp.add(dummyOption);
         resp.add(dummyOption);

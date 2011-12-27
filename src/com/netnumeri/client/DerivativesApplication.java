@@ -3,7 +3,7 @@ package com.netnumeri.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.netnumeri.client.presenter.OptionListPresenter;
 import com.netnumeri.client.presenter.PresenterWithView;
-import com.netnumeri.client.service.GetBugService;
+import com.netnumeri.client.service.GetOptionService;
 import com.netnumeri.client.service.MySampleApplicationService;
 import com.netnumeri.client.view.OptionListViewFlexTable;
 
@@ -16,7 +16,7 @@ public class DerivativesApplication implements EntryPoint {
 
     public void onModuleLoad() {
 
-        bugList = new OptionListPresenter( new OptionListViewFlexTable(), GetBugService.App.getInstance(), MySampleApplicationService.App.getInstance());
+        bugList = new OptionListPresenter( new OptionListViewFlexTable(), GetOptionService.App.getInstance(), MySampleApplicationService.App.getInstance());
         bugList.activate();
     }
 

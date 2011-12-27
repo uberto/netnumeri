@@ -1,10 +1,11 @@
 package com.netnumeri.server;
 
 import com.netnumeri.server.persistence.DataFetcher;
-import com.netnumeri.server.service.GetBugServiceImpl;
+import com.netnumeri.server.service.GetOptionServiceImpl;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
+import com.netnumeri.shared.service.GetOptionsResponse;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,12 +14,12 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class GetBugServiceImplTest {
-    private GetBugServiceImpl serv;
+public class GetOptionServiceImplTest {
+    private GetOptionServiceImpl serv;
 
     @Before
     public void setup() {
-        serv = new GetBugServiceImpl(createOptionFetcher());
+        serv = new GetOptionServiceImpl(createOptionFetcher());
 
     }
 
@@ -35,10 +36,10 @@ public class GetBugServiceImplTest {
     @Test
     public void testGetEntities() throws Exception {
 
-        final GetEntitiesResponse expectedRes = new GetEntitiesResponse();
+        final GetEntitiesResponse<Option> expectedRes = new GetOptionsResponse();
         expectedRes.addAll(StubsForTests.createDummyOptionList());
 
-        GetEntitiesResponse res = serv.getEntities("");
+        GetEntitiesResponse<Option> res = serv.getEntities("");
 
         assertThat(res, is(expectedRes));
 

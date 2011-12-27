@@ -4,19 +4,19 @@ import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.netnumeri.client.AppGwtTestCase;
 
-public class BugListViewTest extends AppGwtTestCase {
+public class OptionListViewTest extends AppGwtTestCase {
 
-    private OptionListView bugList;
+    private OptionListView listView;
 
     @Override
     public void gwtSetUp() throws Exception {
         super.gwtSetUp();
-        bugList = new OptionListViewFlexTable();
+        listView = new OptionListViewFlexTable();
     }
 
 
     public void testPrepareEmptyListAtStart() throws Exception {
-        bugList.show();
+        listView.show();
 
         asyncTestValidation(new Timer() {
             public void run() {
@@ -40,7 +40,7 @@ public class BugListViewTest extends AppGwtTestCase {
     public void testDisplayMessageFromServer() throws Exception {
 
 
-        bugList.show();
+        listView.show();
 
         asyncTestValidation(new Timer() {
             public void run() {

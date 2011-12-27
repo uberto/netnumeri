@@ -2,11 +2,11 @@ package com.netnumeri.javaonly.client.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.BugFormPresenter;
-import com.netnumeri.client.service.GetBugServiceAsync;
+import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.view.BugFormView;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.service.GetEntitiesResponse;
+import com.netnumeri.shared.service.GetOptionsResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 public class BugFormPresenterTest {
     private BugFormPresenter pres;
     public BugFormView view = mock(BugFormView.class);
-    public GetBugServiceAsync service = mock(GetBugServiceAsync.class);
+    public GetOptionServiceAsync service = mock(GetOptionServiceAsync.class);
 
 
     @Before
@@ -46,7 +46,7 @@ public class BugFormPresenterTest {
 
     @Test
     public void success(){
-        GetEntitiesResponse resp = new GetEntitiesResponse();
+        GetOptionsResponse resp = new GetOptionsResponse();
         Option option = StubsForTests.createDummyOption();
         resp.add(option);
         resp.add(option);
