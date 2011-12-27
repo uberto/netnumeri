@@ -1,9 +1,9 @@
 package com.netnumeri.javaonly.client.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.netnumeri.client.presenter.BugFormPresenter;
+import com.netnumeri.client.presenter.SingleOptionPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
-import com.netnumeri.client.view.BugFormView;
+import com.netnumeri.client.view.SingleOptionView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,15 +12,15 @@ import org.mockito.Mockito;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
-public class BugFormPresenterTest {
-    private BugFormPresenter pres;
-    public BugFormView view = mock(BugFormView.class);
+public class SingleOptionPresenterTest {
+    private SingleOptionPresenter pres;
+    public SingleOptionView view = mock(SingleOptionView.class);
     public GetOptionServiceAsync service = mock(GetOptionServiceAsync.class);
 
 
     @Before
     public void setUp() throws Exception {
-        pres = new BugFormPresenter(view, service);
+        pres = new SingleOptionPresenter(view, service);
     }
 
 

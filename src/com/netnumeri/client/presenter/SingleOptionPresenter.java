@@ -2,18 +2,18 @@ package com.netnumeri.client.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.service.GetOptionServiceAsync;
-import com.netnumeri.client.view.BugFormView;
+import com.netnumeri.client.view.SingleOptionView;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntityResponse;
 
-public class BugFormPresenter  extends PresenterWithView {
-    private BugFormView view;
-    private GetOptionServiceAsync bugEditService;
+public class SingleOptionPresenter extends PresenterWithView {
+    private SingleOptionView view;
+    private GetOptionServiceAsync optionServiceAsync;
 
-    public BugFormPresenter(BugFormView view, GetOptionServiceAsync service) {
+    public SingleOptionPresenter(SingleOptionView view, GetOptionServiceAsync service) {
         super(view);
         this.view = view;
-        this.bugEditService = service;
+        this.optionServiceAsync = service;
     }
 
 
@@ -22,7 +22,7 @@ public class BugFormPresenter  extends PresenterWithView {
 
         super.activate();
 
-        bugEditService.getEntity("", new AsyncCallback<GetEntityResponse<Option>>() {
+        optionServiceAsync.getEntity("", new AsyncCallback<GetEntityResponse<Option>>() {
 
             @Override
             public void onFailure(Throwable caught) {

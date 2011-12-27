@@ -1,5 +1,5 @@
 package com.netnumeri.client.view;
 
-public interface BugFormView extends View {
+public interface SingleOptionView extends View {
     void setTitle(String title);
 }

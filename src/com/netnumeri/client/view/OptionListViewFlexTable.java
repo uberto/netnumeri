@@ -16,7 +16,7 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
 
     public void setTitle(String title) {
         RootPanel.get("title-label").getElement().setInnerText(title);
-        flexTable.setTitle(title);
+//        flexTable.setTitle(title);
 
     }
 

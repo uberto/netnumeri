@@ -10,7 +10,7 @@ public class OptionListViewTest extends AppGwtTestCase {
 
     @Override
     public void gwtSetUp() throws Exception {
-        super.gwtSetUp();
+//        super.gwtSetUp();
         listView = new OptionListViewFlexTable();
     }
 
@@ -27,7 +27,7 @@ public class OptionListViewTest extends AppGwtTestCase {
 //                assertEquals(4, app.bugListview.getCellCount(0));
 //                assertEquals(4, app.bugListview.getCellCount(1));
 
-                assertEquals("Active bugs", RootPanel.get("title-label").getElement().getInnerText());
+                assertEquals("Options Portfolio", RootPanel.get("title-label").getElement().getInnerText());
                 finishTest();
             }
         });

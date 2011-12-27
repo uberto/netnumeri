@@ -58,7 +58,7 @@ public class OptionListPresenterTest {
         pres.activate();
 
         verify(view).show();
-        verify(view).setTitle("Active bugs");
+        verify(view).setTitle("Options Portfolio");
         verify(view).addClickHandler(any(ClickHandler.class));
 
         verify(service).getEntities(anyString(), any(AsyncCallback.class));
@@ -71,7 +71,7 @@ public class OptionListPresenterTest {
         answer.clickHandler.onClick(null);
 
         verify(view).show();
-        verify(view).setTitle("Active bugs");
+        verify(view).setTitle("Options Portfolio");
         verify(view).getMessageText();
         verify(view).addClickHandler(any(ClickHandler.class));
         verify(service).getEntities(anyString(), any(AsyncCallback.class));

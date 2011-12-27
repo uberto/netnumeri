@@ -37,7 +37,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     @Override
     public void activate() {
         super.activate();
-        view.setTitle("Option Portfolio");
+        view.setTitle("Options Portfolio");
 
         bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
 
