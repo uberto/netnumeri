@@ -8,20 +8,20 @@ import com.netnumeri.client.service.MySampleApplicationService;
 import com.netnumeri.client.view.OptionListViewFlexTable;
 
 
-public class DerivativesApplication implements EntryPoint {
+public class NetNumeriApplication implements EntryPoint {
 
 
-    public String message = "Hello, World!";
-    public OptionListPresenter bugList;
+    private String message = "Hello, World!";
+    private OptionListPresenter optionListPresenter;
 
     public void onModuleLoad() {
 
-        bugList = new OptionListPresenter( new OptionListViewFlexTable(), GetOptionService.App.getInstance(), MySampleApplicationService.App.getInstance());
-        bugList.activate();
+        optionListPresenter = new OptionListPresenter( new OptionListViewFlexTable(), GetOptionService.App.getInstance(), MySampleApplicationService.App.getInstance());
+        optionListPresenter.activate();
     }
 
 
     public PresenterWithView getCurrentPresenter() {
-         return bugList;
+         return optionListPresenter;
     }
 }
