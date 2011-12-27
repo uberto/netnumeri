@@ -8,8 +8,8 @@ import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntityResponse;
-import com.netnumeri.shared.service.GetOptionResponse;
-import com.netnumeri.shared.service.GetOptionsResponse;
+import com.netnumeri.shared.service.GetEntityResponseImmutable;
+import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
 
 import java.util.Date;
 import java.util.List;
@@ -34,14 +34,12 @@ public class GetOptionServiceImpl extends RemoteServiceServlet implements GetOpt
 
     @Override
     public GetEntitiesResponse<Option> getEntities(String query) {
-        GetOptionsResponse res = new GetOptionsResponse();
-        res.addAll(fetcher.fetch(query));
 
-        return res;
+        return new GetEntitiesResponseImmutable(fetcher.fetch(query));
     }
 
     @Override
     public GetEntityResponse<Option> getEntity(String query) {
-        return new GetOptionResponse( new Option("option2", "GOOG", OptionType.CALL, 180.0, new Date(0)));
+        return new GetEntityResponseImmutable( new Option("option2", "GOOG", OptionType.CALL, 180.0, new Date(0)));
     }
 }

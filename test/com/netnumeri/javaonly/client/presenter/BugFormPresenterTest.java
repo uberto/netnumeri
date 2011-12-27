@@ -4,9 +4,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.BugFormPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.view.BugFormView;
-import com.netnumeri.shared.StubsForTests;
-import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.service.GetOptionsResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,11 +43,11 @@ public class BugFormPresenterTest {
 
     @Test
     public void success(){
-        GetOptionsResponse resp = new GetOptionsResponse();
-        Option option = StubsForTests.createDummyOption();
-        resp.add(option);
-        resp.add(option);
-        resp.add(option);
+//        GetEntitiesResponseImmutable resp = new GetEntitiesResponseImmutable();
+//        Option option = StubsForTests.createDummyOption();
+//        resp.add(option);
+//        resp.add(option);
+//        resp.add(option);
 //        pres.populateForm(resp);
 //
 //        verify(view).clearBugGrid();

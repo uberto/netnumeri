@@ -5,7 +5,7 @@ import com.netnumeri.server.service.GetOptionServiceImpl;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
-import com.netnumeri.shared.service.GetOptionsResponse;
+import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,8 +36,7 @@ public class GetOptionServiceImplTest {
     @Test
     public void testGetEntities() throws Exception {
 
-        final GetEntitiesResponse<Option> expectedRes = new GetOptionsResponse();
-        expectedRes.addAll(StubsForTests.createDummyOptionList());
+        final GetEntitiesResponse<Option> expectedRes = new GetEntitiesResponseImmutable(StubsForTests.createDummyOptionList());
 
         GetEntitiesResponse<Option> res = serv.getEntities("");
 

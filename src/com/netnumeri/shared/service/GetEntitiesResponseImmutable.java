@@ -1,33 +1,37 @@
 package com.netnumeri.shared.service;
 
-import com.netnumeri.shared.entity.Option;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetOptionsResponse implements  GetEntitiesResponse<Option> {
-    private List<Option> entityList = new ArrayList<Option>();
+public class GetEntitiesResponseImmutable<T> implements  GetEntitiesResponse<T> {
+    private List<T> entityList = new ArrayList<T>();
 
+    public GetEntitiesResponseImmutable(List<T> entityList) {
+        this.entityList = entityList;
+    }
+
+    private GetEntitiesResponseImmutable() {
+    }
 
     @Override
-    public void add(Option option) {
+    public void add(T option) {
         entityList.add(option);
     }
 
     @Override
-    public List<Option> getEntityList() {
+    public List<T> getEntityList() {
         return entityList;
     }
 
     @Override
-    public void addAll(List<Option> optionList) {
+    public void addAll(List<T> optionList) {
         entityList.addAll(optionList);
     }
 
     @Override
     public String toString() {
         String list = "";
-        for (Option option : entityList) {
+        for (T option : entityList) {
             if (list.length() >0){
                 list +=", ";
             }
@@ -44,7 +48,7 @@ public class GetOptionsResponse implements  GetEntitiesResponse<Option> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        GetOptionsResponse that = (GetOptionsResponse) o;
+        GetEntitiesResponseImmutable that = (GetEntitiesResponseImmutable) o;
 
         if (entityList != null ? !entityList.equals(that.entityList) : that.entityList != null) return false;
 

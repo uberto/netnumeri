@@ -8,7 +8,7 @@ import com.netnumeri.client.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.service.GetOptionsResponse;
+import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,15 +80,12 @@ public class OptionListPresenterTest {
 
     @Test
     public void success(){
-        GetOptionsResponse resp = new GetOptionsResponse();
-        Option dummyOption = StubsForTests.createDummyOption();
-        resp.add(dummyOption);
-        resp.add(dummyOption);
-        resp.add(dummyOption);
+        GetEntitiesResponseImmutable resp = new GetEntitiesResponseImmutable(StubsForTests.createDummyOptionList());
+
         pres.populateGrid(resp);
 
         verify(view).clearBugGrid();
-        verify(view, times(3)).addOption(dummyOption);
+        verify(view, times(2)).addOption(any(Option.class));
         verify(view).addClickHandler(any(ClickHandler.class));
 
     }
