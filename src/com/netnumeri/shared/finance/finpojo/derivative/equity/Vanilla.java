@@ -14,9 +14,6 @@ public class Vanilla extends Derivative {
     protected int optionType;
     private double dividend;
 
-
-//    private MonteCarlo monteCarlo;
-
     @Override
     public double alpha(int model) {
         return 0;
