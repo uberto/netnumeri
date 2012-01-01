@@ -122,22 +122,13 @@ public class InstrumentTest extends TestCase {
     }
 
     @Test
-    public void testGetFixedVolatility() throws Exception {
-
-    }
-
-    @Test
     public void testS() throws Exception {
 
-    }
+        stock.setSpot(1.0);
+        assertEquals(1.0, stock.S());
 
-    @Test
-    public void testSetFixedSpot() throws Exception {
-
-    }
-
-    @Test
-    public void testSetFixedVolatility() throws Exception {
+        stock.setSpotFixed(true);
+        assertEquals(true, stock.isSpotFixed());
 
     }
 
@@ -159,6 +150,9 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testGetHistoricalVolatility() throws Exception {
 
+        double historicalVolatility = stock.getHistoricalVolatility();
+
+        assertEquals (historicalVolatility,1.0567523108414614);
     }
 
     @Test

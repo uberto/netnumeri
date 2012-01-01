@@ -152,14 +152,9 @@ public abstract class Instrument extends DateWindow implements Serializable {
         volatility = Volatility;
     }
 
-    /**
-     * Get Historical premium for a certain date
-     *
-     * @return average closing value of the day
-     */
-    public double historicalSpot(TDay tday) {
+    public double historicalSpot() {
         double ret = 0;
-        ret = getHistoricalSpot(tday);
+        ret = getHistoricalSpot(new TDay());
         return ret;
     }
 
