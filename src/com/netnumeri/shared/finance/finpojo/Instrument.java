@@ -14,7 +14,9 @@ public abstract class Instrument extends DateWindow implements Serializable {
 
     protected double delta = 1;
 
-    public abstract double modelPrice(int model);
+    public double modelPrice(int model) {
+        return spot();
+    }
 
     private TDay lastPriceDateTime;
     private TDay lastAskDateTime;
@@ -1462,14 +1464,9 @@ public abstract class Instrument extends DateWindow implements Serializable {
         TDay lastDailyDate = lastDailyDate();
         if (firstDate == null) firstDate = firstDailyDate;
         if (lastDate == null) lastDate = lastDailyDate;
-
-        if (firstDate.isLess(firstDailyDate))
-            firstDate = firstDailyDate;
-        if (lastDate.isGreater(lastDailyDate))
-            lastDate = lastDailyDate;
-
+        if (firstDate.isLess(firstDailyDate)) firstDate = firstDailyDate;
+        if (lastDate.isGreater(lastDailyDate)) lastDate = lastDailyDate;
         double value;
-
         for (TDay date = firstDate;
              date.isLessEqual(lastDate);
              date = date.addDays(1)) {

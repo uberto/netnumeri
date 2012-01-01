@@ -92,11 +92,11 @@ public class Stock extends Asset implements Serializable {
 
     @Override
     public String getKind() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;
     }
 
     @Override
     public SearchablePojo clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;
     }
 }

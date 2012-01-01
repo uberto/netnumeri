@@ -1000,17 +1000,15 @@ public class Portfolio extends Asset implements FinConstants {
     }
 
     // Calculate CAPM beta with Benchmark representing market portfolio
-
     public double getBeta(Portfolio index) {
         double Beta = 0;
         for (int i = 0; i < items.size(); i++) {
-            Beta += ((Asset) getInstrument(i)).getBeta(index) * getWeight(i);
+            Beta += ((Portfolio) getInstrument(i)).getBeta(index) * getWeight(i);
         }
         return Beta;
     }
 
     // Claculate CAPM expected return excess with Benchmark representing market portfolio
-
     public double excess(Portfolio index, double InterestRate) {
         return InterestRate + getBeta(index) * (index.annualExpectedReturn() - InterestRate);
     }
@@ -1029,6 +1027,29 @@ public class Portfolio extends Asset implements FinConstants {
             delta += getInstrument(i).getDelta() * getItemAmount(i);
         }
         return delta;
+    }
+
+
+    /**
+     * Calculate CAPM beta with Benchmark representing market portfolio
+     */
+    public double getBeta(Asset index) {
+        return getCovariance(index) / index.variance();
+    }
+
+    /**
+     * Calculate Traynor index
+     * The Treynor index is a risk adjusted measure of portfolio performance, not unlike the Sharpe ratio. The Treynor index only adjusts for non-diversifiable risk, by dividing the excess return by the portfolio beta:
+     * (rp - rf)/β
+     *
+     *  Where rp is the return on the portfolio,rf is the risk free return, and,β is the beta of the portfolio.
+     * By excluding only adjusting for non-diversifiable risk, we assume that the portfolio it self is an investment
+     * that we expect to be part of a wider diversified portfolio.
+     * As this is typically true for funds this means that it is a suitable measure for assessing the performance of
+     * fund managers.
+     */
+    public double getTreynorIndex(Asset index, double interestRate) {
+        return ((Math.pow(expectedReturn(), 365) - 1) * 100 - interestRate) / getBeta(index);
     }
 
 //    public double VaR(int NDays) {
