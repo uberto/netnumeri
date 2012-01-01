@@ -4,7 +4,7 @@ import com.google.gwt.user.client.Random;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.ta.FinMath;
-import com.netnumeri.shared.finance.utils.Util;
+import com.netnumeri.shared.finance.utils.LogUtils;
 
 
 public class FinRecipes extends FinMath implements FinConstants {
@@ -2096,7 +2096,7 @@ public class FinRecipes extends FinMath implements FinConstants {
                     sum_payoffs = sum_payoffs + put_payoff;
                     break;
                 default:
-                    Util.debug("payoff not applicable");
+                    LogUtils.debug("payoff not applicable");
                     break;
             }
         }

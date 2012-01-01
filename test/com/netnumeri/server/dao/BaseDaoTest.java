@@ -5,7 +5,6 @@ import com.google.appengine.tools.development.testing.LocalDatastoreServiceTestC
 import com.google.appengine.tools.development.testing.LocalServiceTestHelper;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;

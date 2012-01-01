@@ -11,45 +11,22 @@ import com.netnumeri.shared.finance.date.TDay;
 import java.util.Date;
 
 
-public class Util {
+public class NumericalRecipesUtils {
 
-//    public static HashMap<Long, Portfolio> portfolios = new HashMap<Long, Portfolio>();
-
-    // logging --------------------------
-    public static void debug(String msg) {
-        debug(msg, null);
-    }
-
-    public static void debug(String msg, Throwable e) {
-        GWT.log(msg, e);
-        if (GWT.isScript()) {
-            log(msg);
-        } else {
-            System.out.println("GWT LOG: " + msg);
-            if (e != null) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private static native void log(String message) /*-{
-        console.debug(message);
-    }-*/;
-
-    private static native JsArrayString regExpMatch(String regEx, String target) /*-{
-        var re = new RegExp();
-        return re.compile(regEx).exec(target);
-    }-*/;
-
-    public static Long getPortfolioLongId(String portfolioId) {
-        JsArrayString match = regExpMatch("\\/(\\d+)$", portfolioId);
-        if (match.length() > 1) {
-            portfolioId = match.get(1);
-        } else {
-            GWT.log("Error parsing the portfolio id.", null);
-        }
-        return Long.parseLong(portfolioId);
-    }
+//    private static native JsArrayString regExpMatch(String regEx, String target) /*-{
+//        var re = new RegExp();
+//        return re.compile(regEx).exec(target);
+//    }-*/;
+//
+//    public static Long getPortfolioLongId(String portfolioId) {
+//        JsArrayString match = regExpMatch("\\/(\\d+)$", portfolioId);
+//        if (match.length() > 1) {
+//            portfolioId = match.get(1);
+//        } else {
+//            GWT.log("Error parsing the portfolio id.", null);
+//        }
+//        return Long.parseLong(portfolioId);
+//    }
 
     public static int[] ivector(int startIndex, int size) {
         int[] v = new int[startIndex + size];
@@ -118,7 +95,7 @@ public class Util {
 
     public static float[] sumSeries(float[] s1, float[] s2) {
         int size = s1.length - 1;
-        float[] sum = Util.vector(1, size);
+        float[] sum = NumericalRecipesUtils.vector(1, size);
         for (int i = 1; i <= size; i++)
             sum[i] = s1[i] + s2[i];
         return sum;
@@ -126,7 +103,7 @@ public class Util {
 
     public static float[] diffSeries(float[] s1, float[] s2) {
         int size = s1.length - 1;
-        float[] diff = Util.vector(1, size);
+        float[] diff = NumericalRecipesUtils.vector(1, size);
         for (int i = 1; i <= size; i++)
             diff[i] = s1[i] - s2[i];
         return diff;
@@ -134,15 +111,15 @@ public class Util {
 
     public static float[] exponential(float[] s1) {
         int size = s1.length - 1;
-        float[] sum = Util.vector(1, size);
+        float[] sum = NumericalRecipesUtils.vector(1, size);
         for (int i = 1; i <= size; i++)
             sum[i] = (float) Math.exp(s1[i]);
         return sum;
     }
 
     public static float[] augmentByMovingAverage(float[] s1) throws NRError {
-        float[] aug = Util.vector(1, size(s1));
-        float[] madata = Util.vector(1, 10);
+        float[] aug = NumericalRecipesUtils.vector(1, size(s1));
+        float[] madata = NumericalRecipesUtils.vector(1, 10);
         Moment.MomentResult ma = null;
         for (int i = 1; i < size(s1); i++)
             aug[i] = s1[i + 1];
@@ -158,12 +135,12 @@ public class Util {
     }
 
     public static float[] concatenateSeries(float[] s1, float[] s2) {
-        float[] totSerie = Util.vector(1, Util.size(s1) + Util.size(s2));
+        float[] totSerie = NumericalRecipesUtils.vector(1, NumericalRecipesUtils.size(s1) + NumericalRecipesUtils.size(s2));
         int i = -1;
-        for (i = 1; i <= Util.size(s1); i++) {
+        for (i = 1; i <= NumericalRecipesUtils.size(s1); i++) {
             totSerie[i] = s1[i];
         }
-        for (int j = 1; j <= Util.size(s2); j++) {
+        for (int j = 1; j <= NumericalRecipesUtils.size(s2); j++) {
             totSerie[i] = s2[j];
             i++;
         }
@@ -171,7 +148,7 @@ public class Util {
     }
 
     public static float[] getPrevN(float[] series, int seriesSize, int today) {
-        float[] totSerie = Util.vector(1, seriesSize);
+        float[] totSerie = NumericalRecipesUtils.vector(1, seriesSize);
         int i = -1;
         for (i = 1; i <= seriesSize; i++)
             totSerie[i] = series[today - seriesSize + i];
@@ -179,7 +156,7 @@ public class Util {
     }
 
     public static float[] getNextN(float[] series, int seriesSize, int today) {
-        float[] totSerie = Util.vector(1, seriesSize);
+        float[] totSerie = NumericalRecipesUtils.vector(1, seriesSize);
         int i = -1;
         for (i = 1; i <= seriesSize; i++)
             totSerie[i] = series[today + i];

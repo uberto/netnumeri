@@ -10,7 +10,7 @@ import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
-import com.netnumeri.shared.finance.utils.Util;
+import com.netnumeri.shared.finance.utils.LogUtils;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -558,12 +558,12 @@ public class StrategyBacktest implements FinConstants, Serializable {
         grossProfitTotal = grossProfitLong + grossProfitShort;
         grossLossTotal = grossLossLong + grossLossShort;
         wealth = CurrentWealth;
-        Util.debug("Wealth      : " + CurrentWealth);
-        Util.debug("Account     : " + currentAccount);
-        Util.debug("Portfolio   : " + portfolio.getPrice(lastDate));
+        LogUtils.debug("Wealth      : " + CurrentWealth);
+        LogUtils.debug("Account     : " + currentAccount);
+        LogUtils.debug("Portfolio   : " + portfolio.getPrice(lastDate));
         if (benchmarkPortfolio != null) {
-            Util.debug("print benchmark portfolio");
-            Util.debug(benchmarkPortfolio.toString());
+            LogUtils.debug("print benchmark portfolio");
+            LogUtils.debug(benchmarkPortfolio.toString());
         }
         return false;
     }
@@ -1501,7 +1501,7 @@ public class StrategyBacktest implements FinConstants, Serializable {
         sb.append("<SHORTSTDDEV>" + getTradeStdDevShort() + "</SHORTSTDDEV>");
         sb.append("</TESTRESULT>");
 
-        Util.debug("sb.toString() = " + sb.toString());
+        LogUtils.debug("sb.toString() = " + sb.toString());
         return sb.toString();
     }
 

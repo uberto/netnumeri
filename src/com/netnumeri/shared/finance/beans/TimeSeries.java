@@ -6,7 +6,8 @@ import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.ta.DateValue;
 import com.netnumeri.shared.finance.utils.DateUtils;
-import com.netnumeri.shared.finance.utils.Util;
+import com.netnumeri.shared.finance.utils.LogUtils;
+import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 public class TimeSeries extends DateWindow {
 
@@ -263,7 +264,7 @@ public class TimeSeries extends DateWindow {
     public double getPrevData(int index, int row) {
         int PrevIndex = getPrevIndex(index);
         if (PrevIndex == -1) {
-            Util.debug(" GetPrevData. No previous data for index " + index);
+            LogUtils.debug(" GetPrevData. No previous data for index " + index);
             return 0.0;
         } else
             return data.get(row, PrevIndex);
@@ -298,7 +299,7 @@ public class TimeSeries extends DateWindow {
     public double getNextData(int index, int row) {
         int nextIndex = getNextIndex(index);
         if (nextIndex == -1) {
-            Util.debug(" GetNextData. No next data for index " + index);
+            LogUtils.debug(" GetNextData. No next data for index " + index);
             return 0;
         } else
             return data.get(row, nextIndex);
@@ -363,11 +364,11 @@ public class TimeSeries extends DateWindow {
 
     public void set(int index, double data, int row) {
         if (index < getLowerBoundIndex() || index > getUpperBoundIndex()) {
-            Util.debug("TS: Set. index out of bounds: " + index);
+            LogUtils.debug("TS: Set. index out of bounds: " + index);
             return;
         }
         if (isEmpty(index, row)) {
-            Util.debug("TS: Set. Empty entry with index :" + index);
+            LogUtils.debug("TS: Set. Empty entry with index :" + index);
             return;
         }
         this.data.set(row, index, data);
@@ -382,7 +383,7 @@ public class TimeSeries extends DateWindow {
         if (Index != -1)
             set(Index, Data, Row);
         else
-            Util.debug("TS: Set. CalendarDate out of bounds");
+            LogUtils.debug("TS: Set. CalendarDate out of bounds");
     }
 
     public void set(TimeSeries Series) {
@@ -805,7 +806,7 @@ public class TimeSeries extends DateWindow {
     public TimeSeries getDiffSeries(TimeSeries Series) {
         TimeSeries diffSeries = new TimeSeries();
         if (frequency != Series.frequency) {
-            Util.debug("TS: GetDiffSeries. Time xyseries with different tick sizes");
+            LogUtils.debug("TS: GetDiffSeries. Time xyseries with different tick sizes");
             return diffSeries;
         }
         TDay firstCalendarDate = DateUtils.max(getFirstDate(), Series.getFirstDate());
@@ -1135,7 +1136,7 @@ public class TimeSeries extends DateWindow {
             }
         }
         if (N == 0) {
-            Util.debug("getMomentum . N = 0");
+            LogUtils.debug("getMomentum . N = 0");
             return 0;
         } else {
             return Momentum / N;
@@ -1156,7 +1157,7 @@ public class TimeSeries extends DateWindow {
         lastIndex = Math.min(lastIndex, getLastIndex());
         double StdDev = getStandardDeviation(firstIndex, lastIndex, row);
         if (StdDev == 0) {
-            Util.debug("getAsimmetry. StdDev = 0");
+            LogUtils.debug("getAsimmetry. StdDev = 0");
             return 0;
         } else {
             return getMomentum(3, firstIndex, lastIndex, row) / Math.pow(StdDev, 3);
@@ -1176,7 +1177,7 @@ public class TimeSeries extends DateWindow {
         LastIndex = Math.min(LastIndex, getLastIndex());
         double StdDev = getStandardDeviation(FirstIndex, LastIndex, row);
         if (StdDev == 0) {
-            Util.debug("getAsimmetry. StdDev = 0");
+            LogUtils.debug("getAsimmetry. StdDev = 0");
             return 0;
         } else {
             return getMomentum(4, FirstIndex, LastIndex, row) / Math.pow(StdDev, 4);
@@ -1920,8 +1921,8 @@ public class TimeSeries extends DateWindow {
     public NumericalRecipesSeries asRecipes() {
         NumericalRecipesSeries series = new NumericalRecipesSeries();
         int size = lengthsArray[0];
-        series.setData(Util.vector(1, size));
-        series.setDates(Util.datesvector(1, size));
+        series.setData(NumericalRecipesUtils.vector(1, size));
+        series.setDates(NumericalRecipesUtils.datesvector(1, size));
         int j = 1;
         for (int i = getLowerBoundIndex(); i <= getUpperBoundIndex(); i++) {
             if (!isEmpty(i)) {
@@ -1968,7 +1969,7 @@ public class TimeSeries extends DateWindow {
 
     public void printDates() {
         for (int i = getLowerBoundIndex(); i <= getUpperBoundIndex(); i++)
-            if (!isEmpty(i)) Util.debug("i = " + getDate(i).toString());
+            if (!isEmpty(i)) LogUtils.debug("i = " + getDate(i).toString());
     }
 
     public double[] getLastNData(int newSize) {

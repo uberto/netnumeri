@@ -1,7 +1,7 @@
 package com.netnumeri.shared.finance.matrix;
 
 
-import com.netnumeri.shared.finance.utils.Util;
+import com.netnumeri.shared.finance.utils.LogUtils;
 
 /**
  * Cholesky Decomposition. <P> For a symmetric, positive definite matrix A, the Cholesky decomposition is an lower
@@ -53,13 +53,13 @@ public class CholeskyDecomposition implements java.io.Serializable {
                 Lrowj[k] = s = (A[j][k] - s) / L[k][k];
                 d = d + s * s;
                 if ((A[k][j] == A[j][k]) == false) {
-                    Util.debug("matrix is not simmetric j=" + j + " k:" + k + " " + A[k][j] + " " + A[j][k]);
+                    LogUtils.debug("matrix is not simmetric j=" + j + " k:" + k + " " + A[k][j] + " " + A[j][k]);
                 }
                 isspd = isspd & (A[k][j] == A[j][k]);
             }
             d = A[j][j] - d;
             if (d <= 0) {
-                Util.debug("matrix is not positive j=" + j + " d=" + d + "A[j][j]=" + A[j][j]);
+                LogUtils.debug("matrix is not positive j=" + j + " d=" + d + "A[j][j]=" + A[j][j]);
             }
             isspd = isspd & (d > 0.0);
             L[j][j] = Math.sqrt(Math.max(d, 0.0));

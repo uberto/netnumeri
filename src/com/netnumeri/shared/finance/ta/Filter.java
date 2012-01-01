@@ -2,7 +2,8 @@ package com.netnumeri.shared.finance.ta;
 
 
 import com.netnumeri.shared.finance.beans.NRError;
-import com.netnumeri.shared.finance.utils.Util;
+import com.netnumeri.shared.finance.utils.LogUtils;
+import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,11 +13,11 @@ import java.util.Map;
 public class Filter {
 
     public static void log(float s) {
-        Util.debug("" + s);
+        LogUtils.debug("" + s);
     }
 
     public static void log(String s) {
-        Util.debug(s);
+        LogUtils.debug(s);
     }
 
     protected static final float TINY = 1.0e-20F;
@@ -30,7 +31,7 @@ public class Filter {
                               int derivative)
             throws NRError {
         int isign;
-        float[] respns = Util.vector(1, n);
+        float[] respns = NumericalRecipesUtils.vector(1, n);
         int np = nl + nr + 1;
         isign = 1;
         savgol(respns, np, nl, nr, derivative, m);
@@ -43,7 +44,7 @@ public class Filter {
         int i, no2;
         float dum, mag2;
         float[] fft;
-        fft = Util.vector(1, n << 1);
+        fft = NumericalRecipesUtils.vector(1, n << 1);
         for (i = 1; i <= (m - 1) / 2; i++) {
             respns[n + 1 - i] = respns[m + 1 - i];
         }
@@ -59,12 +60,12 @@ public class Filter {
                 ans[i] = (fft[i] * dum + fft[i - 1] * ans[i]) / no2;
             } else if (isign == -1) {
                 if ((mag2 = (ans[i - 1] * ans[i - 1]) + (ans[i] * ans[i])) == 0.0F) {
-                    Util.nrerror("Deconvolving at response zero in convlv");
+                    NumericalRecipesUtils.nrerror("Deconvolving at response zero in convlv");
                 }
                 ans[i - 1] = (fft[i - 1] * (dum = ans[i - 1]) + fft[i] * ans[i]) / mag2 / no2;
                 ans[i] = (fft[i] * dum - fft[i - 1] * ans[i]) / mag2 / no2;
             } else {
-                Util.nrerror("No meaning for isign in convlv");
+                NumericalRecipesUtils.nrerror("No meaning for isign in convlv");
             }
         }
         ans[2] = ans[n + 1];
@@ -81,8 +82,8 @@ public class Filter {
         j = 1;
         for (i = 1; i < n; i += 2) {
             if (j > i) {
-                Util.swap(data, j, i);
-                Util.swap(data, j + 1, i + 1);
+                NumericalRecipesUtils.swap(data, j, i);
+                NumericalRecipesUtils.swap(data, j + 1, i + 1);
             }
             m = n >> 1;
             while (m >= 2 && j > m) {
@@ -151,7 +152,7 @@ public class Filter {
         float[] vv;
         float d;
 
-        vv = Util.vector(1, n);
+        vv = NumericalRecipesUtils.vector(1, n);
         d = 1.0F;
         for (i = 1; i <= n; i++) {
             big = 0.0F;
@@ -161,7 +162,7 @@ public class Filter {
                 }
             }
             if (big == 0.0F) {
-                Util.nrerror("Singular matrix in routine ludcmp");
+                NumericalRecipesUtils.nrerror("Singular matrix in routine ludcmp");
             }
             vv[i] = 1.0F / big;
         }
@@ -260,11 +261,11 @@ public class Filter {
         float[] b;
 
         if (np < nl + nr + 1 || nl < 0 || nr < 0 || ld > m || nl + nr < m) {
-            Util.nrerror("bad args in savgol");
+            NumericalRecipesUtils.nrerror("bad args in savgol");
         }
-        a = Util.matrix(1, m + 1, 1, m + 1);
-        indx = Util.ivector(1, m + 1);
-        b = Util.vector(1, m + 1);
+        a = NumericalRecipesUtils.matrix(1, m + 1, 1, m + 1);
+        indx = NumericalRecipesUtils.ivector(1, m + 1);
+        b = NumericalRecipesUtils.vector(1, m + 1);
         for (ipj = 0; ipj <= (m << 1); ipj++) {
             sum = ((ipj != 0) ? 0.0F : 1.0F);
             for (k = 1; k <= nr; k++) {
@@ -273,7 +274,7 @@ public class Filter {
             for (k = 1; k <= nl; k++) {
                 sum += Math.pow((double) -k, (double) ipj);
             }
-            mm = Util.imin(ipj, 2 * m - ipj);
+            mm = NumericalRecipesUtils.imin(ipj, 2 * m - ipj);
             for (imj = -mm; imj <= mm; imj += 2) {
                 a[1 + (ipj + imj) / 2][1 + (ipj - imj) / 2] = sum;
             }
@@ -342,9 +343,9 @@ public class Filter {
         int N2 = 2 * N;
         //  int NPTS = 512;
 
-        respns = Util.vector(1, N);
-        resp = Util.vector(1, N);
-        ans = Util.vector(1, N2);
+        respns = NumericalRecipesUtils.vector(1, N);
+        resp = NumericalRecipesUtils.vector(1, N);
+        ans = NumericalRecipesUtils.vector(1, N2);
         isign = 1;
         savgol(respns, np, nl, nr, derivative, m);
 
@@ -380,10 +381,10 @@ public class Filter {
         int nr = 10;
         int np = 21;
         int m = 4;
-        int N = Util.size(data);
+        int N = NumericalRecipesUtils.size(data);
         int N2 = 2 * N;
-        respns = Util.vector(1, N);
-        ans = Util.vector(1, N2);
+        respns = NumericalRecipesUtils.vector(1, N);
+        ans = NumericalRecipesUtils.vector(1, N2);
         isign = 1;
         savgol(respns, np, nl, nr, 0, m);
         convlv(data, N, respns, np, isign, ans);
@@ -403,10 +404,10 @@ public class Filter {
         int M = 9;         /* response function dimension - must be odd */
         int N2 = 2 * N;
 
-        data = Util.vector(1, N);
-        respns = Util.vector(1, N);
-        resp = Util.vector(1, N);
-        ans = Util.vector(1, N2);
+        data = NumericalRecipesUtils.vector(1, N);
+        respns = NumericalRecipesUtils.vector(1, N);
+        resp = NumericalRecipesUtils.vector(1, N);
+        ans = NumericalRecipesUtils.vector(1, N2);
         for (i = 1; i <= N; i++) {
             if ((i >= N / 2 - N / 8) && (i <= N / 2 + N / 8)) {
                 data[i] = 1.0F;
@@ -459,7 +460,7 @@ public class Filter {
                 "  0.042 -0.105 -0.023  0.140  0.280  0.333  0.280  0.140 -0.023 -0.105  0.042"
         };
 
-        c = Util.vector(1, NMAX);
+        c = NumericalRecipesUtils.vector(1, NMAX);
         log("M nl nr");
         log("\t\t\tSample Savitzky-Golay Coefficients");
         for (i = 1; i <= NTEST; i++) {
@@ -501,8 +502,8 @@ public class Filter {
         try {
             int N = 512;
 
-            Util.debug("=====================================================================");
-            float[] data = Util.vector(1, N);
+            LogUtils.debug("=====================================================================");
+            float[] data = NumericalRecipesUtils.vector(1, N);
             for (int i = 1; i <= N; i++) {
                 data[i] = (float) Math.random();
                 log(data[i]);
@@ -510,25 +511,25 @@ public class Filter {
 
             Map ret = computeArmonics(data);
 
-            Util.debug("=====================================================================");
+            LogUtils.debug("=====================================================================");
             float[] filter = (float[]) ret.get("filter");
             for (int i = 1; i <= N; i++) {
                 log(filter[i]);
             }
 
-            Util.debug("=====================================================================");
+            LogUtils.debug("=====================================================================");
             float[] doublefilter = (float[]) ret.get("doublefilter");
             for (int i = 1; i <= N; i++) {
                 log(filter[i]);
             }
 
-            Util.debug("=====================================================================");
+            LogUtils.debug("=====================================================================");
             float[] d1 = (float[]) ret.get("d1");
             for (int i = 1; i <= N; i++) {
                 log(d1[i]);
             }
 
-            Util.debug("=====================================================================");
+            LogUtils.debug("=====================================================================");
             float[] d2 = (float[]) ret.get("d2");
             for (int i = 1; i <= N; i++) {
                 log(d2[i]);
