@@ -12,7 +12,6 @@ public class StockUtils {
 
     public static Stock getStock(String filePath) throws Exception {
         Stock instrument = new Stock();
-
         Stack lines = new Stack();
 //        String filePath = ("./src/test/resources/SSRI.csv");
 
@@ -20,12 +19,9 @@ public class StockUtils {
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String inputLine;
         while ((inputLine = reader.readLine()) != null) {
-
             inputLine = inputLine.replaceAll("\"", "");
             if (inputLine.startsWith("Date")) continue;
-            System.out.println("inputLine = " + inputLine);
             lines.push(inputLine);
-
         }
         reader.close();
 

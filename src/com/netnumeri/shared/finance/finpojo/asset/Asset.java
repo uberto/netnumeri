@@ -6,6 +6,7 @@ import com.netnumeri.shared.finance.finpojo.Instrument;
 import java.io.Serializable;
 
 public abstract class Asset extends Instrument implements Serializable {
+
     public Asset() {
     }
 

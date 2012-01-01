@@ -1,107 +1,123 @@
 package com.netnumeri.shared.finance.finpojo;
 
+import com.netnumeri.shared.finance.beans.TimeSeries;
+import com.netnumeri.shared.finance.date.TDay;
+import com.netnumeri.shared.finance.finpojo.asset.Stock;
+import com.netnumeri.shared.finance.utils.TestUtils;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class InstrumentTest extends TestCase {
+
+    Stock stock;
+
+    @Override
+    protected  void setUp(){
+        try {
+            stock =  TestUtils.buildStock();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void testModelPrice() throws Exception {
 
+        double v = stock.modelPrice(0);
+
+        assertEquals(v, 0.0);
     }
 
     @Test
     public void testGetDailyarray() throws Exception {
 
-    }
+        TreeMap<TDay,Daily> dailyarray = stock.getDailyarray();
 
-    @Test
-    public void testSetDailyarray() throws Exception {
+        Map.Entry<TDay, Daily> tDayDailyEntry = dailyarray.lastEntry();
 
-    }
+        TDay key = tDayDailyEntry.getKey();
 
-    @Test
-    public void testGetOpeningTradeTime() throws Exception {
+        // 2009-04-09
+        assertEquals("9/4/2009", key.toString());
 
-    }
+        Daily daily = tDayDailyEntry.getValue();
+        assertEquals(daily.getOpenprice(),16.35);
+        assertEquals(daily.getHigh(),16.40);
+        assertEquals(daily.getLow(),16.03);
+        assertEquals(daily.getCloseprice(),16.11);
+        assertEquals(daily.getVolume(),863300);
 
-    @Test
-    public void testGetClosingTradeTime() throws Exception {
 
-    }
+        // "2007-08-01,34.09,34.56,33.04,33.87,894200,33.87";
+        tDayDailyEntry = dailyarray.firstEntry();
+        key = tDayDailyEntry.getKey();
+        assertEquals("1/8/2007", key.toString());
 
-    @Test
-    public void testSetOpeningTradeTime() throws Exception {
-
-    }
-
-    @Test
-    public void testSetClosingTradeTime() throws Exception {
-
+        daily = tDayDailyEntry.getValue();
+        assertEquals(daily.getOpenprice(),34.09);
+        assertEquals(daily.getHigh(),34.56);
+        assertEquals(daily.getLow(),33.04);
+        assertEquals(daily.getCloseprice(),33.87);
+        assertEquals(daily.getVolume(),894200);
     }
 
     @Test
     public void testTempToday() throws Exception {
 
-    }
-
-    @Test
-    public void testSetTempToday() throws Exception {
+        TDay tDay = stock.getFirstDate();
+        stock.setTempToday(tDay);
+        assertEquals(tDay, stock.tempToday());
 
     }
 
     @Test
     public void testGetTempSpot() throws Exception {
 
-    }
-
-    @Test
-    public void testSetTempSpot() throws Exception {
+        stock.setTempSpot(1.0);
+        assertEquals(1.0, stock.getTempSpot());
 
     }
 
     @Test
     public void testGetTempVolatility() throws Exception {
 
-    }
+        stock.setTempVolatility(1.0);
+        assertEquals(1.0, stock.getTempVolatility());
 
-    @Test
-    public void testSetTempVolatility() throws Exception {
+        stock.setTempVolatilityFixed(true);
+        assertEquals(true, stock.isTempVolatilityFixed());
 
     }
 
     @Test
     public void testIsTempIsSpotFixed() throws Exception {
 
-    }
-
-    @Test
-    public void testSetTempIsSpotFixed() throws Exception {
-
-    }
-
-    @Test
-    public void testIsTempIsVolatilityFixed() throws Exception {
-
-    }
-
-    @Test
-    public void testSetTempIsVolatilityFixed() throws Exception {
+        stock.setTempSpot(1.0);
+        assertEquals(1.0, stock.getTempSpot());
 
     }
 
     @Test
     public void testIsVolatilityFixed() throws Exception {
 
+         stock.setVolatility(1.0);
+         assertEquals(1.0, stock.getVolatility());
+
+         stock.setVolatilityFixed(true);
+         assertEquals(true, stock.isVolatilityFixed());
+
     }
 
-    @Test
-    public void testFixVolatility() throws Exception {
-
-    }
 
     @Test
     public void testGetFixedSpot() throws Exception {
+
+        stock.setSpot(1.0);
+
+        assertEquals(1.0, stock.spot());
 
     }
 
@@ -258,6 +274,9 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testGetClose() throws Exception {
 
+        double close = stock.getClose();
+        assertEquals(16.11, close);
+
     }
 
     @Test
@@ -303,6 +322,9 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testGetCloseSeries() throws Exception {
 
+        TimeSeries closeSeries = stock.getCloseSeries();
+        int numberOfData = closeSeries.getNData();
+        assertEquals(427,numberOfData);
     }
 
     @Test

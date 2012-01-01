@@ -22,6 +22,10 @@ public class Stock extends Asset implements Serializable {
         super(name);
     }
 
+    public double modelPrice(int model) {
+        return 0;
+    }
+
     public DividendArray getDividendArray() {
         return dividendArray;
     }

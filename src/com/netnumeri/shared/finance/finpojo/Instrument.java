@@ -14,17 +14,7 @@ public abstract class Instrument extends DateWindow implements Serializable {
 
     protected double delta = 1;
 
-    public double modelPrice(int model) {
-        return spot();
-    }
-
-    private TDay lastPriceDateTime;
-    private TDay lastAskDateTime;
-    private TDay lastBidDateTime;
-
-    private int openingTradeTime;
-    private int closingTradeTime;
-
+    public abstract double modelPrice(int model);
 
     private double spot;
     private double volatility;
@@ -34,15 +24,8 @@ public abstract class Instrument extends DateWindow implements Serializable {
     private TDay tempToday;
     private double tempSpot;
     private double tempVolatility;
-    private boolean tempIsSpotFixed;
-    private boolean tempIsVolatilityFixed;
-
-    private double lastPrice;
-    private int lastSize;
-    private double lastAsk;
-    private double lastBid;
-    private int lastAskSize;
-    private int lastBidSize;
+    private boolean isTempSpotFixed;
+    private boolean isTempVolatilityFixed;
 
     private TimeSeries priceSeries = null;
     private TimeSeries returnSeries = null;
@@ -76,34 +59,12 @@ public abstract class Instrument extends DateWindow implements Serializable {
         init();
     }
 
-    public int getOpeningTradeTime() {
-        return openingTradeTime;
-    }
-
-    public int getClosingTradeTime() {
-        return closingTradeTime;
-    }
-
-    public void setOpeningTradeTime(int Time) {
-        openingTradeTime = Time;
-    }
-
-    public void setClosingTradeTime(int Time) {
-        closingTradeTime = Time;
-    }
-
     private void init() {
         initFields();
         initSeries();
     }
 
     private void initFields() {
-        lastPrice = 0;
-        lastSize = 0;
-        lastAsk = 0;
-        lastBid = 0;
-        lastAskSize = 0;
-        lastBidSize = 0;
         isSpotFixed = false;
         isVolatilityFixed = false;
     }
@@ -146,33 +107,25 @@ public abstract class Instrument extends DateWindow implements Serializable {
         this.tempVolatility = tempVolatility;
     }
 
-    public boolean isTempIsSpotFixed() {
-        return tempIsSpotFixed;
+    public boolean isTempSpotFixed() {
+        return isTempSpotFixed;
     }
 
-    public void setTempIsSpotFixed(boolean tempIsSpotFixed) {
-        this.tempIsSpotFixed = tempIsSpotFixed;
+    public void setTempSpotFixed(boolean tempSpotFixed) {
+        this.isTempSpotFixed = tempSpotFixed;
     }
 
-    public boolean isTempIsVolatilityFixed() {
-        return tempIsVolatilityFixed;
+    public boolean isTempVolatilityFixed() {
+        return isTempVolatilityFixed;
     }
 
-    public void setTempIsVolatilityFixed(boolean tempIsVolatilityFixed) {
-        this.tempIsVolatilityFixed = tempIsVolatilityFixed;
+    public void setTempVolatilityFixed(boolean tempVolatilityFixed) {
+        this.isTempVolatilityFixed = tempVolatilityFixed;
     }
 
 
     public boolean isVolatilityFixed() {
         return isVolatilityFixed;
-    }
-
-    public void fixVolatility() {
-        fixVolatility(true);
-    }
-
-    public void fixVolatility(boolean Fixed) {
-        isVolatilityFixed = Fixed;
     }
 
     public double getFixedSpot() {
@@ -204,9 +157,9 @@ public abstract class Instrument extends DateWindow implements Serializable {
      *
      * @return average closing value of the day
      */
-    public double historicalSpot() {
+    public double historicalSpot(TDay tday) {
         double ret = 0;
-        ret = getHistoricalSpot(new TDay());
+        ret = getHistoricalSpot(tday);
         return ret;
     }
 
@@ -279,23 +232,20 @@ public abstract class Instrument extends DateWindow implements Serializable {
         isVolatilityFixed = false;
     }
 
-    /**
-     * Store settings Spot Volatility TDay of today Use Restoresetting() to restore settings back
-     */
     public void storeSettings() {
         tempToday = new TDay();
         tempSpot = spot;
         tempVolatility = volatility;
-        tempIsSpotFixed = isSpotFixed;
-        tempIsVolatilityFixed = isVolatilityFixed;
+        isTempSpotFixed = isSpotFixed;
+        isTempVolatilityFixed = isVolatilityFixed;
     }
 
     public void restoreSettings() {
         DateUtils.setToday(tempToday);
         spot = tempSpot;
         volatility = tempVolatility;
-        isSpotFixed = tempIsSpotFixed;
-        isVolatilityFixed = tempIsVolatilityFixed;
+        isSpotFixed = isTempSpotFixed;
+        isVolatilityFixed = isTempVolatilityFixed;
     }
 
     public void addDaily(int index, Daily daily) {
@@ -1001,12 +951,10 @@ public abstract class Instrument extends DateWindow implements Serializable {
         marketVolatilityShift = Shift;
     }
 
-    
     public double getMarketSpotShift() {
         return marketSpotShift;
     }
 
-    
     public double getMarketVolatilityShift() {
         return marketVolatilityShift;
     }
@@ -1017,31 +965,6 @@ public abstract class Instrument extends DateWindow implements Serializable {
 
     public void setVolatilityFixed(boolean volatilityFixed) {
         isVolatilityFixed = volatilityFixed;
-    }
-
-
-    public void setLastPrice(double lastPrice) {
-        this.lastPrice = lastPrice;
-    }
-
-    public void setLastSize(int lastSize) {
-        this.lastSize = lastSize;
-    }
-
-    public void setLastAsk(double lastAsk) {
-        this.lastAsk = lastAsk;
-    }
-
-    public void setLastBid(double lastBid) {
-        this.lastBid = lastBid;
-    }
-
-    public void setLastAskSize(int lastAskSize) {
-        this.lastAskSize = lastAskSize;
-    }
-
-    public void setLastBidSize(int lastBidSize) {
-        this.lastBidSize = lastBidSize;
     }
 
     public void setPriceSeries(TimeSeries priceSeries) {
@@ -1640,51 +1563,12 @@ public abstract class Instrument extends DateWindow implements Serializable {
         return tempToday;
     }
 
-    public double getLastPrice() {
-        return lastPrice;
-    }
-
-    public int getLastSize() {
-        return lastSize;
-    }
-
-    public double getLastAsk() {
-        return lastAsk;
-    }
-
-    public double getLastBid() {
-        return lastBid;
-    }
-
-    public int getLastAskSize() {
-        return lastAskSize;
-    }
-
-    
-    public int getLastBidSize() {
-        return lastBidSize;
-    }
-
-    
     public TimeSeries getReturnSeries() {
         return returnSeries;
     }
 
-    
     public TimeSeries getLogReturnSeries() {
         return logReturnSeries;
-    }
-
-    public void setLastPriceDateTime(TDay lastPriceDateTime) {
-        this.lastPriceDateTime = lastPriceDateTime;
-    }
-
-    public void setLastAskDateTime(TDay lastAskDateTime) {
-        this.lastAskDateTime = lastAskDateTime;
-    }
-
-    public void setLastBidDateTime(TDay lastBidDateTime) {
-        this.lastBidDateTime = lastBidDateTime;
     }
 
     public boolean equals(Object o) {
