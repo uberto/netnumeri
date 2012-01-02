@@ -392,9 +392,7 @@ public abstract class Instrument extends DateWindow implements Serializable {
     }
 
     public double getPrice(TDay date) {
-        if (date == null) {
-            throw new IllegalArgumentException("date cannot be null");
-        }
+        if (date == null) throw new IllegalArgumentException("date cannot be null");
         return getPrice(date, FinConstants.TYPICALPRICE);
     }
 
@@ -693,6 +691,7 @@ public abstract class Instrument extends DateWindow implements Serializable {
             firstIndex = getNextIndex(firstIndex);
         }
 
+        assert daily != null;
         double fLastPrice = daily.getCloseprice();
         for (int i = firstIndex + 1; i <= lastIndex; i++) {
             daily = getDaily(i);

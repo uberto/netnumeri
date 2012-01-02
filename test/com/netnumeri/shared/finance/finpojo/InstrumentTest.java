@@ -135,6 +135,11 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testHistoricalSpot() throws Exception {
 
+        double historicalSpot = stock.getHistoricalSpot(new TDay("9/4/2009"));
+
+        assertEquals(16.11, historicalSpot);
+
+
     }
 
     @Test
@@ -153,16 +158,6 @@ public class InstrumentTest extends TestCase {
         double historicalVolatility = stock.getHistoricalVolatility();
 
         assertEquals (historicalVolatility,1.0567523108414614);
-    }
-
-    @Test
-    public void testIsSpotFixed() throws Exception {
-
-    }
-
-    @Test
-    public void testSpot() throws Exception {
-
     }
 
     @Test
