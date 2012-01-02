@@ -18,7 +18,7 @@
       <configuration>
         <setting name="compilerMaxHeapSize" value="128" />
         <setting name="gwtScriptOutputStyle" value="DETAILED" />
-        <setting name="gwtSdkUrl" value="file://$USER_HOME$/google/gwt-2.2.0" />
+        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/lib/gwt-2.4.0" />
         <setting name="webFacet" value="Web" />
       </configuration>
     </facet>
@@ -41,7 +41,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="project-lib" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="gwt" level="project" />
     <orderEntry type="library" scope="TEST" name="junit" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
   </component>

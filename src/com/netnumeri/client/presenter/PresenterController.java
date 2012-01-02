@@ -10,7 +10,6 @@ import com.netnumeri.client.events.PlaceRequestHandler;
 import com.netnumeri.client.events.RestUrl;
 
 public class PresenterController {
-    //    private Map<String, PresenterProxy<?>> presenterProxyMap = new HashMap<String, PresenterProxy<?>>();
 
     private PlaceManager placeManager;
     private Presenter currentPresenter;
@@ -58,7 +57,6 @@ public class PresenterController {
         this.presenterProxy = presenterProxy;
         placeManager = new PlaceManager(eventManager);
         addPlaceRequestHandler(eventManager, new MyPlaceRequestHandler());
-        placeManager.fireCurrentPlace();
     }
 
     public Presenter getCurrentPresenter() {

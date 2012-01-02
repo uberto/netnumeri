@@ -303,25 +303,13 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-    <library name="gwt">
-      <CLASSES>
-        <root url="file://$USER_HOME$/google/gwt-2.2.0" />
-        <root url="file://$USER_HOME$/google/gwt-2.2.0" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="file://$USER_HOME$/google/gwt-2.2.0" />
-      </SOURCES>
-      <jarDirectory url="file://$USER_HOME$/google/gwt-2.2.0" recursive="false" />
-      <jarDirectory url="file://$USER_HOME$/google/gwt-2.2.0" recursive="false" type="SOURCES" />
-    </library>
     <library name="gwt-user">
       <CLASSES>
-        <root url="jar://$USER_HOME$/google/gwt-2.2.0/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/google/gwt-2.2.0/gwt-user.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </SOURCES>
     </library>
     <library name="junit">
