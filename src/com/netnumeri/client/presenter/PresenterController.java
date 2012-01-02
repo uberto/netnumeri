@@ -4,14 +4,12 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.Window;
-import com.netnumeri.client.events.PlaceManager;
 import com.netnumeri.client.events.PlaceRequestEvent;
 import com.netnumeri.client.events.PlaceRequestHandler;
 import com.netnumeri.client.events.RestUrl;
 
 public class PresenterController {
 
-    private PlaceManager placeManager;
     private Presenter currentPresenter;
     private PresenterProxy presenterProxy;
 
@@ -55,7 +53,6 @@ public class PresenterController {
 
     public PresenterController(HandlerManager eventManager, PresenterProxy presenterProxy) {
         this.presenterProxy = presenterProxy;
-        placeManager = new PlaceManager(eventManager);
         addPlaceRequestHandler(eventManager, new MyPlaceRequestHandler());
     }
 

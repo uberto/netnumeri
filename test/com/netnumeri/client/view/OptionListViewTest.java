@@ -10,24 +10,25 @@ public class OptionListViewTest extends AppGwtTestCase {
 
     @Override
     public void gwtSetUp() throws Exception {
-//        super.gwtSetUp();
+        super.gwtSetUp();
         listView = new OptionListViewFlexTable();
     }
 
 
     public void testPrepareEmptyListAtStart() throws Exception {
+
         listView.show();
+        listView.setTitle("title");
 
         asyncTestValidation(new Timer() {
             public void run() {
 
                 assertEquals(1, RootPanel.get("wrapper").getWidgetCount());
-                assertEquals(1, RootPanel.get("wrapper").getWidgetCount());
 //                assertEquals(3, app.get.getRowCount());
 //                assertEquals(4, app.bugListview.getCellCount(0));
 //                assertEquals(4, app.bugListview.getCellCount(1));
 
-                assertEquals("Options Portfolio", RootPanel.get("title-label").getElement().getInnerText());
+                assertEquals("title", RootPanel.get("title-label").getElement().getInnerText());
                 finishTest();
             }
         });

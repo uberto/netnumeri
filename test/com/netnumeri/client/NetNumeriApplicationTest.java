@@ -3,18 +3,17 @@ package com.netnumeri.client;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.netnumeri.client.presenter.OptionListPresenter;
-import com.netnumeri.client.presenter.Presenter;
+import com.netnumeri.client.presenter.SingleOptionPresenter;
 import com.netnumeri.client.view.OptionListView;
 
 
 public class NetNumeriApplicationTest extends AppGwtTestCase {
 
-    public void testOnModuleLoad() throws Exception {
-        Presenter presenter = app.getCurrentPresenter();
-        assertEquals(presenter.getClass(), OptionListPresenter.class);
-        OptionListPresenter bugListPresenter = (OptionListPresenter) presenter;
+    public void testLoadPresenterOnModuleLoad() throws Exception {
+        assertEquals(app.getCurrentPresenter().getClass(), OptionListPresenter.class);
+        OptionListPresenter presenter = (OptionListPresenter) app.getCurrentPresenter();
 
-        final OptionListView view = bugListPresenter.getView();
+        final OptionListView view = presenter.getView();
         view.setMessageText("");
         assertEquals(1, RootPanel.get("slot1").getWidgetCount());
         view.clickButton();
@@ -26,6 +25,13 @@ public class NetNumeriApplicationTest extends AppGwtTestCase {
             }
         });
 
+    }
+
+    public void testSwitchPresenter() throws Exception {
+        app.moveToPlace("option");
+
+        assertEquals(app.getCurrentPresenter().getClass(), SingleOptionPresenter.class);
+        SingleOptionPresenter presenter = (SingleOptionPresenter) app.getCurrentPresenter();
 
     }
 
