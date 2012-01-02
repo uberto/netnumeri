@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public class StubsForTests {
+
     public static Option createDummyOption() {
         return new Option("option123", "GOOG", OptionType.CALL, 180.0, new Date(0));
     }

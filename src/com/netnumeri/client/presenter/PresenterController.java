@@ -27,7 +27,7 @@ public class PresenterController {
 
 
             Presenter tmpPres = presenterProxy.getPresenter(newPlace.getPresenterUrl());
-            if (tmpPres == null){
+            if (tmpPres == null) {
                 System.out.println("No such presenter " + newPlace.getPresenterUrl());
                 return;
             }
@@ -63,10 +63,10 @@ public class PresenterController {
 
     public Presenter getCurrentPresenter() {
         if (currentPresenter == null) {
-            return presenterProxy.getDefaultPresenter();
-        } else {
-            return currentPresenter;
+            currentPresenter = presenterProxy.getDefaultPresenter();
         }
+        return currentPresenter;
+
     }
 
 

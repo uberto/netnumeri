@@ -6,6 +6,8 @@ import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
+import com.netnumeri.shared.service.GetEntityResponse;
+import com.netnumeri.shared.service.GetEntityResponseImmutable;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,15 +28,20 @@ public class GetOptionServiceImplTest {
     private DataFetcher<Option> createOptionFetcher() {
         return new DataFetcher<Option>() {
             @Override
-            public List<Option> fetch(String query) {
+            public List<Option> selectByCriteria(String query) {
                 return StubsForTests.createDummyOptionList();
+            }
+
+            @Override
+            public Option getById(String id) {
+                return StubsForTests.createDummyOption();
             }
         };
     }
 
 
     @Test
-    public void testGetEntities() throws Exception {
+    public void returnEntitiesList() throws Exception {
 
         final GetEntitiesResponse<Option> expectedRes = new GetEntitiesResponseImmutable(StubsForTests.createDummyOptionList());
 
@@ -44,4 +51,14 @@ public class GetOptionServiceImplTest {
 
     }
 
+    @Test
+    public void returnSingleEntity() throws Exception {
+
+        final GetEntityResponse<Option> expectedRes = new GetEntityResponseImmutable<Option>(StubsForTests.createDummyOption());
+
+        GetEntityResponse<Option> res = serv.getEntity("");
+
+        assertThat(res.getEntity(), is(expectedRes.getEntity()));
+
+    }
 }
