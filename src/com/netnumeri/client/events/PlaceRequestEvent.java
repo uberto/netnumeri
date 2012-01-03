@@ -8,15 +8,8 @@ public class PlaceRequestEvent extends GwtEvent<PlaceRequestHandler> {
 
     private final RestUrl url;
 
-    private final boolean fromHistory;
-
-//    public PlaceRequestEvent(RestUrl request) {
-//        this(request, false);
-//    }
-
-    public PlaceRequestEvent(RestUrl url, boolean fromHistory) {
+    public PlaceRequestEvent(RestUrl url) {
         this.url = url;
-        this.fromHistory = fromHistory;
     }
 
 
@@ -32,10 +25,6 @@ public class PlaceRequestEvent extends GwtEvent<PlaceRequestHandler> {
 
     public RestUrl getUrl() {
         return url;
-    }
-
-    boolean isFromHistory() {
-        return fromHistory;
     }
 
 }

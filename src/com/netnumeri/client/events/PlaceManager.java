@@ -19,7 +19,7 @@ public class PlaceManager implements ValueChangeHandler<String> {
 
     public void onValueChange(ValueChangeEvent<String> event) {
         //get events from History, relaunch as ours
-        eventManager.fireEvent(new PlaceRequestEvent(new RestUrl(event.getValue()), true));
+        eventManager.fireEvent(new PlaceRequestEvent(new RestUrl(event.getValue())));
     }
 
 //    public void fireCurrentPlace() {
