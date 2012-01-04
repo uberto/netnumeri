@@ -4,6 +4,10 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.SingleOptionPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.view.SingleOptionView;
+import com.netnumeri.shared.StubsForTests;
+import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.service.GetEntityResponse;
+import com.netnumeri.shared.service.GetEntityResponseImmutable;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,6 +24,9 @@ public class SingleOptionPresenterTest {
 
     @Before
     public void setUp() throws Exception {
+        GetEntityResponse<Option> resp = new GetEntityResponseImmutable<Option>(StubsForTests.createDummyOption());
+
+//        when(service.getEntity(anyString(), (AsyncCallback<GetEntityResponse<Option>>) anyObject())).thenReturn(resp);
         pres = new SingleOptionPresenter(view, service);
     }
 
@@ -41,19 +48,15 @@ public class SingleOptionPresenterTest {
 
     }
 
-    @Test
-    public void success(){
-//        GetEntitiesResponseImmutable resp = new GetEntitiesResponseImmutable();
-//        Option option = StubsForTests.createDummyOption();
-//        resp.add(option);
-//        resp.add(option);
-//        resp.add(option);
-//        pres.populateForm(resp);
+//    @Test
+//    public void success(){
+//        pres.activate();
+//        pres.
 //
 //        verify(view).clearBugGrid();
 //        verify(view, times(3)).addBug(option.getId(), option.getDesc(), option.getStatus(), option.getUser());
-
-    }
+//
+//    }
 
 
 }
