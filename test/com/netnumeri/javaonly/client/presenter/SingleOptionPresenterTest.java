@@ -8,18 +8,16 @@ import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntityResponse;
 import com.netnumeri.shared.service.GetEntityResponseImmutable;
-import org.junit.After;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-
-import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.*;
 
 public class SingleOptionPresenterTest {
     private SingleOptionPresenter pres;
-    public SingleOptionView view = mock(SingleOptionView.class);
-    public GetOptionServiceAsync service = mock(GetOptionServiceAsync.class);
+    public SingleOptionView view;
+    public GetOptionServiceAsync service;
+    private Mockery context;
 
 
     @Before
@@ -27,24 +25,25 @@ public class SingleOptionPresenterTest {
         GetEntityResponse<Option> resp = new GetEntityResponseImmutable<Option>(StubsForTests.createDummyOption());
 
 //        when(service.getEntity(anyString(), (AsyncCallback<GetEntityResponse<Option>>) anyObject())).thenReturn(resp);
+
+        context = new Mockery();
+        view = context.mock(SingleOptionView.class);
+        service = context.mock(GetOptionServiceAsync.class);
+
+
         pres = new SingleOptionPresenter(view, service);
     }
 
 
-    @After
-    public void dropDown() throws Exception {
-        Mockito.verifyNoMoreInteractions(view);
-        Mockito.verifyNoMoreInteractions(service);
-    }
-
     @Test
-    public void activateTest(){
+    public void activateTest() {
+        context.checking(new Expectations() {{
+            oneOf(view).show();
+            oneOf(view).setTitle("Edit bug");
+            oneOf(service).getEntity(with(""), with(any(AsyncCallback.class)));
+        }});
+        
         pres.activate();
-
-        verify(view).show();
-        verify(view).setTitle("Edit bug");
-
-        verify(service).getEntity(anyString(), any(AsyncCallback.class));
 
     }
 

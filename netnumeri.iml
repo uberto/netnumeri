@@ -35,6 +35,7 @@
     <orderEntry type="library" name="project-lib" level="project" />
     <orderEntry type="library" scope="TEST" name="junit" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
+    <orderEntry type="library" scope="TEST" name="jmock-2.6" level="project" />
   </component>
 </module>
 
