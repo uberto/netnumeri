@@ -28,7 +28,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
         asyncCallback = new MyAsyncCallback(view);
 
-        view.addClickHandler(createClickHandler());
+        this.view.addClickHandler(createClickHandler());
     }
 
 

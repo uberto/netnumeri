@@ -4,10 +4,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.presenter.SingleOptionPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.view.SingleOptionView;
-import com.netnumeri.shared.StubsForTests;
-import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.service.GetEntityResponse;
-import com.netnumeri.shared.service.GetEntityResponseImmutable;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Before;
@@ -15,21 +11,17 @@ import org.junit.Test;
 
 public class SingleOptionPresenterTest {
     private SingleOptionPresenter pres;
-    public SingleOptionView view;
-    public GetOptionServiceAsync service;
-    private Mockery context;
+
+    private Mockery context = new Mockery();
+    public SingleOptionView view = context.mock(SingleOptionView.class);
+    public GetOptionServiceAsync service = context.mock(GetOptionServiceAsync.class);
 
 
     @Before
     public void setUp() throws Exception {
-        GetEntityResponse<Option> resp = new GetEntityResponseImmutable<Option>(StubsForTests.createDummyOption());
-
-//        when(service.getEntity(anyString(), (AsyncCallback<GetEntityResponse<Option>>) anyObject())).thenReturn(resp);
-
-        context = new Mockery();
-        view = context.mock(SingleOptionView.class);
-        service = context.mock(GetOptionServiceAsync.class);
-
+//        GetEntityResponse<Option> resp = new GetEntityResponseImmutable<Option>(StubsForTests.createDummyOption());
+//
+////        when(service.getEntity(anyString(), (AsyncCallback<GetEntityResponse<Option>>) anyObject())).thenReturn(resp);
 
         pres = new SingleOptionPresenter(view, service);
     }
@@ -44,6 +36,8 @@ public class SingleOptionPresenterTest {
         }});
         
         pres.activate();
+
+        context.assertIsSatisfied();
 
     }
 

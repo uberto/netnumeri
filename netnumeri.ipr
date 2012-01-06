@@ -24,9 +24,7 @@
           <element id="directory" name="classes">
             <element id="module-output" name="netnumeri" />
           </element>
-          <element id="directory" name="lib">
-            <element id="library" level="project" name="project-lib" />
-          </element>
+          <element id="directory" name="lib" />
         </element>
       </root>
     </artifact>
@@ -312,18 +310,18 @@
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </SOURCES>
     </library>
-    <library name="jmock-2.6">
+    <library name="jmock-2.5">
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" />
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" />
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
       </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.6.0-RC2" recursive="false" type="SOURCES" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" type="SOURCES" />
     </library>
     <library name="junit">
       <CLASSES>
@@ -332,14 +330,6 @@
       <JAVADOC />
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" />
-    </library>
-    <library name="project-lib">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/project-lib" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/project-lib" recursive="false" />
     </library>
   </component>
 </project>
