@@ -14,7 +14,6 @@ import java.util.List;
 
 public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
-    private OptionListView view;
     private GetOptionServiceAsync bugListService;
     private MyAsyncCallback asyncCallback;
     private MySampleApplicationServiceAsync messageService;
@@ -22,13 +21,12 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
     public OptionListPresenter(OptionListView view, GetOptionServiceAsync serv, MySampleApplicationServiceAsync messageService) {
         super(view);
-        this.view = view;
         bugListService = serv;
         this.messageService = messageService;
 
         asyncCallback = new MyAsyncCallback(view);
 
-        this.view.addClickHandler(createClickHandler());
+        this.getView().addClickHandler(createClickHandler());
     }
 
 
@@ -37,13 +35,13 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     @Override
     public void activate() {
         super.activate();
-        view.setTitle("Options Portfolio");
+        getView().setTitle("Options Portfolio");
 
         bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
 
             @Override
             public void onFailure(Throwable caught) {
-                view.alert("Failure on server!");
+                getView().alert("Failure on server!");
             }
 
             @Override
@@ -55,12 +53,12 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     }
 
     public void populateGrid(GetEntitiesResponse<Option> response) {
-        view.clearBugGrid();
+        getView().clearBugGrid();
 
 
         List<Option> optionList = response.getEntityList();
         for (Option option : optionList) {
-            view.addOption(option);
+            getView().addOption(option);
         }
     }
 
@@ -68,17 +66,13 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
         return new ClickHandler() {
 
             public void onClick(ClickEvent event) {
-                if (view.getMessageText().equals("")) {
+                if (getView().getMessageText().equals("")) {
                     messageService.getMessage("Hello, World!", asyncCallback);
                 } else {
-                    view.setMessageText("");
+                    getView().setMessageText("");
                 }
             }
         };
-    }
-
-    public OptionListView getView() {
-        return view;
     }
 
     private static class MyAsyncCallback implements AsyncCallback<String> {

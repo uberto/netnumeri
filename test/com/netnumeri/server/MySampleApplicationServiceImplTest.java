@@ -19,9 +19,6 @@ public class MySampleApplicationServiceImplTest {
     @Test
     public void testGetMessage() throws Exception {
 
-
-        assertThat(3, is(3));
-
         String m = serv.getMessage("pippo");
 
         assertThat(m, is("Client said: \"pippo\"<br>Server answered: \"Hi!\""));

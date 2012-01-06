@@ -8,7 +8,10 @@ import com.netnumeri.client.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.view.OptionListView;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
+import com.netnumeri.testutils.AsyncAction;
+import com.netnumeri.testutils.HandlerAction;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Before;
@@ -28,7 +31,7 @@ public class OptionListPresenterTest {
     public OptionListView view = context.mock(OptionListView.class);
     public GetOptionServiceAsync service = context.mock(GetOptionServiceAsync.class);
     public MySampleApplicationServiceAsync messageService = context.mock(MySampleApplicationServiceAsync.class);
-
+    private HandlerAction clickHandler;
 
 
     @Before
@@ -46,9 +49,10 @@ public class OptionListPresenterTest {
 //        
 //        when(view.getMessageText()).thenReturn("");
 
+        clickHandler = new HandlerAction();
 
         context.checking(new Expectations() {{
-            oneOf (view).addClickHandler(with(any(ClickHandler.class)));
+            oneOf (view).addClickHandler(with(any(ClickHandler.class))); will(clickHandler);
             oneOf(view).show();
             oneOf(view).setTitle("Options Portfolio");
          }});
@@ -60,6 +64,8 @@ public class OptionListPresenterTest {
 
     @Test
     public void activateTest(){
+
+
 
         context.checking(new Expectations() {{
             oneOf (service).getEntities(with(""), with(any(AsyncCallback.class)));
@@ -75,26 +81,24 @@ public class OptionListPresenterTest {
 
         context.checking(new Expectations() {{
             oneOf (service).getEntities(with(""), with(any(AsyncCallback.class)));
+            oneOf (view).getMessageText();
+            oneOf (messageService).getMessage(with("Hello, World!"), with(any(AsyncCallback.class)));
         }});
 
         pres.activate();
-//        answer.clickHandler.onClick(null);
+        clickHandler.click();
 
         context.assertIsSatisfied();
-//
-//        verify(view).show();
-//        verify(view).setTitle("Options Portfolio");
-//        verify(view).getMessageText();
-//        verify(view).addClickHandler(any(ClickHandler.class));
-//        verify(service).getEntities(anyString(), any(AsyncCallback.class));
-//        verify(messageService).getMessage(anyString(), any(AsyncCallback.class));
+
     }
 
     @Test
     public void success(){
 
-        context.checking(new Expectations() {{
-            oneOf (service).getEntities(with(""), with(any(AsyncCallback.class)));
+        final AsyncAction<GetEntitiesResponse<Option>> makeAsyncRequest = new AsyncAction<GetEntitiesResponse<Option>>();
+
+       context.checking(new Expectations() {{
+            oneOf (service).getEntities(with(""), with(any(AsyncCallback.class))); will(makeAsyncRequest);
             oneOf (view).clearBugGrid();
             exactly(2).of(view).addOption(with(any(Option.class)));
         }});
@@ -103,13 +107,9 @@ public class OptionListPresenterTest {
 
 
         pres.activate();
-        pres.populateGrid(resp);
+        makeAsyncRequest.succeedGiving(resp);
 
         context.assertIsSatisfied();
-
-//        verify(view).clearBugGrid();
-//        verify(view, times(2)).addOption(any(Option.class));
-//        verify(view).addClickHandler(any(ClickHandler.class));
 
     }
 
