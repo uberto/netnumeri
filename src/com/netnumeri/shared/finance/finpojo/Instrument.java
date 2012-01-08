@@ -2,7 +2,7 @@ package com.netnumeri.shared.finance.finpojo;
 
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.beans.TimeSeries;
-import com.netnumeri.shared.finance.data.DateWindow;
+import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
 
@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.TreeMap;
 
-public abstract class Instrument extends DateWindow implements Serializable {
+public abstract class Instrument extends DateBound implements Serializable {
 
     protected double delta = 1;
 

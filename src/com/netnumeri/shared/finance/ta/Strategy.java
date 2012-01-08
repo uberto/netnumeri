@@ -3,7 +3,7 @@ package com.netnumeri.shared.finance.ta;
 
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.beans.TimeSeries;
-import com.netnumeri.shared.finance.data.DateWindow;
+import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.data.Transaction;
 import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.*;
@@ -14,7 +14,7 @@ import com.netnumeri.shared.finance.finpojo.Portfolio;
 import java.util.Map;
 
 
-public abstract class Strategy extends DateWindow implements FinConstants {
+public abstract class Strategy extends DateBound implements FinConstants {
 
     private StrategyBacktest tester;
 

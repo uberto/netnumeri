@@ -78,48 +78,6 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
-  <component name="FacetAutodetectingManager">
-    <autodetection-disabled>
-      <facet-type id="google-app-engine">
-        <modules>
-          <module name="netnumeri">
-            <files>
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Showcase/war/WEB-INF/appengine-web.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-      <facet-type id="jpa">
-        <modules>
-          <module name="netnumeri">
-            <files>
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/java/META-INF/persistence.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/webapp/WEB-INF/classes/META-INF/persistence.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/MobileWebApp/src/main/java/META-INF/persistence.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-      <facet-type id="web">
-        <modules>
-          <module name="netnumeri">
-            <files>
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/DynaTable/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/DynaTableRf/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Expenses/src/main/webapp/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Hello/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/JSON/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/LogExample/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Mail/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/MobileWebApp/src/main/webapp/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Showcase/war/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/lib/gwt-2.4.0/samples/Validation/war/WEB-INF/web.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-    </autodetection-disabled>
-  </component>
   <component name="FireworksProject">
     <option name="expectedTestCaseNameRegex" />
     <option name="maxMemory" />
@@ -132,7 +90,9 @@
     <option name="autoShowErrorsInEditorAfterCompile" value="true" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/tomcat/conf/web.xml" />
+    <type id="google-app-engine" />
+    <type id="jpa" />
+    <type id="web" />
   </component>
   <component name="IdProvider" IDEtalkID="E82C5E113F30DEB49663A3C3621D160C" />
   <component name="InspectionProjectProfileManager">
@@ -339,7 +299,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="43377" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" enabled="false" />

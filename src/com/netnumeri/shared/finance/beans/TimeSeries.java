@@ -1,7 +1,7 @@
 package com.netnumeri.shared.finance.beans;
 
 
-import com.netnumeri.shared.finance.data.DateWindow;
+import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.ta.DateValue;
@@ -9,7 +9,7 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 import com.netnumeri.shared.finance.utils.LogUtils;
 import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
-public class TimeSeries extends DateWindow {
+public class TimeSeries extends DateBound {
 
     private int frequency = FinConstants.FR_DAILY;
     private int option = 0;
