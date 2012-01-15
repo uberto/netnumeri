@@ -17,8 +17,7 @@ public class OptionListViewTest extends AppGwtTestCase {
 
     public void testPrepareEmptyListAtStart() throws Exception {
 
-        listView.show();
-        listView.setTitle("title");
+        listView.showGrid();
 
         asyncTestValidation(new Timer() {
             public void run() {
@@ -28,7 +27,7 @@ public class OptionListViewTest extends AppGwtTestCase {
 //                assertEquals(4, app.bugListview.getCellCount(0));
 //                assertEquals(4, app.bugListview.getCellCount(1));
 
-                assertEquals("title", RootPanel.get("title-label").getElement().getInnerText());
+                assertEquals("Options Portfolio", RootPanel.get("title-label").getElement().getInnerText());
                 finishTest();
             }
         });
@@ -41,7 +40,7 @@ public class OptionListViewTest extends AppGwtTestCase {
     public void testDisplayMessageFromServer() throws Exception {
 
 
-        listView.show();
+        listView.showGrid();
 
         asyncTestValidation(new Timer() {
             public void run() {

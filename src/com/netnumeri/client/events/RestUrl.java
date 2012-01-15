@@ -11,6 +11,7 @@ public class RestUrl {
         parseUrl(url);
 
     }
+
     private void parseUrl(String url) {
 
 //        String pageUrl = afterHash(url);
@@ -51,5 +52,13 @@ public class RestUrl {
         }
 
         return sb.toString();
+    }
+
+    public String getId() {
+        if (params.size() > 0) {
+            return params.get(params.size() - 1);
+        } else {
+            return "";
+        }
     }
 }

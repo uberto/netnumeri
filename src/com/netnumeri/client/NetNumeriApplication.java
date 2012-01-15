@@ -3,6 +3,7 @@ package com.netnumeri.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.HandlerManager;
 import com.netnumeri.client.events.PlaceManager;
+import com.netnumeri.client.events.RestUrl;
 import com.netnumeri.client.presenter.Presenter;
 import com.netnumeri.client.presenter.PresenterController;
 import com.netnumeri.client.presenter.PresenterProxy;
@@ -22,7 +23,7 @@ public class NetNumeriApplication implements EntryPoint {
 
         presenterController = new PresenterController(handlerManager, new PresenterProxy());
 
-        getCurrentPresenter().activate();
+        getCurrentPresenter().activate(new RestUrl(""));
     }
 
 

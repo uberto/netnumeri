@@ -43,7 +43,7 @@ public class PresenterController {
                 public void onSuccess() {
 //                        Application.hideGlasspanelLoading();
                     //BasePresenter p = pp.getPresenter();
-                    currentPresenter.activate();
+                    currentPresenter.activate(newPlace);
                 }
             });
 //            }

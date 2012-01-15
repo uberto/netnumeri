@@ -14,7 +14,7 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
     public Button clickMeButton = new Button("Click me");
     public Label messageLabel = new Label();
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         RootPanel.get("title-label").getElement().setInnerText(title);
 //        flexTable.setTitle(title);
 
@@ -40,6 +40,14 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
 
     }
 
+    @Override
+    public void showGrid() {
+
+        setTitle("Options Portfolio");
+        show();
+
+    }
+
 
     public void clearBugGrid() {
 
@@ -47,16 +55,16 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
         flexTable.removeAllRows();
         addHeaders();
     }
-
-    @Override
-    public int getRowCount() {
-        return flexTable.getRowCount();
-    }
-
-    @Override
-    public int getCellCount(int row) {
-        return flexTable.getCellCount(row);
-    }
+//
+//    @Override
+//    public int getRowCount() {
+//        return flexTable.getRowCount();
+//    }
+//
+//    @Override
+//    public int getCellCount(int row) {
+//        return flexTable.getCellCount(row);
+//    }
 
     @Override
     public void addClickHandler(ClickHandler clickHandler) {
@@ -73,7 +81,7 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
     @Override
     protected void placeInPanel(Panel panel) {
         panel.add(flexTable);
-                RootPanel.get("slot1").add(clickMeButton);
+        RootPanel.get("slot1").add(clickMeButton);
         RootPanel.get("slot2").add(messageLabel);
 
     }

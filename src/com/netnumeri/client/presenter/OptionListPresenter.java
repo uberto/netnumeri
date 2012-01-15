@@ -3,6 +3,7 @@ package com.netnumeri.client.presenter;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.netnumeri.client.events.RestUrl;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.view.NotificationView;
@@ -33,9 +34,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
 
     @Override
-    public void activate() {
-        super.activate();
-        getView().setTitle("Options Portfolio");
+    public void activate(RestUrl url) {
 
         bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
 
@@ -60,6 +59,9 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
         for (Option option : optionList) {
             getView().addOption(option);
         }
+
+        getView().showGrid();
+
     }
 
     private ClickHandler createClickHandler() {

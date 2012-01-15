@@ -2,6 +2,7 @@ package com.netnumeri.javaonly.client.presenter;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.netnumeri.client.events.RestUrl;
 import com.netnumeri.client.presenter.OptionListPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.service.MySampleApplicationServiceAsync;
@@ -19,7 +20,7 @@ import org.junit.Test;
 
 public class OptionListPresenterTest {
     private OptionListPresenter pres;
-    
+
 //    private ClickAnswer answer = new ClickAnswer();
 //@Override
 //public Void answer(InvocationOnMock invocationOnMock) throws Throwable {
@@ -52,10 +53,11 @@ public class OptionListPresenterTest {
         clickHandler = new HandlerAction();
 
         context.checking(new Expectations() {{
-            oneOf (view).addClickHandler(with(any(ClickHandler.class))); will(clickHandler);
-            oneOf(view).show();
-            oneOf(view).setTitle("Options Portfolio");
-         }});
+            oneOf(view).addClickHandler(with(any(ClickHandler.class)));
+            will(clickHandler);
+//            oneOf(view).showGrid();
+//            oneOf(view).setTitle("Options Portfolio");
+        }});
 
 
         pres = new OptionListPresenter(view, service, messageService);
@@ -63,29 +65,28 @@ public class OptionListPresenterTest {
 
 
     @Test
-    public void activateTest(){
-
+    public void activateTest() {
 
 
         context.checking(new Expectations() {{
-            oneOf (service).getEntities(with(""), with(any(AsyncCallback.class)));
+            oneOf(service).getEntities(with(""), with(any(AsyncCallback.class)));
         }});
 
-        pres.activate();
+        pres.activate(new RestUrl(""));
 
         context.assertIsSatisfied();
     }
 
     @Test
-    public void clickButton(){
+    public void clickButton() {
 
         context.checking(new Expectations() {{
-            oneOf (service).getEntities(with(""), with(any(AsyncCallback.class)));
-            oneOf (view).getMessageText();
-            oneOf (messageService).getMessage(with("Hello, World!"), with(any(AsyncCallback.class)));
+            oneOf(service).getEntities(with(""), with(any(AsyncCallback.class)));
+            oneOf(view).getMessageText();
+            oneOf(messageService).getMessage(with("Hello, World!"), with(any(AsyncCallback.class)));
         }});
 
-        pres.activate();
+        pres.activate(new RestUrl(""));
         clickHandler.click();
 
         context.assertIsSatisfied();
@@ -93,26 +94,26 @@ public class OptionListPresenterTest {
     }
 
     @Test
-    public void success(){
+    public void success() {
 
         final AsyncAction<GetEntitiesResponse<Option>> makeAsyncRequest = new AsyncAction<GetEntitiesResponse<Option>>();
 
-       context.checking(new Expectations() {{
-            oneOf (service).getEntities(with(""), with(any(AsyncCallback.class))); will(makeAsyncRequest);
-            oneOf (view).clearBugGrid();
+        context.checking(new Expectations() {{
+            oneOf(service).getEntities(with(""), with(any(AsyncCallback.class)));will(makeAsyncRequest);
+            oneOf(view).clearBugGrid();
             exactly(2).of(view).addOption(with(any(Option.class)));
+            oneOf(view).showGrid();
         }});
 
         GetEntitiesResponseImmutable resp = new GetEntitiesResponseImmutable(StubsForTests.createDummyOptionList());
 
 
-        pres.activate();
+        pres.activate(new RestUrl(""));
         makeAsyncRequest.succeedGiving(resp);
 
         context.assertIsSatisfied();
 
     }
-
 
 
 }

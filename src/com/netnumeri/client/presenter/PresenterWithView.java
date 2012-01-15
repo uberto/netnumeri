@@ -9,13 +9,6 @@ public abstract class PresenterWithView<T extends View> implements Presenter{
         this.view = view;
     }
 
-    @Override
-    public void activate() {
-//        url = newUrl;
-
-        view.show();
-    }
-
 
     public T getView() {
         return view;

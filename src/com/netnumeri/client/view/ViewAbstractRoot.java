@@ -8,7 +8,7 @@ public abstract class ViewAbstractRoot implements View {
 
     protected abstract void placeInPanel(Panel panel);
 
-    public void show() {
+    protected void show() {
 
         RootPanel w = RootPanel.get("wrapper");
         if (w != null) {

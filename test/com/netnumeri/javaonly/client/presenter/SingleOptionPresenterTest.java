@@ -1,9 +1,15 @@
 package com.netnumeri.javaonly.client.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.netnumeri.client.events.RestUrl;
 import com.netnumeri.client.presenter.SingleOptionPresenter;
 import com.netnumeri.client.service.GetOptionServiceAsync;
 import com.netnumeri.client.view.SingleOptionView;
+import com.netnumeri.shared.StubsForTests;
+import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.service.GetEntityResponse;
+import com.netnumeri.shared.service.GetEntityResponseImmutable;
+import com.netnumeri.testutils.AsyncAction;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Before;
@@ -30,26 +36,37 @@ public class SingleOptionPresenterTest {
     @Test
     public void activateTest() {
         context.checking(new Expectations() {{
-            oneOf(view).show();
-            oneOf(view).setTitle("Edit bug");
+//            oneOf(view).showEdit(null);
+//            oneOf(view).setTitle("Edit bug");
             oneOf(service).getEntity(with(""), with(any(AsyncCallback.class)));
         }});
         
-        pres.activate();
+        pres.activate(new RestUrl(""));
 
         context.assertIsSatisfied();
 
     }
 
-//    @Test
-//    public void success(){
-//        pres.activate();
-//        pres.
-//
-//        verify(view).clearBugGrid();
-//        verify(view, times(3)).addBug(option.getId(), option.getDesc(), option.getStatus(), option.getUser());
-//
-//    }
+    @Test
+    public void success(){
+        final AsyncAction<GetEntityResponse<Option>> makeAsyncRequest = new AsyncAction<GetEntityResponse<Option>>();
+
+        context.checking(new Expectations() {{
+            oneOf(service).getEntity(with(""), with(any(AsyncCallback.class)));
+            will(makeAsyncRequest);
+            oneOf(view).showEdit(StubsForTests.createDummyOption());
+        }});
+
+        GetEntityResponseImmutable<Option> resp = new GetEntityResponseImmutable(StubsForTests.createDummyOption());
+
+
+        pres.activate(new RestUrl(""));
+        makeAsyncRequest.succeedGiving(resp);
+
+        context.assertIsSatisfied();
+
+
+    }
 
 
 }

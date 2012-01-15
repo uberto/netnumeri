@@ -46,7 +46,7 @@ public abstract class AppGwtTestCase extends GWTTestCase {
     public void asyncTestValidation(Timer timer) {
         // Set a delay period significantly longer than the
         // event is expected to take.
-        delayTestFinish(1000);
+        delayTestFinish(5000);
 
         // Schedule the event and return control to the test system.
         timer.schedule(500);
