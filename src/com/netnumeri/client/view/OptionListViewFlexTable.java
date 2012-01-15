@@ -16,7 +16,7 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
 
     private void setTitle(String title) {
         RootPanel.get("title-label").getElement().setInnerText(title);
-//        flexTable.setTitle(title);
+        flexTable.setTitle(title);
 
     }
 
@@ -68,6 +68,9 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
 
     @Override
     public void addClickHandler(ClickHandler clickHandler) {
+        RootPanel.get("slot1").add(clickMeButton);
+        RootPanel.get("slot2").add(messageLabel);
+
         clickMeButton.addClickHandler(clickHandler);
     }
 
@@ -81,8 +84,6 @@ public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionL
     @Override
     protected void placeInPanel(Panel panel) {
         panel.add(flexTable);
-        RootPanel.get("slot1").add(clickMeButton);
-        RootPanel.get("slot2").add(messageLabel);
 
     }
 

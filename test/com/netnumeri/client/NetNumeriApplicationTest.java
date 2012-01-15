@@ -15,15 +15,14 @@ public class NetNumeriApplicationTest extends AppGwtTestCase {
 
 
         final OptionListView view = presenter.getView();
-        view.setMessageText("");
         view.clickButton();
 
         asyncTestValidation(new Timer() {
             public void run() {
                 assertEquals(1, RootPanel.get("slot1").getWidgetCount());
 
-// TODO it should work                assertEquals("Client said: \"Hello, World!\"<br></br>Server answered: \"Hi!\"", view.getMessageText());
-                
+                assertEquals("Client said: \"Hello, World!\"<br></br>Server answered: \"Hi!\"", view.getMessageText());
+
                 String div = RootPanel.get("slot2").getElement().getInnerHTML();
 //            ???    assertEquals("Client said: \"Hello, World!\"<br></br>Server answered: \"Hi!\"", div);
 
@@ -59,7 +58,6 @@ public class NetNumeriApplicationTest extends AppGwtTestCase {
     }
 
 
-
     public void ignore_testOnDoubleClick() throws Exception {
 //        app.messageLabel.setText("");
 //        app.clickMeButton.click();
@@ -83,7 +81,6 @@ public class NetNumeriApplicationTest extends AppGwtTestCase {
 
 
     }
-
 
 
 }
