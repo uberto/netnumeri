@@ -1,10 +1,10 @@
 package com.netnumeri.javaonly.client.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.netnumeri.client.events.RestUrl;
-import com.netnumeri.client.presenter.SingleOptionPresenter;
-import com.netnumeri.client.service.GetOptionServiceAsync;
-import com.netnumeri.client.view.SingleOptionView;
+import com.netnumeri.client.javaonly.events.RestUrl;
+import com.netnumeri.client.jsneeded.view.SingleOptionView;
+import com.netnumeri.client.javaonly.presenter.SingleOptionPresenter;
+import com.netnumeri.client.jsneeded.service.GetOptionServiceAsync;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.service.GetEntityResponse;

@@ -3,6 +3,8 @@ package com.netnumeri.client.view;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.netnumeri.client.AppGwtTestCase;
+import com.netnumeri.client.jsneeded.view.OptionListView;
+import com.netnumeri.client.jsneeded.view.OptionListViewFlexTable;
 
 public class OptionListViewTest extends AppGwtTestCase {
 

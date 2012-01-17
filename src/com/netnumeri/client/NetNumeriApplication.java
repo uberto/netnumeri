@@ -2,14 +2,14 @@ package com.netnumeri.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.HandlerManager;
-import com.netnumeri.client.events.EventsMonitor;
-import com.netnumeri.client.events.EventsMonitorClient;
-import com.netnumeri.client.events.PlaceChangedHandler;
-import com.netnumeri.client.events.RestUrl;
-import com.netnumeri.client.log.ListenerGwtLog;
-import com.netnumeri.client.presenter.Presenter;
-import com.netnumeri.client.presenter.PresentersActivator;
-import com.netnumeri.client.presenter.PresentersProxy;
+import com.netnumeri.client.javaonly.events.EventsMonitor;
+import com.netnumeri.client.javaonly.events.EventsMonitorClient;
+import com.netnumeri.client.javaonly.events.PlaceChangedHandler;
+import com.netnumeri.client.javaonly.events.RestUrl;
+import com.netnumeri.client.jsneeded.log.ListenerGwtLog;
+import com.netnumeri.client.javaonly.presenter.Presenter;
+import com.netnumeri.client.javaonly.presenter.PresentersActivator;
+import com.netnumeri.client.javaonly.presenter.PresentersProxy;
 
 
 public class NetNumeriApplication implements EntryPoint {

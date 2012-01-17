@@ -1,7 +1,7 @@
 package com.netnumeri.server.service;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.netnumeri.client.service.MySampleApplicationService;
+import com.netnumeri.client.jsneeded.service.MySampleApplicationService;
 
 public class MySampleApplicationServiceImpl extends RemoteServiceServlet implements MySampleApplicationService {
 

@@ -1,7 +1,7 @@
 package com.netnumeri.server.service;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import com.netnumeri.client.service.GetOptionService;
+import com.netnumeri.client.jsneeded.service.GetOptionService;
 import com.netnumeri.server.persistence.DataFetcher;
 import com.netnumeri.shared.StubsForTests;
 import com.netnumeri.shared.entity.Option;
