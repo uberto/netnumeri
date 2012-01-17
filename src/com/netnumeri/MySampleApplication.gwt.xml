@@ -16,7 +16,7 @@
 
 
     <!-- Specify the app entry point class.                   -->
-    <entry-point class='com.netnumeri.client.NetNumeriApplication'/>
+    <entry-point class='com.netnumeri.client.jsneeded.NetNumeriApplication'/>
 
 
     <!-- Specify the app servlets.                   -->

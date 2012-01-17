@@ -1,10 +1,10 @@
-package com.netnumeri.client;
+package com.netnumeri.client.jsneeded;
 
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.netnumeri.client.jsneeded.view.OptionListView;
 import com.netnumeri.client.javaonly.presenter.OptionListPresenter;
 import com.netnumeri.client.javaonly.presenter.SingleOptionPresenter;
+import com.netnumeri.client.jsneeded.view.OptionListView;
 
 
 public class NetNumeriApplicationTest extends AppGwtTestCase {

@@ -1,12 +1,12 @@
-package com.netnumeri.client;
+package com.netnumeri.client.jsneeded;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.HandlerManager;
-import com.netnumeri.client.javaonly.events.EventsMonitor;
-import com.netnumeri.client.javaonly.events.EventsMonitorClient;
+import com.netnumeri.client.javaonly.support.EventsMonitor;
+import com.netnumeri.client.javaonly.support.EventsMonitorClient;
 import com.netnumeri.client.javaonly.events.PlaceChangedHandler;
 import com.netnumeri.client.javaonly.events.RestUrl;
-import com.netnumeri.client.jsneeded.log.ListenerGwtLog;
+import com.netnumeri.client.jsneeded.support.ListenerGwtLog;
 import com.netnumeri.client.javaonly.presenter.Presenter;
 import com.netnumeri.client.javaonly.presenter.PresentersActivator;
 import com.netnumeri.client.javaonly.presenter.PresentersProxy;

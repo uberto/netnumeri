@@ -1,6 +1,6 @@
 package com.netnumeri.client.javaonly.presenter;
 
-import com.netnumeri.client.javaonly.events.EventsMonitor;
+import com.netnumeri.client.javaonly.support.EventsMonitor;
 import com.netnumeri.client.jsneeded.service.GetOptionService;
 import com.netnumeri.client.jsneeded.service.MySampleApplicationService;
 import com.netnumeri.client.jsneeded.view.OptionListViewFlexTable;

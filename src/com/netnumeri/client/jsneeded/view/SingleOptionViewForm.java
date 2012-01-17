@@ -1,16 +1,23 @@
 package com.netnumeri.client.jsneeded.view;
 
-import com.google.gwt.user.client.ui.Panel;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.*;
 
-public class SingleOptionViewForm extends ViewAbstractRoot implements SingleOptionView{
+public class SingleOptionViewForm extends ViewAbstractWrapper implements SingleOptionView {
+
+
+    private Button submitButton = new Button("Submit");
+    private Button cancelButton = new Button("Cancel");
+    private TextBox name = new TextBox();
 
 
     @Override
     protected void placeInPanel(Panel panel) {
 
+        panel.add(name);
+        panel.add(submitButton);
+        panel.add(cancelButton);
     }
-
 
     /*
     ci dovrebbe essere una view generica (dentro yuzu) per edit-data-form, che e' generica per VO. L'utente deve implementare un interfaccia con i metodi: createVOFromForm, populateFormFromVO, e gli hook per gli eventi Submit, Cancel
@@ -40,4 +47,12 @@ public class SingleOptionViewForm extends ViewAbstractRoot implements SingleOpti
         show();
 
     }
+
+    @Override
+    public void addButtonsHandlers(ClickHandler submitHandler, ClickHandler cancelHandler) {
+
+        submitButton.addClickHandler(submitHandler);
+        cancelButton.addClickHandler(cancelHandler);
+    }
+
 }

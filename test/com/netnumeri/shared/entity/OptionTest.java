@@ -1,7 +1,5 @@
-package com.netnumeri.javaonly.shared.entity;
+package com.netnumeri.shared.entity;
 
-import com.netnumeri.shared.entity.Option;
-import com.netnumeri.shared.entity.OptionType;
 import org.junit.Test;
 
 import java.util.Date;

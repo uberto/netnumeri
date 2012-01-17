@@ -1,6 +1,6 @@
 package com.netnumeri.client.javaonly.presenter;
 
-import com.netnumeri.client.javaonly.events.EventsMonitor;
+import com.netnumeri.client.javaonly.support.EventsMonitor;
 import com.netnumeri.client.jsneeded.view.View;
 
 public abstract class PresenterWithView<T extends View> implements Presenter{

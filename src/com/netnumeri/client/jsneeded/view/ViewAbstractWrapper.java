@@ -4,7 +4,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootPanel;
 
-public abstract class ViewAbstractRoot implements View {
+public abstract class ViewAbstractWrapper implements View {
 
     protected abstract void placeInPanel(Panel panel);
 

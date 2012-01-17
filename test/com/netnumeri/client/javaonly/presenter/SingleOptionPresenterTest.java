@@ -1,4 +1,4 @@
-package com.netnumeri.javaonly.client.presenter;
+package com.netnumeri.client.javaonly.presenter;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.javaonly.events.RestUrl;

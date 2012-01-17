@@ -4,7 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.Window;
-import com.netnumeri.client.javaonly.events.EventsMonitor;
+import com.netnumeri.client.javaonly.support.EventsMonitor;
 import com.netnumeri.client.javaonly.events.PlaceRequestEvent;
 import com.netnumeri.client.javaonly.events.PlaceRequestHandler;
 import com.netnumeri.client.javaonly.events.RestUrl;

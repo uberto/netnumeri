@@ -1,4 +1,6 @@
-package com.netnumeri.client.javaonly.events;
+package com.netnumeri.client.javaonly.support;
+
+import com.netnumeri.client.javaonly.events.PlaceRequestEvent;
 
 import java.util.ArrayList;
 import java.util.List;

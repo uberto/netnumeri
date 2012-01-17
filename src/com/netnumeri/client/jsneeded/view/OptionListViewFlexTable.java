@@ -8,11 +8,11 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.netnumeri.client.jsneeded.widget.HeadersFlexTable;
 import com.netnumeri.shared.entity.Option;
 
-public class OptionListViewFlexTable extends ViewAbstractRoot implements OptionListView {
+public class OptionListViewFlexTable extends ViewAbstractWrapper implements OptionListView {
 
     HeadersFlexTable flexTable = new HeadersFlexTable();
-    public Button clickMeButton = new Button("Click me");
-    public Label messageLabel = new Label();
+    private Button clickMeButton = new Button("Click me");
+    private Label messageLabel = new Label();
 
     private void setTitle(String title) {
         RootPanel.get("title-label").getElement().setInnerText(title);

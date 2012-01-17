@@ -1,4 +1,4 @@
-package com.netnumeri.javaonly.client.presenter;
+package com.netnumeri.client.javaonly.presenter;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;

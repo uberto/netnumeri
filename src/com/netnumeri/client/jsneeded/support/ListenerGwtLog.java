@@ -1,7 +1,7 @@
-package com.netnumeri.client.jsneeded.log;
+package com.netnumeri.client.jsneeded.support;
 
 import com.google.gwt.core.client.GWT;
-import com.netnumeri.client.javaonly.events.SupportListener;
+import com.netnumeri.client.javaonly.support.SupportListener;
 
 public class ListenerGwtLog implements SupportListener {
     @Override
