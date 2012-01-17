@@ -47,7 +47,6 @@ public class QuotesServlet extends HttpServlet {
 
         ServletOutputStream sos = response.getOutputStream();
         sos.print(s);
-        sos.flush();
 
     }
 
