@@ -13,20 +13,20 @@ public class GetEntitiesResponseImmutable<T> implements  GetEntitiesResponse<T> 
     private GetEntitiesResponseImmutable() {
     }
 
-    @Override
-    public void add(T option) {
-        entityList.add(option);
-    }
+//    @Override
+//    public void add(T option) {
+//        entityList.add(option);
+//    }
 
     @Override
     public List<T> getEntityList() {
         return entityList;
     }
 
-    @Override
-    public void addAll(List<T> optionList) {
-        entityList.addAll(optionList);
-    }
+//    @Override
+//    public void addAll(List<T> optionList) {
+//        entityList.addAll(optionList);
+//    }
 
     @Override
     public String toString() {

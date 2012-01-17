@@ -4,7 +4,6 @@ import com.google.gwt.dom.client.Element;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.netnumeri.client.jsneeded.NetNumeriApplication;
 
 public abstract class AppGwtTestCase extends GWTTestCase {
 
