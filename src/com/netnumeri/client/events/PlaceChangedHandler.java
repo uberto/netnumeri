@@ -5,11 +5,11 @@ import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.History;
 
-public class PlaceManager implements ValueChangeHandler<String> {
+public class PlaceChangedHandler implements ValueChangeHandler<String> {
     private final HandlerManager eventManager;
 
 
-    public PlaceManager(HandlerManager eventManager) {
+    public PlaceChangedHandler(HandlerManager eventManager) {
         this.eventManager = eventManager;
 
         // Register ourselves with the History API.
@@ -22,11 +22,11 @@ public class PlaceManager implements ValueChangeHandler<String> {
         eventManager.fireEvent(new PlaceRequestEvent(new RestUrl(event.getValue())));
     }
 
-//    public void fireCurrentPlace() {
-//        if (!History.getToken().isEmpty()) {
-//            History.fireCurrentHistoryState();
-//        }
-//    }
+    public void fireCurrentPlace() {
+        if (!History.getToken().isEmpty()) {
+            History.fireCurrentHistoryState();
+        }
+    }
 
     public void moveToPlace(String place) {
         RestUrl url = new RestUrl(place);

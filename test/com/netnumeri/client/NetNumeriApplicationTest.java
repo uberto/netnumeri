@@ -13,7 +13,6 @@ public class NetNumeriApplicationTest extends AppGwtTestCase {
         assertEquals(app.getCurrentPresenter().getClass(), OptionListPresenter.class);
         OptionListPresenter presenter = (OptionListPresenter) app.getCurrentPresenter();
 
-
         final OptionListView view = presenter.getView();
         view.clickButton();
 

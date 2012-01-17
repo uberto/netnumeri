@@ -4,30 +4,35 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.Window;
+import com.netnumeri.client.events.EventsMonitor;
 import com.netnumeri.client.events.PlaceRequestEvent;
 import com.netnumeri.client.events.PlaceRequestHandler;
 import com.netnumeri.client.events.RestUrl;
 
-public class PresenterController {
+public class PresentersActivator {
 
     private Presenter currentPresenter;
-    private PresenterProxy presenterProxy;
+    private PresentersProxy presenterProxy;
+    private EventsMonitor monitor;
 
     private class MyPlaceRequestHandler implements PlaceRequestHandler {
 
         public void onPlaceRequest(PlaceRequestEvent event) {
             final RestUrl newPlace = event.getUrl();
 
-            System.out.println("onPlaceRequest " + newPlace);
-
+//            System.out.println("onPlaceRequest " + newPlace);
+            monitor.notifyPlaceRequest(event);
+            
+            
 //            final PresenterProxy<?> pp = presenterProxyMap.get(newPlace.getPresenterUrl());
 
 
             Presenter tmpPres = presenterProxy.getPresenter(newPlace.getPresenterUrl());
             if (tmpPres == null) {
-                System.out.println("No such presenter " + newPlace.getPresenterUrl());
+                monitor.notifyError("No such presenter " + newPlace.getPresenterUrl());
                 return;
             }
+            tmpPres.setMonitor(monitor);
             currentPresenter = tmpPres;
 
 
@@ -51,8 +56,9 @@ public class PresenterController {
 
     }
 
-    public PresenterController(HandlerManager eventManager, PresenterProxy presenterProxy) {
+    public PresentersActivator(HandlerManager eventManager, PresentersProxy presenterProxy, EventsMonitor monitor) {
         this.presenterProxy = presenterProxy;
+        this.monitor = monitor;
         addPlaceRequestHandler(eventManager, new MyPlaceRequestHandler());
     }
 

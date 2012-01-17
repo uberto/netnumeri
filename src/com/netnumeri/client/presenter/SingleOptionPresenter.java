@@ -20,10 +20,8 @@ public class SingleOptionPresenter extends PresenterWithView<SingleOptionView> {
     public void activate(RestUrl url) {
 
         if (url.getId() == null) {
-        getView().showNew(); //setTitle "New Option"
-
+            getView().showNew(); //setTitle "New Option"
         } else {
-
             optionServiceAsync.getEntity("" + url.getId(), new AsyncCallback<GetEntityResponse<Option>>() {
 
                 @Override
@@ -39,7 +37,6 @@ public class SingleOptionPresenter extends PresenterWithView<SingleOptionView> {
                 }
             });
         }
-
 
 
     }

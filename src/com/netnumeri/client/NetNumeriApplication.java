@@ -2,28 +2,33 @@ package com.netnumeri.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.HandlerManager;
-import com.netnumeri.client.events.PlaceManager;
-import com.netnumeri.client.events.RestUrl;
+import com.netnumeri.client.events.EventsMonitor;
+import com.netnumeri.client.events.EventsMonitorGwt;
+import com.netnumeri.client.events.PlaceChangedHandler;
 import com.netnumeri.client.presenter.Presenter;
-import com.netnumeri.client.presenter.PresenterController;
-import com.netnumeri.client.presenter.PresenterProxy;
+import com.netnumeri.client.presenter.PresentersProxy;
+import com.netnumeri.client.presenter.PresentersActivator;
 
 
 public class NetNumeriApplication implements EntryPoint {
 
-    private PresenterController presenterController;
+    private PresentersActivator presenterController;
 
-    private PlaceManager placeManager;
+    private PlaceChangedHandler placeManager;
+    private EventsMonitor monitor;
 
     public void onModuleLoad() {
 
         HandlerManager handlerManager = new HandlerManager(null);
 
-        placeManager = new PlaceManager(handlerManager);
+        placeManager = new PlaceChangedHandler(handlerManager);
 
-        presenterController = new PresenterController(handlerManager, new PresenterProxy());
+        monitor = new EventsMonitorGwt();
 
-        getCurrentPresenter().activate(new RestUrl(""));
+        presenterController = new PresentersActivator(handlerManager, new PresentersProxy(), monitor);
+
+//        getCurrentPresenter().activate(new RestUrl(""));
+        placeManager.fireCurrentPlace();
     }
 
 
