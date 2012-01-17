@@ -1,6 +1,6 @@
 package com.netnumeri.client.javaonly.presenter;
 
-import com.netnumeri.client.javaonly.support.EventsMonitor;
+import com.netnumeri.client.javaonly.support.SupportDispatcher;
 import com.netnumeri.client.jsneeded.service.GetOptionService;
 import com.netnumeri.client.jsneeded.service.MySampleApplicationService;
 import com.netnumeri.client.jsneeded.view.OptionListViewFlexTable;
@@ -14,7 +14,7 @@ public class PresentersProxy {
     public static final String URL_OPTION_LIST = "optionList";
     public static final String URL_OPTION = "option";
     private Map<String, Presenter> presentersMap = new HashMap<String, Presenter>();
-    private EventsMonitor monitor;
+    private SupportDispatcher monitor;
 
     public PresentersProxy() {
         prepareProxyMap();

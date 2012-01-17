@@ -5,7 +5,7 @@ import com.netnumeri.client.javaonly.events.PlaceRequestEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventsMonitorClient implements EventsMonitor {
+public class EventsMonitorClient implements SupportDispatcher {
 
     List<SupportListener> listeners = new ArrayList<SupportListener>();
 

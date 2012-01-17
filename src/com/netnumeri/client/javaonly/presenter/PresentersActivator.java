@@ -4,7 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.Window;
-import com.netnumeri.client.javaonly.support.EventsMonitor;
+import com.netnumeri.client.javaonly.support.SupportDispatcher;
 import com.netnumeri.client.javaonly.events.PlaceRequestEvent;
 import com.netnumeri.client.javaonly.events.PlaceRequestHandler;
 import com.netnumeri.client.javaonly.events.RestUrl;
@@ -13,7 +13,7 @@ public class PresentersActivator {
 
     private Presenter currentPresenter;
     private PresentersProxy presenterProxy;
-    private EventsMonitor monitor;
+    private SupportDispatcher monitor;
 
     private class MyPlaceRequestHandler implements PlaceRequestHandler {
 
@@ -56,7 +56,7 @@ public class PresentersActivator {
 
     }
 
-    public PresentersActivator(HandlerManager eventManager, PresentersProxy presenterProxy, EventsMonitor monitor) {
+    public PresentersActivator(HandlerManager eventManager, PresentersProxy presenterProxy, SupportDispatcher monitor) {
         this.presenterProxy = presenterProxy;
         this.monitor = monitor;
         addPlaceRequestHandler(eventManager, new MyPlaceRequestHandler());

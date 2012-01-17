@@ -2,7 +2,7 @@ package com.netnumeri.client.jsneeded;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.shared.HandlerManager;
-import com.netnumeri.client.javaonly.support.EventsMonitor;
+import com.netnumeri.client.javaonly.support.SupportDispatcher;
 import com.netnumeri.client.javaonly.support.EventsMonitorClient;
 import com.netnumeri.client.javaonly.events.PlaceChangedHandler;
 import com.netnumeri.client.javaonly.events.RestUrl;
@@ -17,7 +17,7 @@ public class NetNumeriApplication implements EntryPoint {
     private PresentersActivator presenterController;
 
     private PlaceChangedHandler placeManager;
-    private EventsMonitor monitor;
+    private SupportDispatcher monitor;
 
     public void onModuleLoad() {
 
