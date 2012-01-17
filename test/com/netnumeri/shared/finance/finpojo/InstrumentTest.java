@@ -135,20 +135,23 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testHistoricalSpot() throws Exception {
 
-        double historicalSpot = stock.getHistoricalSpot(new TDay("4/9/2009"));
-
-        assertEquals(16.18, historicalSpot);
-
 
     }
 
     @Test
     public void testGetHistoricalSpot() throws Exception {
 
+        double historicalSpot = stock.getHistoricalSpot(new TDay("4/9/2009"));
+
+        assertEquals(16.18, historicalSpot);
+
     }
 
     @Test
     public void testHistoricalVolatility() throws Exception {
+
+        double historicalSpot = stock.historicalVolatility();
+        assertEquals(16.18, historicalSpot);
 
     }
 
