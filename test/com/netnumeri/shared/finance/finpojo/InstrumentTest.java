@@ -151,7 +151,7 @@ public class InstrumentTest extends TestCase {
     public void testHistoricalVolatility() throws Exception {
 
         double historicalSpot = stock.historicalVolatility();
-        assertEquals(16.18, historicalSpot);
+        assertEquals(1.0567523108414614, historicalSpot);
 
     }
 
@@ -767,31 +767,6 @@ public class InstrumentTest extends TestCase {
 
     @Test
     public void testGetLastPrice() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLastSize() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLastAsk() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLastBid() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLastAskSize() throws Exception {
-
-    }
-
-    @Test
-    public void testGetLastBidSize() throws Exception {
 
     }
 

@@ -92,7 +92,6 @@ public class TDay implements Serializable, Comparable {
             dir = -1;
         }
         for (; cd.getDay() != weekday; cd = cd.addDays(dir)) {
-            ;
         }
         cd = cd.addDays((week - 1) * 7 * dir);
         time = tolong(cd.getTime());
