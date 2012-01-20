@@ -56,6 +56,8 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetStdDev() throws Exception {
 
+        assertEquals(timeSeries.getStandardDeviation(),9.90288889291483);
+
     }
 
     @Test
