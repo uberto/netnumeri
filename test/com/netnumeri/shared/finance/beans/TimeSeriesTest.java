@@ -1,16 +1,34 @@
 package com.netnumeri.shared.finance.beans;
 
+import com.netnumeri.shared.finance.finpojo.asset.Stock;
+import com.netnumeri.shared.finance.utils.TestUtils;
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TimeSeriesTest {
+public class TimeSeriesTest extends TestCase {
+
+    Stock stock;
+    TimeSeries timeSeries;
+
     @Before
     public void setUp() throws Exception {
+        try {
 
+            stock =  TestUtils.buildStock();
+            timeSeries = stock.getCloseSeries();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void testGetFrequency() throws Exception {
+
+        int frequency = timeSeries.getFrequency();
+
+        assertEquals(FinConstants.FR_DAILY, frequency);
 
     }
 
