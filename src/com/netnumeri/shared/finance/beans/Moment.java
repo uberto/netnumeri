@@ -1,6 +1,5 @@
 package com.netnumeri.shared.finance.beans;
 
-
 import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 public class Moment {
