@@ -35,15 +35,21 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetNRows() throws Exception {
 
+        assertEquals(timeSeries.getNRows(),1);
+
     }
 
     @Test
     public void testGetLowerBoundIndex() throws Exception {
 
+        assertEquals(timeSeries.getLowerBoundIndex(),0);
+
     }
 
     @Test
     public void testGetUpperBoundIndex() throws Exception {
+
+        assertEquals(timeSeries.getLowerBoundIndex(),499);
 
     }
 
