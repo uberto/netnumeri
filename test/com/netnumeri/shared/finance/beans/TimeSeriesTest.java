@@ -130,7 +130,7 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetPrevDate() throws Exception {
 
-        assertEquals(timeSeries.getLastDate(),new TDay("26/4/2010"));
+        assertTrue(timeSeries.getLastDate().equals(new TDay("4/26/2010")));
 
     }
 
