@@ -137,18 +137,25 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetPrevData() throws Exception {
 
-        assertEquals(timeSeries.getPrevData(timeSeries.getLastIndex()),16.11);
-
+        assertEquals(timeSeries.getPrevData(timeSeries.getLastIndex()), 16.11);
 
     }
 
     @Test
     public void testGetNextIndex() throws Exception {
 
+        assertEquals(timeSeries.getLastIndex(), timeSeries.getNextIndex(timeSeries.getPrevIndex(timeSeries.getLastIndex())));
+
     }
 
     @Test
     public void testGetNextDate() throws Exception {
+
+        assertTrue(timeSeries.getFirstDate().equals(new TDay("8/1/2007")));
+
+        TDay nextDate = timeSeries.getNextDate(new TDay("8/1/2007"));
+
+        assertTrue(nextDate.equals(new TDay("8/2/2007")));
 
     }
 
@@ -184,6 +191,7 @@ public class TimeSeriesTest extends TestCase {
 
     @Test
     public void testSet() throws Exception {
+
 
     }
 
@@ -450,6 +458,7 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetDimension() throws Exception {
 
+        assertTrue(timeSeries.getDimension()==0);
     }
 
     @Test

@@ -7,7 +7,6 @@ import com.netnumeri.shared.pojoc.SearchablePojo;
 
 import java.io.Serializable;
 
-
 public abstract class DateBound extends SearchablePojo implements Serializable {
 
     private TDay lowerBoundTDay;
@@ -87,20 +86,6 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
         enableRange();
     }
 
-    public TDay getFirstDateTime() {
-        if (isRangeEnabled())
-            return DateUtils.max(lowerRangeTDay, lowerBoundTDay);
-        else
-            return lowerBoundTDay;
-    }
-
-    public TDay getLastDateTime() {
-        if (isRangeEnabled())
-            return DateUtils.min(upperRangeDate, upperBoundDate);
-        else
-            return upperBoundDate;
-    }
-
     public boolean inBounds(TDay date) {
         return date.isGreaterEqual(lowerBoundTDay) && date.isLessEqual(upperBoundDate);
     }
@@ -113,7 +98,6 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
             return lowerBoundTDay;
         }
     }
-
 
     public TDay getLastDate() {
         if (upperBoundDate == null) return null;
