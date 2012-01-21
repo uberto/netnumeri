@@ -137,6 +137,9 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetPrevData() throws Exception {
 
+        assertEquals(timeSeries.getPrevData(timeSeries.getLastIndex()),16.11);
+
+
     }
 
     @Test
