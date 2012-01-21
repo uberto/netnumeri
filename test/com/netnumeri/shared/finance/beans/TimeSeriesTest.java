@@ -1,5 +1,6 @@
 package com.netnumeri.shared.finance.beans;
 
+import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
 import com.netnumeri.shared.finance.utils.TestUtils;
 import junit.framework.TestCase;
@@ -49,7 +50,7 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetUpperBoundIndex() throws Exception {
 
-        assertEquals(timeSeries.getLowerBoundIndex(),499);
+        assertEquals(timeSeries.getLowerBoundIndex(),0);
 
     }
 
@@ -63,10 +64,19 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetStdErr() throws Exception {
 
+        assertEquals(timeSeries.getStdErr(),0.4792343826377079);
+
     }
+
 
     @Test
     public void testIsValidRow() throws Exception {
+
+
+        assertTrue(timeSeries.isValidRow(0));
+
+        assertFalse(timeSeries.isValidRow(1));
+
 
     }
 
@@ -78,30 +88,49 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetFirstIndex() throws Exception {
 
+        assertEquals(timeSeries.getFirstIndex(),0);
+
     }
 
     @Test
     public void testGetLastIndex() throws Exception {
+
+        assertEquals(timeSeries.getLastIndex(),999);
 
     }
 
     @Test
     public void testGetNData() throws Exception {
 
+        assertEquals(timeSeries.getNData(),427);
+
     }
 
     @Test
     public void testGetNumberOfNotNullData() throws Exception {
+
+        assertEquals(timeSeries.getNumberOfNotNullData(0),427);
 
     }
 
     @Test
     public void testGetPrevIndex() throws Exception {
 
+        assertEquals(timeSeries.getPrevIndex(499),498);
+        assertEquals(timeSeries.getPrevIndex(498),497);
+        assertEquals(timeSeries.getPrevIndex(497),496);
+        assertEquals(timeSeries.getPrevIndex(496),495);
+        assertEquals(timeSeries.getPrevIndex(495),492);
+        assertEquals(timeSeries.getPrevIndex(494),492);
+        assertEquals(timeSeries.getPrevIndex(493),492);
+        assertEquals(timeSeries.getPrevIndex(492),491);
+
     }
 
     @Test
     public void testGetPrevDate() throws Exception {
+
+        assertEquals(timeSeries.getLastDate(),new TDay("26/4/2010"));
 
     }
 
