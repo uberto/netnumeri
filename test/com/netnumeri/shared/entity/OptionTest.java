@@ -26,7 +26,8 @@ public class OptionTest {
 //        assertThat(entity.getId(), is(new EntityId( "123")));
         assertTrue(entity.getFields().contains(Option.NAME));
         assertTrue(entity.getFields().contains(Option.NAME));
-//        assertThat((String) entity.get(Option.NAME).getValue(), is("name"));
+        assertThat((String) entity.get(Option.NAME).getValue(), is("name"));
+        assertThat((String) entity.get(Option.STOCK_TICKET).getValue(), is("ticket"));
 
     }
 

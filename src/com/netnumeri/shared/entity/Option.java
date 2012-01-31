@@ -13,7 +13,10 @@ public class Option implements Entity, IsSerializable {
     Date dateDue;
 
 
-//    private Map<EntityField, EntityValue> values = new HashMap<EntityField, EntityValue>();
+    private EntityValue<String> value;// needed only to the serialized whitelist
+
+
+    private Map<EntityField, EntityValue> values = new HashMap<EntityField, EntityValue>();
 
 
     static final StringEntityField NAME = new StringEntityField(22, "name");
@@ -25,9 +28,9 @@ public class Option implements Entity, IsSerializable {
         this.type = type;
         this.strike = strike;
         this.dateDue = dateDue;
-
-//        values.put(NAME, new EntityValue<String>( optionName));
-//        values.put(STOCK_TICKET, new EntityValue<String>( stockTicket));
+//
+        values.put(NAME, new EntityValue( optionName));
+        values.put(STOCK_TICKET, new EntityValue( stockTicket));
 //
   }
 
@@ -103,8 +106,7 @@ public class Option implements Entity, IsSerializable {
 
     @Override
     public EntityValue get(EntityField field) {
-//        return values.get(field);
-        return null;
+        return values.get(field);
     }
 
 }
