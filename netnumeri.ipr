@@ -237,7 +237,7 @@
           <configuration>
             <setting name="compilerMaxHeapSize" value="128" />
             <setting name="gwtScriptOutputStyle" value="DETAILED" />
-            <setting name="gwtSdkUrl" value="file://$USER_HOME$/google/gwt-2.2.0" />
+            <setting name="gwtSdkUrl" value="file://$PROJECT_DIR$/lib/gwt-2.4.0" />
           </configuration>
         </default-facet-configuration>
       </entry>

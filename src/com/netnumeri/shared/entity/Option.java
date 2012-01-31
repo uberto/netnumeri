@@ -2,9 +2,9 @@ package com.netnumeri.shared.entity;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
-import java.util.Date;
+import java.util.*;
 
-public class Option implements IsSerializable {
+public class Option implements Entity, IsSerializable {
 
     String optionName;
     String stockTicket;
@@ -12,13 +12,24 @@ public class Option implements IsSerializable {
     Double strike;
     Date dateDue;
 
+
+//    private Map<EntityField, EntityValue> values = new HashMap<EntityField, EntityValue>();
+
+
+    static final StringEntityField NAME = new StringEntityField(22, "name");
+    static final StringEntityField STOCK_TICKET = new StringEntityField(5, "stock");
+
     public Option(String optionName, String stockTicket, OptionType type, Double strike, Date dateDue) {
         this.optionName = optionName;
         this.stockTicket = stockTicket;
         this.type = type;
         this.strike = strike;
         this.dateDue = dateDue;
-    }
+
+//        values.put(NAME, new EntityValue<String>( optionName));
+//        values.put(STOCK_TICKET, new EntityValue<String>( stockTicket));
+//
+  }
 
     private Option() {
     }
@@ -79,4 +90,21 @@ public class Option implements IsSerializable {
                 ", dateDue=" + dateDue +
                 '}';
     }
+
+    @Override
+    public EntityId getId() {
+        return null;
+    }
+
+    @Override
+    public Set<EntityField<?>> getFields() {
+        return new HashSet(Arrays.asList(NAME, STOCK_TICKET));
+    }
+
+    @Override
+    public EntityValue get(EntityField field) {
+//        return values.get(field);
+        return null;
+    }
+
 }
