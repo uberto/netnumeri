@@ -37,19 +37,9 @@ public class Portfolio extends Asset implements FinConstants {
 
     public IdField userId = idField("userId");
 
-//    public EnumField<PortfolioStatusEnum> fStatus = enumField("portfolioStatus", PortfolioStatusEnum.Draft);
-//    public StringField fNotes = stringField("notes", 3000);
-//    public EnumField<CurrencyEnum> fCurrency = enumField("currency", CurrencyEnum.EUR);
-//    public DoubleField fValue = doubleField("value", 0D);
-//    public DateField fDate = dateField("date", new Date());
-
-//    protected OwnedListField<PortfolioDetail> details = ownedListField("details");
-//
-//    public OwnedListField<PortfolioDetail> getDetails() {
-//        return details;
-//    }
 
     public Portfolio() {
+        init("Unnamed");
     }
 
 //    public Optimizer optimizer;
@@ -71,11 +61,9 @@ public class Portfolio extends Asset implements FinConstants {
     private int objectiveOption;
     private int nPoints;
 
-
 //    private MonteCarlo monteCarlo;
     private TDay firstDailyDate;
     private TDay lastDailyDate;
-
 
 //    private AbstractDistribution dist = null;
 
@@ -129,7 +117,7 @@ public class Portfolio extends Asset implements FinConstants {
 
     public PortfolioItem getPortfolioItemByName(String name) {
         PortfolioItem item = null;
-        List<PortfolioItem> list = getItems();
+        List<PortfolioItem> list = getInstruments();
         if (list != null)
             for (int i = 0; i < list.size(); i++) {
                 PortfolioItem portfolioItem = list.get(i);
@@ -372,6 +360,7 @@ public class Portfolio extends Asset implements FinConstants {
     public PortfolioItem getEntry(Instrument instrument) {
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         PortfolioItem entry;
+        if (items != null)
         for (int i = 0; i < items.size(); i++) {
             entry = item(i);
             if (entry.getInstrument().equals(instrument)) {
@@ -381,9 +370,6 @@ public class Portfolio extends Asset implements FinConstants {
         return null;
     }
 
-    // Return pointer to portfolio entry holding
-    // instrument with Name
-    // Return null if there is no such entry in portfolio
     public PortfolioItem getEntry(String Name) {
         PortfolioItem entry;
         for (int i = 0; i < items.size(); i++) {
@@ -399,8 +385,10 @@ public class Portfolio extends Asset implements FinConstants {
         invest(wealth, null);
     }
 
+    // Invest wealth into portfolio according to current portfolio weights
     public void invest(double wealth, TDay date) {
-        // Invest wealth into portfolio according to current portfolio weights
+
+        if (items == null || items.isEmpty()) throw new PortfolioException("no instruments to invest money into");
         for (int i = 0; i < items.size(); i++) {
             Asset asset = (Asset) getInstrument(i);
             double price = 0;
@@ -419,84 +407,67 @@ public class Portfolio extends Asset implements FinConstants {
         }
     }
 
-    public Transaction buy(Instrument instrument, int Amount) {
-        return buy(instrument, Amount, null, 0);
+    public Transaction buy(Instrument instrument, int amount) {
+        return buy(instrument, amount, null);
     }
 
-    public Transaction buy(Instrument instrument, int Amount, TDay date, int Time) {
-        // Buy
-        TDay transactionDate = date;
-        if (date == null) {
-            transactionDate = new TDay();
-        }
-        Transaction transaction = new Transaction(instrument, BUY, Amount, instrument.getPrice(date), transactionDate);
+    public Transaction buy(Instrument instrument, int amount, TDay date) {
+        if (date == null) date = new TDay();
+        Transaction transaction = new Transaction(instrument, BUY, amount, instrument.getPrice(date), date);
         add(transaction);
         return transaction;
     }
 
-    public Transaction sell(Instrument instrument, int Amount) {
-        return sell(instrument, Amount, null, 0);
+    public Transaction sell(Instrument instrument, int amount) {
+        return sell(instrument, amount, null);
     }
 
-    public Transaction sell(Instrument instrument, int Amount, TDay date, int Time) {
-        TDay transactionDate = date;
-        if (date == null) {
-            transactionDate = new TDay();
-        }
-        Transaction transaction = new Transaction(instrument, SELL, Amount, instrument.getPrice(date), transactionDate);
+    public Transaction sell(Instrument instrument, int amount, TDay date) {
+        if (date == null) date = new TDay();
+        Transaction transaction = new Transaction(instrument, SELL, amount, instrument.getPrice(date), date);
         add(transaction);
         return transaction;
     }
 
-    public Transaction sellShort(Instrument instrument, int Amount) {
-        return sellShort(instrument, Amount, null, 0);
+    public Transaction sellShort(Instrument instrument, int amount) {
+        return sellShort(instrument, amount, null, 0);
     }
 
     public Transaction sellShort(Instrument instrument, int Amount, TDay date, int Time) {
-        TDay transactionDate = date;
-        if (date == null) {
-            transactionDate = new TDay();
-        }
-        Transaction transaction = new Transaction(instrument, SELLSHORT, Amount, instrument.getPrice(date), transactionDate);
+        if (date == null) date = new TDay();
+        Transaction transaction = new Transaction(instrument, SELLSHORT, Amount, instrument.getPrice(date), date);
         add(transaction);
         return transaction;
     }
 
     public Transaction buyShort(Instrument instrument, int Amount) {
-        return buyShort(instrument, Amount, null, 0);
+        return buyShort(instrument, Amount, null);
     }
 
     // Buy short
 
-    public Transaction buyShort(Instrument instrument, int Amount, TDay date, int Time) {
-        TDay transactionDate = date;
-        if (date == null) {
-            assert date != null;
-        }
-        transactionDate = new TDay();
-        Transaction transaction = new Transaction(instrument, BUYSHORT, Amount, instrument.getPrice(date), transactionDate);
+    public Transaction buyShort(Instrument instrument, int Amount, TDay date) {
+        if (date == null) date = new TDay();
+        Transaction transaction = new Transaction(instrument, BUYSHORT, Amount, instrument.getPrice(date), date);
         add(transaction);
         return transaction;
     }
 
     public Transaction sell(Instrument instrument) {
-        return sell(instrument, null, 0);
+        return sell(instrument, null);
     }
 
     // Sell everything
 
-    public Transaction sell(Instrument instrument, TDay date, int Time) {
+    public Transaction sell(Instrument instrument, TDay date) {
         int amount;
         if (getEntry(instrument) != null) {
             amount = getAmount(instrument);
         } else {
             return null;
         }
-        TDay transactionDate = date;
-        if (date == null) {
-            transactionDate = new TDay();
-        }
-        Transaction transaction = new Transaction(instrument, SELL, amount, instrument.getPrice(date), transactionDate);
+        if (date == null) date = new TDay();
+        Transaction transaction = new Transaction(instrument, SELL, amount, instrument.getPrice(date), date);
         add(transaction);
         return transaction;
     }
@@ -1521,7 +1492,7 @@ public class Portfolio extends Asset implements FinConstants {
         return getName();
     }
 
-    public List<PortfolioItem> getItems() {
+    public List<PortfolioItem> getInstruments() {
         return items;
     }
 
@@ -1530,9 +1501,9 @@ public class Portfolio extends Asset implements FinConstants {
     }
 
     public Matrix toMatrixLogReturns() {
-        int dimension = getItems().size();
+        int dimension = getInstruments().size();
         Matrix ret = null;
-        List entries = getItems();
+        List entries = getInstruments();
         for (int i = 0; i < entries.size(); i++) {
             PortfolioItem item = (PortfolioItem) entries.get(i);
             Instrument instrument = item.getInstrument();
@@ -1549,9 +1520,9 @@ public class Portfolio extends Asset implements FinConstants {
     }
 
     public Matrix toMatrixReturns() {
-        int dimension = getItems().size();
+        int dimension = getInstruments().size();
         Matrix ret = null;
-        List entries = getItems();
+        List entries = getInstruments();
         for (int i = 0; i < entries.size(); i++) {
             PortfolioItem item = (PortfolioItem) entries.get(i);
             Instrument instrument = item.getInstrument();

@@ -1,20 +1,14 @@
 package com.netnumeri.shared.service;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
-import com.netnumeri.shared.entity.Bug;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GetEntitiesResponse implements IsSerializable {
-    private List<Bug> entityList = new ArrayList<Bug>();
+public interface GetEntitiesResponse<T> extends IsSerializable {
+//    public void add(T entity);
 
+    public List<T> getEntityList() ;
 
-    public void add(Bug bug) {
-        entityList.add(bug);
+//    public void addAll(List<T> entityList);
+
     }
-
-    public List<Bug> getEntityList() {
-        return entityList;
-    }
-}

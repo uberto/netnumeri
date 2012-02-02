@@ -1492,6 +1492,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         if (dailyarray == null) throw new IllegalArgumentException("dailyarray cannot be null");
         if (date == null) throw new IllegalArgumentException("date cannot be null");
         Daily daily = dailyarray.get(date);
+        if (daily == null) throw new InstrumentException("no price assoiated to this date");
         return daily.getArrayindex();
     }
 

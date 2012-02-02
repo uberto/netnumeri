@@ -15,6 +15,29 @@
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
+<<<<<<< .merge_file_ylNcbp
+=======
+  <component name="ArtifactManager">
+    <artifact type="exploded-war" name="netnumeri:Web exploded">
+      <output-path>$PROJECT_DIR$/out/artifacts/netnumeri_Web_exploded</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="netnumeri/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="netnumeri" />
+          </element>
+          <element id="directory" name="lib" />
+        </element>
+      </root>
+    </artifact>
+    <artifact name="netnumeri:GWT">
+      <output-path>$PROJECT_DIR$/out/artifacts/netnumeri_GWT</output-path>
+      <root id="root">
+        <element id="gwt-compiler-output" facet="netnumeri/gwt/GWT" />
+      </root>
+    </artifact>
+  </component>
+>>>>>>> .merge_file_TQCAvm
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -224,7 +247,7 @@
           <configuration>
             <setting name="compilerMaxHeapSize" value="128" />
             <setting name="gwtScriptOutputStyle" value="DETAILED" />
-            <setting name="gwtSdkUrl" value="file://$USER_HOME$/google/gwt-2.2.0" />
+            <setting name="gwtSdkUrl" value="file://$PROJECT_DIR$/lib/gwt-2.4.0" />
           </configuration>
         </default-facet-configuration>
       </entry>
@@ -238,10 +261,11 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
+<<<<<<< .merge_file_ylNcbp
     <configuration default="false" name="InstrumentTest" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -257,6 +281,26 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="" />
+=======
+    <configuration default="false" name="gwt" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+      <module name="netnumeri" />
+      <option name="RUN_PAGE" value="MySampleApplication.html" />
+      <option name="BROWSER" value="Chrome" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in netnumeri" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="netnumeri" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+>>>>>>> .merge_file_TQCAvm
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
@@ -267,6 +311,7 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Cover" />
+<<<<<<< .merge_file_ylNcbp
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="43377" />
         <option name="TRANSPORT" value="0" />
@@ -279,6 +324,12 @@
       <method>
         <option name="Make" enabled="false" />
       </method>
+=======
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Cover" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+>>>>>>> .merge_file_TQCAvm
     </configuration>
   </component>
   <component name="SuppressionsComponent">
@@ -293,6 +344,7 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+<<<<<<< .merge_file_ylNcbp
     <library name="appengine">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/geronimo-jta_1.1_spec-1.1.1.jar!/" />
@@ -336,13 +388,18 @@
       <SOURCES />
     </library>
     <library name="gwt">
+=======
+    <library name="gwt-user">
+>>>>>>> .merge_file_TQCAvm
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/gwt-2.4.0" />
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/gwt-2.4.0" recursive="false" />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
+      </SOURCES>
     </library>
+<<<<<<< .merge_file_ylNcbp
     <library name="gwt-user">
       <CLASSES>
         <root url="jar://$USER_HOME$/tools/gwt-2.4.0/gwt-user.jar!/" />
@@ -353,20 +410,28 @@
       </SOURCES>
     </library>
     <library name="junit">
+=======
+    <library name="jmock-2.5">
+>>>>>>> .merge_file_TQCAvm
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" type="SOURCES" />
+    </library>
+    <library name="junit">
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/junit4.5" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" />
-    </library>
-    <library name="project-lib">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/project-lib" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/project-lib" recursive="false" />
     </library>
   </component>
 </project>

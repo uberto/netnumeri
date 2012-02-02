@@ -16,7 +16,14 @@
     </facet>
     <facet type="gwt" name="GWT">
       <configuration>
+<<<<<<< .merge_file_H7c93e
         <setting name="gwtSdkUrl" value="file://$USER_HOME$/tools/gwt-2.4.0" />
+=======
+        <setting name="compilerMaxHeapSize" value="128" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/lib/gwt-2.4.0" />
+        <setting name="webFacet" value="Web" />
+>>>>>>> .merge_file_iin03a
       </configuration>
     </facet>
   </component>
@@ -24,11 +31,11 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/out/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< .merge_file_H7c93e
     <orderEntry type="library" name="project-lib" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library>
@@ -44,6 +51,11 @@
     <orderEntry type="library" name="appengine" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
+=======
+    <orderEntry type="library" scope="TEST" name="junit" level="project" />
+    <orderEntry type="library" name="gwt-user" level="project" />
+    <orderEntry type="library" scope="TEST" name="jmock-2.5" level="project" />
+>>>>>>> .merge_file_iin03a
   </component>
 </module>
 
