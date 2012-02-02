@@ -458,7 +458,7 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetDimension() throws Exception {
 
-        assertTrue(timeSeries.getDimension()==0);
+        assertTrue(timeSeries.getDimension()==1);
     }
 
     @Test
