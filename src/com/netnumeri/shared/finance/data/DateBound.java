@@ -10,10 +10,10 @@ import java.io.Serializable;
 public abstract class DateBound extends SearchablePojo implements Serializable {
 
     private TDay lowerBoundTDay;
-    private TDay upperBoundDate;
+    private TDay upperBoundTDay;
 
     private TDay lowerRangeTDay;
-    private TDay upperRangeDate;
+    private TDay upperRangeTDay;
 
     private boolean rangeEnabled = false;
 
@@ -32,13 +32,12 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
     public void setRangeBounds(TDay lowerDate, TDay upperDate) {
         enableRange();
         lowerRangeTDay = lowerDate;
-        upperRangeDate = upperDate;
+        upperRangeTDay = upperDate;
     }
-
 
     public void setWindow(TDay lowerDate, TDay upperDate) {
         lowerBoundTDay = lowerDate;
-        upperBoundDate = upperDate;
+        upperBoundTDay = upperDate;
     }
 
     public TDay getLowerBoundDate() {
@@ -49,12 +48,12 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
         this.lowerBoundTDay = lowerBoundDate;
     }
 
-    public TDay getUpperBoundDate() {
-        return upperBoundDate;
+    public TDay getUpperBoundTDay() {
+        return upperBoundTDay;
     }
 
-    public void setUpperBoundDate(TDay upperBoundDate) {
-        this.upperBoundDate = upperBoundDate;
+    public void setUpperBoundTDay(TDay upperBoundTDay) {
+        this.upperBoundTDay = upperBoundTDay;
     }
 
     public TDay getLowerRangeDate() {
@@ -65,12 +64,12 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
         this.lowerRangeTDay = lowerRangeDate;
     }
 
-    public TDay getUpperRangeDate() {
-        return upperRangeDate;
+    public TDay getUpperRangeTDay() {
+        return upperRangeTDay;
     }
 
-    public void setUpperRangeDate(TDay upperRangeDate) {
-        this.upperRangeDate = upperRangeDate;
+    public void setUpperRangeTDay(TDay upperRangeTDay) {
+        this.upperRangeTDay = upperRangeTDay;
     }
 
 
@@ -78,16 +77,8 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
         return rangeEnabled;
     }
 
-    public void setRangeEnabled(boolean rangeEnabled) {
-        this.rangeEnabled = rangeEnabled;
-    }
-
-    public void setNDays(int NDays) {
-        enableRange();
-    }
-
     public boolean inBounds(TDay date) {
-        return date.isGreaterEqual(lowerBoundTDay) && date.isLessEqual(upperBoundDate);
+        return date.isGreaterEqual(lowerBoundTDay) && date.isLessEqual(upperBoundTDay);
     }
 
     public TDay getFirstDate() {
@@ -100,11 +91,14 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
     }
 
     public TDay getLastDate() {
-        if (upperBoundDate == null) return null;
+        if (upperBoundTDay == null) return null;
         if (isRangeEnabled()) {
-            return DateUtils.min(getUpperRangeDate(), upperBoundDate);
+            TDay min = DateUtils.min(getUpperRangeTDay(), upperBoundTDay);
+            System.out.println("min = " + min);
+            return min;
         } else {
-            return this.upperBoundDate;
+            System.out.println("upperBoundTDay = " + upperBoundTDay);
+            return upperBoundTDay;
         }
     }
 }

@@ -117,7 +117,7 @@ public class TimeSeries extends DateBound {
     }
 
     public int getUpperBoundIndex() {
-        return getIndex(getUpperBoundDate());
+        return getIndex(getUpperBoundTDay());
     }
 
     public double getStdDev(int FirstIndex, int LastIndex, int Row) {
@@ -647,9 +647,9 @@ public class TimeSeries extends DateBound {
             }
             setLowerBoundDate(date);
             setLowerRangeDate(date);
-            setUpperRangeDate(date);
+            setUpperRangeTDay(date);
             TDay upperDate = getDate(size - 1);
-            setUpperBoundDate(upperDate);
+            setUpperBoundTDay(upperDate);
         }
 
         // Expand left
@@ -685,13 +685,13 @@ public class TimeSeries extends DateBound {
             setLowerRangeDate(date);
         }
 
-        if (date.isGreater(getUpperBoundDate())) {
+        if (date.isGreater(getUpperBoundTDay())) {
 
-            System.out.println("date " + date + " is after upper bound = " + getUpperBoundDate());
+            System.out.println("date " + date + " is after upper bound = " + getUpperBoundTDay());
 
             printWindow();
 
-            TDay dt = getUpperBoundDate();
+            TDay dt = getUpperBoundTDay();
             long addSize = Math.max(expansion, DateUtils.diffDays(date, dt));
 
             long newSize = size + addSize;
@@ -716,8 +716,8 @@ public class TimeSeries extends DateBound {
             dimension = newNRows;
             TDay upperDate = getDate((int) (newSize - 1));
 
-            setUpperBoundDate(upperDate);
-            setUpperRangeDate(date);
+            setUpperBoundTDay(upperDate);
+            setUpperRangeTDay(date);
         }
 
         // New Rowension
@@ -738,7 +738,7 @@ public class TimeSeries extends DateBound {
             dimension = NewNRows;
         }
 
-        if (date.isGreater(getUpperRangeDate())) setUpperRangeDate(date);
+        if (date.isGreater(getUpperRangeTDay())) setUpperRangeTDay(date);
         if (date.isLess(getLowerRangeDate())) setLowerRangeDate(date);
 
         int Index = getIndex(date);
@@ -757,7 +757,7 @@ public class TimeSeries extends DateBound {
         System.out.println("------------ window ------------------------------------------");
         System.out.println("getLowerBoundDate() = " + getLowerBoundDate().toString());
         System.out.println("getLowerBoundIndex() = " + getLowerBoundIndex());
-        System.out.println("getUpperBoundDate() = " + getUpperBoundDate().toString());
+        System.out.println("getUpperBoundTDay() = " + getUpperBoundTDay().toString());
         System.out.println("getUpperBoundIndex() = " + getUpperBoundIndex());
         System.out.println("--------------------------------------------------------------");
 
@@ -1545,7 +1545,7 @@ public class TimeSeries extends DateBound {
         double Mean2 = series.getMean();
 
         TDay firstCalendarDate = DateUtils.max(getLowerBoundDate(), series.getLowerBoundDate());
-        TDay lastCalendarDate = DateUtils.min(getUpperBoundDate(), series.getUpperBoundDate());
+        TDay lastCalendarDate = DateUtils.min(getUpperBoundTDay(), series.getUpperBoundTDay());
 
         correlationPairs = 0;
         double Covariance = 0;
@@ -1821,9 +1821,9 @@ public class TimeSeries extends DateBound {
             for (int i = 0; i < size; i++) timeSeries.data.set(rowCount, i, data.get(rowCount, i));
         timeSeries.frequency = this.frequency;
         timeSeries.setLowerBoundDate(this.getLowerBoundDate());
-        timeSeries.setUpperBoundDate(this.getUpperBoundDate());
+        timeSeries.setUpperBoundTDay(this.getUpperBoundTDay());
         timeSeries.setLowerRangeDate(this.getLowerRangeDate());
-        timeSeries.setUpperRangeDate(this.getUpperRangeDate());
+        timeSeries.setUpperRangeTDay(this.getUpperRangeTDay());
         timeSeries.initialSize = this.initialSize;
         timeSeries.expansion = this.expansion;
         timeSeries.dimension = this.dimension;

@@ -243,11 +243,11 @@ public class Portfolio extends Asset implements FinConstants {
         }
 
         if (instrument instanceof Asset) {
-            if (instrument.getLowerBoundDate() != null && instrument.getUpperBoundDate() != null) {
-                instrument.setRangeBounds(instrument.getLowerBoundDate(), instrument.getUpperBoundDate());
+            if (instrument.getLowerBoundDate() != null && instrument.getUpperBoundTDay() != null) {
+                instrument.setRangeBounds(instrument.getLowerBoundDate(), instrument.getUpperBoundTDay());
             }
-            this.setWindow(instrument.getLowerBoundDate(), instrument.getUpperBoundDate());
-            this.setRangeBounds(instrument.getLowerBoundDate(), instrument.getUpperBoundDate());
+            this.setWindow(instrument.getLowerBoundDate(), instrument.getUpperBoundTDay());
+            this.setRangeBounds(instrument.getLowerBoundDate(), instrument.getUpperBoundTDay());
         }
         items.add(entry);
     }

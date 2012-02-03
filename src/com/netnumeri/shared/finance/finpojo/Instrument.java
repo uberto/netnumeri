@@ -248,13 +248,13 @@ public abstract class Instrument extends DateBound implements Serializable {
                 daily.getHigh(), daily.getLow(), daily.getOpenprice(), daily.getCloseprice(), daily.getVolume(),
                 daily.getOpenInterest(), FinConstants.VALID);
         setLowerBoundDate(DateUtils.min(daily.getDailydate(), getLowerBoundDate()));
-        setUpperBoundDate(DateUtils.max(daily.getDailydate(), getUpperBoundDate()));
+        setUpperBoundTDay(DateUtils.max(daily.getDailydate(), getUpperBoundTDay()));
     }
 
     public void addDaily(int index, TDay date, double high, double low, double open, double close, int volume, int openInterest, int option) {
         add(this, index, date, high, low, open, close, volume, openInterest, option);
         setLowerBoundDate(DateUtils.min(date, getLowerBoundDate()));
-        setUpperBoundDate(DateUtils.max(date, getUpperBoundDate()));
+        setUpperBoundTDay(DateUtils.max(date, getUpperBoundTDay()));
     }
 
 

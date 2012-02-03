@@ -643,7 +643,7 @@ public class Indicator extends TimeSeries {
     }
 
     private void copyBackwords(double[] ad) {
-        TDay date = series.getUpperRangeDate();
+        TDay date = series.getUpperRangeTDay();
         for (int i = 0; i < ad.length; i++) {
             double value = ad[ad.length - i - 1];
             add(date, value);
