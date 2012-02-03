@@ -1,4 +1,4 @@
-package com.netnumeri.shared.entity;
+package com.netnumeri.shared.field;
 
 public class StringEntityField extends ValuesEntityField<String> {
     private int maxLen = -1;
@@ -7,8 +7,8 @@ public class StringEntityField extends ValuesEntityField<String> {
     }
 
     public StringEntityField(int maxLen, FieldName name) {
+        super(name);
         this.maxLen = maxLen;
-        this.fieldName = name;
     }
 
     public int getMaxLen() {

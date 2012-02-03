@@ -1,14 +1,15 @@
 package com.netnumeri.shared.entity;
 
-import com.google.gwt.user.client.rpc.IsSerializable;
+import com.netnumeri.shared.field.*;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-public class Option implements Entity, IsSerializable {
+public class Option implements Entity {
 
-    private enum Field implements FieldName {
+     enum Field implements FieldName {
         bourse, name, underlying, type, strike, expiry;
 
         @Override
@@ -19,21 +20,21 @@ public class Option implements Entity, IsSerializable {
 
     //TODO put the field class inside the enum
 
-    final StringEntityField NAME = new StringEntityField(22, Field.name);
-    final StringEntityField UNDERLYING = new StringEntityField(5, Field.underlying);
-    final EnumEntityField<OptionType> TYPE = new EnumEntityField<OptionType>(Field.type);
-    final BigDecimalEntityField STRIKE = new BigDecimalEntityField(Field.strike);
-    final DateEntityField EXPIRY = new DateEntityField(Field.expiry);
-    final StringEntityField BOURSE = new StringEntityField(20, Field.bourse);
+
+    StringEntityField NAME = new StringEntityField(22, Field.name);
+      StringEntityField UNDERLYING = new StringEntityField(5, Field.underlying);
+     EnumEntityField<OptionType> TYPE = new EnumEntityField<OptionType>(Field.type);
+     DoubleEntityField STRIKE = new DoubleEntityField(Field.strike);
+     DateEntityField EXPIRY = new DateEntityField(Field.expiry);
+     StringEntityField BOURSE = new StringEntityField(20, Field.bourse);
 
     public Option(String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
-
 
         BOURSE.setValue("NasdaqGS");
         NAME.setValue(optionName);
         UNDERLYING.setValue(stockTicket);
         TYPE.setValue(type);
-        STRIKE.setValue(new BigDecimal(strike, MathContext.DECIMAL64));
+        STRIKE.setValue(strike);
         EXPIRY.setValue(expiry);
 
     }
@@ -53,7 +54,7 @@ public class Option implements Entity, IsSerializable {
         return (OptionType) TYPE.get();
     }
 
-    public BigDecimal getStrike() {
+    public Double getStrike() {
         return STRIKE.get();
     }
 

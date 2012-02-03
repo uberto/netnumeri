@@ -15,14 +15,14 @@ import java.util.List;
 
 public class OptionListPresenter extends PresenterWithView<OptionListView> {
 
-    private GetOptionServiceAsync bugListService;
+    private GetOptionServiceAsync getListService;
     private MyAsyncCallback asyncCallback;
     private MySampleApplicationServiceAsync messageService;
 
 
     public OptionListPresenter(OptionListView view, GetOptionServiceAsync serv, MySampleApplicationServiceAsync messageService) {
         super(view);
-        bugListService = serv;
+        getListService = serv;
         this.messageService = messageService;
 
         asyncCallback = new MyAsyncCallback(view);
@@ -36,7 +36,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     @Override
     public void activate(RestUrl url) {
 
-        bugListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
+        getListService.getEntities("", new AsyncCallback<GetEntitiesResponse<Option>>() {
 
             @Override
             public void onFailure(Throwable caught) {

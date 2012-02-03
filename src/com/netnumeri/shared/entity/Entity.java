@@ -1,5 +1,7 @@
 package com.netnumeri.shared.entity;
 
+import com.netnumeri.shared.field.EntityField;
+
 import java.io.Serializable;
 import java.util.Set;
 

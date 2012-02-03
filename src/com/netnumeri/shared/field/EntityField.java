@@ -1,4 +1,4 @@
-package com.netnumeri.shared.entity;
+package com.netnumeri.shared.field;
 
 import java.io.Serializable;
 

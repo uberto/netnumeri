@@ -2,12 +2,11 @@ package com.netnumeri.shared.entity;
 
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.Date;
 
 import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 
 public class OptionTest {
@@ -19,7 +18,7 @@ public class OptionTest {
         assertThat(option.getOptionName(), is("name"));
         assertThat(option.getStockTicket(), is("ticket"));
         assertThat(option.getDateDue(), is(new Date(123)));
-        assertThat(option.getStrike(), is(new BigDecimal(1.1, MathContext.DECIMAL64)));
+        assertThat(option.getStrike(), is(1.1));
         assertThat(option.getType(), is(OptionType.PUT));
     }
 
@@ -36,6 +35,18 @@ public class OptionTest {
 //        assertThat((String) entity.get(Option.UNDERLYING).getValue(), is("ticket"));
 
     }
+
+    @Test
+    public void checkEquals() throws Exception {
+        Option option = new Option("name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionDiff = new Option("name2", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionEqual = new Option("name", "ticket", OptionType.PUT, 1.1, new Date(123));
+
+        assertThat(option, is(optionEqual));
+        assertThat(option, not(optionDiff));
+
+    }
+
 
 
 

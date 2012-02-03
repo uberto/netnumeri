@@ -36,6 +36,7 @@ public class OptionListViewFlexTable extends ViewAbstractWrapper implements Opti
 
     @Override
     public void addOption(Option option) {
+
         flexTable.addRow(option.getOptionName(), option.getStockTicket(), option.getType().toString(), option.getDateDue().toString(), option.getStrike().toString());
 
     }

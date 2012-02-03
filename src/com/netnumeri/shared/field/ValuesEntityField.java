@@ -1,8 +1,16 @@
-package com.netnumeri.shared.entity;
+package com.netnumeri.shared.field;
 
 public class ValuesEntityField<T> implements EntityField<T> {
+
     private T value;
     protected FieldName fieldName;
+
+    public ValuesEntityField(FieldName fieldName) {
+       this.fieldName = fieldName;
+    }
+
+    public ValuesEntityField() {
+    }
 
     public void setValue(T value) {
         this.value = value;
@@ -20,7 +28,7 @@ public class ValuesEntityField<T> implements EntityField<T> {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + ":'" + value + "'";
+        return "{" + fieldName + ":" + value + '}';
     }
 
     @Override

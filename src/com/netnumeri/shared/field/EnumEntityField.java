@@ -1,11 +1,13 @@
-package com.netnumeri.shared.entity;
+package com.netnumeri.shared.field;
 
 public class EnumEntityField<T extends Enum<T>> extends ValuesEntityField<Enum<T>> {
-    
+
+    public EnumEntityField() {
+    }
 
     public EnumEntityField(FieldName fieldName) {
 
-        this.fieldName = fieldName;
+        super(fieldName);
     }
 
 }
