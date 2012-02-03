@@ -15,8 +15,6 @@
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
-<<<<<<< .merge_file_ylNcbp
-=======
   <component name="ArtifactManager">
     <artifact type="exploded-war" name="netnumeri:Web exploded">
       <output-path>$PROJECT_DIR$/out/artifacts/netnumeri_Web_exploded</output-path>
@@ -37,7 +35,6 @@
       </root>
     </artifact>
   </component>
->>>>>>> .merge_file_TQCAvm
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -80,9 +77,7 @@
     <option name="autoShowErrorsInEditorAfterCompile" value="true" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <type id="google-app-engine" />
-    <type id="jpa" />
-    <type id="web" />
+    <file type="web" url="file://$PROJECT_DIR$/tomcat/conf/web.xml" />
   </component>
   <component name="IdProvider" IDEtalkID="E82C5E113F30DEB49663A3C3621D160C" />
   <component name="InspectionProjectProfileManager">
@@ -91,11 +86,6 @@
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
         <inspection_tool class="NonJREEmulationClassesInClientCode" enabled="true" level="WARNING" enabled_by_default="true" />
-        <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
-          <option name="processCode" value="true" />
-          <option name="processLiterals" value="true" />
-          <option name="processComments" value="true" />
-        </inspection_tool>
       </profile>
     </profiles>
     <option name="PROJECT_PROFILE" value="Project Default" />
@@ -265,23 +255,6 @@
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectRunConfigurationManager">
-<<<<<<< .merge_file_ylNcbp
-    <configuration default="false" name="InstrumentTest" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.netnumeri.shared.finance.finpojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="netnumeri" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="com.netnumeri.shared.finance.finpojo" />
-      <option name="MAIN_CLASS_NAME" value="com.netnumeri.shared.finance.finpojo.InstrumentTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="" />
-=======
     <configuration default="false" name="gwt" type="GWT.ConfigurationType" factoryName="GWT Configuration">
       <module name="netnumeri" />
       <option name="RUN_PAGE" value="MySampleApplication.html" />
@@ -300,7 +273,6 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
->>>>>>> .merge_file_TQCAvm
       <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
@@ -311,25 +283,10 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Cover" />
-<<<<<<< .merge_file_ylNcbp
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="43377" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Cover" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="Make" enabled="false" />
-      </method>
-=======
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
->>>>>>> .merge_file_TQCAvm
     </configuration>
   </component>
   <component name="SuppressionsComponent">
@@ -344,53 +301,7 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-<<<<<<< .merge_file_ylNcbp
-    <library name="appengine">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/geronimo-jta_1.1_spec-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-core-1.1.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jakarta-standard-1.1.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jakarta-jstl-1.1.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/jdo2-api-2.3-eb.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-jpa-1.1.5.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/asm-3.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/datanucleus-enhancer-1.1.4.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/agent/appengine-agentruntime.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/orm/geronimo-jpa_3.0_spec-1.1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api-stubs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-local-runtime.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/google_sql.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/appengine-remote-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/appengine-tools-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/impl/appengine-api-labs.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-api-labs-1.6.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/override/appengine-dev-jdk-overrides.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-api-1.0-sdk-1.6.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-jasper-el-6.0.29.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/jsr107cache-1.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-jasper-6.0.29.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/appengine-jsr107cache-1.6.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-tomcat-juli-6.0.29.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-ant-launcher-1.7.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/el-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp/repackaged-appengine-ant-1.7.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/appengine-local-runtime-shared.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/servlet-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/agent/appengine-agent.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/shared/jsp-api.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/agent/appengine-agentimpl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/user/orm/datanucleus-appengine-1.0.10.final.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/testing/appengine-testing.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/appengine-java-sdk-1.6.0/lib/tools/jsp/repackaged-appengine-jasper-jdt-6.0.29.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="gwt">
-=======
     <library name="gwt-user">
->>>>>>> .merge_file_TQCAvm
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </CLASSES>
@@ -399,20 +310,7 @@
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </SOURCES>
     </library>
-<<<<<<< .merge_file_ylNcbp
-    <library name="gwt-user">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/tools/gwt-2.4.0/gwt-user.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/tools/gwt-2.4.0/gwt-user.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="junit">
-=======
     <library name="jmock-2.5">
->>>>>>> .merge_file_TQCAvm
       <CLASSES>
         <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
         <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
