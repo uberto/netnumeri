@@ -75,7 +75,6 @@ public class PortfolioTest extends TestCase {
         int nDaily = instrument.getNDaily();
         assertEquals(nDaily, 427);
 
-
     }
 
     @Test
