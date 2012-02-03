@@ -2,59 +2,63 @@ package com.netnumeri.shared.entity;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.*;
 
 public class Option implements Entity, IsSerializable {
 
-    String optionName;
-    String stockTicket;
-    OptionType type;
-    Double strike;
-    Date dateDue;
+    private enum Field implements FieldName {
+        bourse, name, underlying, type, strike, expiry;
+
+        @Override
+        public String getFieldName() {
+            return name();
+        }
+    }
+
+    //TODO put the field class inside the enum
+
+    final StringEntityField NAME = new StringEntityField(22, Field.name);
+    final StringEntityField UNDERLYING = new StringEntityField(5, Field.underlying);
+    final EnumEntityField<OptionType> TYPE = new EnumEntityField<OptionType>(Field.type);
+    final BigDecimalEntityField STRIKE = new BigDecimalEntityField(Field.strike);
+    final DateEntityField EXPIRY = new DateEntityField(Field.expiry);
+    final StringEntityField BOURSE = new StringEntityField(20, Field.bourse);
+
+    public Option(String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
 
 
-    private EntityValue<String> value;// needed only to the serialized whitelist
+        BOURSE.setValue("NasdaqGS");
+        NAME.setValue(optionName);
+        UNDERLYING.setValue(stockTicket);
+        TYPE.setValue(type);
+        STRIKE.setValue(new BigDecimal(strike, MathContext.DECIMAL64));
+        EXPIRY.setValue(expiry);
 
-
-    private Map<EntityField, EntityValue> values = new HashMap<EntityField, EntityValue>();
-
-
-    static final StringEntityField NAME = new StringEntityField(22, "name");
-    static final StringEntityField STOCK_TICKET = new StringEntityField(5, "stock");
-
-    public Option(String optionName, String stockTicket, OptionType type, Double strike, Date dateDue) {
-        this.optionName = optionName;
-        this.stockTicket = stockTicket;
-        this.type = type;
-        this.strike = strike;
-        this.dateDue = dateDue;
-//
-        values.put(NAME, new EntityValue( optionName));
-        values.put(STOCK_TICKET, new EntityValue( stockTicket));
-//
-  }
+    }
 
     private Option() {
     }
 
     public String getOptionName() {
-        return optionName;
+        return NAME.get();
     }
 
     public String getStockTicket() {
-        return stockTicket;
+        return UNDERLYING.get();
     }
 
     public OptionType getType() {
-        return type;
+        return (OptionType) TYPE.get();
     }
 
-    public Double getStrike() {
-        return strike;
+    public BigDecimal getStrike() {
+        return STRIKE.get();
     }
 
     public Date getDateDue() {
-        return dateDue;
+        return EXPIRY.get();
     }
 
     @Override
@@ -64,33 +68,36 @@ public class Option implements Entity, IsSerializable {
 
         Option option = (Option) o;
 
-        if (dateDue != null ? !dateDue.equals(option.dateDue) : option.dateDue != null) return false;
-        if (optionName != null ? !optionName.equals(option.optionName) : option.optionName != null) return false;
-        if (stockTicket != null ? !stockTicket.equals(option.stockTicket) : option.stockTicket != null) return false;
-        if (strike != null ? !strike.equals(option.strike) : option.strike != null) return false;
-        if (type != option.type) return false;
+        if (BOURSE != null ? !BOURSE.equals(option.BOURSE) : option.BOURSE != null) return false;
+        if (EXPIRY != null ? !EXPIRY.equals(option.EXPIRY) : option.EXPIRY != null) return false;
+        if (NAME != null ? !NAME.equals(option.NAME) : option.NAME != null) return false;
+        if (STRIKE != null ? !STRIKE.equals(option.STRIKE) : option.STRIKE != null) return false;
+        if (TYPE != null ? !TYPE.equals(option.TYPE) : option.TYPE != null) return false;
+        if (UNDERLYING != null ? !UNDERLYING.equals(option.UNDERLYING) : option.UNDERLYING != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = optionName != null ? optionName.hashCode() : 0;
-        result = 31 * result + (stockTicket != null ? stockTicket.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (strike != null ? strike.hashCode() : 0);
-        result = 31 * result + (dateDue != null ? dateDue.hashCode() : 0);
+        int result = NAME != null ? NAME.hashCode() : 0;
+        result = 31 * result + (UNDERLYING != null ? UNDERLYING.hashCode() : 0);
+        result = 31 * result + (TYPE != null ? TYPE.hashCode() : 0);
+        result = 31 * result + (STRIKE != null ? STRIKE.hashCode() : 0);
+        result = 31 * result + (EXPIRY != null ? EXPIRY.hashCode() : 0);
+        result = 31 * result + (BOURSE != null ? BOURSE.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Option{" +
-                "optionName='" + optionName + '\'' +
-                ", stockTicket='" + stockTicket + '\'' +
-                ", type=" + type +
-                ", strike=" + strike +
-                ", dateDue=" + dateDue +
+                "NAME=" + NAME +
+                ", UNDERLYING=" + UNDERLYING +
+                ", TYPE=" + TYPE +
+                ", STRIKE=" + STRIKE +
+                ", EXPIRY=" + EXPIRY +
+                ", BOURSE=" + BOURSE +
                 '}';
     }
 
@@ -101,12 +108,8 @@ public class Option implements Entity, IsSerializable {
 
     @Override
     public Set<EntityField<?>> getFields() {
-        return new HashSet(Arrays.asList(NAME, STOCK_TICKET));
+        return new HashSet(Arrays.asList(NAME, UNDERLYING, BOURSE, TYPE, STRIKE, EXPIRY));
     }
 
-    @Override
-    public EntityValue get(EntityField field) {
-        return values.get(field);
-    }
 
 }

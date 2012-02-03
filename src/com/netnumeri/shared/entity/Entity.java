@@ -9,5 +9,4 @@ public interface Entity extends Serializable {
 
     Set<EntityField<?>> getFields();
 
-    EntityValue<?> get(EntityField field);
 }

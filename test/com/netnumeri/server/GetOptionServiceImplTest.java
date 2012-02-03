@@ -47,6 +47,7 @@ public class GetOptionServiceImplTest {
 
         GetEntitiesResponse<Option> res = serv.getEntities("");
 
+        assertThat(res.toString(), is(expectedRes.toString()));
         assertThat(res, is(expectedRes));
 
     }

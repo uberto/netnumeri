@@ -1,31 +1,17 @@
 package com.netnumeri.shared.entity;
 
-import java.util.Map;
-
-public class StringEntityField implements EntityField<String> {
-    private Map<EntityField<?>, EntityValue<?>> values;
+public class StringEntityField extends ValuesEntityField<String> {
     private int maxLen = -1;
-    private String name;
 
     private StringEntityField() {
     }
 
-    public StringEntityField(int maxLen, String name) {
+    public StringEntityField(int maxLen, FieldName name) {
         this.maxLen = maxLen;
-        this.name = name;
+        this.fieldName = name;
     }
 
-    public void setValues(Map <EntityField<?>, EntityValue<?>> values) {
-        this.values = values;
-    }
-
-    @Override
-    public String get() {
-        return values.get(this ).toString();
-    }
-
-    @Override
-    public String getName() {
-        return name;
+    public int getMaxLen() {
+        return maxLen;
     }
 }

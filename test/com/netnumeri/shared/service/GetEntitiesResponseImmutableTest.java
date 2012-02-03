@@ -17,6 +17,6 @@ public class GetEntitiesResponseImmutableTest {
         list.add(new Option("name", "ticket", OptionType.PUT, 1.1, new Date(123)));
 
         GetEntitiesResponseImmutable<Option> resp = new GetEntitiesResponseImmutable<Option>(list);
-        assertThat(resp.toString(), is("GetEntitiesResponse{Option{optionName='name', stockTicket='ticket', type=PUT, strike=1.1, dateDue=Thu Jan 01 01:00:00 GMT 1970}}"));
+        assertThat(resp.toString(), is("GetEntitiesResponse{Option{NAME=StringEntityField:'name', UNDERLYING=StringEntityField:'ticket', TYPE=EnumEntityField:'PUT', STRIKE=BigDecimalEntityField:'1.100000000000000', EXPIRY=DateEntityField:'Thu Jan 01 01:00:00 GMT 1970', BOURSE=StringEntityField:'NasdaqGS'}}"));
     }
 }
