@@ -6,9 +6,13 @@ public class StringEntityField extends ValuesEntityField<String> {
     private StringEntityField() {
     }
 
-    public StringEntityField(int maxLen, FieldName name) {
+    public StringEntityField(FieldName name) {
         super(name);
-        this.maxLen = maxLen;
+    }
+
+    public StringEntityField(FieldName name, FieldAttributes fieldAttributes) {
+       super(name);
+        maxLen = fieldAttributes.getMaxLenght();
     }
 
     public int getMaxLen() {

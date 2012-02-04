@@ -11,4 +11,5 @@ public interface Entity extends Serializable {
 
     Set<EntityField<?>> getFields();
 
+    EntityField<?> mapField(Option.Field field);
 }

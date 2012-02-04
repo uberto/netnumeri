@@ -2,40 +2,53 @@ package com.netnumeri.shared.entity;
 
 import com.netnumeri.shared.field.*;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Option implements Entity {
 
-     enum Field implements FieldName {
+    private Map<Field, EntityField<?>> fieldMap = new HashMap<Field, EntityField<?>>();
+
+    enum Field implements FieldName {
         bourse, name, underlying, type, strike, expiry;
 
-        @Override
-        public String getFieldName() {
-            return name();
-        }
+//        private FieldAttributes fieldAttributes;
+//
+//        Field(FieldAttributes fieldAttributes) {
+//            this.fieldAttributes = fieldAttributes;
+//        }
+//
+//        Field() {
+//            this.fieldAttributes = new FieldAttributes("", 0);
+//        }
+//
+//        @Override
+//        public FieldAttributes getFieldAttributes() {
+//            return fieldAttributes;
+//        }
     }
 
-    //TODO put the field class inside the enum
-
-
-    StringEntityField NAME = new StringEntityField(22, Field.name);
-      StringEntityField UNDERLYING = new StringEntityField(5, Field.underlying);
-     EnumEntityField<OptionType> TYPE = new EnumEntityField<OptionType>(Field.type);
-     DoubleEntityField STRIKE = new DoubleEntityField(Field.strike);
-     DateEntityField EXPIRY = new DateEntityField(Field.expiry);
-     StringEntityField BOURSE = new StringEntityField(20, Field.bourse);
+    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
+    StringEntityField underlying = new StringEntityField(Field.underlying);
+    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
+    DoubleEntityField strike = new DoubleEntityField(Field.strike);
+    DateEntityField expiry = new DateEntityField(Field.expiry);
+    StringEntityField bourse = new StringEntityField(Field.bourse);
 
     public Option(String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
 
-        BOURSE.setValue("NasdaqGS");
-        NAME.setValue(optionName);
-        UNDERLYING.setValue(stockTicket);
-        TYPE.setValue(type);
-        STRIKE.setValue(strike);
-        EXPIRY.setValue(expiry);
+        this.bourse.setValue("NasdaqGS");
+        this.name.setValue(optionName);
+        this.underlying.setValue(stockTicket);
+        this.type.setValue(type);
+        this.strike.setValue(strike);
+        this.expiry.setValue(expiry);
+
+        fieldMap.put(Field.bourse, bourse);
+        fieldMap.put(Field.name, name);
+        fieldMap.put(Field.underlying, underlying);
+        fieldMap.put(Field.type, this.type);
+        fieldMap.put(Field.strike, this.strike);
+        fieldMap.put(Field.expiry, this.expiry);
 
     }
 
@@ -43,23 +56,23 @@ public class Option implements Entity {
     }
 
     public String getOptionName() {
-        return NAME.get();
+        return name.get();
     }
 
     public String getStockTicket() {
-        return UNDERLYING.get();
+        return underlying.get();
     }
 
     public OptionType getType() {
-        return (OptionType) TYPE.get();
+        return (OptionType) type.get();
     }
 
     public Double getStrike() {
-        return STRIKE.get();
+        return strike.get();
     }
 
     public Date getDateDue() {
-        return EXPIRY.get();
+        return expiry.get();
     }
 
     @Override
@@ -69,36 +82,36 @@ public class Option implements Entity {
 
         Option option = (Option) o;
 
-        if (BOURSE != null ? !BOURSE.equals(option.BOURSE) : option.BOURSE != null) return false;
-        if (EXPIRY != null ? !EXPIRY.equals(option.EXPIRY) : option.EXPIRY != null) return false;
-        if (NAME != null ? !NAME.equals(option.NAME) : option.NAME != null) return false;
-        if (STRIKE != null ? !STRIKE.equals(option.STRIKE) : option.STRIKE != null) return false;
-        if (TYPE != null ? !TYPE.equals(option.TYPE) : option.TYPE != null) return false;
-        if (UNDERLYING != null ? !UNDERLYING.equals(option.UNDERLYING) : option.UNDERLYING != null) return false;
+        if (bourse != null ? !bourse.equals(option.bourse) : option.bourse != null) return false;
+        if (expiry != null ? !expiry.equals(option.expiry) : option.expiry != null) return false;
+        if (name != null ? !name.equals(option.name) : option.name != null) return false;
+        if (strike != null ? !strike.equals(option.strike) : option.strike != null) return false;
+        if (type != null ? !type.equals(option.type) : option.type != null) return false;
+        if (underlying != null ? !underlying.equals(option.underlying) : option.underlying != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = NAME != null ? NAME.hashCode() : 0;
-        result = 31 * result + (UNDERLYING != null ? UNDERLYING.hashCode() : 0);
-        result = 31 * result + (TYPE != null ? TYPE.hashCode() : 0);
-        result = 31 * result + (STRIKE != null ? STRIKE.hashCode() : 0);
-        result = 31 * result + (EXPIRY != null ? EXPIRY.hashCode() : 0);
-        result = 31 * result + (BOURSE != null ? BOURSE.hashCode() : 0);
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (underlying != null ? underlying.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (strike != null ? strike.hashCode() : 0);
+        result = 31 * result + (expiry != null ? expiry.hashCode() : 0);
+        result = 31 * result + (bourse != null ? bourse.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "Option{" +
-                "NAME=" + NAME +
-                ", UNDERLYING=" + UNDERLYING +
-                ", TYPE=" + TYPE +
-                ", STRIKE=" + STRIKE +
-                ", EXPIRY=" + EXPIRY +
-                ", BOURSE=" + BOURSE +
+                "NAME=" + name +
+                ", UNDERLYING=" + underlying +
+                ", TYPE=" + type +
+                ", STRIKE=" + strike +
+                ", EXPIRY=" + expiry +
+                ", BOURSE=" + bourse +
                 '}';
     }
 
@@ -109,8 +122,13 @@ public class Option implements Entity {
 
     @Override
     public Set<EntityField<?>> getFields() {
-        return new HashSet(Arrays.asList(NAME, UNDERLYING, BOURSE, TYPE, STRIKE, EXPIRY));
-    }
 
+        return new HashSet(Arrays.asList(name, underlying, bourse, type, strike, expiry));
+    }
+    @Override
+    public EntityField<?> mapField(Field field) {
+
+        return fieldMap.get(field);
+    }
 
 }

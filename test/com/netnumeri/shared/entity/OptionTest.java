@@ -1,5 +1,7 @@
 package com.netnumeri.shared.entity;
 
+import com.netnumeri.shared.field.EntityField;
+import com.netnumeri.shared.field.StringEntityField;
 import org.junit.Test;
 
 import java.util.Date;
@@ -29,10 +31,11 @@ public class OptionTest {
         assertThat(entity.getFields().size(), is(6));
 //        assertThat(entity.getId(), is(new EntityId( "123")));
 
-        assertTrue(entity.getFields().contains(((Option) entity).NAME));
-//        assertTrue(entity.getFields().contains(entity.UNDERLYING));
-//        assertThat((String) entity.get(Option.NAME).getValue(), is("name"));
-//        assertThat((String) entity.get(Option.UNDERLYING).getValue(), is("ticket"));
+        assertTrue(entity.getFields().contains(((Option) entity).name));
+        assertTrue(entity.getFields().contains(((Option) entity).underlying));
+        assertThat((StringEntityField) entity.mapField(Option.Field.name), is(((Option) entity).name));
+        EntityField<Double> entityField = (EntityField<Double>) entity.mapField(Option.Field.strike);
+        assertThat(entityField.get(), is(1.1));
 
     }
 

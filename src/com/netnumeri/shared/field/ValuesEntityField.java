@@ -21,14 +21,18 @@ public class ValuesEntityField<T> implements EntityField<T> {
         return value;
     }
 
-    @Override
-    public String getName() {
-        return fieldName.getFieldName();
-    }
+//    @Override
+//    public String getName() {
+//        return fieldName.getFieldName();
+//    }
 
     @Override
     public String toString() {
-        return "{" + fieldName + ":" + value + '}';
+        return "{" + fieldName + ":" + valueToString() + '}';
+    }
+
+    protected String valueToString() {
+        return value.toString();
     }
 
     @Override
