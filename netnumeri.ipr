@@ -230,6 +230,13 @@
       </item>
     </group>
   </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="antonio">
+      <words>
+        <w>dailyarray</w>
+      </words>
+    </dictionary>
+  </component>
   <component name="ProjectFacetManager">
     <default-configurations>
       <entry facet-type="gwt">

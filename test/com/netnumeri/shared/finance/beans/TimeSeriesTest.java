@@ -144,17 +144,20 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetNextIndex() throws Exception {
 
-//        int lastIndex = timeSeries.getLastIndex();
-//        System.out.println("lastIndex = " + lastIndex);
-//
-//        lastIndex = timeSeries.getLastIndex();
-//
-//
-//
-//        int prevIndex = timeSeries.getPrevIndex(lastIndex);
-//        System.out.println("prevIndex = " + prevIndex);
-//
-//        assertEquals(timeSeries.getLastIndex(), timeSeries.getNextIndex(timeSeries.getPrevIndex(timeSeries.getLastIndex())));
+        int lastIndex = timeSeries.getLastIndex();
+        assertEquals(999, lastIndex);
+
+        double lastData = timeSeries.getLastData();
+        assertEquals(Double.NaN, lastData);
+
+        double lastValidData = timeSeries.getLastValidData();
+        assertEquals(16.11, lastValidData);
+
+        int lastValidIndex = timeSeries.getLastValidIndex();
+        assertEquals(616, lastValidIndex);
+
+        int result = timeSeries.getPrevIndex(lastValidIndex);
+        assertEquals(615, result);
 
     }
 

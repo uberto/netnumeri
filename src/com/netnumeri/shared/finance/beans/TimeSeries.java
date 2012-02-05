@@ -864,6 +864,10 @@ public class TimeSeries extends DateBound {
         return getLastValidData(0);
     }
 
+    public int getLastValidIndex() {
+        return getLastValidIndex(0);
+    }
+
     public double getLastValidData(int row) {
         if (!isValidRow(row)) throw new IllegalArgumentException("Illegal row number: " + row + " " + getName());
         int i = getLastIndex();
@@ -873,14 +877,21 @@ public class TimeSeries extends DateBound {
         return d;
     }
 
+    public int getLastValidIndex(int row) {
+        if (!isValidRow(row)) throw new IllegalArgumentException("Illegal row number: " + row + " " + getName());
+        int i = getLastIndex();
+        Double d = data.get(row, i);
+        while (d.isNaN() && i >= 0)
+            d = data.get(row, i--);
+        return i;
+    }
+
     public double getLastData() {
         return getLastData(0);
     }
 
     public double getLastData(int row) {
-        if (!isValidRow(row)) {
-            throw new IllegalArgumentException("Illegal row number: " + row + " " + getName());
-        }
+        if (!isValidRow(row)) throw new IllegalArgumentException("Illegal row number: " + row + " " + getName());
         return data.get(row, getLastIndex());
     }
 

@@ -1,14 +1,13 @@
 package com.netnumeri.shared.finance.data;
 
 
+import com.netnumeri.shared.entity.Entity;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
-import com.netnumeri.shared.pojoc.SearchablePojo;
 
-import java.io.Serializable;
+public abstract class DateBound implements Entity  {
 
-public abstract class DateBound extends SearchablePojo implements Serializable {
-
+    private String name;
     private TDay lowerBoundTDay;
     private TDay upperBoundTDay;
 
@@ -19,6 +18,30 @@ public abstract class DateBound extends SearchablePojo implements Serializable {
 
     public DateBound() {
         disableRange();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public TDay getLowerBoundTDay() {
+        return lowerBoundTDay;
+    }
+
+    public void setLowerBoundTDay(TDay lowerBoundTDay) {
+        this.lowerBoundTDay = lowerBoundTDay;
+    }
+
+    public TDay getLowerRangeTDay() {
+        return lowerRangeTDay;
+    }
+
+    public void setLowerRangeTDay(TDay lowerRangeTDay) {
+        this.lowerRangeTDay = lowerRangeTDay;
     }
 
     public void enableRange() {

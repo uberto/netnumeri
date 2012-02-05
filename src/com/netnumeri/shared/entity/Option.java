@@ -125,6 +125,7 @@ public class Option implements Entity {
 
         return new HashSet(Arrays.asList(name, underlying, bourse, type, strike, expiry));
     }
+
     @Override
     public EntityField<?> mapField(Field field) {
 

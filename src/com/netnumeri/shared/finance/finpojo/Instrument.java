@@ -55,7 +55,7 @@ public abstract class Instrument extends DateBound implements Serializable {
     }
 
     public Instrument(String name) {
-        fName.setValue(name);
+        setName(name);
         init();
     }
 
