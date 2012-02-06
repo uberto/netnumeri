@@ -1,6 +1,7 @@
 package com.netnumeri.shared.entity;
 
 import com.netnumeri.shared.field.EntityField;
+import com.netnumeri.shared.field.FieldName;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -11,5 +12,5 @@ public interface Entity extends Serializable {
 
     Set<EntityField<?>> getFields();
 
-    EntityField<?> mapField(Option.Field field);
+    EntityField<?> getField(FieldName fieldname);
 }

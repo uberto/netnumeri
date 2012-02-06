@@ -2,12 +2,17 @@ package com.netnumeri.shared.field;
 
 public class EnumEntityField<T extends Enum<T>> extends ValuesEntityField<Enum<T>> {
 
-    public EnumEntityField() {
+    private EnumEntityField() {
+        super();
     }
 
-    public EnumEntityField(FieldName fieldName) {
+    public EnumEntityField(FieldMap fieldMap, FieldName fieldName) {
 
-        super(fieldName);
+        super(fieldMap, fieldName);
     }
 
+    @Override
+    public T get() {
+        return (T) super.get();
+    }
 }

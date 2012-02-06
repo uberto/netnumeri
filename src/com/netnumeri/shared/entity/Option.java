@@ -6,53 +6,36 @@ import java.util.*;
 
 public class Option implements Entity {
 
-    private Map<Field, EntityField<?>> fieldMap = new HashMap<Field, EntityField<?>>();
+
 
     enum Field implements FieldName {
-        bourse, name, underlying, type, strike, expiry;
-
-//        private FieldAttributes fieldAttributes;
-//
-//        Field(FieldAttributes fieldAttributes) {
-//            this.fieldAttributes = fieldAttributes;
-//        }
-//
-//        Field() {
-//            this.fieldAttributes = new FieldAttributes("", 0);
-//        }
-//
-//        @Override
-//        public FieldAttributes getFieldAttributes() {
-//            return fieldAttributes;
-//        }
+        bourse, name, underlying, type, strike, expiry
     }
+    private FieldMap fieldMap = new FieldMap();
 
-    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
-    StringEntityField underlying = new StringEntityField(Field.underlying);
-    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
-    DoubleEntityField strike = new DoubleEntityField(Field.strike);
-    DateEntityField expiry = new DateEntityField(Field.expiry);
-    StringEntityField bourse = new StringEntityField(Field.bourse);
+    StringEntityField bourse= new StringEntityField(fieldMap, Field.bourse, 12);
+    StringEntityField name = new StringEntityField(fieldMap, Field.name, 30);
+    StringEntityField underlying= new StringEntityField(fieldMap, Field.underlying, 10);
+    EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
+    DoubleEntityField strike= new DoubleEntityField(fieldMap, Field.strike);
+    DateEntityField expiry  = new DateEntityField(fieldMap, Field.expiry);
 
-    public Option(String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
+    public Option(String bourse, String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
 
-        this.bourse.setValue("NasdaqGS");
+        this.bourse.setValue(bourse);
         this.name.setValue(optionName);
         this.underlying.setValue(stockTicket);
         this.type.setValue(type);
         this.strike.setValue(strike);
         this.expiry.setValue(expiry);
 
-        fieldMap.put(Field.bourse, bourse);
-        fieldMap.put(Field.name, name);
-        fieldMap.put(Field.underlying, underlying);
-        fieldMap.put(Field.type, this.type);
-        fieldMap.put(Field.strike, this.strike);
-        fieldMap.put(Field.expiry, this.expiry);
-
     }
 
     private Option() {
+    }
+
+    public String getBourse() {
+        return bourse.get();
     }
 
     public String getOptionName() {
@@ -64,7 +47,7 @@ public class Option implements Entity {
     }
 
     public OptionType getType() {
-        return (OptionType) type.get();
+        return type.get();
     }
 
     public Double getStrike() {
@@ -123,12 +106,11 @@ public class Option implements Entity {
     @Override
     public Set<EntityField<?>> getFields() {
 
-        return new HashSet(Arrays.asList(name, underlying, bourse, type, strike, expiry));
+        return new HashSet<EntityField<?>>(fieldMap.values());
     }
     @Override
-    public EntityField<?> mapField(Field field) {
-
-        return fieldMap.get(field);
+    public EntityField<?> getField(FieldName fieldname) {
+        return fieldMap.get(fieldname);
     }
 
 }
