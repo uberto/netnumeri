@@ -2,12 +2,16 @@ package com.netnumeri.shared.finance.data;
 
 
 import com.netnumeri.shared.entity.Entity;
+import com.netnumeri.shared.field.FieldAttributes;
+import com.netnumeri.shared.field.StringEntityField;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
+import com.netnumeri.shared.field.*;
 
-public abstract class DateBound implements Entity  {
+public abstract class DateBound  {
 
-    private String name;
+    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
+
     private TDay lowerBoundTDay;
     private TDay upperBoundTDay;
 

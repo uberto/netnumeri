@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class User extends Versionable implements Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 2019181020074975689L;
 
     private int lockCount;

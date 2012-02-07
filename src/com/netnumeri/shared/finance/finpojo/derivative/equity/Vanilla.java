@@ -1,19 +1,51 @@
 package com.netnumeri.shared.finance.finpojo.derivative.equity;
 
 
+import com.netnumeri.shared.entity.Entity;
+import com.netnumeri.shared.entity.EntityId;
+import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.entity.OptionType;
+import com.netnumeri.shared.field.*;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 import com.netnumeri.shared.finance.math.FinRecipes;
 import com.netnumeri.shared.finance.ta.FinMath;
-import com.netnumeri.shared.pojoc.SearchablePojo;
 
-public class Vanilla extends Derivative {
+import java.util.Set;
+
+public class Vanilla extends Derivative implements Entity {
     protected int direction;
     protected int optionType;
     private double dividend;
 
+
+    enum Field implements FieldName {
+        bourse, name, underlying, type, strike, expiry;
+
+//        private FieldAttributes fieldAttributes;
+//
+//        Field(FieldAttributes fieldAttributes) {
+//            this.fieldAttributes = fieldAttributes;
+//        }
+//
+//        Field() {
+//            this.fieldAttributes = new FieldAttributes("", 0);
+//        }
+//
+//        @Override
+//        public FieldAttributes getFieldAttributes() {
+//            return fieldAttributes;
+//        }
+    }
+
+    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
+    StringEntityField underlying = new StringEntityField(Field.underlying);
+    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
+    DoubleEntityField strike = new DoubleEntityField(Field.strike);
+    DateEntityField expiry = new DateEntityField(Field.expiry);
+    StringEntityField bourse = new StringEntityField(Field.bourse);
 
 //    private MonteCarlo monteCarlo;
 
@@ -145,9 +177,9 @@ public class Vanilla extends Derivative {
     public double getPayoff(double instrumentPrice, boolean withPremium) {
         double payoff = 0;
         if (direction == FinConstants.kCall) {
-            payoff = Math.max(0, instrumentPrice - strike);
+            payoff = Math.max(0, instrumentPrice - strike.get());
         } else {
-            payoff = Math.max(0, strike - instrumentPrice);
+            payoff = Math.max(0, strike.get() - instrumentPrice);
         }
         if (withPremium) {
             payoff -= premium;
@@ -381,12 +413,17 @@ public class Vanilla extends Derivative {
     }
 
     @Override
-    public String getKind() {
+    public EntityId getId() {
         return null;
     }
 
     @Override
-    public SearchablePojo clone() {
+    public Set<EntityField<?>> getFields() {
+        return null;
+    }
+
+    @Override
+    public EntityField<?> mapField(Vanilla.Field field) {
         return null;
     }
 }

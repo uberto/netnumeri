@@ -34,7 +34,7 @@ public class TimeSeries extends DateBound {
     }
 
     public TimeSeries(String name) {
-        fName.setValue(name);
+        setName(name);
         init();
     }
 

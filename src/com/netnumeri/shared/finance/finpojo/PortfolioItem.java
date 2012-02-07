@@ -8,7 +8,7 @@ import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 
 import java.io.Serializable;
 
-public class PortfolioItem extends Versionable implements Serializable, FinConstants {
+public class PortfolioItem implements Serializable, FinConstants {
 
     Portfolio portfolio;
 
