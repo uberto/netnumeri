@@ -10,8 +10,6 @@ import com.netnumeri.shared.field.*;
 
 public abstract class DateBound  {
 
-    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
-
     private TDay lowerBoundTDay;
     private TDay upperBoundTDay;
 
@@ -22,14 +20,6 @@ public abstract class DateBound  {
 
     public DateBound() {
         disableRange();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public TDay getLowerBoundTDay() {
