@@ -735,7 +735,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return volumeReturnSeries;
     }
 
-    
     public TimeSeries getVolumeLogReturnSeries() {
         //     if (volumeLogReturnSeriesChanged)
         {
@@ -764,8 +763,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return volumeLogReturnSeries;
     }
 
-
-    
     public double expectedReturn() {
         return getExpectedReturn(FinConstants.RETURN);
     }
@@ -784,7 +781,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return Return;
     }
 
-    
     public double variance() {
         return getVariance(FinConstants.RETURN);
     }
@@ -802,7 +798,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return Variance;
     }
 
-    
     public double standardDeviation() {
         return getStandardDeviation(FinConstants.RETURN);
     }
@@ -811,22 +806,18 @@ public abstract class Instrument extends DateBound implements Serializable {
         return Math.sqrt(getVariance(option));
     }
 
-    
     public double annualExpectedReturn() {
         return (Math.pow(expectedReturn(), 365) - 1);
     }
 
-    
     public double annualVariance() {
         return variance() * 365.0;
     }
 
-    
     public double annualStandardDeviation() {
         return standardDeviation() * Math.sqrt(365.0);
     }
 
-    
     public double getCovariance(Instrument instrument) {
         return getCovariance(instrument, FinConstants.RETURN);
     }
@@ -865,7 +856,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return returnSeries().getNCorrelationPairs(instrument.returnSeries());
     }
 
-    
     public boolean isDailyData() {
         return isDailyData(null);
     }
@@ -874,12 +864,10 @@ public abstract class Instrument extends DateBound implements Serializable {
         return dailyData(date);
     }
 
-    
     public TDay getFirstDay() {
         return firstDailyDate();
     }
 
-    
     public TDay getLastDay() {
         return lastDailyDate();
     }
