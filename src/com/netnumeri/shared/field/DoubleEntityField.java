@@ -2,11 +2,12 @@ package com.netnumeri.shared.field;
 
 public class DoubleEntityField extends ValuesEntityField<Double> {
 
-    private DoubleEntityField() {
+    protected DoubleEntityField() {
+        super();
     }
 
-    public DoubleEntityField(FieldName name) {
-        this.fieldName = name;
+    public DoubleEntityField(FieldMap fieldMap, FieldName name) {
+        super(fieldMap, name);
     }
 
 }

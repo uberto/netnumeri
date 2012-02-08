@@ -6,6 +6,9 @@ public class FieldAttributes implements Serializable {
     int maxLenght;
     String editMask;
 
+    public FieldAttributes() {
+    }
+
     public FieldAttributes(String editMask, int maxLenght) {
         this.editMask = editMask;
         this.maxLenght = maxLenght;

@@ -5,11 +5,12 @@ import java.util.Date;
 public class DateEntityField  extends ValuesEntityField<Date>  {
 
 
-    public DateEntityField() {
+    private DateEntityField() {
+        super();
     }
 
-    public DateEntityField(FieldName fieldName) {
-        super(fieldName);
+    public DateEntityField(FieldMap fieldMap, FieldName fieldName) {
+        super(fieldMap, fieldName);
     }
 
     @Override

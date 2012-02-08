@@ -1,21 +1,14 @@
 package com.netnumeri.shared.field;
 
 public class StringEntityField extends ValuesEntityField<String> {
-    private int maxLen = -1;
 
     private StringEntityField() {
+        super();
     }
 
-    public StringEntityField(FieldName name) {
-        super(name);
+    public StringEntityField(FieldMap fieldMap,FieldName name, int maxLen) {
+        super(fieldMap, name);
+        setAttributes(new FieldAttributes("", maxLen));
     }
 
-    public StringEntityField(FieldName name, FieldAttributes fieldAttributes) {
-       super(name);
-        maxLen = fieldAttributes.getMaxLenght();
-    }
-
-    public int getMaxLen() {
-        return maxLen;
-    }
 }

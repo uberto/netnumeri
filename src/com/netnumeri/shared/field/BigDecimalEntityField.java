@@ -3,8 +3,13 @@ package com.netnumeri.shared.field;
 import java.math.BigDecimal;
 
 public class BigDecimalEntityField extends ValuesEntityField<BigDecimal>   {
-    public BigDecimalEntityField(FieldName fieldName) {
 
-        this.fieldName = fieldName;
+    public BigDecimalEntityField() {
+        super();
+    }
+
+    public BigDecimalEntityField(FieldMap fieldMap, FieldName fieldName) {
+
+        super(fieldMap, fieldName);
     }
 }

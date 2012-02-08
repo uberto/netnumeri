@@ -4,15 +4,20 @@ public class ValuesEntityField<T> implements EntityField<T> {
 
     private T value;
     protected FieldName fieldName;
+    private FieldAttributes attributes;
 
-    public ValuesEntityField(FieldName fieldName) {
-       this.fieldName = fieldName;
+    public ValuesEntityField(FieldMap fieldMap, FieldName fieldName) {
+        this.fieldName = fieldName;
+        fieldMap.put(fieldName, this);
     }
 
     public ValuesEntityField() {
     }
 
     public void setValue(T value) {
+        if (value == null){
+            throw new RuntimeException("Illegal null assignation to field:" + fieldName);
+        }
         this.value = value;
     }
 
@@ -20,11 +25,6 @@ public class ValuesEntityField<T> implements EntityField<T> {
     public T get() {
         return value;
     }
-
-//    @Override
-//    public String getName() {
-//        return fieldName.getFieldName();
-//    }
 
     @Override
     public String toString() {
@@ -53,5 +53,14 @@ public class ValuesEntityField<T> implements EntityField<T> {
         int result = value != null ? value.hashCode() : 0;
         result = 31 * result + (fieldName != null ? fieldName.hashCode() : 0);
         return result;
+
+    }
+
+    public FieldAttributes getAttributes() {
+        return attributes;
+    }
+
+    protected void setAttributes(FieldAttributes fieldAttributes) {
+        this.attributes = fieldAttributes;
     }
 }
