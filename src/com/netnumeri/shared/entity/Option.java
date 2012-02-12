@@ -91,12 +91,12 @@ public class Option implements Entity {
     @Override
     public String toString() {
         return "Option{" +
-                "NAME=" + name +
-                ", UNDERLYING=" + underlying +
-                ", TYPE=" + type +
-                ", STRIKE=" + strike +
-                ", EXPIRY=" + expiry +
-                ", BOURSE=" + bourse +
+                 bourse +
+                ", " + name +
+                ", " + underlying +
+                ", " + type +
+                ", " + strike +
+                ", " + expiry +
                 '}';
     }
 

@@ -14,14 +14,22 @@ import static org.junit.Assert.assertTrue;
 public class OptionTest {
 
     @Test
-    public void createOption() throws Exception {
+    public void valuesInConstructorAreAllUsed() throws Exception {
         Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
         assertThat(option.getOptionName(), is("name"));
+        assertThat(option.getBourse(), is("NasdaqGs"));
         assertThat(option.getStockTicket(), is("ticket"));
         assertThat(option.getDateDue(), is(new Date(123)));
         assertThat(option.getStrike(), is(1.1));
         assertThat(option.getType(), is(OptionType.PUT));
+    }
+
+    @Test
+    public void representCompletelyAsString() throws Exception {
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+
+        assertThat(option.toString(), is("Option{{bourse:NasdaqGs}, {name:name}, {underlying:ticket}, {type:PUT}, {strike:1.1}, {expiry:4/01/70}}"));
     }
 
     @Test
