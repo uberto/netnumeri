@@ -106,9 +106,8 @@ public class Option implements Entity {
     }
 
     @Override
-    public Set<EntityField<?>> getFields() {
-
-        return new HashSet<EntityField<?>>(fieldMap.values());
+    public Collection<? extends EntityField<?>> getFields() {
+       return fieldMap.values();
     }
     @Override
     public EntityField<?> getField(FieldName fieldname) {
