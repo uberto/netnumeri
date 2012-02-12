@@ -9,10 +9,11 @@ public class Option implements Entity {
 
 
     enum Field implements FieldName {
-        bourse, name, underlying, type, strike, expiry
+        id, bourse, name, underlying, type, strike, expiry
     }
     private FieldMap fieldMap = new FieldMap();
 
+    IdEntityField id= new IdEntityField(fieldMap, Field.id);
     StringEntityField bourse= new StringEntityField(fieldMap, Field.bourse, 12);
     StringEntityField name = new StringEntityField(fieldMap, Field.name, 30);
     StringEntityField underlying= new StringEntityField(fieldMap, Field.underlying, 10);
@@ -20,8 +21,9 @@ public class Option implements Entity {
     DoubleEntityField strike= new DoubleEntityField(fieldMap, Field.strike);
     DateEntityField expiry  = new DateEntityField(fieldMap, Field.expiry);
 
-    public Option(String bourse, String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
+    public Option(String id, String bourse, String optionName, String stockTicket, OptionType type, Double strike, Date expiry) {
 
+        this.id.setValue(new EntityId(id));
         this.bourse.setValue(bourse);
         this.name.setValue(optionName);
         this.underlying.setValue(stockTicket);
@@ -100,7 +102,7 @@ public class Option implements Entity {
 
     @Override
     public EntityId getId() {
-        return null;
+        return id.get();
     }
 
     @Override

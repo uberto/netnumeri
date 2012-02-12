@@ -15,7 +15,7 @@ public class OptionTest {
 
     @Test
     public void createOption() throws Exception {
-        Option option = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
         assertThat(option.getOptionName(), is("name"));
         assertThat(option.getStockTicket(), is("ticket"));
@@ -26,10 +26,10 @@ public class OptionTest {
 
     @Test
     public void entity() throws Exception {
-        Entity entity = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Entity entity = new Option("123", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
-        assertThat(entity.getFields().size(), is(6));
-//        assertThat(entity.getId(), is(new EntityId( "123")));
+        assertThat(entity.getFields().size(), is(7));
+        assertThat(entity.getId(), is(new EntityId( "123")));
 
         assertTrue(entity.getFields().contains(((Option) entity).name));
         assertTrue(entity.getFields().contains(((Option) entity).underlying));
@@ -41,9 +41,9 @@ public class OptionTest {
 
     @Test
     public void checkEquals() throws Exception {
-        Option option = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionDiff = new Option("NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionEqual = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionDiff = new Option("1", "NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionEqual = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
         assertThat(option, is(optionEqual));
         assertThat(option, not(optionDiff));
