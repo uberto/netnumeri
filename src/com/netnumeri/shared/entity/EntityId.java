@@ -1,15 +1,21 @@
 package com.netnumeri.shared.entity;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class EntityId implements Serializable {
 
-    private String idString;
+    private byte[] idString;
+
+
+    public EntityId() {
+    }
 
     public EntityId(String idString) {
 
-        this.idString = idString;
+        this.idString = idString.getBytes();
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -18,13 +24,18 @@ public class EntityId implements Serializable {
 
         EntityId entityId = (EntityId) o;
 
-        if (idString != null ? !idString.equals(entityId.idString) : entityId.idString != null) return false;
+        if (!Arrays.equals(idString, entityId.idString)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        return idString != null ? idString.hashCode() : 0;
+        return idString != null ? Arrays.hashCode(idString) : 0;
+    }
+
+    @Override
+    public String toString() {
+        return new String(idString);
     }
 }
