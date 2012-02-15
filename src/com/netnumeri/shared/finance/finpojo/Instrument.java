@@ -1021,9 +1021,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return daily(date, false);
     }
 
-    /**
-     * Return flase if data for index have NOTAVAILABLE option
-     */
     public boolean dataAvailable(int index) {
         if (index == -1) {
             index = lastIndex();
@@ -1032,9 +1029,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return (daily.getState() != FinConstants.NOTAVAILABLE);
     }
 
-    /**
-     * Return flase if data for date have NOTAVAILABLE option
-     */
     public boolean dataAvailable(TDay date) {
         Daily daily = dailyarray.get(date);
         if (daily == null) {
@@ -1043,10 +1037,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         return daily.getState() != FinConstants.NOTAVAILABLE;
     }
 
-    /**
-     * Return previous index with available historical data Return -1 if there is no such index fDaily points to the
-     * previous index
-     */
     public int prevIndex(int index) {
         int FirstIndex = firstIndex();
         int PrevIndex = index - 1;
@@ -1098,10 +1088,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         }
     }
 
-    /**
-     * Return next TDay with available historical data Return zero TDay if there is no such TDay fDaily points
-     * to next TDay data
-     */
     public TDay nextDate(TDay date) {
         int NextIndex = nextIndex(index(date));
         if (NextIndex == -1) {
@@ -1111,14 +1097,6 @@ public abstract class Instrument extends DateBound implements Serializable {
         }
     }
 
-    /**
-     * Return daily data for previous Index
-     * <p/>
-     * If New flag is set, create and return new daily object. It is webuser responsibility to delete it then.
-     * <p/>
-     * If New flag is not set, pointer to internally adopted daily object is returned. Note that data fields of this
-     * object will be changed during next I/O operation with daily data.
-     */
     public Daily prevDaily(int Index) {
         return prevDaily(Index, false);
     }
