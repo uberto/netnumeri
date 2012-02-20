@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="netnumeri:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/netnumeri_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="netnumeri/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="netnumeri" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/gwt-2.4.0/gwt-servlet.jar" />
+        </element>
+      </element>
+      <element id="gwt-compiler-output" facet="netnumeri/gwt/GWT" />
+    </root>
+  </artifact>
+</component>

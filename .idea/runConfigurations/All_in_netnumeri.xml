@@ -1,12 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="com.netnumeri" type="JUnit" factoryName="JUnit">
+  <configuration default="false" name="All in netnumeri" type="JUnit" factoryName="JUnit">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <pattern>
         <option name="PATTERN" value="com.netnumeri.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <module name="Netnumeri" />
+    <module name="netnumeri" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="PACKAGE_NAME" value="com.netnumeri" />
@@ -19,7 +19,7 @@
     <option name="ENV_VARIABLES" />
     <option name="PASS_PARENT_ENVS" value="true" />
     <option name="TEST_SEARCH_SCOPE">
-      <value defaultName="wholeProject" />
+      <value defaultName="singleModule" />
     </option>
     <envs />
     <patterns />
