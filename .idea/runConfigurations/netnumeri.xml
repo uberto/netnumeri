@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="netnumeri" type="GWT.ConfigurationType" factoryName="GWT Configuration">
+    <module name="Netnumeri" />
+    <option name="RUN_PAGE" value="http://127.0.0.1:8888/MySampleApplication.html" />
+    <option name="GWT_MODULE" value="com.netnumeri.MySampleApplication" />
+    <option name="BROWSER" value="Chrome" />
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method />
+  </configuration>
+</component>
