@@ -17,7 +17,7 @@
     <facet type="gwt" name="GWT">
       <configuration>
         <setting name="compilerMaxHeapSize" value="128" />
-        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtScriptOutputStyle" value="OBF" />
         <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/lib/gwt-2.4.0" />
         <setting name="webFacet" value="Web" />
       </configuration>
@@ -28,11 +28,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="TEST" name="junit" level="project" />
     <orderEntry type="library" name="gwt-user" level="project" />
-    <orderEntry type="library" scope="TEST" name="jmock-2.5" level="project" />
+    <orderEntry type="library" scope="TEST" name="jmock-2.5.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="junit4.5" level="project" />
   </component>
 </module>
 
