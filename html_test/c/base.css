@@ -1,0 +1,41 @@
+/* 	NetNumeri css styles
+	Copyright 2012 Net Numeri Ltd. 
+-------------------------------------------------*/
+/* Makeshift CSS Reset */  
+{  
+    margin: 0;  
+    padding: 0;  
+}  
+  
+header, footer, aside, article {  
+    display: block;   
+} 
+
+header {
+	background-color: black;
+	color: white;
+	height: 25px;
+}
+	
+header a {
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+}
+
+header nav {
+	display: inline;
+	padding-right: 20px;
+	padding-left: 20px;	}
+
+
+#logout{
+	float: right;
+}
+
+body {  
+    margin: 0 auto;
+    width: 940px;  
+    font: 13px/22px Helvetica, Arial, sans-serif;  
+    background: #f0f0f0;
+	}
