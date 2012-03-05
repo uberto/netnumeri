@@ -15,6 +15,8 @@ public abstract class Instrument extends DateBound implements Serializable {
     protected double delta = 1;
 
     public abstract double modelPrice(int model);
+    public abstract String getName();
+    public abstract void setName(String name);
 
     private double spot;
     private double volatility;
@@ -1542,7 +1544,7 @@ public abstract class Instrument extends DateBound implements Serializable {
 
         Instrument that = (Instrument) o;
 
-        if (getId() != that.getId()) {
+        if (getName() != that.getName()) {
             return false;
         }
         return true;
@@ -1552,7 +1554,7 @@ public abstract class Instrument extends DateBound implements Serializable {
     public int hashCode() {
         int result;
         long temp;
-        result = getId() != null ? getId().hashCode() : 0;
+        result = getName() != null ? getName().hashCode() : 0;
         return result;
     }
 

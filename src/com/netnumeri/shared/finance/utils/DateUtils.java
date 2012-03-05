@@ -1,12 +1,12 @@
 package com.netnumeri.shared.finance.utils;
 
+import com.netnumeri.shared.finance.date.Calendar;
+import com.netnumeri.shared.finance.date.GregorianCalendar;
+import com.netnumeri.shared.finance.date.SimpleDateFormat;
 import com.netnumeri.shared.finance.date.TDay;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class DateUtils {
 
@@ -85,7 +85,7 @@ public class DateUtils {
     public static Date fromYYYYMMDD(String value) {
         try {
             return new SimpleDateFormat("yyyyMMdd").parse(value);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             return null;
         }
     }
@@ -93,13 +93,18 @@ public class DateUtils {
     public static Date fromYYYYMMDDhhmmss(String value) {
         try {
             return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(value);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             return null;
         }
     }
     //  2011-03-25T17:42:12
     public static String toYYYYMMDD(Date date) {
-        return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+        try {
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static Date firstQuarterStartDate(Integer year) {
@@ -252,7 +257,7 @@ public class DateUtils {
     }
 
     public static Date getStartPreviousMonth(Date date) {
-        Calendar cal = Calendar.getInstance();
+        GregorianCalendar cal = new GregorianCalendar();
         cal.setTime(date);
         cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) - 1);
         cal.set(Calendar.DAY_OF_MONTH, 1);

@@ -11,6 +11,16 @@ import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 public class TimeSeries extends DateBound {
 
+    String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private int frequency = FinConstants.FR_DAILY;
     private int option = 0;
     private int size = 0;
@@ -1816,11 +1826,6 @@ public class TimeSeries extends DateBound {
             index = getNextIndex(index);
         }
         return lead;
-    }
-
-    @Override
-    public String getKind() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public TimeSeries clone() {

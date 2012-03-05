@@ -16,6 +16,7 @@ import com.netnumeri.shared.finance.ta.FinMath;
 import java.util.Set;
 
 public class Vanilla extends Derivative implements Entity {
+
     protected int direction;
     protected int optionType;
     private double dividend;

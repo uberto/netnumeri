@@ -4,7 +4,6 @@ import com.netnumeri.shared.finance.data.Dividend;
 import com.netnumeri.shared.finance.data.DividendArray;
 import com.netnumeri.shared.finance.data.Split;
 import com.netnumeri.shared.finance.data.SplitArray;
-import com.netnumeri.shared.pojoc.SearchablePojo;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -94,13 +93,5 @@ public class Stock extends Asset implements Serializable {
         }
     }
 
-    @Override
-    public String getKind() {
-        return null;
-    }
 
-    @Override
-    public SearchablePojo clone() {
-        return null;
-    }
 }
