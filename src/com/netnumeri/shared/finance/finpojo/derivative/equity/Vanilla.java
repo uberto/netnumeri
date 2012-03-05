@@ -1,9 +1,7 @@
 package com.netnumeri.shared.finance.finpojo.derivative.equity;
 
-
 import com.netnumeri.shared.entity.Entity;
 import com.netnumeri.shared.entity.EntityId;
-import com.netnumeri.shared.entity.Option;
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.field.*;
 import com.netnumeri.shared.finance.beans.FinConstants;
@@ -17,55 +15,20 @@ import java.util.Set;
 
 public class Vanilla extends Derivative implements Entity {
 
-    /*
-    //    protected Instrument underlying;
-//    protected double interestRate;
-//    protected TDay expiration = null;
-//    protected double strike;
-//    protected double premium;
-//    protected int contractSize;
-//    protected int openInterest;
-     */
-
-    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
-    StringEntityField underlying = new StringEntityField(Field.underlying);
-    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
-    DoubleEntityField strike = new DoubleEntityField(Field.strike);
-    DateEntityField expiry = new DateEntityField(Field.expiry);
-    StringEntityField bourse = new StringEntityField(Field.bourse);
-
-
-
-    protected int direction;
-    protected int optionType;
-    private double dividend;
-
-
     enum Field implements FieldName {
-        bourse, name, underlying, type, strike, expiry;
-
-//        private FieldAttributes fieldAttributes;
-//
-//        Field(FieldAttributes fieldAttributes) {
-//            this.fieldAttributes = fieldAttributes;
-//        }
-//
-//        Field() {
-//            this.fieldAttributes = new FieldAttributes("", 0);
-//        }
-//
-//        @Override
-//        public FieldAttributes getFieldAttributes() {
-//            return fieldAttributes;
-//        }
+        underlying, interestRate, expiration, strike, premium, contractSize, openInterest, type, dividend
     }
+    private FieldMap fieldMap = new FieldMap();
 
-    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
-    StringEntityField underlying = new StringEntityField(Field.underlying);
-    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
-    DoubleEntityField strike = new DoubleEntityField(Field.strike);
-    DateEntityField expiry = new DateEntityField(Field.expiry);
-    StringEntityField bourse = new StringEntityField(Field.bourse);
+    StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
+    DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
+    DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
+    DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
+    DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
+    DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
+    DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
+    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(fieldMap,Field.type);
+    DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
 
 //    private MonteCarlo monteCarlo;
 

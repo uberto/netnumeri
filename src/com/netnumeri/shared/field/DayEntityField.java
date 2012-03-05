@@ -1,14 +1,14 @@
 package com.netnumeri.shared.field;
 
-import java.util.Date;
+import com.netnumeri.shared.finance.date.TDay;
 
-public class DateEntityField  extends ValuesEntityField<Date>  {
+public class DayEntityField extends ValuesEntityField<TDay>  {
 
-    private DateEntityField() {
+    private DayEntityField() {
         super();
     }
 
-    public DateEntityField(FieldMap fieldMap, FieldName fieldName) {
+    public DayEntityField(FieldMap fieldMap, FieldName fieldName) {
         super(fieldMap, fieldName);
     }
 
