@@ -9,7 +9,9 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 import com.netnumeri.shared.finance.utils.LogUtils;
 import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
-public class TimeSeries extends DateBound {
+import java.io.Serializable;
+
+public class TimeSeries extends DateBound implements Serializable {
 
     String name;
 

@@ -17,6 +17,25 @@ import java.util.Set;
 
 public class Vanilla extends Derivative implements Entity {
 
+    /*
+    //    protected Instrument underlying;
+//    protected double interestRate;
+//    protected TDay expiration = null;
+//    protected double strike;
+//    protected double premium;
+//    protected int contractSize;
+//    protected int openInterest;
+     */
+
+    StringEntityField name = new StringEntityField(Field.name, new FieldAttributes("", 22));
+    StringEntityField underlying = new StringEntityField(Field.underlying);
+    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(Field.type);
+    DoubleEntityField strike = new DoubleEntityField(Field.strike);
+    DateEntityField expiry = new DateEntityField(Field.expiry);
+    StringEntityField bourse = new StringEntityField(Field.bourse);
+
+
+
     protected int direction;
     protected int optionType;
     private double dividend;
