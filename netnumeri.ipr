@@ -24,7 +24,9 @@
           <element id="directory" name="classes">
             <element id="module-output" name="netnumeri" />
           </element>
-          <element id="directory" name="lib" />
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="com.springsource.org.apache.commons.httpclient-3.1.0" />
+          </element>
         </element>
       </root>
     </artifact>
@@ -308,6 +310,24 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
+    <library name="com.springsource.org.apache.commons.httpclient-3.1.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/com.springsource.org.apache.commons.httpclient-3.1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-assistedinject-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-grapher-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-jmx-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-jndi-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-multibindings-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-persist-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-servlet-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-spring-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-struts2-plugin-3.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/project-lib/guice-throwingproviders-3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="gwt-user">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
@@ -316,27 +336,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </SOURCES>
-    </library>
-    <library name="jmock-2.5">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
-        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
-      </SOURCES>
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" type="SOURCES" />
-    </library>
-    <library name="junit">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/lib/junit4.5" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" />
     </library>
   </component>
 </project>
