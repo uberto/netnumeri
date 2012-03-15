@@ -25,6 +25,16 @@ public class Stock extends Asset implements Serializable {
         return 0;
     }
 
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void setName(String name) {
+
+    }
+
     public DividendArray getDividendArray() {
         return dividendArray;
     }

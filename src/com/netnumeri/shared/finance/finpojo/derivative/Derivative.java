@@ -8,14 +8,6 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 public abstract class Derivative extends Instrument {
     public static final boolean debug = true;
 
-//    protected Instrument underlying;
-//    protected double interestRate;
-//    protected TDay expiration = null;
-//    protected double strike;
-//    protected double premium;
-//    protected int contractSize;
-//    protected int openInterest;
-
     public abstract Instrument underlying();
     public abstract double interestRate();
     public abstract TDay expiration();
@@ -36,12 +28,13 @@ public abstract class Derivative extends Instrument {
     public abstract double rho(int model);
     public abstract double vega(int model);
 
-    protected Derivative() {
-    }
-
-    public Derivative(String name) {
-        super(name);
-    }
+//    protected Derivative() {
+//    }
+//
+//    public Derivative(String name) {
+////        super(name);
+//        setName(name);
+//    }
 
     public double getInterestRate() {
         return interestRate() / 100;
@@ -68,7 +61,7 @@ public abstract class Derivative extends Instrument {
         if (underlying() != null)
             return underlying().volatility() / 100;
         else
-            throw new RuntimeException("Volatility. No underlyer");
+            throw new RuntimeException("Volatility. No underliyer");
     }
 
     public double S() {

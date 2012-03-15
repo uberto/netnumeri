@@ -1,5 +1,6 @@
 package com.netnumeri.server.utils;
 
+import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.data.MaximumPainBean;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
@@ -184,22 +185,22 @@ public class YahooOptions {
 
     private static double computeCumulativeValue(double underSpotPrice, List<Vanilla> options) {
         double cumulativeValue = 0;
-//        if (options != null)
-//            for (int i = 0; i < options.size(); i++) {
-//                Vanilla vanilla = options.get(i);
-//                int openInt = vanilla.getLastQuote().getOpenInterest();
-//                if (vanilla.getDirection() == FinConstants.kCall) {
-//                    if (underSpotPrice > vanilla.getStrike()) {
-//                        double value = underSpotPrice - vanilla.getStrike();
-//                        cumulativeValue = cumulativeValue + (value * openInt);
-//                    }
-//                } else if (vanilla.getDirection() == FinConstants.kPut) {
-//                    if (underSpotPrice < vanilla.getStrike()) {
-//                        double value = vanilla.getStrike() - underSpotPrice;
-//                        cumulativeValue = cumulativeValue + (value * openInt);
-//                    }
-//                }
-//            }
+        if (options != null)
+            for (int i = 0; i < options.size(); i++) {
+                Vanilla vanilla = options.get(i);
+                int openInt = vanilla.getLastQuote().getOpenInterest();
+                if (vanilla.type.get().equals(OptionType.CALL)) {
+                    if (underSpotPrice > vanilla.strike()) {
+                        double value = underSpotPrice - vanilla.strike();
+                        cumulativeValue = cumulativeValue + (value * openInt);
+                    }
+                } else if (vanilla.type.get().equals(OptionType.PUT)) {
+                    if (underSpotPrice < vanilla.strike()) {
+                        double value = vanilla.strike() - underSpotPrice;
+                        cumulativeValue = cumulativeValue + (value * openInt);
+                    }
+                }
+            }
         return cumulativeValue;
     }
 

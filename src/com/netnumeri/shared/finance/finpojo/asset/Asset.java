@@ -11,7 +11,7 @@ public abstract class Asset extends Instrument implements Serializable {
     }
 
     public Asset(String name) {
-        super(name);
+        setName(name);
     }
 
 }

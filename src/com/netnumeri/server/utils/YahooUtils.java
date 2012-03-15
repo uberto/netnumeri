@@ -7,6 +7,7 @@ import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
 import com.netnumeri.shared.finance.utils.DateUtils;
 import com.netnumeri.shared.finance.utils.NetUtils;
+import com.netnumeri.shared.finance.utils.YahooInstantSnapshot;
 
 import java.io.IOException;
 import java.io.InputStream;

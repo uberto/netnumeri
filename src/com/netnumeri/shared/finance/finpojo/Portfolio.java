@@ -37,7 +37,6 @@ public class Portfolio extends Asset implements FinConstants {
 
     public IdField userId = idField("userId");
 
-
     public Portfolio() {
         init("Unnamed");
     }
@@ -71,6 +70,16 @@ public class Portfolio extends Asset implements FinConstants {
 
     public double modelPrice(int model) {
         return 0;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void setName(String name) {
+
     }
 
     public Portfolio(String name) {
@@ -151,11 +160,6 @@ public class Portfolio extends Asset implements FinConstants {
 //        }
 //        return optimizer;
 //    }
-
-    @Override
-    public String getKind() {
-        return null;
-    }
 
     public Portfolio clone() {
         Portfolio p = new Portfolio(getName());

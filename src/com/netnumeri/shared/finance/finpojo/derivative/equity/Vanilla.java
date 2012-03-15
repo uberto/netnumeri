@@ -11,7 +11,7 @@ import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 import com.netnumeri.shared.finance.math.FinRecipes;
 import com.netnumeri.shared.finance.ta.FinMath;
 
-import java.util.Set;
+import java.util.Collection;
 
 public class Vanilla extends Derivative implements Entity {
 
@@ -20,17 +20,55 @@ public class Vanilla extends Derivative implements Entity {
     }
     private FieldMap fieldMap = new FieldMap();
 
-    StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
-    DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
-    DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
-    DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
-    DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
-    DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
-    DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
-    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(fieldMap,Field.type);
-    DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
+    private StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
+    private DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
+    private DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
+    private DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
+    private DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
+    private DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
+    public EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
+
+    private DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
+    private DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
 
 //    private MonteCarlo monteCarlo;
+
+    private int pricingModel;
+
+    @Override
+    public Instrument underlying() {
+        return null;
+    }
+
+    @Override
+    public double interestRate() {
+        return 0;
+    }
+
+    @Override
+    public TDay expiration() {
+        return null;
+    }
+
+    @Override
+    public double strike() {
+        return 0;
+    }
+
+    @Override
+    public double premium() {
+        return 0;
+    }
+
+    @Override
+    public int contractSize() {
+        return 0;
+    }
+
+    @Override
+    public int openInterest() {
+        return 0;
+    }
 
     @Override
     public double alpha(int model) {
@@ -57,52 +95,44 @@ public class Vanilla extends Derivative implements Entity {
         return 0;
     }
 
-    public Vanilla() {
-    }
-
     public Vanilla(String Name) {
-        super(Name);
+        setName(Name);
     }
 
     public Vanilla(String name,
-                   Instrument underlying,
+                   Instrument stock,
                    TDay expirationDate,
                    double strikePrice,
-                   double interestRate,
-                   int direction,
-                   int type) {
-        super(name, underlying, expirationDate, strikePrice, interestRate);
-        this.direction = direction;
-        this.optionType = type;
-    }
+                   double interest,
+                   OptionType optionType,
+                   int model) {
+//        super(name, stock, expirationDate, strikePrice, interestRate);
+/*
+            StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
+    DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
+    DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
+    DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
+    DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
+    DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
+    DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
+    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(fieldMap,Field.type);
+    DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
 
-    public int getDirection() {
-        return direction;
-    }
+         */
+        setName(name);
+        underlying.setValue(stock.getName());
+        expiration.setValue(expirationDate);
+        strike.setValue(strikePrice);
+        interestRate.setValue(interest);
 
-    public void setDirection(int direction) {
-        this.direction = direction;
-    }
-
-    public int getOptionType() {
-        return optionType;
-    }
-
-    public void setOptionType(int optionType) {
-        this.optionType = optionType;
-    }
-
-    public double getDividend() {
-        return dividend;
+        this.type.setValue(optionType);
+        this.pricingModel = model;
     }
 
     public double d() {
-        return getDividend() / 100D;
+        return dividend.get() / 100D;
     }
 
-    public void setDividend(double dividend) {
-        this.dividend = dividend;
-    }
 
     private double getPrice(String optionType,
                             double S,
@@ -136,8 +166,9 @@ public class Vanilla extends Derivative implements Entity {
 
 
     private double modelPrice() {
-        if (direction == FinConstants.kCall) {
-            if (optionType == FinConstants.kAmerican) {
+        if (type.get().equals(OptionType.CALL)) {
+
+            if (pricingModel == FinConstants.kAmerican) {
                 return getPrice("American Call (BS)", S(), X(), r(), d(), s(), t());
             }
             if (debug) {
@@ -146,7 +177,7 @@ public class Vanilla extends Derivative implements Entity {
             }
             return getPrice("European Call", S(), X(), r(), d(), s(), t());
         }
-        if (optionType == FinConstants.kAmerican) {
+        if (pricingModel == FinConstants.kAmerican) {
             return getPrice("American Put (BS)", S(), X(), r(), d(), s(), t());
         } else {
             return getPrice("European Put", S(), X(), r(), d(), s(), t());
@@ -159,26 +190,26 @@ public class Vanilla extends Derivative implements Entity {
 
     public double getPayoff(double instrumentPrice, boolean withPremium) {
         double payoff = 0;
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             payoff = Math.max(0, instrumentPrice - strike.get());
         } else {
             payoff = Math.max(0, strike.get() - instrumentPrice);
         }
         if (withPremium) {
-            payoff -= premium;
+            payoff -= premium.get();
         }
         return payoff;
     }
 
 
     public double getDelta() {
-        if (direction == FinConstants.kCall) {
-            if (optionType == FinConstants.kAmerican) {
+        if (type.get().equals(OptionType.CALL)) {
+            if (pricingModel == FinConstants.kAmerican) {
                 return blackDelta("American Call (BS)", S(), X(), r(), d(), s(), t());
             } else {
                 return blackDelta("European Call", S(), X(), r(), d(), s(), t());
             }
-        } else if (optionType == FinConstants.kAmerican) {
+        } else if (pricingModel == FinConstants.kAmerican) {
             return blackDelta("American Put (BS)", S(), X(), r(), d(), s(), t());
         } else {
             return blackDelta("European Put", S(), X(), r(), d(), s(), t());
@@ -189,15 +220,15 @@ public class Vanilla extends Derivative implements Entity {
     public double gamma() {
         double d3 = 0.01D * S();
         double dv = 0.01D * s();
-        if (direction == FinConstants.kCall) {
-            if (optionType == FinConstants.kAmerican) {
+        if (type.get().equals(OptionType.CALL)) {
+            if (pricingModel == FinConstants.kAmerican) {
                 double d4 = (1 / (d3 * d3)) * ((getPrice("American Call (BS)", S() + d3, X(), r(), d(), s(), t()) - 2D * getPrice("American Call (BS)", S(), X(), r(), d(), s(), t())) + getPrice("American Call (BS)", S() - d3, X(), r(), d(), s(), t()));
                 return d4;
             } else {
                 double price = (1 / (d3 * d3)) * ((getPrice("European Call", S() + d3, X(), r(), d(), s(), t()) - 2D * getPrice("European Call", S(), X(), r(), d(), s(), t())) + getPrice("European Call", S() - d3, X(), r(), d(), s(), t()));
                 return price;
             }
-        } else if (optionType == FinConstants.kCall) {
+        } else if (pricingModel == FinConstants.kCall) {
             double d4 = (1 / (d3 * d3)) * ((getPrice("American Put (BS)", S() + d3, X(), r(), d(), s(), t()) - 2D * getPrice("American Put (BS)", S(), X(), r(), d(), s(), t())) + getPrice("American Put (BS)", S() - d3, X(), r(), d(), s(), t()));
             return d4;
         } else {
@@ -208,7 +239,7 @@ public class Vanilla extends Derivative implements Entity {
 
 
     public double theta() {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.Theta(S(), X(), t(), s(), r(), 92);
         } else {
             return FinMath.Theta(S(), X(), t(), s(), r(), 93);
@@ -217,7 +248,7 @@ public class Vanilla extends Derivative implements Entity {
 
 
     public double rho() {
-        if (direction == FinConstants.kCall) {
+        if (type.equals(OptionType.CALL)) {
             return FinMath.Rho(S(), X(), t(), s(), r(), 92);
         } else {
             return FinMath.Rho(S(), X(), t(), s(), r(), 93);
@@ -228,14 +259,14 @@ public class Vanilla extends Derivative implements Entity {
     public double vega() {
         System.out.println("Vega:" + FinMath.Vega(S(), X(), t(), s(), r()));
         double dv = 0.01D * s();
-        if (direction == FinConstants.kCall) {
-            if (optionType == FinConstants.kAmerican) {
+        if (type.get().equals(OptionType.CALL)) {
+            if (pricingModel == FinConstants.kAmerican) {
                 return (1 / dv) * (getPrice("American Call (BS)", S(), X(), r(), d(), s() + dv, t()) - getPrice("American Call (BS)", S(), X(), r(), d(), s(), t()));
             } else {
                 return (1 / dv) * (getPrice("European Call", S(), X(), r(), d(), s() + dv, t()) - getPrice("European Call", S(), X(), r(), d(), s(), t()));
             }
         }
-        if (optionType == FinConstants.kAmerican) {
+        if (pricingModel == FinConstants.kAmerican) {
             return (1 / dv) * (getPrice("American Put (BS)", S(), X(), r(), d(), s() + dv, t()) - getPrice("American Put (BS)", S(), X(), r(), d(), s(), t()));
         } else {
             return (1 / dv) * (getPrice("European Put", S(), X(), r(), d(), s() + dv, t()) - getPrice("European Put", S(), X(), r(), d(), s(), t()));
@@ -279,7 +310,7 @@ public class Vanilla extends Derivative implements Entity {
     }
 
     public double binomialPrice(int n) {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.BM(S(), X(), t(), s(), r(), 92, n);
         } else {
             return FinMath.BM(S(), X(), t(), s(), r(), 93, n);
@@ -292,7 +323,7 @@ public class Vanilla extends Derivative implements Entity {
     }
 
     public double monteCarloPrice(int n) {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.MC(S(), X(), t(), s(), r(), 92, n);
         } else {
             return FinMath.MC(S(), X(), t(), s(), r(), 93, n);
@@ -301,7 +332,7 @@ public class Vanilla extends Derivative implements Entity {
 
 
     public double blackScholesPrice() {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.BS(S(), X(), t(), s(), r(), 92);
         } else {
             return FinMath.BS(S(), X(), t(), s(), r(), 93);
@@ -337,6 +368,16 @@ public class Vanilla extends Derivative implements Entity {
         return -1;
     }
 
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void setName(String name) {
+
+    }
+
     public double modelPrice(int model,
                              double price,
                              double days) {
@@ -368,7 +409,7 @@ public class Vanilla extends Derivative implements Entity {
     }
 
     private double monteCarloPrice(double price, double days) {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.MC(price, X(), days, s(), r(), 92, 10000);
         } else {
             return FinMath.MC(price, X(), days, s(), r(), 93, 10000);
@@ -376,7 +417,7 @@ public class Vanilla extends Derivative implements Entity {
     }
 
     private double binomialPrice(double price, double days) {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.BM(price, X(), days, s(), r(), 92, 500);
         } else {
             return FinMath.BM(price, X(), days, s(), r(), 93, 500);
@@ -384,7 +425,7 @@ public class Vanilla extends Derivative implements Entity {
     }
 
     private double blackScholesPrice(double spot, double days) {
-        if (direction == FinConstants.kCall) {
+        if (type.get().equals(OptionType.CALL)) {
             return FinMath.BS(spot, X(), days, s(), r(), 92);
         } else {
             return FinMath.BS(spot, X(), days, s(), r(), 93);
@@ -400,13 +441,15 @@ public class Vanilla extends Derivative implements Entity {
         return null;
     }
 
+
     @Override
-    public Set<EntityField<?>> getFields() {
-        return null;
+    public Collection<? extends EntityField<?>> getFields() {
+        return fieldMap.values();
     }
 
     @Override
-    public EntityField<?> mapField(Vanilla.Field field) {
-        return null;
+    public EntityField<?> getField(FieldName fieldname) {
+        return fieldMap.get(fieldname);
     }
+
 }
