@@ -41,7 +41,7 @@ public class SingleOptionViewFormTest extends AppGwtTestCase {
 
 
     public void testShowEdit() throws Exception {
-        Option option = new Option("NasdaqNG", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqNG", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
 
         listView.showEdit(option);

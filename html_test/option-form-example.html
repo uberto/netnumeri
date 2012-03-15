@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="c/base.css" type="text/css" media="screen" charset="utf-8" />
+		
+	<title>NetNumeri</title>	
+</head>
+<body>
+	<header>
+		<nav id="settings">
+			<a href="#settings">Settings</a>
+			<a href="#help">Help</a>
+		</nav>
+	
+		<nav id="logout">
+			<a href="#account">Uberto Barbini</a>
+			<a href="#logout">Logout</a>
+		</nav>
+	</header>
+	<section id="tabs">
+		<nav>
+			<a href="#dashboard">Dashboard</a>
+			<a href="#options" class="active_tab">Options</a>
+			<a href="#futures">Futures</a>
+			<a href="#swaps">Swaps</a>
+			<a href="#commodities">Commodities</a>
+			<a href="#stocks">Stocks</a>		
+		</nav>
+	</section>
+	<section id="page">
+		<div id="formMessage">Insert here the data for the option you are buying</div>
+		<form method="post" action="#">
+			<section title="Option Details">
+				<label for="bourse">Bourse</label><input type="text" name="bourse" value="bourse name" />
+				<label for="name">Name</label><input type="text" name="name" value="option name" />
+
+				<label for="underlying">Underlying asset</label><input type="text" name="underlying" value="underlying" />
+
+				<label for="type">Type</label><input type="text" name="type" value="option type" />
+				
+				<label for="strike">Strike price</label><input type="text" name="strike" value="strike price" />
+								
+				<label for="expiry">Expiry date</label><input type="text" name="expiry" value="date" />
+
+			</section>
+			
+			<section title="Purchase Details">
+				<label for="pur_date">Purchase date</label><input type="text" name="pur_date" value="date" required=""/>
+				<label for="pur_price">Purchase price</label><input type="text" name="pur_price" value="price" required=""/>
+				<label for="pur_quantity">Purchase qty</label><input type="text" name="pur_quantity" value="quantity" required="" />
+			</section>
+			
+			<section title="Notes">
+				<label for="notes">Purchase date</label><textarea name="notes" value="notes"></textarea>
+				
+			</section>
+			<section id="buttons">
+			
+			<p><input type="submit" value="Cancel" /></p>  
+			<p><input type="submit" value="Save" /></p>  
+			</section>
+		</form>
+		
+		<footer>
+			<section id="copyright">netnumeri copyright 2012</section>
+			<nav id="contacts">
+				<a href="#bug">Report a bug</a>
+				<a href="#tos">Terms of service</a>
+				<a href="#contact_us">Contact us</a>
+			</nav>
+		</footer>
+	</section>
+
+</body>
+<!--TODO: 
+		*-Selecting the tab
+		*-form id entity specific?
+		*-date and drop fields will be created later?
+-->

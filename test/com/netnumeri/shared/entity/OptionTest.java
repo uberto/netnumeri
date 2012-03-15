@@ -14,10 +14,11 @@ import static org.junit.Assert.assertTrue;
 public class OptionTest {
 
     @Test
-    public void createOption() throws Exception {
-        Option option = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+    public void valuesInConstructorAreAllUsed() throws Exception {
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
         assertThat(option.getOptionName(), is("name"));
+        assertThat(option.getBourse(), is("NasdaqGs"));
         assertThat(option.getStockTicket(), is("ticket"));
         assertThat(option.getDateDue(), is(new Date(123)));
         assertThat(option.getStrike(), is(1.1));
@@ -25,11 +26,18 @@ public class OptionTest {
     }
 
     @Test
-    public void entity() throws Exception {
-        Entity entity = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+    public void representCompletelyAsString() throws Exception {
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
-        assertThat(entity.getFields().size(), is(6));
-//        assertThat(entity.getId(), is(new EntityId( "123")));
+        assertThat(option.toString(), is("Option{{bourse:NasdaqGs}, {name:name}, {underlying:ticket}, {type:PUT}, {strike:1.1}, {expiry:4/01/70}}"));
+    }
+
+    @Test
+    public void entity() throws Exception {
+        Entity entity = new Option("123", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+
+        assertThat(entity.getFields().size(), is(7));
+        assertThat(entity.getId(), is(new EntityId( "123")));
 
         assertTrue(entity.getFields().contains(((Option) entity).name));
         assertTrue(entity.getFields().contains(((Option) entity).underlying));
@@ -41,9 +49,9 @@ public class OptionTest {
 
     @Test
     public void checkEquals() throws Exception {
-        Option option = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionDiff = new Option("NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionEqual = new Option("NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionDiff = new Option("1", "NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option optionEqual = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
         assertThat(option, is(optionEqual));
         assertThat(option, not(optionDiff));
