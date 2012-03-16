@@ -34,7 +34,7 @@ public class QuotesServlet extends HttpServlet {
     }
 
     private void export(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String ticker = request.getParameter("ticker");
+        String ticker = request.getParameter("name");
 
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.YEAR, -1);

@@ -19,6 +19,9 @@ package com.netnumeri.shared.finance.finpojo;
 // asset portfolio.
 
 
+import com.netnumeri.shared.field.FieldMap;
+import com.netnumeri.shared.field.FieldName;
+import com.netnumeri.shared.field.StringEntityField;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.beans.TimeSeries;
 import com.netnumeri.shared.finance.data.Transaction;
@@ -28,14 +31,18 @@ import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.utils.DateUtils;
-import com.netnumeri.shared.pojoc.field.IdField;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Portfolio extends Asset implements FinConstants {
 
-    public IdField userId = idField("userId");
+    enum Field implements FieldName {
+        name
+    }
+    private FieldMap fieldMap = new FieldMap();
+    private StringEntityField ticker = new StringEntityField(fieldMap,Field.name, 5);
+
 
     public Portfolio() {
         init("Unnamed");
@@ -79,7 +86,7 @@ public class Portfolio extends Asset implements FinConstants {
 
     @Override
     public void setName(String name) {
-
+        ticker.setValue(name);
     }
 
     public Portfolio(String name) {
@@ -92,7 +99,7 @@ public class Portfolio extends Asset implements FinConstants {
     }
 
     private void init(String name) {
-        fName.setValue(name);
+        setName(name);
         assetsToHold = 0;
         targetReturn = 0;
         objectiveOption = RETURN;
@@ -130,7 +137,7 @@ public class Portfolio extends Asset implements FinConstants {
         if (list != null)
             for (int i = 0; i < list.size(); i++) {
                 PortfolioItem portfolioItem = list.get(i);
-                if (portfolioItem.getName().equalsIgnoreCase(name)) ;
+                if (portfolioItem.name.get().equalsIgnoreCase(name)) ;
                 item = portfolioItem;
             }
         return item;

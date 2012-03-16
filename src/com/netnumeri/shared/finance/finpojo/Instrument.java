@@ -40,6 +40,10 @@ public abstract class Instrument extends DateBound implements Serializable {
     private TimeSeries volumeReturnSeries = null;
     private TimeSeries volumeLogReturnSeries = null;
 
+    public Double bid;
+    public Double ask;
+    public Double lastQuote;
+
     private double marketSpotShift = 1.0;
     private double marketVolatilityShift = 1.0;
 

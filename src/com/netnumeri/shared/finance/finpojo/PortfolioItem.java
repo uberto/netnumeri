@@ -1,6 +1,9 @@
 package com.netnumeri.shared.finance.finpojo;
 
 
+import com.netnumeri.shared.field.FieldMap;
+import com.netnumeri.shared.field.FieldName;
+import com.netnumeri.shared.field.StringEntityField;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
@@ -9,6 +12,12 @@ import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 import java.io.Serializable;
 
 public class PortfolioItem implements Serializable, FinConstants {
+
+    enum Field implements FieldName {
+        name
+    }
+    private FieldMap fieldMap = new FieldMap();
+    public StringEntityField name = new StringEntityField(fieldMap,Field.name, 5);
 
     Portfolio portfolio;
 
@@ -45,7 +54,6 @@ public class PortfolioItem implements Serializable, FinConstants {
         this.instrument = instrument;
         this.amount = amount;
     }
-
 
     public double getModelPrice() {
         return modelPrice;

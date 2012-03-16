@@ -15,6 +15,7 @@ import java.util.Collection;
 
 public class Vanilla extends Derivative implements Entity {
 
+
     enum Field implements FieldName {
         underlying, interestRate, expiration, strike, premium, contractSize, openInterest, type, dividend
     }
@@ -23,13 +24,13 @@ public class Vanilla extends Derivative implements Entity {
     private StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
     private DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
     private DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
-    private DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
-    private DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
+    public DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
+    public DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
     private DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
     public EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
 
-    private DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
-    private DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
+    private IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
+    public IntegerEntityField openInterest = new IntegerEntityField(fieldMap,Field.openInterest);
 
 //    private MonteCarlo monteCarlo;
 
@@ -37,37 +38,38 @@ public class Vanilla extends Derivative implements Entity {
 
     @Override
     public Instrument underlying() {
+        // todo
         return null;
     }
 
     @Override
     public double interestRate() {
-        return 0;
+        return interestRate.get();
     }
 
     @Override
     public TDay expiration() {
-        return null;
+        return expiration.get();
     }
 
     @Override
     public double strike() {
-        return 0;
+        return strike.get();
     }
 
     @Override
     public double premium() {
-        return 0;
+        return premium.get();
     }
 
     @Override
     public int contractSize() {
-        return 0;
+        return contractSize.get();
     }
 
     @Override
     public int openInterest() {
-        return 0;
+        return openInterest.get();
     }
 
     @Override
@@ -106,19 +108,6 @@ public class Vanilla extends Derivative implements Entity {
                    double interest,
                    OptionType optionType,
                    int model) {
-//        super(name, stock, expirationDate, strikePrice, interestRate);
-/*
-            StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
-    DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
-    DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
-    DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
-    DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
-    DoubleEntityField contractSize = new DoubleEntityField(fieldMap,Field.contractSize);
-    DoubleEntityField openInterest = new DoubleEntityField(fieldMap,Field.openInterest);
-    EnumEntityField<OptionType> type = new EnumEntityField<OptionType>(fieldMap,Field.type);
-    DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
-
-         */
         setName(name);
         underlying.setValue(stock.getName());
         expiration.setValue(expirationDate);
@@ -132,7 +121,6 @@ public class Vanilla extends Derivative implements Entity {
     public double d() {
         return dividend.get() / 100D;
     }
-
 
     private double getPrice(String optionType,
                             double S,

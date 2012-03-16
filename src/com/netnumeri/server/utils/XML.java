@@ -6,26 +6,6 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -338,9 +318,9 @@ public class XML {
      *
      * @return <code>List</code> of <code>Element</code>s
      */
-    public static List getChildElements(Node n) {
+    public static List<Node> getChildElements(Node n) {
         NodeList kids = n.getChildNodes();
-        List answer = new ArrayList();
+        List<Node> answer = new ArrayList<Node>();
         int size = kids.getLength();
         for (int i = 0; i < size; i++) {
             Node kid = kids.item(i);
@@ -450,8 +430,8 @@ public class XML {
     /**
      * Gets the all the sibling nodes of the first node identified by the given path of the node.
      */
-    public static List findAllSiblingNodes(Node node) {
-        List siblings = new ArrayList();
+    public static List<Node> findAllSiblingNodes(Node node) {
+        List<Node> siblings = new ArrayList<Node>();
         Node child = null;
         int ind = 0;
         String path = getPath(node, "/");
@@ -558,7 +538,7 @@ public class XML {
      * @param list an initialized list to place strings intos
      * @param tree the grid to recurse
      */
-    public static void getData(List list, Node tree) {
+    public static void getData(List<String> list, Node tree) {
 
         String data = null;
 
@@ -1209,8 +1189,8 @@ return (NodeList) nodeset;
         return doc;
     }
 
-    public static List getImmediateChildren(Node node) {
-        List children = new ArrayList();
+    public static List<Node> getImmediateChildren(Node node) {
+        List<Node> children = new ArrayList<Node>();
         NodeList nl = node.getChildNodes();
         for (int i = 0; i < nl.getLength(); i++) {
             Node n = nl.item(i);
@@ -1351,7 +1331,7 @@ return (NodeList) nodeset;
      */
     public static void clearAttributes(Element el) {
 
-        List list = new ArrayList();
+        List<String> list = new ArrayList<String>();
         NamedNodeMap map = el.getAttributes();
 
         for (int i = 0; i < map.getLength(); i++) {
@@ -1359,7 +1339,7 @@ return (NodeList) nodeset;
         }
 
         for (int i = 0; i < list.size(); i++) {
-            String name = (String) list.get(i);
+            String name = list.get(i);
 
             el.removeAttribute(name);
         }
@@ -1447,11 +1427,11 @@ return (NodeList) nodeset;
         if (nTwo.getOwnerDocument() == null) {
             nTwo = getFirstChildElementNode(nTwo);
         }
-        List l1 = XML.getImmediateChildren(nOne);
-        List l2 = XML.getImmediateChildren(nTwo);
+        List<Node> l1 = XML.getImmediateChildren(nOne);
+        List<Node> l2 = XML.getImmediateChildren(nTwo);
         for (int i = 0; i < l1.size(); i++) {
-            Node n1 = (Node) l1.get(i);
-            Node n2 = (Node) l2.get(i);
+            Node n1 = l1.get(i);
+            Node n2 = l2.get(i);
             result = compareNodeAttributes(n1, n2);
             if (!result) {
                 return result;
@@ -1707,16 +1687,16 @@ return (NodeList) nodeset;
     */
 
 
-    public static void ricorsiva(Node n, HashMap map) {
+    public static void ricorsiva(Node n, HashMap<String, String> map) {
         if (n == null) {
             return;
         }
         if (XML.getFirstChildElementNode(n) == null) {
             map.put(XML.getNodeName(n).trim(), XML.getData(n).trim());
         } else {
-            List children = XML.getImmediateChildren(n);
+            List<Node> children = XML.getImmediateChildren(n);
             for (int i = 0; i < children.size(); i++) {
-                ricorsiva((Node) children.get(i), map);
+                ricorsiva(children.get(i), map);
             }
         }
     }

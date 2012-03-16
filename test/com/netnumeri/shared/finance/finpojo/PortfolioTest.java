@@ -67,7 +67,7 @@ public class PortfolioTest extends TestCase {
         for (int i = 0; i < items.size(); i++) {
             PortfolioItem portfolioItem = items.get(i);
 
-            System.out.println("portfolioItem.getName() = " + portfolioItem.getName());
+            System.out.println("portfolioItem.getName() = " + portfolioItem.name);
         }
 
         Instrument instrument = portfolio.getInstrument(0);

@@ -43,7 +43,7 @@ public class YahooOptions {
 //        HttpClient client = new HttpClient();
 //        client.getHostConfiguration().setHost(LOGON_SITE, LOGON_PORT, "http");
 //        client.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
-//        GetMethod authpost = new GetMethod("/q/op?s=" + ticker);
+//        GetMethod authpost = new GetMethod("/q/op?s=" + name);
 //        client.executeMethod(authpost);
 
         String s = sb.toString();
@@ -113,24 +113,24 @@ public class YahooOptions {
         computeMaxPain("XOM");
     }
 
-    private static void computeMaxPain(String str) throws Exception {
-        Document doc = YahooOptions.getStockOptionChain(str);
+    private static void computeMaxPain(String ticker) throws Exception {
+        Document doc = YahooOptions.getStockOptionChain(ticker);
 //        System.out.println("doc = " + XML.toString(doc, true, true));
 
         double lastPrice = 0;
         try {
-            YahooInstantSnapshot snapshot = YahooUtils.getCompanySnapshot(str);
+            YahooInstantSnapshot snapshot = YahooUtils.getCompanySnapshot(ticker);
             lastPrice = Double.parseDouble(snapshot.getLastPrice());
             System.out.println("lastPrice = " + lastPrice);
         } catch (NumberFormatException e) {
-            //    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
         Node callsNode = XML.findNode(doc, "calls");
         Node putsNode = XML.findNode(doc, "puts");
 
-        List<Vanilla> callsOptions = getChain(callsNode, FinConstants.kCall);
-        List<Vanilla> putsOptions = getChain(putsNode, FinConstants.kPut);
+        List<Vanilla> callsOptions = getChain(ticker, callsNode, FinConstants.kCall);
+        List<Vanilla> putsOptions = getChain(ticker, putsNode, FinConstants.kPut);
 
 //        double cumulativeValue = computeCumulativeValue(lastPrice, callsOptions);
 
@@ -179,8 +179,8 @@ public class YahooOptions {
                 }
             }
         }
-        System.out.println("last price for " + str + " : " + lastPrice);
-        System.out.println("maxPainStrike for " + str + " : " + maxPainStrike);
+        System.out.println("last price for " + ticker + " : " + lastPrice);
+        System.out.println("maxPainStrike for " + ticker + " : " + maxPainStrike);
     }
 
     private static double computeCumulativeValue(double underSpotPrice, List<Vanilla> options) {
@@ -188,7 +188,7 @@ public class YahooOptions {
         if (options != null)
             for (int i = 0; i < options.size(); i++) {
                 Vanilla vanilla = options.get(i);
-                int openInt = vanilla.getLastQuote().getOpenInterest();
+                int openInt = vanilla.openInterest();
                 if (vanilla.type.get().equals(OptionType.CALL)) {
                     if (underSpotPrice > vanilla.strike()) {
                         double value = underSpotPrice - vanilla.strike();
@@ -209,32 +209,35 @@ public class YahooOptions {
     ** where the greatest numbers of options contracts (in dollar value) will expire worthless.
     ** It is the point where option owners feel the maximum pain and option sellers reap the most reward.
      */
-    private static List<Vanilla> getChain(Node callsNode, int direction) {
+    private static List<Vanilla> getChain(String ticker, Node callsNode, int direction) {
         Node tableNode = XML.findNode(callsNode, "table");
         List<Node> children = XML.getImmediateChildren(tableNode);
         List<Vanilla> list = new ArrayList<Vanilla>();
 
         for (int i = 0; i < children.size(); i++) {
-            Vanilla vanilla = new Vanilla();
-            vanilla.setDirection(direction);
+            Vanilla vanilla = new Vanilla(ticker);
+
+            // todo - call o put
+            vanilla.type.setValue(OptionType.CALL);
+
             Node row = children.get(i);
             List<Node> columns = XML.getImmediateChildren(row);
             for (int j = 0; j < columns.size(); j++) {
                 Node node = columns.get(j);
 
-//                if (j == 0) {
-//                    vanilla.setStrike(processStrike(node));
-//                } else if (j == 1) {
-//                    vanilla.setName(getOptionName(node));
-//                } else if (j == 2) {
-//                    vanilla.setPremium(getValue(node));
-//                } else if (j == 4) {
-//                    vanilla.getLastQuote().setBid(getBid(node));
-//                } else if (j == 5) {
-//                    vanilla.getLastQuote().setAsk(getAsk(node));
-//                } else if (j == 7) {
-//                    vanilla.getLastQuote().setOpenInterest(getOpenInterest(node));
-//                }
+                if (j == 0) {
+                    vanilla.strike.setValue(processStrike(node));
+                } else if (j == 1) {
+                    vanilla.setName(getOptionName(node));
+                } else if (j == 2) {
+                    vanilla.premium.setValue(getValue(node));
+                } else if (j == 4) {
+                    vanilla.bid = getBid(node);
+                } else if (j == 5) {
+                    vanilla.ask = getAsk(node);
+                } else if (j == 7) {
+                    vanilla.openInterest.setValue(getOpenInterest(node));
+                }
             }
             list.add(vanilla);
         }
