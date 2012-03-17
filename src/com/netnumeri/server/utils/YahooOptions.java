@@ -26,7 +26,12 @@ public class YahooOptions {
         StringBuffer sb = new StringBuffer();
         String s3;
 
-        InputStream is = NetUtils.openURL("http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker);
+
+        String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
+
+        System.out.println("url = " + url);
+
+        InputStream is = NetUtils.openURL(url);
         s3 = NetUtils.getLineFromURL(is);
         while (s3 != null) {
             if (s3 == null) {
@@ -47,6 +52,10 @@ public class YahooOptions {
 //        client.executeMethod(authpost);
 
         String s = sb.toString();
+
+        // yfnc_datamodoutline1
+
+
         int i = s.indexOf("Strike");
 
         String ss = s.substring(s.indexOf("Strike"));

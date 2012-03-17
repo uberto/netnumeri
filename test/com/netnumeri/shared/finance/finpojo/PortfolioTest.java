@@ -18,10 +18,8 @@ public class PortfolioTest extends TestCase {
 
     @Test(expected=PortfolioException.class)
     public void testBuildPortfolio() throws Exception {
-
         portfolio = new Portfolio();
         portfolio.invest(1000000);
-
     }
 
     @Test
