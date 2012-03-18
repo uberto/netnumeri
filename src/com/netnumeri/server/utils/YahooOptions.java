@@ -298,5 +298,31 @@ public class YahooOptions {
         String strikeString = XML.getData(strikeNode);
         return Double.parseDouble(strikeString);
     }
+
+    public static String getScreen(String ticker) {
+            final String LOGON_SITE = "finance.yahoo.com";
+            final int LOGON_PORT = 80;
+
+            StringBuffer sb = new StringBuffer();
+            String s3;
+
+            String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
+            System.out.println("url = " + url);
+
+            InputStream is = NetUtils.openURL(url);
+            s3 = NetUtils.getLineFromURL(is);
+            while (s3 != null) {
+                if (s3 == null) {
+                    break;
+                }
+                if (s3.startsWith("<!--")) {
+                    break;
+                }
+                System.out.println("s3 = " + s3);
+                sb.append(s3);
+                s3 = NetUtils.getLineFromURL(is);
+            }
+            return sb.toString();
+    }
 }
 

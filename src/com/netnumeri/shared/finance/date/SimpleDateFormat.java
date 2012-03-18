@@ -92,32 +92,17 @@ public class SimpleDateFormat {
                 DAY_OF_WEEK, DAY_OF_MONTH, MONTH, YEAR, HOUR_12, HOUR_24, MINUTE, SECOND, AM_PM, QUOTE, SLASH, COLON, DASH, SPACE
         };
 
-        /*
-         * Getters
-         */
-
         public char getValue() {
             return this.value;
         }
 
-        /*
-         * Setters
-         */
-
         private final void setValue(char value) {
         }
-
-        /*
-         * Util
-         */
 
         public String toString() {
             return Character.toString(this.value);
         }
 
-        /**
-         * return the token that represents this value
-         */
         public static Token getByValue(char value) {
             for (int cii = 0; cii < LIST.length; cii++)
                 if (LIST[cii].getValue() == value)
@@ -126,9 +111,6 @@ public class SimpleDateFormat {
         }
     } // end of class Token
 
-    /**
-     * this utility class is used to create a list that represents the pattern string after parsing.
-     */
     private static class Item {
         private Token token = null;
         private String value = null;
