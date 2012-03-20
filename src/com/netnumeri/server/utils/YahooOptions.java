@@ -9,7 +9,10 @@ import com.netnumeri.shared.finance.utils.YahooInstantSnapshot;
 import com.netnumeri.shared.finance.utils.YahooUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +47,7 @@ public class YahooOptions {
             s3 = NetUtils.getLineFromURL(is);
         }
 
-        
+
 //        HttpClient client = new HttpClient();
 //        client.getHostConfiguration().setHost(LOGON_SITE, LOGON_PORT, "http");
 //        client.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
@@ -299,30 +302,84 @@ public class YahooOptions {
         return Double.parseDouble(strikeString);
     }
 
-    public static String getScreen(String ticker) {
-            final String LOGON_SITE = "finance.yahoo.com";
-            final int LOGON_PORT = 80;
 
-            StringBuffer sb = new StringBuffer();
-            String s3;
+    public static OptionsRows yahooScreenScraper(String ticker) throws IOException, SAXException, ParserConfigurationException {
+        final String LOGON_SITE = "finance.yahoo.com";
+        final int LOGON_PORT = 80;
 
-            String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
-            System.out.println("url = " + url);
+        OptionsRows rows = new OptionsRows();
 
-            InputStream is = NetUtils.openURL(url);
-            s3 = NetUtils.getLineFromURL(is);
-            while (s3 != null) {
-                if (s3 == null) {
-                    break;
-                }
-                if (s3.startsWith("<!--")) {
-                    break;
-                }
-                System.out.println("s3 = " + s3);
-                sb.append(s3);
-                s3 = NetUtils.getLineFromURL(is);
+        StringBuffer sb = new StringBuffer();
+        String s3;
+
+        String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
+        System.out.println("url = " + url);
+
+        InputStream is = NetUtils.openURL(url);
+        s3 = NetUtils.getLineFromURL(is);
+
+        System.out.println("is = " + s3);
+
+        boolean inCalls = false;
+        boolean inPuts = false;
+
+        while (s3 != null) {
+            if (s3 == null) {
+                break;
             }
-            return sb.toString();
+            if (s3.startsWith("<!--")) {
+                break;
+            }
+
+            if (s3.contains("Call Options")) {
+                inCalls = true;
+            }
+            if (s3.contains("Put Options")) {
+                inCalls = false;
+                inPuts = true;
+            }
+
+            System.out.println("s3 = " + s3);
+
+            if (inCalls) rows.callsRows.add(s3);
+            if (inPuts) rows.putsRows.add(s3);
+
+            s3 = NetUtils.getLineFromURL(is);
+        }
+
+        StringBuffer callsStringBuffer= new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+        ArrayList<String> callsRows = rows.callsRows;
+
+        buildXMLString(callsStringBuffer, callsRows);
+        boolean inTable;
+
+
+        StringBuffer putsStringBuffer= new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+        ArrayList<String> putsRows = rows.putsRows;
+
+        buildXMLString(putsStringBuffer, putsRows);
+
+        System.out.println("callsStringBuffer = " + callsStringBuffer.toString()) ;
+
+        rows.setCallsDocument(XML.stringToDocument(callsStringBuffer.toString()));
+        rows.setPutsDocument(XML.stringToDocument(putsStringBuffer.toString()));
+        return rows;
+    }
+
+    private static void buildXMLString(StringBuffer callsStringBuffer, ArrayList<String> callsRows) {
+        boolean inTable = false;
+        for (int i = 0; i < callsRows.size(); i++) {
+            String s = callsRows.get(i);
+            if (s.contains("<table>")) {
+                inTable = true;
+            }
+            if (inTable)
+                callsStringBuffer.append(s);
+            if (s.contentEquals("</table>")){
+                callsStringBuffer.append(s);
+                break;
+            }
+        }
     }
 }
 

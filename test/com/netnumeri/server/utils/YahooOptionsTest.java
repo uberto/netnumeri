@@ -2,16 +2,15 @@ package com.netnumeri.server.utils;
 
 import junit.framework.TestCase;
 import org.junit.Test;
-import org.w3c.dom.Document;
 
 public class YahooOptionsTest extends TestCase {
 
-    String screen;
+    OptionsRows screen;
 
     @Override
     protected  void setUp(){
         try {
-            screen =  YahooOptions.getScreen("SSRI");
+            screen =  YahooOptions.yahooScreenScraper("SSRI");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -22,7 +21,9 @@ public class YahooOptionsTest extends TestCase {
     public void testGetStockOptionChain() throws Exception {
 
 
-        System.out.println("screen = " + screen);
-        Document doc = XML.stringToDocument(screen);
+        System.out.println("screen = " + screen.callsDocument.toString());
+
+        System.out.println("puts = " + screen.putsDocument.toString());
+
     }
 }
