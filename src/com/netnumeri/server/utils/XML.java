@@ -1473,30 +1473,30 @@ return (NodeList) nodeset;
     /**
      * Based on the type of the attribute(String,float,int), compare the two given values
      */
-    private static int compareAttributeValues(SortedAttribute sAtt,
-                                              String val1, String val2) {
-        int returnVal = -1;
-        if (sAtt.getAttType().equals("String")) {
-            returnVal = val1.compareTo(val2);
-        } else if (sAtt.getAttType().equals("float")
-                || sAtt.getAttType().equals("int")) {
-            float f1 = Float.parseFloat(val1);
-            float f2 = Float.parseFloat(val2);
-
-            if (f1 > f2) {
-                returnVal = 1;
-            } else if (f1 < f2) {
-                returnVal = -1;
-            } else if (f1 == f2) {
-                returnVal = 0;
-            }
-        } else {
-            System.err.println("Incompatible attribute type: "
-                    + sAtt.getAttType());
-        }
-
-        return returnVal;
-    }
+//    private static int compareAttributeValues(SortedAttribute sAtt,
+//                                              String val1, String val2) {
+//        int returnVal = -1;
+//        if (sAtt.getAttType().equals("String")) {
+//            returnVal = val1.compareTo(val2);
+//        } else if (sAtt.getAttType().equals("float")
+//                || sAtt.getAttType().equals("int")) {
+//            float f1 = Float.parseFloat(val1);
+//            float f2 = Float.parseFloat(val2);
+//
+//            if (f1 > f2) {
+//                returnVal = 1;
+//            } else if (f1 < f2) {
+//                returnVal = -1;
+//            } else if (f1 == f2) {
+//                returnVal = 0;
+//            }
+//        } else {
+//            System.err.println("Incompatible attribute type: "
+//                    + sAtt.getAttType());
+//        }
+//
+//        return returnVal;
+//    }
 
     /**
      * Orders the children of the given node by their attributes (more than one sorting is allowed) The attribute names

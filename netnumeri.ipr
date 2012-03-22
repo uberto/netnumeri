@@ -337,6 +337,24 @@
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
       </SOURCES>
     </library>
+    <library name="project-lib">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/project-lib" />
+        <root url="file://$PROJECT_DIR$/lib/project-lib" />
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/junit4.5" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/lib/jmock-2.5.1" />
+        <root url="file://$PROJECT_DIR$/lib/junit4.5" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/project-lib" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jmock-2.5.1" recursive="false" type="SOURCES" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/junit4.5" recursive="false" type="SOURCES" />
+    </library>
   </component>
 </project>
 
