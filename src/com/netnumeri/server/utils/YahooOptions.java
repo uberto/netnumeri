@@ -344,10 +344,17 @@ public class YahooOptions {
         int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = s3.substring(index);
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
-        String table = s.substring(0,end);
-        System.out.println("table = " + table);
-        table = table.replaceAll("nowrap", "wrap=\"nowrap\"");
-        rows.setCallsDocument(XML.stringToDocument(table));
+        String callsTable = s.substring(0,end);
+
+        callsTable = callsTable.replaceAll("nowrap", "wrap=\"nowrap\"");
+        rows.setCallsDocument(XML.stringToDocument(callsTable));
+
+        String puts = s.substring(end);
+        end = puts.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
+        String putsTable = puts.substring(0,end);
+        rows.setPutsDocument(XML.stringToDocument(putsTable));
+
+
         return rows;
 
     }
