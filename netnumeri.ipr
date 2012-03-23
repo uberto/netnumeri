@@ -79,7 +79,7 @@
     <option name="autoShowErrorsInEditorAfterCompile" value="true" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="web" url="file://$PROJECT_DIR$/tomcat/conf/web.xml" />
+    <type id="web" />
   </component>
   <component name="IdProvider" IDEtalkID="E82C5E113F30DEB49663A3C3621D160C" />
   <component name="InspectionProjectProfileManager">
@@ -268,7 +268,13 @@
       <module name="netnumeri" />
       <option name="RUN_PAGE" value="MySampleApplication.html" />
       <option name="BROWSER" value="Chrome" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>

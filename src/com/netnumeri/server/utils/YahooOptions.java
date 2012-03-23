@@ -333,6 +333,10 @@ public class YahooOptions {
 
             if (s3.contains("Call Options")) {
                 inCalls = true;
+                String tableWith_yfnc_datamodoutline1 = getTable(s3);
+
+                System.out.println("tableWith_yfnc_datamodoutline1 = " + tableWith_yfnc_datamodoutline1);
+
             }
             if (s3.contains("Put Options")) {
                 inCalls = false;
@@ -366,6 +370,25 @@ public class YahooOptions {
         return rows;
     }
 
+    private static String getTable(String s3){
+
+        int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
+
+        String s = s3.substring(index);
+        
+        int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
+        
+        String table = s.substring(0,end);
+
+        System.out.println("table = " + table);
+
+        table = table.replaceAll("nowrap", "wrap=\"nowrap\"");
+         return table;
+        
+
+    }
+
+    
     private static void buildXMLString(StringBuffer callsStringBuffer, ArrayList<String> callsRows) {
         boolean inTable = false;
         for (int i = 0; i < callsRows.size(); i++) {
