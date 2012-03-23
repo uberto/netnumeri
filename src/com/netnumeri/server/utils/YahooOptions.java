@@ -349,6 +349,7 @@ public class YahooOptions {
         table = table.replaceAll("nowrap", "wrap=\"nowrap\"");
         rows.setCallsDocument(XML.stringToDocument(table));
         return rows;
+
     }
 }
 
