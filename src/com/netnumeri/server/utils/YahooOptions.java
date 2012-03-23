@@ -332,14 +332,14 @@ public class YahooOptions {
             }
             if (s3.contains("Call Options")) {
                 inCalls = true;
-                rows.setCallsDocument(getTable(s3));
+                rows=getTable(rows,s3);
             }
             s3 = NetUtils.getLineFromURL(is);
         }
         return rows;
     }
 
-    private static Document getTable(String s3) throws IOException, SAXException, ParserConfigurationException {
+    private static OptionsRows getTable(OptionsRows rows, String s3) throws IOException, SAXException, ParserConfigurationException {
 
         int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = s3.substring(index);
@@ -347,7 +347,8 @@ public class YahooOptions {
         String table = s.substring(0,end);
         System.out.println("table = " + table);
         table = table.replaceAll("nowrap", "wrap=\"nowrap\"");
-        return XML.stringToDocument(table);
+        rows.setCallsDocument(XML.stringToDocument(table));
+        return rows;
     }
 }
 
