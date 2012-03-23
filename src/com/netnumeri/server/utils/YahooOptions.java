@@ -330,79 +330,24 @@ public class YahooOptions {
             if (s3.startsWith("<!--")) {
                 break;
             }
-
             if (s3.contains("Call Options")) {
                 inCalls = true;
-                String tableWith_yfnc_datamodoutline1 = getTable(s3);
-
-                System.out.println("tableWith_yfnc_datamodoutline1 = " + tableWith_yfnc_datamodoutline1);
-
+                rows.setCallsDocument(getTable(s3));
             }
-            if (s3.contains("Put Options")) {
-                inCalls = false;
-                inPuts = true;
-            }
-
-            System.out.println("s3 = " + s3);
-
-            if (inCalls) rows.callsRows.add(s3);
-            if (inPuts) rows.putsRows.add(s3);
-
             s3 = NetUtils.getLineFromURL(is);
         }
-
-        StringBuffer callsStringBuffer= new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
-        ArrayList<String> callsRows = rows.callsRows;
-
-        buildXMLString(callsStringBuffer, callsRows);
-        boolean inTable;
-
-
-        StringBuffer putsStringBuffer= new StringBuffer("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
-        ArrayList<String> putsRows = rows.putsRows;
-
-        buildXMLString(putsStringBuffer, putsRows);
-
-        System.out.println("callsStringBuffer = " + callsStringBuffer.toString()) ;
-
-        rows.setCallsDocument(XML.stringToDocument(callsStringBuffer.toString()));
-        rows.setPutsDocument(XML.stringToDocument(putsStringBuffer.toString()));
         return rows;
     }
 
-    private static String getTable(String s3){
+    private static Document getTable(String s3) throws IOException, SAXException, ParserConfigurationException {
 
         int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
-
         String s = s3.substring(index);
-        
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
-        
         String table = s.substring(0,end);
-
         System.out.println("table = " + table);
-
         table = table.replaceAll("nowrap", "wrap=\"nowrap\"");
-         return table;
-        
-
-    }
-
-    
-    private static void buildXMLString(StringBuffer callsStringBuffer, ArrayList<String> callsRows) {
-        boolean inTable = false;
-        for (int i = 0; i < callsRows.size(); i++) {
-            String s = callsRows.get(i);
-            if (s.contains("<table>")) {
-                inTable = true;
-            }
-            if (inTable)
-                callsStringBuffer.append(s);
-            if (s.contentEquals("</table>")){
-                callsStringBuffer.append(s);
-                break;
-            }
-        }
+        return XML.stringToDocument(table);
     }
 }
 

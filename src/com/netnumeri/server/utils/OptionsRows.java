@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 public class OptionsRows {
 
-    public ArrayList<String> callsRows = new ArrayList<String>();
-    public ArrayList<String> putsRows = new ArrayList<String>();
-
     public Document callsDocument;
     public Document putsDocument;
 
