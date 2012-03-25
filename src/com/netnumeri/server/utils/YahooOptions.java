@@ -340,23 +340,40 @@ public class YahooOptions {
     }
 
     private static OptionsRows getTable(OptionsRows rows, String s3) throws IOException, SAXException, ParserConfigurationException {
-
         int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = s3.substring(index);
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
         String callsTable = s.substring(0,end);
-
-        callsTable = callsTable.replaceAll("nowrap", "wrap=\"nowrap\"");
+        callsTable = fixWrap(callsTable);
+        callsTable = fixImg(callsTable);
         rows.setCallsDocument(XML.stringToDocument(callsTable));
-
         String puts = s.substring(end);
-        end = puts.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
-        String putsTable = puts.substring(0,end);
+        index = puts.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
+        s = puts.substring(index);
+        end = s.indexOf("<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
+        String putsTable = s.substring(0,end);
+        putsTable = fixWrap(putsTable);
+        putsTable = fixImgPuts(putsTable);
         rows.setPutsDocument(XML.stringToDocument(putsTable));
-
-
         return rows;
 
+    }
+
+    private static String fixWrap(String callsTable) {
+        callsTable = callsTable.replaceAll("nowrap", "wrap=\"nowrap\"");
+        return callsTable;
+    }
+
+    // alt="Up">
+    private static String fixImg(String callsTable) {
+        callsTable = callsTable.replaceAll("alt=\"Up\">", "alt=\"Up\"/>");
+        return callsTable;
+    }
+
+    // alt="Up">
+    private static String fixImgPuts(String callsTable) {
+        callsTable = callsTable.replaceAll("alt=\"Down\">", "alt=\"Down\"/>");
+        return callsTable;
     }
 }
 
