@@ -4,7 +4,7 @@ import org.w3c.dom.Document;
 
 import java.util.ArrayList;
 
-public class OptionsRows {
+public class OptionsDocuments {
 
     public Document callsDocument;
     public Document putsDocument;

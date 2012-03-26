@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class YahooOptionsTest extends TestCase {
 
-    OptionsRows screen;
+    OptionsDocuments screen;
 
     @Override
     protected  void setUp(){

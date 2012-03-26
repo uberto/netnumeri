@@ -125,11 +125,9 @@ public class YahooOptions {
         computeMaxPain("XOM");
     }
 
-    private static void computeMaxPain(String ticker) throws Exception {
-        Document doc = YahooOptions.getStockOptionChain(ticker);
-//        System.out.println("doc = " + XML.toString(doc, true, true));
-
-        double lastPrice = 0;
+    
+    private static Double getLastPrice(String ticker){
+        Double lastPrice = Double.NaN;
         try {
             YahooInstantSnapshot snapshot = YahooUtils.getCompanySnapshot(ticker);
             lastPrice = Double.parseDouble(snapshot.getLastPrice());
@@ -137,6 +135,14 @@ public class YahooOptions {
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
+        return lastPrice;
+    }
+    
+    private static void computeMaxPain(String ticker) throws Exception {
+        Document doc = YahooOptions.getStockOptionChain(ticker);
+//        System.out.println("doc = " + XML.toString(doc, true, true));
+
+        double lastPrice = getLastPrice(ticker);
 
         Node callsNode = XML.findNode(doc, "calls");
         Node putsNode = XML.findNode(doc, "puts");
@@ -303,11 +309,11 @@ public class YahooOptions {
     }
 
 
-    public static OptionsRows yahooScreenScraper(String ticker) throws IOException, SAXException, ParserConfigurationException {
+    public static OptionsDocuments yahooScreenScraper(String ticker) throws IOException, SAXException, ParserConfigurationException {
         final String LOGON_SITE = "finance.yahoo.com";
         final int LOGON_PORT = 80;
 
-        OptionsRows rows = new OptionsRows();
+        OptionsDocuments documents = new OptionsDocuments();
 
         StringBuffer sb = new StringBuffer();
         String s3;
@@ -320,9 +326,6 @@ public class YahooOptions {
 
         System.out.println("is = " + s3);
 
-        boolean inCalls = false;
-        boolean inPuts = false;
-
         while (s3 != null) {
             if (s3 == null) {
                 break;
@@ -331,49 +334,54 @@ public class YahooOptions {
                 break;
             }
             if (s3.contains("Call Options")) {
-                inCalls = true;
-                rows=getTable(rows,s3);
+                documents = getOptionsDocuments(documents, s3);
             }
             s3 = NetUtils.getLineFromURL(is);
         }
-        return rows;
+        return documents;
     }
 
-    private static OptionsRows getTable(OptionsRows rows, String s3) throws IOException, SAXException, ParserConfigurationException {
+    private static OptionsDocuments getOptionsDocuments(OptionsDocuments documents, String s3) throws IOException, SAXException, ParserConfigurationException {
         int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = s3.substring(index);
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
         String callsTable = s.substring(0,end);
-        callsTable = fixWrap(callsTable);
-        callsTable = fixImg(callsTable);
-        rows.setCallsDocument(XML.stringToDocument(callsTable));
+        callsTable = fix(callsTable);
+
+        System.out.println("callsTable = " + callsTable);
+
+        documents.setCallsDocument(XML.stringToDocument(callsTable));
         String puts = s.substring(end);
         index = puts.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         s = puts.substring(index);
         end = s.indexOf("<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
         String putsTable = s.substring(0,end);
-        putsTable = fixWrap(putsTable);
-        putsTable = fixImgPuts(putsTable);
-        rows.setPutsDocument(XML.stringToDocument(putsTable));
-        return rows;
+        putsTable = fix(putsTable);
+        documents.setPutsDocument(XML.stringToDocument(putsTable));
+        return documents;
 
     }
 
-    private static String fixWrap(String callsTable) {
-        callsTable = callsTable.replaceAll("nowrap", "wrap=\"nowrap\"");
+    private static String fix(String callsTable) {
+
+        callsTable = callsTable.replaceAll("alt=\"Up\">", "/>");
+        callsTable = callsTable.replaceAll("alt=\"Down\">", "/>");
+
+        ArrayList<String> strings = new ArrayList<String>();
+        strings.add("nowrap");
+        strings.add("class=\"yfnc_tabledata1\"");
+        strings.add("align=\"right\"");
+        strings.add("align=\"left\"");
+        strings.add("class=\"yfnc_h\"");
+        strings.add("style=\"color:#000000;\"");
+
+        for (int i = 0; i < strings.size(); i++) {
+            String s = strings.get(i);
+            callsTable = callsTable.replaceAll(s, "");
+        }
+
         return callsTable;
     }
 
-    // alt="Up">
-    private static String fixImg(String callsTable) {
-        callsTable = callsTable.replaceAll("alt=\"Up\">", "alt=\"Up\"/>");
-        return callsTable;
-    }
-
-    // alt="Up">
-    private static String fixImgPuts(String callsTable) {
-        callsTable = callsTable.replaceAll("alt=\"Down\">", "alt=\"Down\"/>");
-        return callsTable;
-    }
 }
 
