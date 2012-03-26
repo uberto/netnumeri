@@ -1,6 +1,8 @@
 package com.netnumeri.server.utils;
 
 import junit.framework.TestCase;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
 import org.junit.Test;
 
 public class YahooOptionsTest extends TestCase {
@@ -20,6 +22,7 @@ public class YahooOptionsTest extends TestCase {
     @Test
     public void testGetStockOptionChain() throws Exception {
 
+        Document document = DocumentHelper.createDocument();
 
         System.out.println("screen = " + screen.callsDocument.toString());
 
