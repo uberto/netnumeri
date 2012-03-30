@@ -242,88 +242,90 @@ public class YahooOptions {
             Vanilla vanilla = new Vanilla(ticker);
 
             if (direction == OptionType.CALL)
-            vanilla.type.setValue(OptionType.CALL);
+                vanilla.type.setValue(OptionType.CALL);
             else
                 vanilla.type.setValue(OptionType.CALL);
 
             Element row = (Element) nodes.get(i);
 
-            List<Node> columns = XML.getImmediateChildren(row);
+            row.asXML();
 
-            for (int j = 0; j < columns.size(); j++) {
-                Node node = columns.get(j);
-
-                if (j == 0) {
-                    vanilla.strike.setValue(processStrike(node));
-                } else if (j == 1) {
-                    vanilla.setName(getOptionName(node));
-                } else if (j == 2) {
-                    vanilla.premium.setValue(getValue(node));
-                } else if (j == 4) {
-                    vanilla.bid = getBid(node);
-                } else if (j == 5) {
-                    vanilla.ask = getAsk(node);
-                } else if (j == 7) {
-                    vanilla.openInterest.setValue(getOpenInterest(node));
-                }
-            }
+//            List<Node> columns = XML.getImmediateChildren(row);
+//
+//            for (int j = 0; j < columns.size(); j++) {
+//                Node node = columns.get(j);
+//
+//                if (j == 0) {
+//                    vanilla.strike.setValue(processStrike(node));
+//                } else if (j == 1) {
+//                    vanilla.setName(getOptionName(node));
+//                } else if (j == 2) {
+//                    vanilla.premium.setValue(getValue(node));
+//                } else if (j == 4) {
+//                    vanilla.bid = getBid(node);
+//                } else if (j == 5) {
+//                    vanilla.ask = getAsk(node);
+//                } else if (j == 7) {
+//                    vanilla.openInterest.setValue(getOpenInterest(node));
+//                }
+//            }
             list.add(vanilla);
         }
         return list;
     }
 
     private static double getAsk(Node node) {
-//        System.out.println("XML.toString(node,true,true) = " + XML.toString(node, true, true));
-        Node sNode = XML.findNode(node, "span");
-        if (sNode != null) {
-            String s = XML.getData(sNode);
-            return Double.parseDouble(s);
-        }
+//        Node sNode = XML.findNode(node, "span");
+//        if (sNode != null) {
+//            String s = XML.getData(sNode);
+//            return Double.parseDouble(s);
+//        }
         return Double.NaN;
     }
 
     private static double getBid(Node node) {
-//        System.out.println("XML.toString(node,true,true) = " + XML.toString(node, true, true));
-        Node sNode = XML.findNode(node, "span");
-        if (sNode != null) {
-            String s = XML.getData(sNode);
-            return Double.parseDouble(s);
-        }
+//        Node sNode = XML.findNode(node, "span");
+//        if (sNode != null) {
+//            String s = XML.getData(sNode);
+//            return Double.parseDouble(s);
+//        }
         return Double.NaN;
     }
 
     private static int getOpenInterest(Node node) {
-        String s = XML.getData(node);
-        s = s.replaceAll(",", "");
-        return Integer.parseInt(s);
+//        String s = XML.getData(node);
+//        s = s.replaceAll(",", "");
+//        return Integer.parseInt(s);
+        return 0;
     }
 
     private static double getValue(Node node) {
-//        System.out.println("XML.toString(node,true,true) = " + XML.toString(node, true, true));
-        Node sNode = XML.findNode(node, "span");
-        if (sNode != null) {
-            return Double.parseDouble(XML.getData(sNode));
-        }
+//        Node sNode = XML.findNode(node, "span");
+//        if (sNode != null) {
+//            return Double.parseDouble(XML.getData(sNode));
+//        }
         return Double.NaN;
     }
 
     private static String getOptionName(Node node) {
-        Node sNode = XML.findNode(node, "a");
-        return XML.getData(sNode);
+//        Node sNode = XML.findNode(node, "a");
+//        return XML.getData(sNode);
+
+        return "toto";
     }
 
     private static double processStrike(Node row) {
-        Node strikeNode = XML.findNode(row, "a");
-        String strikeString = XML.getData(strikeNode);
-        return Double.parseDouble(strikeString);
+//        Node strikeNode = XML.findNode(row, "a");
+//        String strikeString = XML.getData(strikeNode);
+//        return Double.parseDouble(strikeString);
+        return Double.NaN;
     }
-
 
     public static OptionsDocuments yahooScreenScraper(String ticker) throws IOException, SAXException, ParserConfigurationException, DocumentException {
         final String LOGON_SITE = "finance.yahoo.com";
         final int LOGON_PORT = 80;
 
-
+        OptionsDocuments documents = null;
         StringBuffer sb = new StringBuffer();
         String s3;
 
