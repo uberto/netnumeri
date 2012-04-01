@@ -236,6 +236,7 @@
     <dictionary name="antonio">
       <words>
         <w>dailyarray</w>
+        <w>htlm</w>
       </words>
     </dictionary>
   </component>

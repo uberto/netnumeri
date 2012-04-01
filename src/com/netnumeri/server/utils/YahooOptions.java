@@ -21,78 +21,6 @@ import java.util.Map;
 
 public class YahooOptions {
 
-//    public static Document getStockOptionChain(String ticker) throws Exception {
-//        final String LOGON_SITE = "finance.yahoo.com";
-//        final int LOGON_PORT = 80;
-//
-//        StringBuffer sb = new StringBuffer();
-//        String s3;
-//
-//
-//        String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
-//
-//        System.out.println("url = " + url);
-//
-//        InputStream is = NetUtils.openURL(url);
-//        s3 = NetUtils.getLineFromURL(is);
-//        while (s3 != null) {
-//            if (s3 == null) {
-//                break;
-//            }
-//            if (s3.startsWith("<!--")) {
-//                break;
-//            }
-//            sb.append(s3);
-//            s3 = NetUtils.getLineFromURL(is);
-//        }
-//
-//
-////        HttpClient client = new HttpClient();
-////        client.getHostConfiguration().setHost(LOGON_SITE, LOGON_PORT, "http");
-////        client.getParams().setCookiePolicy(CookiePolicy.BROWSER_COMPATIBILITY);
-////        GetMethod authpost = new GetMethod("/q/op?s=" + name);
-////        client.executeMethod(authpost);
-//
-//        String s = sb.toString();
-//
-//        // yfnc_datamodoutline1
-//
-//
-//        int i = s.indexOf("Strike");
-//
-//        String ss = s.substring(s.indexOf("Strike"));
-//        ss = ss.substring(ss.indexOf("/q/op?s="));
-//        String sss = "Highlighted options are in-the-money.";
-//        int j = ss.indexOf(sss);
-//        String calls = ss.substring(0, j);
-//
-//        calls = "    <calls><table><tr><td><b>" +
-//                "           <a name=\"STRIKE" + calls;
-//        calls = calls.replaceAll("nowrap", "");
-//        calls = calls.replaceAll("class=\"yfnc_tabledata1\"", "");
-//        calls = calls.replaceAll("align=\"right\"", "");
-//        calls = calls.replaceAll("class=\"yfnc_h\"", "");
-//
-//        String c = calls.replaceAll("alt=\"Up\">", "alt=\"Up\"/>");
-//        c = c.replaceAll("alt=\"Down\">", "alt=\"Down\"/>");
-//
-//        String x = "</td></tr></table><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">";
-//        c = c.replaceAll(x, "</calls>");
-//        String puts = c.substring(c.indexOf("</calls>"));
-//        c = c.substring(0, c.indexOf("</calls>")) + "</calls>";
-//        puts = puts.substring(puts.indexOf("/q/op?s="));
-//        puts = "<puts><table><tr><td><b><a name=\"STRIKE" + puts;
-//        String cputs = puts.replaceAll("alt=\"Up\">", "alt=\"Up\"/>");
-//        cputs = cputs.replaceAll("alt=\"Down\">", "alt=\"Down\"/>");
-//        cputs = cputs.replaceAll("</td></tr></table><table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">", "</puts>");
-//        cputs = cputs.substring(0, cputs.indexOf("</puts>")) + "</puts>";
-//
-//
-//        Document doc = XML.stringToDocument("<root>" + c + cputs + "</root>");
-////        authpost.releaseConnection();
-//        return doc;
-//    }
-
     public static void main(String[] args) throws Exception {
         computeMaxPain("AA");
         computeMaxPain("AXP");
@@ -140,16 +68,19 @@ public class YahooOptions {
     }
     
     private static void computeMaxPain(String ticker) throws Exception {
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker);
+
+
+
+        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, htmlScreen);
 //        System.out.println("doc = " + XML.toString(doc, true, true));
 
-        double lastPrice = getLastPrice(ticker);
+        double lastPrice = getLastPrice(htmlScreen);
 
 //        Node callsNode = XML.findNode(doc, "calls");
 //        Node putsNode = XML.findNode(doc, "puts");
 
-        List<Vanilla> callsOptions = getChain(ticker, optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = getChain(ticker, optionsDocuments, OptionType.CALL);
+        List<Vanilla> callsOptions = getChain(htmlScreen, optionsDocuments, OptionType.CALL);
+        List<Vanilla> putsOptions = getChain(htmlScreen, optionsDocuments, OptionType.PUT);
 
 //        double cumulativeValue = computeCumulativeValue(lastPrice, callsOptions);
 
@@ -198,8 +129,8 @@ public class YahooOptions {
                 }
             }
         }
-        System.out.println("last price for " + ticker + " : " + lastPrice);
-        System.out.println("maxPainStrike for " + ticker + " : " + maxPainStrike);
+        System.out.println("last price for " + htmlScreen + " : " + lastPrice);
+        System.out.println("maxPainStrike for " + htmlScreen + " : " + maxPainStrike);
     }
 
     private static double computeCumulativeValue(double underSpotPrice, List<Vanilla> options) {
@@ -248,7 +179,7 @@ public class YahooOptions {
 
             Element row = (Element) nodes.get(i);
 
-            row.asXML();
+            System.out.println("row = " + row.asXML());
 
 //            List<Node> columns = XML.getImmediateChildren(row);
 //
@@ -346,23 +277,20 @@ public class YahooOptions {
             }
             if (s3.contains("Call Options")) {
                 documents = getOptionsDocuments( s3);
+                break;
             }
             s3 = NetUtils.getLineFromURL(is);
         }
         return documents;
     }
 
-    private static OptionsDocuments getOptionsDocuments(String s3) throws IOException, SAXException, ParserConfigurationException, DocumentException {
-        OptionsDocuments documents = new OptionsDocuments();
-
-        int index = s3.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
-        String s = s3.substring(index);
+    public static OptionsDocuments getOptionsDocuments(String ticker, String htlmScreen) throws IOException, SAXException, ParserConfigurationException, DocumentException {
+        OptionsDocuments documents = new OptionsDocuments(ticker);
+        int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
+        String s = htlmScreen.substring(index);
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
         String callsTable = s.substring(0,end);
         callsTable = fix(callsTable);
-
-        System.out.println("callsTable = " + callsTable);
-
         documents.setCallsDocument(DocumentHelper.parseText(callsTable));
         String puts = s.substring(end);
         index = puts.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
@@ -370,7 +298,6 @@ public class YahooOptions {
         end = s.indexOf("<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
         String putsTable = s.substring(0,end);
         putsTable = fix(putsTable);
-
         documents.setPutsDocument(DocumentHelper.parseText(putsTable));
         return documents;
 
@@ -396,7 +323,6 @@ public class YahooOptions {
 
         return callsTable;
     }
-
 
 }
 

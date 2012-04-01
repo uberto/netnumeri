@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <table class="yfnc_datamodoutline1" width="100%" cellpadding="0" cellspacing="0" border="0">
     <tr valign="top">
         <td>
@@ -26,11 +27,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00008000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
+                    <td>6.70</td>
+                    <td>7.20</td>
                     <td>1</td>
                     <td>1</td>
                 </tr>
@@ -48,11 +49,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00010000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
+                    <td>4.70</td>
+                    <td>5.10</td>
                     <td>10</td>
                     <td>11</td>
                 </tr>
@@ -70,11 +71,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00011000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
+                    <td>3.70</td>
+                    <td>4.20</td>
                     <td>1</td>
                     <td>1</td>
                 </tr>
@@ -92,11 +93,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00012000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
+                    <td>2.75</td>
+                    <td>3.20</td>
                     <td>1</td>
                     <td>12</td>
                 </tr>
@@ -110,17 +111,19 @@
                         <a href="/q?s=SSRI120421C00013000">SSRI120421C00013000</a>
                     </td>
                     <td>
-                        <b>2.06</b>
+                        <b>2.05</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00013000">
-                            <b style="color:#000000;">0.00</b>
+                            <img width="10" height="14" style="margin-right:-2px;" border="0"
+                                 src="http://l.yimg.com/a/i/us/fi/03rd/down_r.gif"/>
+                            <b style="color:#cc0000;">0.01</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>20</td>
-                    <td>962</td>
+                    <td>2.05</td>
+                    <td>2.20</td>
+                    <td>10</td>
+                    <td>970</td>
                 </tr>
                 <tr>
                     <td>
@@ -132,17 +135,19 @@
                         <a href="/q?s=SSRI120421C00014000">SSRI120421C00014000</a>
                     </td>
                     <td>
-                        <b>1.40</b>
+                        <b>1.20</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00014000">
-                            <b style="color:#000000;">0.00</b>
+                            <img width="10" height="14" style="margin-right:-2px;" border="0"
+                                 src="http://l.yimg.com/a/i/us/fi/03rd/up_g.gif"/>
+                            <b style="color:#008800;">0.02</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>36</td>
-                    <td>301</td>
+                    <td>1.20</td>
+                    <td>1.35</td>
+                    <td>8</td>
+                    <td>313</td>
                 </tr>
                 <tr>
                     <td>
@@ -154,17 +159,19 @@
                         <a href="/q?s=SSRI120421C00015000">SSRI120421C00015000</a>
                     </td>
                     <td>
-                        <b>0.65</b>
+                        <b>0.58</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00015000">
-                            <b style="color:#000000;">0.00</b>
+                            <img width="10" height="14" style="margin-right:-2px;" border="0"
+                                 src="http://l.yimg.com/a/i/us/fi/03rd/down_r.gif"/>
+                            <b style="color:#cc0000;">0.04</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>221</td>
-                    <td>3,216</td>
+                    <td>0.60</td>
+                    <td>0.65</td>
+                    <td>10</td>
+                    <td>3,147</td>
                 </tr>
                 <tr>
                     <td>
@@ -176,17 +183,19 @@
                         <a href="/q?s=SSRI120421C00016000">SSRI120421C00016000</a>
                     </td>
                     <td>
-                        <b>0.30</b>
+                        <b>0.23</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00016000">
-                            <b style="color:#000000;">0.00</b>
+                            <img width="10" height="14" style="margin-right:-2px;" border="0"
+                                 src="http://l.yimg.com/a/i/us/fi/03rd/down_r.gif"/>
+                            <b style="color:#cc0000;">0.04</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>149</td>
-                    <td>1,019</td>
+                    <td>0.25</td>
+                    <td>0.30</td>
+                    <td>2</td>
+                    <td>1,213</td>
                 </tr>
                 <tr>
                     <td>
@@ -198,17 +207,17 @@
                         <a href="/q?s=SSRI120421C00017000">SSRI120421C00017000</a>
                     </td>
                     <td>
-                        <b>0.15</b>
+                        <b>0.07</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00017000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
-                    <td>N/A</td>
-                    <td>N/A</td>
-                    <td>45</td>
-                    <td>541</td>
+                    <td>0.05</td>
+                    <td>0.15</td>
+                    <td>1</td>
+                    <td>521</td>
                 </tr>
                 <tr>
                     <td>
@@ -224,13 +233,15 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00018000">
-                            <b style="color:#000000;">0.00</b>
+                            <img width="10" height="14" style="margin-right:-2px;" border="0"
+                                 src="http://l.yimg.com/a/i/us/fi/03rd/down_r.gif"/>
+                            <b style="color:#cc0000;">0.02</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
-                    <td>4</td>
-                    <td>875</td>
+                    <td>0.10</td>
+                    <td>2</td>
+                    <td>868</td>
                 </tr>
                 <tr>
                     <td>
@@ -242,17 +253,17 @@
                         <a href="/q?s=SSRI120421C00019000">SSRI120421C00019000</a>
                     </td>
                     <td>
-                        <b>0.05</b>
+                        <b>0.06</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00019000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
-                    <td>20</td>
-                    <td>1,001</td>
+                    <td>0.10</td>
+                    <td>7</td>
+                    <td>965</td>
                 </tr>
                 <tr>
                     <td>
@@ -264,17 +275,17 @@
                         <a href="/q?s=SSRI120421C00020000">SSRI120421C00020000</a>
                     </td>
                     <td>
-                        <b>0.05</b>
+                        <b>0.04</b>
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00020000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
-                    <td>129</td>
-                    <td>507</td>
+                    <td>0.05</td>
+                    <td>1</td>
+                    <td>493</td>
                 </tr>
                 <tr>
                     <td>
@@ -290,11 +301,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00021000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
+                    <td>0.05</td>
                     <td>15</td>
                     <td>92</td>
                 </tr>
@@ -312,11 +323,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00022000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
+                    <td>0.05</td>
                     <td>80</td>
                     <td>71</td>
                 </tr>
@@ -334,11 +345,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00023000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
+                    <td>0.05</td>
                     <td>8</td>
                     <td>6</td>
                 </tr>
@@ -356,11 +367,11 @@
                     </td>
                     <td>
                         <span id="yfs_c10_ssri120421c00024000">
-                            <b style="color:#000000;">0.00</b>
+                            <b>0.00</b>
                         </span>
                     </td>
                     <td>N/A</td>
-                    <td>N/A</td>
+                    <td>0.05</td>
                     <td>100</td>
                     <td>107</td>
                 </tr>

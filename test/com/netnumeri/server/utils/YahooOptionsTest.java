@@ -22,11 +22,15 @@ public class YahooOptionsTest extends TestCase {
     @Test
     public void testGetStockOptionChain() throws Exception {
 
-        Document document = DocumentHelper.createDocument();
+        Document callsDocument = screen.callsDocument;
 
-        System.out.println("screen = " + screen.callsDocument.toString());
+        System.out.println("screen = " + callsDocument.asXML());
 
-        System.out.println("puts = " + screen.putsDocument.toString());
+        Document putsDocument = screen.putsDocument;
+
+        System.out.println("putsDocument.asXML() = " + putsDocument.asXML());
+
+
 
     }
 }
