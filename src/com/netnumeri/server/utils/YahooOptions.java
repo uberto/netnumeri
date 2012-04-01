@@ -1,7 +1,6 @@
 package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.entity.OptionType;
-import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.data.MaximumPainBean;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
 import com.netnumeri.shared.finance.utils.NetUtils;
@@ -69,18 +68,16 @@ public class YahooOptions {
     
     private static void computeMaxPain(String ticker) throws Exception {
 
-
-
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, htmlScreen);
+        OptionsDocuments optionsDocuments = getOptionsDocuments(ticker);
 //        System.out.println("doc = " + XML.toString(doc, true, true));
 
-        double lastPrice = getLastPrice(htmlScreen);
+        double lastPrice = getLastPrice(ticker);
 
 //        Node callsNode = XML.findNode(doc, "calls");
 //        Node putsNode = XML.findNode(doc, "puts");
 
-        List<Vanilla> callsOptions = getChain(htmlScreen, optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = getChain(htmlScreen, optionsDocuments, OptionType.PUT);
+        List<Vanilla> callsOptions = getChain(ticker, optionsDocuments, OptionType.CALL);
+        List<Vanilla> putsOptions = getChain(ticker, optionsDocuments, OptionType.PUT);
 
 //        double cumulativeValue = computeCumulativeValue(lastPrice, callsOptions);
 
@@ -129,8 +126,8 @@ public class YahooOptions {
                 }
             }
         }
-        System.out.println("last price for " + htmlScreen + " : " + lastPrice);
-        System.out.println("maxPainStrike for " + htmlScreen + " : " + maxPainStrike);
+        System.out.println("last price for " + ticker + " : " + lastPrice);
+        System.out.println("maxPainStrike for " + ticker + " : " + maxPainStrike);
     }
 
     private static double computeCumulativeValue(double underSpotPrice, List<Vanilla> options) {
@@ -252,7 +249,7 @@ public class YahooOptions {
         return Double.NaN;
     }
 
-    public static OptionsDocuments yahooScreenScraper(String ticker) throws IOException, SAXException, ParserConfigurationException, DocumentException {
+    public static OptionsDocuments getOptionsDocuments(String ticker) throws IOException, SAXException, ParserConfigurationException, DocumentException {
         final String LOGON_SITE = "finance.yahoo.com";
         final int LOGON_PORT = 80;
 
@@ -276,7 +273,7 @@ public class YahooOptions {
                 break;
             }
             if (s3.contains("Call Options")) {
-                documents = getOptionsDocuments( s3);
+                documents = scrape(ticker, s3);
                 break;
             }
             s3 = NetUtils.getLineFromURL(is);
@@ -284,7 +281,7 @@ public class YahooOptions {
         return documents;
     }
 
-    public static OptionsDocuments getOptionsDocuments(String ticker, String htlmScreen) throws IOException, SAXException, ParserConfigurationException, DocumentException {
+    public static OptionsDocuments scrape(String ticker, String htlmScreen) throws IOException, SAXException, ParserConfigurationException, DocumentException {
         OptionsDocuments documents = new OptionsDocuments(ticker);
         int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = htlmScreen.substring(index);

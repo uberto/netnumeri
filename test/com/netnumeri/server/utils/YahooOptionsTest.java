@@ -2,7 +2,6 @@ package com.netnumeri.server.utils;
 
 import junit.framework.TestCase;
 import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
 import org.junit.Test;
 
 public class YahooOptionsTest extends TestCase {
@@ -12,7 +11,7 @@ public class YahooOptionsTest extends TestCase {
     @Override
     protected  void setUp(){
         try {
-            screen =  YahooOptions.yahooScreenScraper("SSRI");
+            screen =  YahooOptions.getOptionsDocuments("SSRI");
 
         } catch (Exception e) {
             e.printStackTrace();
