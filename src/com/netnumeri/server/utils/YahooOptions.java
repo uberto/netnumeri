@@ -76,8 +76,8 @@ public class YahooOptions {
 //        Node callsNode = XML.findNode(doc, "calls");
 //        Node putsNode = XML.findNode(doc, "puts");
 
-        List<Vanilla> callsOptions = getChain(ticker, optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = getChain(ticker, optionsDocuments, OptionType.PUT);
+        List<Vanilla> callsOptions = getChain(optionsDocuments, OptionType.CALL);
+        List<Vanilla> putsOptions = getChain(optionsDocuments, OptionType.PUT);
 
 //        double cumulativeValue = computeCumulativeValue(lastPrice, callsOptions);
 
@@ -156,7 +156,7 @@ public class YahooOptions {
     ** where the greatest numbers of options contracts (in dollar value) will expire worthless.
     ** It is the point where option owners feel the maximum pain and option sellers reap the most reward.
      */
-    private static List<Vanilla> getChain(String ticker, OptionsDocuments callsNode, OptionType direction) {
+    public static List<Vanilla> getChain(OptionsDocuments callsNode, OptionType direction) {
 
         XPath xpathSelector = DocumentHelper.createXPath("/table/tr/td/table/tr");
         List nodes = xpathSelector.selectNodes(callsNode.callsDocument);
@@ -167,16 +167,48 @@ public class YahooOptions {
         List<Vanilla> list = new ArrayList<Vanilla>();
 
         for (int i = 1; i < nodes.size(); i++) {
-            Vanilla vanilla = new Vanilla(ticker);
+
+            Element node = (Element) nodes.get(i);
+
+            String row = node.asXML();
+
+            Vanilla vanilla = new Vanilla(callsNode.ticker);
 
             if (direction == OptionType.CALL)
                 vanilla.type.setValue(OptionType.CALL);
             else
-                vanilla.type.setValue(OptionType.CALL);
+                vanilla.type.setValue(OptionType.PUT);
 
-            Element row = (Element) nodes.get(i);
+            /*
+            <tr>
+                <td>
+                    <a href="/q/op?s=IBM&amp;k=85.000000">
+                        <strong>85.00</strong>
+                    </a>
+                </td>
+                <td>
+                    <a href="/q?s=IBM120421C00085000">IBM120421C00085000</a>
+                </td>
+                <td>
+                    <b>15.80</b>
+                </td>
+                <td>
+                    <span id="yfs_c63_ibm120421c00085000">
+                        <b>0.00</b>
+                    </span>
+                </td>
+                <td>118.00</td>
+                <td>122.10</td>
+                <td>1</td>
+                <td>1</td>
+            </tr>
+            */
 
-            System.out.println("row = " + row.asXML());
+            XPath selector = DocumentHelper.createXPath("//tr/td/a/strong");
+            Node node1 = selector.selectSingleNode(node);
+
+            Double strike = Double.parseDouble(node1.getText());
+            vanilla.strike.setValue(strike);
 
 //            List<Node> columns = XML.getImmediateChildren(row);
 //

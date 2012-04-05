@@ -1,8 +1,12 @@
 package com.netnumeri.server.utils;
 
+import com.netnumeri.shared.entity.OptionType;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
 import junit.framework.TestCase;
 import org.dom4j.Document;
 import org.junit.Test;
+
+import java.util.List;
 
 public class YahooOptionsTest extends TestCase {
 
@@ -11,7 +15,7 @@ public class YahooOptionsTest extends TestCase {
     @Override
     protected  void setUp(){
         try {
-            screen =  YahooOptions.getOptionsDocuments("SSRI");
+            screen =  YahooOptions.getOptionsDocuments("IBM");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -28,6 +32,9 @@ public class YahooOptionsTest extends TestCase {
         Document putsDocument = screen.putsDocument;
 
         System.out.println("putsDocument.asXML() = " + putsDocument.asXML());
+
+        List<Vanilla> callsOptions = YahooOptions.getChain(screen, OptionType.CALL);
+
 
 
 
