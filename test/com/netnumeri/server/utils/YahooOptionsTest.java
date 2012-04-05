@@ -26,14 +26,13 @@ public class YahooOptionsTest extends TestCase {
     public void testGetStockOptionChain() throws Exception {
 
         Document callsDocument = screen.callsDocument;
-
         System.out.println("screen = " + callsDocument.asXML());
 
         Document putsDocument = screen.putsDocument;
-
         System.out.println("putsDocument.asXML() = " + putsDocument.asXML());
 
-        List<Vanilla> callsOptions = YahooOptions.getChain(screen, OptionType.CALL);
+        List<Vanilla> callOptions = YahooOptions.getChain(screen, OptionType.CALL);
+        List<Vanilla> putOptions = YahooOptions.getChain(screen, OptionType.PUT);
 
 
 

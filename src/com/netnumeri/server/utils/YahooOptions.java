@@ -170,9 +170,6 @@ public class YahooOptions {
 
             Element node = (Element) nodes.get(i);
 
-
-            System.out.println("node.asXML() = " + node.asXML());
-
             Vanilla vanilla = new Vanilla(callsNode.ticker);
 
             if (direction == OptionType.CALL)
