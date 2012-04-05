@@ -15,21 +15,35 @@ import java.util.Collection;
 
 public class Vanilla extends Derivative implements Entity {
 
-
     enum Field implements FieldName {
-        underlying, interestRate, expiration, strike, premium, contractSize, openInterest, type, dividend
+        name,
+        underlying,
+        interestRate,
+        expiration,
+        strike,
+        premium,
+        change,
+        ask,
+        bid,
+        contractSize,
+        openInterest,
+        type,
+        dividend
     }
     private FieldMap fieldMap = new FieldMap();
 
-    private StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
-    private DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
-    private DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
+    public StringEntityField name = new StringEntityField(fieldMap,Field.name, 32);
+    public StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
+    public DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
+    public DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
     public DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
     public DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
-    private DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
+    public DoubleEntityField change = new DoubleEntityField(fieldMap,Field.change);
+    public DoubleEntityField ask = new DoubleEntityField(fieldMap,Field.ask);
+    public DoubleEntityField bid = new DoubleEntityField(fieldMap,Field.bid);
+    public DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
     public EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
-
-    private IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
+    public IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
     public IntegerEntityField openInterest = new IntegerEntityField(fieldMap,Field.openInterest);
 
 //    private MonteCarlo monteCarlo;
@@ -358,12 +372,12 @@ public class Vanilla extends Derivative implements Entity {
 
     @Override
     public String getName() {
-        return null;
+        return name.get();
     }
 
     @Override
     public void setName(String name) {
-
+        this.name.setValue(name);
     }
 
     public double modelPrice(int model,

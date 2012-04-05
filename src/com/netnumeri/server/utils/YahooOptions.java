@@ -170,7 +170,8 @@ public class YahooOptions {
 
             Element node = (Element) nodes.get(i);
 
-            String row = node.asXML();
+
+            System.out.println("node.asXML() = " + node.asXML());
 
             Vanilla vanilla = new Vanilla(callsNode.ticker);
 
@@ -190,95 +191,64 @@ public class YahooOptions {
                     <a href="/q?s=IBM120421C00085000">IBM120421C00085000</a>
                 </td>
                 <td>
-                    <b>15.80</b>
+                    <b>15.80</b>     // last
                 </td>
                 <td>
                     <span id="yfs_c63_ibm120421c00085000">
-                        <b>0.00</b>
+                        <b>0.00</b>    // change
                     </span>
                 </td>
-                <td>118.00</td>
-                <td>122.10</td>
-                <td>1</td>
-                <td>1</td>
+                <td>118.00</td>                 Bid
+                <td>122.10</td>                 Ask
+                <td>1</td>                      Vol
+                <td>1</td>                      Open interest
             </tr>
             */
 
-            XPath selector = DocumentHelper.createXPath("//tr/td/a/strong");
-            Node node1 = selector.selectSingleNode(node);
+            List ns = node.elements();
 
-            Double strike = Double.parseDouble(node1.getText());
-            vanilla.strike.setValue(strike);
+            Element strikeNode = (Element)ns.get(0);
+            Element strong = strikeNode.element("a").element("strong");
+            String strike = strong.getText();
+            vanilla.strike.setValue(Double.parseDouble(strike));
 
-//            List<Node> columns = XML.getImmediateChildren(row);
-//
-//            for (int j = 0; j < columns.size(); j++) {
-//                Node node = columns.get(j);
-//
-//                if (j == 0) {
-//                    vanilla.strike.setValue(processStrike(node));
-//                } else if (j == 1) {
-//                    vanilla.setName(getOptionName(node));
-//                } else if (j == 2) {
-//                    vanilla.premium.setValue(getValue(node));
-//                } else if (j == 4) {
-//                    vanilla.bid = getBid(node);
-//                } else if (j == 5) {
-//                    vanilla.ask = getAsk(node);
-//                } else if (j == 7) {
-//                    vanilla.openInterest.setValue(getOpenInterest(node));
-//                }
-//            }
+            Element isinNode = (Element)ns.get(1);
+            Element a = isinNode.element("a");
+            vanilla.name.setValue(a.getText());
+
+            Element lastNode = (Element)ns.get(2);
+            a = lastNode.element("b");
+            vanilla.premium.setValue(Double.parseDouble(a.getText()));
+
+            Element changeNode = (Element)ns.get(3);
+            a = changeNode.element("span").element("b");
+            vanilla.change.setValue(Double.parseDouble(a.getText()));
+
+            Element bidNode = (Element)ns.get(4);
+            if (!bidNode.getText().equals("N/A"))
+                vanilla.bid.setValue(Double.parseDouble(bidNode.getText()));
+            else
+                vanilla.bid.setValue(Double.NaN);
+
+            Element askNode = (Element)ns.get(5);
+            if (!askNode.getText().equals("N/A"))
+                vanilla.ask.setValue(Double.parseDouble(askNode.getText()));
+            else
+                vanilla.ask.setValue(Double.NaN);
+
+            Element volumeNode = (Element)ns.get(6);
+
+            if (!volumeNode.getText().equals("N/A"))
+                vanilla.contractSize.setValue(Integer.parseInt(volumeNode.getText().replaceAll(",","")));
+            else
+                vanilla.contractSize.setValue(-1);
+
+            Element openInterestNode = (Element)ns.get(7);
+            vanilla.openInterest.setValue(Integer.parseInt(openInterestNode.getText().replaceAll(",","")));
+
             list.add(vanilla);
         }
         return list;
-    }
-
-    private static double getAsk(Node node) {
-//        Node sNode = XML.findNode(node, "span");
-//        if (sNode != null) {
-//            String s = XML.getData(sNode);
-//            return Double.parseDouble(s);
-//        }
-        return Double.NaN;
-    }
-
-    private static double getBid(Node node) {
-//        Node sNode = XML.findNode(node, "span");
-//        if (sNode != null) {
-//            String s = XML.getData(sNode);
-//            return Double.parseDouble(s);
-//        }
-        return Double.NaN;
-    }
-
-    private static int getOpenInterest(Node node) {
-//        String s = XML.getData(node);
-//        s = s.replaceAll(",", "");
-//        return Integer.parseInt(s);
-        return 0;
-    }
-
-    private static double getValue(Node node) {
-//        Node sNode = XML.findNode(node, "span");
-//        if (sNode != null) {
-//            return Double.parseDouble(XML.getData(sNode));
-//        }
-        return Double.NaN;
-    }
-
-    private static String getOptionName(Node node) {
-//        Node sNode = XML.findNode(node, "a");
-//        return XML.getData(sNode);
-
-        return "toto";
-    }
-
-    private static double processStrike(Node row) {
-//        Node strikeNode = XML.findNode(row, "a");
-//        String strikeString = XML.getData(strikeNode);
-//        return Double.parseDouble(strikeString);
-        return Double.NaN;
     }
 
     public static OptionsDocuments getOptionsDocuments(String ticker) throws IOException, SAXException, ParserConfigurationException, DocumentException {
