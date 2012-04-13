@@ -32,6 +32,7 @@ public class YahooOptionsTest extends TestCase {
         System.out.println("putsDocument.asXML() = " + putsDocument.asXML());
 
         List<Vanilla> callOptions = YahooOptions.getChain(screen, OptionType.CALL);
+
         List<Vanilla> putOptions = YahooOptions.getChain(screen, OptionType.PUT);
 
 

@@ -22,35 +22,35 @@ public class YahooOptions {
 
     public static void main(String[] args) throws Exception {
         computeMaxPain("AA");
-        computeMaxPain("AXP");
-        computeMaxPain("BA");
-        computeMaxPain("BAC");
-        computeMaxPain("CAT");
-        computeMaxPain("CSCO");
-        computeMaxPain("CVX");
-        computeMaxPain("DD");
-        computeMaxPain("DIS");
-        computeMaxPain("GE");
-        computeMaxPain("HD");
-        computeMaxPain("HPQ");
-        computeMaxPain("IBM");
-        computeMaxPain("INTC");
-        computeMaxPain("JNJ");
-        computeMaxPain("JPM");
-        computeMaxPain("KFT");
-        computeMaxPain("KO");
-        computeMaxPain("MCD");
-        computeMaxPain("MMM");
-        computeMaxPain("MRK");
-        computeMaxPain("MSFT");
-        computeMaxPain("PFE");
-        computeMaxPain("PG");
-        computeMaxPain("T");
-        computeMaxPain("TRV");
-        computeMaxPain("UTX");
-        computeMaxPain("VZ");
-        computeMaxPain("WMT");
-        computeMaxPain("XOM");
+//        computeMaxPain("AXP");
+//        computeMaxPain("BA");
+//        computeMaxPain("BAC");
+//        computeMaxPain("CAT");
+//        computeMaxPain("CSCO");
+//        computeMaxPain("CVX");
+//        computeMaxPain("DD");
+//        computeMaxPain("DIS");
+//        computeMaxPain("GE");
+//        computeMaxPain("HD");
+//        computeMaxPain("HPQ");
+//        computeMaxPain("IBM");
+//        computeMaxPain("INTC");
+//        computeMaxPain("JNJ");
+//        computeMaxPain("JPM");
+//        computeMaxPain("KFT");
+//        computeMaxPain("KO");
+//        computeMaxPain("MCD");
+//        computeMaxPain("MMM");
+//        computeMaxPain("MRK");
+//        computeMaxPain("MSFT");
+//        computeMaxPain("PFE");
+//        computeMaxPain("PG");
+//        computeMaxPain("T");
+//        computeMaxPain("TRV");
+//        computeMaxPain("UTX");
+//        computeMaxPain("VZ");
+//        computeMaxPain("WMT");
+//        computeMaxPain("XOM");
     }
 
     
@@ -94,8 +94,6 @@ public class YahooOptions {
         Map map = new HashMap();
         for (int i = 0; i < callBeans.size(); i++) {
             MaximumPainBean maximumPainBean = callBeans.get(i);
-            //         System.out.print("maximumPainBean.getStrike() = " + maximumPainBean.getStrike() + " ");
-            //         System.out.println("maximumPainBean.getCumulative() = " + maximumPainBean.getCumulative());
             map.put(maximumPainBean.getStrike(), maximumPainBean.getCumulative());
         }
 
@@ -113,8 +111,6 @@ public class YahooOptions {
         Double maxPainStrike = Double.MAX_VALUE;
         for (int i = 0; i < putsBeans.size(); i++) {
             MaximumPainBean maximumPainBean = putsBeans.get(i);
-            //       System.out.print("maximumPainBean.getStrike() = " + maximumPainBean.getStrike() + " ");
-            //       System.out.println("maximumPainBean.getCumulative() = " + maximumPainBean.getCumulative());
 
             if (map.get(maximumPainBean.getStrike()) != null) {
                 Double d = (Double) map.get(maximumPainBean.getStrike());
@@ -161,9 +157,6 @@ public class YahooOptions {
         XPath xpathSelector = DocumentHelper.createXPath("/table/tr/td/table/tr");
         List nodes = xpathSelector.selectNodes(callsNode.callsDocument);
 
-//        Node tableNode = XML.findNode(callsNode, "table");
-//        List<Node> children = XML.getImmediateChildren(tableNode);
-
         List<Vanilla> list = new ArrayList<Vanilla>();
 
         for (int i = 1; i < nodes.size(); i++) {
@@ -176,31 +169,6 @@ public class YahooOptions {
                 vanilla.type.setValue(OptionType.CALL);
             else
                 vanilla.type.setValue(OptionType.PUT);
-
-            /*
-            <tr>
-                <td>
-                    <a href="/q/op?s=IBM&amp;k=85.000000">
-                        <strong>85.00</strong>
-                    </a>
-                </td>
-                <td>
-                    <a href="/q?s=IBM120421C00085000">IBM120421C00085000</a>
-                </td>
-                <td>
-                    <b>15.80</b>     // last
-                </td>
-                <td>
-                    <span id="yfs_c63_ibm120421c00085000">
-                        <b>0.00</b>    // change
-                    </span>
-                </td>
-                <td>118.00</td>                 Bid
-                <td>122.10</td>                 Ask
-                <td>1</td>                      Vol
-                <td>1</td>                      Open interest
-            </tr>
-            */
 
             List ns = node.elements();
 
