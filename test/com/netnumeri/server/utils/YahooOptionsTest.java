@@ -43,8 +43,5 @@ public class YahooOptionsTest extends TestCase {
 
         List<Vanilla> putOptions = YahooOptions.getChain(screen, OptionType.PUT);
 
-
-
-
     }
 }
