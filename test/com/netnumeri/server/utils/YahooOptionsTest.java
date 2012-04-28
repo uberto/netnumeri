@@ -22,12 +22,10 @@ public class YahooOptionsTest extends TestCase {
         }
     }
 
-
     @Test
     public void computeMaxpain () throws Exception {
-        Double aa = MaximumPainCalculator.calculate("AA");
+        Double aa = MaximumPainCalculator.calculate("IBM");
         System.out.println("aa = " + aa);
-
     }
 
     @Test

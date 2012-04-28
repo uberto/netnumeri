@@ -1,11 +1,9 @@
 package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.entity.OptionType;
-import com.netnumeri.shared.finance.data.MaximumPainBean;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
 import com.netnumeri.shared.finance.utils.NetUtils;
 import com.netnumeri.shared.finance.utils.YahooInstantSnapshot;
-import com.netnumeri.shared.finance.utils.YahooUtils;
 import org.dom4j.*;
 import org.xml.sax.SAXException;
 
@@ -13,47 +11,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 
 public class YahooOptions {
 
-//    public static void main(String[] args) throws Exception {
-//        calculate("AA");
-//        calculate("AXP");
-//        calculate("BA");
-//        calculate("BAC");
-//        calculate("CAT");
-//        calculate("CSCO");
-//        calculate("CVX");
-//        calculate("DD");
-//        calculate("DIS");
-//        calculate("GE");
-//        calculate("HD");
-//        calculate("HPQ");
-//        calculate("IBM");
-//        calculate("INTC");
-//        calculate("JNJ");
-//        calculate("JPM");
-//        calculate("KFT");
-//        calculate("KO");
-//        calculate("MCD");
-//        calculate("MMM");
-//        calculate("MRK");
-//        calculate("MSFT");
-//        calculate("PFE");
-//        calculate("PG");
-//        calculate("T");
-//        calculate("TRV");
-//        calculate("UTX");
-//        calculate("VZ");
-//        calculate("WMT");
-//        calculate("XOM");
-//    }
+    static final String LOGON_SITE = "finance.yahoo.com";
+    static final int LOGON_PORT = 80;
 
-    
     public static Double getLastPrice(String ticker){
         Double lastPrice = Double.NaN;
         try {
@@ -65,7 +31,6 @@ public class YahooOptions {
         }
         return lastPrice;
     }
-    
 
     /*
     ** According to the theory of maximum pain, the underlying stock or index will tend to move towards the price
@@ -136,15 +101,14 @@ public class YahooOptions {
         return list;
     }
 
-    public static OptionsDocuments getOptionsDocuments(String ticker) throws IOException, SAXException, ParserConfigurationException, DocumentException {
-        final String LOGON_SITE = "finance.yahoo.com";
-        final int LOGON_PORT = 80;
+    public static OptionsDocuments getOptionsDocuments(String ticker, Date date)
+            throws IOException, SAXException, ParserConfigurationException, DocumentException {
 
         OptionsDocuments documents = null;
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         String s3;
 
-        String url = "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker;
+        String url = getURL(ticker, date);
         System.out.println("url = " + url);
 
         InputStream is = NetUtils.openURL(url);
@@ -168,26 +132,29 @@ public class YahooOptions {
         return documents;
     }
 
+    private static String getURL(String ticker, Date date) {
+        return "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker + "&m=" + YahooUtils.mapKey(date);
+    }
+
     public static OptionsDocuments scrape(String ticker, String htlmScreen) throws IOException, SAXException, ParserConfigurationException, DocumentException {
         OptionsDocuments documents = new OptionsDocuments(ticker);
         int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = htlmScreen.substring(index);
         int end = s.indexOf("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">");
         String callsTable = s.substring(0,end);
-        callsTable = fix(callsTable);
+        callsTable = fixHtml(callsTable);
         documents.setCallsDocument(DocumentHelper.parseText(callsTable));
         String puts = s.substring(end);
         index = puts.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         s = puts.substring(index);
         end = s.indexOf("<table border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
         String putsTable = s.substring(0,end);
-        putsTable = fix(putsTable);
+        putsTable = fixHtml(putsTable);
         documents.setPutsDocument(DocumentHelper.parseText(putsTable));
         return documents;
-
     }
 
-    private static String fix(String callsTable) {
+    private static String fixHtml(String callsTable) {
 
         callsTable = callsTable.replaceAll("alt=\"Up\">", "/>");
         callsTable = callsTable.replaceAll("alt=\"Down\">", "/>");
@@ -207,6 +174,5 @@ public class YahooOptions {
 
         return callsTable;
     }
-
 }
 

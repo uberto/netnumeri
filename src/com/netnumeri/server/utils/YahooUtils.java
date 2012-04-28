@@ -17,16 +17,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class YahooUtils  {
 
     private static final Logger logger = Logger.getLogger(YahooUtils.class.getName());
-
 
     public static synchronized String getLineFromURL(InputStream myInputStream) {
         int ch = -1;
@@ -577,9 +573,6 @@ public class YahooUtils  {
         return (y + month + day);
     }
 
-    public static void main(String[] args) {
-        System.out.println("args = " + getExchangeRate("EURUSD"));
-    }
 
     public static String proxyYahooData(String ticker,
                                         Date from,
@@ -637,4 +630,30 @@ public class YahooUtils  {
         return sb.toString();
     }
 
+    public static Integer getCurrentMonth(){
+        Calendar cal = Calendar.getInstance();
+        int i = cal.get(Calendar.MONTH);
+        return i+1;
+    }
+
+    public static Integer getCurrentYear(){
+        Calendar cal = Calendar.getInstance();
+        int i = cal.get(Calendar.YEAR);
+        return i;
+    }
+
+    public static String mapKey (Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH);
+    }
+
+    public static void main(String[] args) {
+        System.out.println("month = " + getCurrentMonth());
+        System.out.println("year = " + getCurrentYear());
+    }
 }
+
+
+
+
