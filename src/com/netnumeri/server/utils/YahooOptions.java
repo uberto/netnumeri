@@ -175,13 +175,28 @@ public class YahooOptions {
         return callsTable;
     }
 
-    public void loadOptionChain (String ticker) throws IOException, DocumentException, SAXException, ParserConfigurationException {
+    public static OptionsChain loadOptionChain (String ticker) throws IOException, DocumentException, SAXException, ParserConfigurationException {
+        OptionsChain optionChain = new OptionsChain();
         Date date = new  Date();
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
+        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, date);
         List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
         List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
-        OptionsChain optionChain = new OptionsChain();
-        optionChain.put(YahooUtils.mapKey(date), callsOptions);
+        optionChain.calls.put(YahooUtils.mapKey(date), callsOptions);
+        optionChain.puts.put(YahooUtils.mapKey(date), putsOptions);
+
+        Date next = YahooUtils.getNextMonth(date);
+
+        while (true) {
+            OptionsDocuments docs = YahooOptions.getOptionsDocuments(ticker, next);
+            List<Vanilla> calls = YahooOptions.getChain(docs, OptionType.CALL);
+            List<Vanilla> puts = YahooOptions.getChain(docs, OptionType.PUT);
+            optionChain.calls.put(YahooUtils.mapKey(next), calls);
+            optionChain.puts.put(YahooUtils.mapKey(next), puts);
+            if (calls.size()==0 && puts.size()==0) break;
+            next = YahooUtils.getNextMonth(next);
+
+        }
+        return optionChain;
     }
 }
 

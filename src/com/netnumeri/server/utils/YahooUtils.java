@@ -1,7 +1,7 @@
 package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.finance.beans.FinConstants;
-import com.netnumeri.shared.finance.date.TDay;
+import com.netnumeri.shared.finance.date.*;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
@@ -18,6 +18,8 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Logger;
 
 public class YahooUtils  {
@@ -638,19 +640,21 @@ public class YahooUtils  {
 
     public static Integer getCurrentYear(){
         Calendar cal = Calendar.getInstance();
-        int i = cal.get(Calendar.YEAR);
-        return i;
+        return cal.get(Calendar.YEAR);
+    }
+
+    public static Date getNextMonth(Date date){
+        Calendar originalDate = Calendar.getInstance();
+        originalDate.setTime(date);
+        Calendar nextMonthDate = (Calendar) originalDate.clone();
+        nextMonthDate.add(Calendar.MONTH, 1);
+        return nextMonthDate.getTime();
     }
 
     public static String mapKey (Date date) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         return cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH);
-    }
-
-    public static void main(String[] args) {
-        System.out.println("month = " + getCurrentMonth());
-        System.out.println("year = " + getCurrentYear());
     }
 }
 
