@@ -6,6 +6,7 @@ import junit.framework.TestCase;
 import org.dom4j.Document;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
 public class YahooOptionsTest extends TestCase {
@@ -15,7 +16,7 @@ public class YahooOptionsTest extends TestCase {
     @Override
     protected  void setUp(){
         try {
-            screen =  YahooOptions.getOptionsDocuments("IBM");
+            screen =  YahooOptions.getOptionsDocuments("IBM", new Date());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -24,7 +25,7 @@ public class YahooOptionsTest extends TestCase {
 
     @Test
     public void computeMaxpain () throws Exception {
-        Double aa = MaximumPainCalculator.calculate("IBM");
+        Double aa = MaximumPainCalculator.calculate("IBM", new Date());
         System.out.println("aa = " + aa);
     }
 

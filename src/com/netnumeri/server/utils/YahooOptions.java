@@ -174,5 +174,14 @@ public class YahooOptions {
 
         return callsTable;
     }
+
+    public void loadOptionChain (String ticker) throws IOException, DocumentException, SAXException, ParserConfigurationException {
+        Date date = new  Date();
+        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
+        List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
+        List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
+        OptionsChain optionChain = new OptionsChain();
+        optionChain.put(YahooUtils.mapKey(date), callsOptions);
+    }
 }
 

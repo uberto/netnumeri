@@ -5,21 +5,18 @@ import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.finance.data.MaximumPainBean;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MaximumPainCalculator {
 
-    public static Double calculate(String ticker) throws Exception {
+    public static Double calculate(String ticker, Date date) throws Exception {
 
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker);
+        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
+        List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
+        List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
 
         double lastPrice = YahooOptions.getLastPrice(ticker);
 
-        List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
 
         List<MaximumPainBean> callBeans = new ArrayList<MaximumPainBean>();
         for (int i = 0; i < callsOptions.size(); i++) {
