@@ -656,6 +656,82 @@ public class YahooUtils  {
         cal.setTime(date);
         return cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH);
     }
+
+    /*
+
+BearCallSpread
+BearPutSpread
+BoxSpreadLongBox
+BullCallSpread
+BullPutSpread
+ButterflySpread
+BuyingIndexCalls
+BuyingIndexPuts
+CalendarStraddle
+CallBackspread
+CondorOptions
+Conversion
+CostlessCollar
+CoveredCalls
+CoveredCombination
+CoveredPut
+CoveredStraddle
+InTheMoneyCovered Call
+InTheMoneyNaked Call
+IronButterfly
+IronCondors
+LongCall
+LongCallLadder
+LongCallSyntheticStraddle
+LongGuts
+LongPut
+PutButterfly
+LongPutLadder
+LongPutSyntheticStraddle
+MarriedPut
+NeutralCalendarSpread
+LongStraddle
+LongStrangle
+OutOfTheMoneyNakedCall
+PortfolioHedgingusingIndexOptions
+ProtectiveCall
+ProtectivePut
+PutBackspread
+PutRatioSpread
+RatioCallWrite
+RatioPutWrite
+RatioSpread
+Reversal
+ReverseIronButterfly
+ReverseIronCondor
+SellingIndexCalls
+SellingIndexPuts
+ShortBox
+ShortButterfly
+ShortCallLadder
+ShortCallSyntheticStraddle
+ShortCondor
+ShortGuts
+ShortPutButterfly
+ShortPutLadder
+ShortPutSyntheticStraddle
+ShortStraddleSellStraddle
+ShortStrangleSellStrangle
+StockRepairStrategy
+Strap
+Strip
+SyntheticLongCall
+SyntheticLongPut
+SyntheticLongStock
+SyntheticLongStockSplitStrikes
+SyntheticShortCall
+SyntheticShortPut
+SyntheticShortStock
+SyntheticShortStockSplitStrikes
+TheCollarStrategy
+UncoveredPutWrite
+VariableRatioWrite
+     */
 }
 
 
