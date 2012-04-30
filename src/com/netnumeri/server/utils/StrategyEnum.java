@@ -1,7 +1,7 @@
 package com.netnumeri.server.utils;
 
-
 public enum StrategyEnum {
+
     BearCallSpread,
     BearPutSpread,
     BoxSpreadLongBox,
@@ -11,7 +11,7 @@ public enum StrategyEnum {
     BuyingIndexCalls,
     BuyingIndexPuts,
     CalendarStraddle,
-    CallBackspread,
+    CallBackSpread,
     CondorOptions,
     Conversion,
     CostlessCollar,
@@ -36,10 +36,10 @@ public enum StrategyEnum {
     LongStraddle,
     LongStrangle,
     OutOfTheMoneyNakedCall,
-    PortfolioHedgingusingIndexOptions,
+    PortfolioHedgingSingIndexOptions,
     ProtectiveCall,
     ProtectivePut,
-    PutBackspread,
+    PutBackSpread,
     PutRatioSpread,
     RatioCallWrite,
     RatioPutWrite,
@@ -73,6 +73,6 @@ public enum StrategyEnum {
     SyntheticShortStockSplitStrikes,
     TheCollarStrategy,
     UncoveredPutWrite,
-    VariableRatioWrite;
+    VariableRatioWrite
 
-    }
+}

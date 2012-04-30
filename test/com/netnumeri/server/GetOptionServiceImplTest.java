@@ -3,7 +3,7 @@ package com.netnumeri.server;
 import com.netnumeri.server.persistence.DataFetcher;
 import com.netnumeri.server.service.GetOptionServiceImpl;
 import com.netnumeri.shared.StubsForTests;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
 import com.netnumeri.shared.service.GetEntityResponse;

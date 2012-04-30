@@ -3,7 +3,7 @@ package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.finance.data.MaximumPainBean;
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 import java.util.*;
 
@@ -12,18 +12,18 @@ public class MaximumPainCalculator {
     public static Double calculate(String ticker, Date date) throws Exception {
 
         OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
-        List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
+        List<Option> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
+        List<Option> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
 
         double lastPrice = YahooOptions.getLastPrice(ticker);
 
 
         List<MaximumPainBean> callBeans = new ArrayList<MaximumPainBean>();
         for (int i = 0; i < callsOptions.size(); i++) {
-            Vanilla vanilla = callsOptions.get(i);
+            Option option = callsOptions.get(i);
             MaximumPainBean bean = new MaximumPainBean();
-            double cumul = computeCumulativeValue(vanilla.strike(), callsOptions);
-            bean.setStrike(vanilla.strike());
+            double cumul = computeCumulativeValue(option.strike(), callsOptions);
+            bean.setStrike(option.strike());
             bean.setCumulative(cumul);
             callBeans.add(bean);
         }
@@ -36,10 +36,10 @@ public class MaximumPainCalculator {
 
         List<MaximumPainBean> putsBeans = new ArrayList<MaximumPainBean>();
         for (int i = 0; i < putsOptions.size(); i++) {
-            Vanilla vanilla = putsOptions.get(i);
+            Option option = putsOptions.get(i);
             MaximumPainBean bean = new MaximumPainBean();
-            double cumul = computeCumulativeValue(vanilla.strike(), putsOptions);
-            bean.setStrike(vanilla.strike());
+            double cumul = computeCumulativeValue(option.strike(), putsOptions);
+            bean.setStrike(option.strike());
             bean.setCumulative(cumul);
             putsBeans.add(bean);
         }
@@ -64,20 +64,20 @@ public class MaximumPainCalculator {
         return maxPainStrike;
     }
 
-    private static double computeCumulativeValue(double underSpotPrice, List<Vanilla> options) {
+    private static double computeCumulativeValue(double underSpotPrice, List<Option> options) {
         double cumulativeValue = 0;
         if (options != null)
             for (int i = 0; i < options.size(); i++) {
-                Vanilla vanilla = options.get(i);
-                int openInt = vanilla.openInterest();
-                if (vanilla.type.get().equals(OptionType.CALL)) {
-                    if (underSpotPrice > vanilla.strike()) {
-                        double value = underSpotPrice - vanilla.strike();
+                Option option = options.get(i);
+                int openInt = option.openInterest();
+                if (option.type.get().equals(OptionType.CALL)) {
+                    if (underSpotPrice > option.strike()) {
+                        double value = underSpotPrice - option.strike();
                         cumulativeValue = cumulativeValue + (value * openInt);
                     }
-                } else if (vanilla.type.get().equals(OptionType.PUT)) {
-                    if (underSpotPrice < vanilla.strike()) {
-                        double value = vanilla.strike() - underSpotPrice;
+                } else if (option.type.get().equals(OptionType.PUT)) {
+                    if (underSpotPrice < option.strike()) {
+                        double value = option.strike() - underSpotPrice;
                         cumulativeValue = cumulativeValue + (value * openInt);
                     }
                 }

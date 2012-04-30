@@ -1,7 +1,7 @@
 package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.entity.OptionType;
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import junit.framework.TestCase;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -42,9 +42,9 @@ public class YahooOptionsTest extends TestCase {
         Document putsDocument = screen.putsDocument;
         System.out.println("putsDocument.asXML() = " + putsDocument.asXML());
 
-        List<Vanilla> callOptions = YahooOptions.getChain(screen, OptionType.CALL);
+        List<Option> callOptions = YahooOptions.getChain(screen, OptionType.CALL);
 
-        List<Vanilla> putOptions = YahooOptions.getChain(screen, OptionType.PUT);
+        List<Option> putOptions = YahooOptions.getChain(screen, OptionType.PUT);
 
     }
 

@@ -4,7 +4,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.netnumeri.client.jsneeded.service.GetOptionService;
 import com.netnumeri.server.persistence.DataFetcher;
 import com.netnumeri.shared.StubsForTests;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 import com.netnumeri.shared.service.GetEntitiesResponseImmutable;
 import com.netnumeri.shared.service.GetEntityResponse;

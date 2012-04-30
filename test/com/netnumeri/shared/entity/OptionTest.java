@@ -2,9 +2,9 @@ package com.netnumeri.shared.entity;
 
 import com.netnumeri.shared.field.EntityField;
 import com.netnumeri.shared.field.StringEntityField;
+import com.netnumeri.shared.finance.date.TDay;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import org.junit.Test;
-
-import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
@@ -12,29 +12,32 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class OptionTest {
+    TDay d = new TDay("3/27/2007");
+
 
     @Test
     public void valuesInConstructorAreAllUsed() throws Exception {
-        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
 
-        assertThat(option.getOptionName(), is("name"));
-        assertThat(option.getBourse(), is("NasdaqGs"));
-        assertThat(option.getStockTicket(), is("ticket"));
-        assertThat(option.getDateDue(), is(new Date(123)));
-        assertThat(option.getStrike(), is(1.1));
-        assertThat(option.getType(), is(OptionType.PUT));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
+
+        assertThat(option.name.get(), is("name"));
+        assertThat(option.bourse.get(), is("NasdaqGs"));
+        assertThat(option.name.get(), is("ticket"));
+        assertThat(option.expiry.get(), is(d));
+        assertThat(option.strike.get(), is(1.1));
+        assertThat(option.type.get(), is(OptionType.PUT));
     }
 
     @Test
     public void representCompletelyAsString() throws Exception {
-        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
 
         assertThat(option.toString(), is("Option{{bourse:NasdaqGs}, {name:name}, {underlying:ticket}, {type:PUT}, {strike:1.1}, {expiry:4/01/70}}"));
     }
 
     @Test
     public void entity() throws Exception {
-        Entity entity = new Option("123", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Entity entity = new Option("123", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
 
         assertThat(entity.getFields().size(), is(7));
         assertThat(entity.getId(), is(new EntityId( "123")));
@@ -49,9 +52,9 @@ public class OptionTest {
 
     @Test
     public void checkEquals() throws Exception {
-        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionDiff = new Option("1", "NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, new Date(123));
-        Option optionEqual = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, new Date(123));
+        Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
+        Option optionDiff = new Option("1", "NasdaqGs", "name2", "ticket", OptionType.PUT, 1.1, d);
+        Option optionEqual = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
 
         assertThat(option, is(optionEqual));
         assertThat(option, not(optionDiff));

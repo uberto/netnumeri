@@ -6,7 +6,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.netnumeri.client.jsneeded.widget.HeadersFlexTable;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 public class OptionListViewFlexTable extends ViewAbstractWrapper implements OptionListView {
 

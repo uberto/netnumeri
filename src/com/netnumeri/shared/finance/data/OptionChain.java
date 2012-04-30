@@ -2,7 +2,7 @@ package com.netnumeri.shared.finance.data;
 
 
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 import java.util.Vector;
 
@@ -22,7 +22,7 @@ public class OptionChain {
         this.options = options;
     }
 
-    public void addOption(Vanilla option) {
+    public void addOption(Option option) {
         options.add(option);
     }
 

@@ -9,7 +9,7 @@ public class VanillaTest   extends TestCase {
     @Test
     public void testVanilla() {
 
-//        Vanilla v = new Vanilla();
+//        Option v = new Option();
 //        v.setDirection(FinConstants.kCall);
 //        v.setPremium(100);
 //        v.setInterestRate(0.5);

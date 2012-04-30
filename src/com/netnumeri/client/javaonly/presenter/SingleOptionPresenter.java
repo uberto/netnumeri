@@ -4,7 +4,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.netnumeri.client.javaonly.events.RestUrl;
 import com.netnumeri.client.jsneeded.service.GetOptionServiceAsync;
 import com.netnumeri.client.jsneeded.view.SingleOptionView;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.service.GetEntityResponse;
 
 public class SingleOptionPresenter extends PresenterWithView<SingleOptionView> {

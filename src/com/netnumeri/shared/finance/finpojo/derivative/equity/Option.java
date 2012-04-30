@@ -12,14 +12,29 @@ import com.netnumeri.shared.finance.math.FinRecipes;
 import com.netnumeri.shared.finance.ta.FinMath;
 
 import java.util.Collection;
+import java.util.Date;
 
-public class Vanilla extends Derivative implements Entity {
+public class Option extends Derivative implements Entity {
 
-    enum Field implements FieldName {
+    public Option(String id, String bourse, String optionName, String stockTicket, OptionType type, Double strike, TDay expiry) {
+
+        this.id.setValue(new EntityId(id));
+        this.bourse.setValue(bourse);
+        this.name.setValue(optionName);
+        this.underlying.setValue(stockTicket);
+        this.type.setValue(type);
+        this.strike.setValue(strike);
+        this.expiry.setValue(expiry);
+
+    }
+
+    public enum Field implements FieldName {
+        id,
+        bourse,
         name,
         underlying,
         interestRate,
-        expiration,
+        expiry,
         strike,
         premium,
         change,
@@ -32,10 +47,12 @@ public class Vanilla extends Derivative implements Entity {
     }
     private FieldMap fieldMap = new FieldMap();
 
+    public IdEntityField id= new IdEntityField(fieldMap, Field.id);
+    public StringEntityField bourse= new StringEntityField(fieldMap, Field.bourse, 12);
     public StringEntityField name = new StringEntityField(fieldMap,Field.name, 32);
     public StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
     public DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
-    public DayEntityField expiration = new DayEntityField(fieldMap,Field.expiration);
+    public DayEntityField expiry = new DayEntityField(fieldMap,Field.expiry);
     public DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
     public DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
     public DoubleEntityField change = new DoubleEntityField(fieldMap,Field.change);
@@ -63,7 +80,7 @@ public class Vanilla extends Derivative implements Entity {
 
     @Override
     public TDay expiration() {
-        return expiration.get();
+        return expiry.get();
     }
 
     @Override
@@ -111,20 +128,20 @@ public class Vanilla extends Derivative implements Entity {
         return 0;
     }
 
-    public Vanilla(String Name) {
+    public Option(String Name) {
         setName(Name);
     }
 
-    public Vanilla(String name,
-                   Instrument stock,
-                   TDay expirationDate,
-                   double strikePrice,
-                   double interest,
-                   OptionType optionType,
-                   int model) {
+    public Option(String name,
+                  Instrument stock,
+                  TDay expirationDate,
+                  double strikePrice,
+                  double interest,
+                  OptionType optionType,
+                  int model) {
         setName(name);
         underlying.setValue(stock.getName());
-        expiration.setValue(expirationDate);
+        expiry.setValue(expirationDate);
         strike.setValue(strikePrice);
         interestRate.setValue(interest);
 
@@ -440,9 +457,8 @@ public class Vanilla extends Derivative implements Entity {
 
     @Override
     public EntityId getId() {
-        return null;
+        return id.get();
     }
-
 
     @Override
     public Collection<? extends EntityField<?>> getFields() {
@@ -452,6 +468,18 @@ public class Vanilla extends Derivative implements Entity {
     @Override
     public EntityField<?> getField(FieldName fieldname) {
         return fieldMap.get(fieldname);
+    }
+
+    @Override
+    public String toString() {
+        return "Option{" +
+                bourse +
+                ", " + name +
+                ", " + underlying +
+                ", " + type +
+                ", " + strike +
+                ", " + expiry +
+                '}';
     }
 
 }

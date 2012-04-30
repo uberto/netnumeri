@@ -1,7 +1,7 @@
 package com.netnumeri.client.jsneeded.view;
 
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 public interface OptionListView extends View, NotificationView {   //TODO remove NotificationView
 

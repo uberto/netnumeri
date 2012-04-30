@@ -1,7 +1,7 @@
 package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.entity.OptionType;
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.finance.utils.NetUtils;
 import com.netnumeri.shared.finance.utils.YahooInstantSnapshot;
 import org.dom4j.*;
@@ -37,66 +37,66 @@ public class YahooOptions {
     ** where the greatest numbers of options contracts (in dollar value) will expire worthless.
     ** It is the point where option owners feel the maximum pain and option sellers reap the most reward.
      */
-    public static List<Vanilla> getChain(OptionsDocuments callsNode, OptionType direction) {
+    public static List<Option> getChain(OptionsDocuments callsNode, OptionType direction) {
 
         XPath xpathSelector = DocumentHelper.createXPath("/table/tr/td/table/tr");
         List nodes = xpathSelector.selectNodes(callsNode.callsDocument);
 
-        List<Vanilla> list = new ArrayList<Vanilla>();
+        List<Option> list = new ArrayList<Option>();
 
         for (int i = 1; i < nodes.size(); i++) {
 
             Element node = (Element) nodes.get(i);
 
-            Vanilla vanilla = new Vanilla(callsNode.ticker);
+            Option option = new Option(callsNode.ticker);
 
             if (direction == OptionType.CALL)
-                vanilla.type.setValue(OptionType.CALL);
+                option.type.setValue(OptionType.CALL);
             else
-                vanilla.type.setValue(OptionType.PUT);
+                option.type.setValue(OptionType.PUT);
 
             List ns = node.elements();
 
             Element strikeNode = (Element)ns.get(0);
             Element strong = strikeNode.element("a").element("strong");
             String strike = strong.getText();
-            vanilla.strike.setValue(Double.parseDouble(strike));
+            option.strike.setValue(Double.parseDouble(strike));
 
             Element isinNode = (Element)ns.get(1);
             Element a = isinNode.element("a");
-            vanilla.name.setValue(a.getText());
+            option.name.setValue(a.getText());
 
             Element lastNode = (Element)ns.get(2);
             a = lastNode.element("b");
-            vanilla.premium.setValue(Double.parseDouble(a.getText()));
+            option.premium.setValue(Double.parseDouble(a.getText()));
 
             Element changeNode = (Element)ns.get(3);
             a = changeNode.element("span").element("b");
-            vanilla.change.setValue(Double.parseDouble(a.getText()));
+            option.change.setValue(Double.parseDouble(a.getText()));
 
             Element bidNode = (Element)ns.get(4);
             if (!bidNode.getText().equals("N/A"))
-                vanilla.bid.setValue(Double.parseDouble(bidNode.getText()));
+                option.bid.setValue(Double.parseDouble(bidNode.getText()));
             else
-                vanilla.bid.setValue(Double.NaN);
+                option.bid.setValue(Double.NaN);
 
             Element askNode = (Element)ns.get(5);
             if (!askNode.getText().equals("N/A"))
-                vanilla.ask.setValue(Double.parseDouble(askNode.getText()));
+                option.ask.setValue(Double.parseDouble(askNode.getText()));
             else
-                vanilla.ask.setValue(Double.NaN);
+                option.ask.setValue(Double.NaN);
 
             Element volumeNode = (Element)ns.get(6);
 
             if (!volumeNode.getText().equals("N/A"))
-                vanilla.contractSize.setValue(Integer.parseInt(volumeNode.getText().replaceAll(",","")));
+                option.contractSize.setValue(Integer.parseInt(volumeNode.getText().replaceAll(",","")));
             else
-                vanilla.contractSize.setValue(-1);
+                option.contractSize.setValue(-1);
 
             Element openInterestNode = (Element)ns.get(7);
-            vanilla.openInterest.setValue(Integer.parseInt(openInterestNode.getText().replaceAll(",","")));
+            option.openInterest.setValue(Integer.parseInt(openInterestNode.getText().replaceAll(",","")));
 
-            list.add(vanilla);
+            list.add(option);
         }
         return list;
     }
@@ -179,8 +179,8 @@ public class YahooOptions {
         OptionsChain optionChain = new OptionsChain();
         Date date = new  Date();
         OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, date);
-        List<Vanilla> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
-        List<Vanilla> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
+        List<Option> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
+        List<Option> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
         optionChain.calls.put(YahooUtils.mapKey(date), callsOptions);
         optionChain.puts.put(YahooUtils.mapKey(date), putsOptions);
 
@@ -188,8 +188,8 @@ public class YahooOptions {
 
         while (true) {
             OptionsDocuments docs = YahooOptions.getOptionsDocuments(ticker, next);
-            List<Vanilla> calls = YahooOptions.getChain(docs, OptionType.CALL);
-            List<Vanilla> puts = YahooOptions.getChain(docs, OptionType.PUT);
+            List<Option> calls = YahooOptions.getChain(docs, OptionType.CALL);
+            List<Option> puts = YahooOptions.getChain(docs, OptionType.PUT);
             optionChain.calls.put(YahooUtils.mapKey(next), calls);
             optionChain.puts.put(YahooUtils.mapKey(next), puts);
             if (calls.size()==0 && puts.size()==0) break;

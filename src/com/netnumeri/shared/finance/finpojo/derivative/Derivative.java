@@ -93,8 +93,8 @@ public abstract class Derivative extends Instrument {
     }
 
     /**
-     * Returns number of days between Date and expiration date If Date == 0, return number of days betwen current
-     * date and expiration date
+     * Returns number of days between Date and expiry date If Date == 0, return number of days betwen current
+     * date and expiry date
      */
     public long expirationDays(TDay date) {
         if (date == null)

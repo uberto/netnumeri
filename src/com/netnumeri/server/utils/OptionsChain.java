@@ -1,6 +1,6 @@
 package com.netnumeri.server.utils;
 
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,9 +10,8 @@ public class OptionsChain{
 
     String ticker;
 
-    Map<String, List<Vanilla>> calls = new HashMap<String, List<Vanilla>>();
-    Map<String, List<Vanilla>> puts = new HashMap<String, List<Vanilla>>();
-
+    Map<String, List<Option>> calls = new HashMap<String, List<Option>>();
+    Map<String, List<Option>> puts = new HashMap<String, List<Option>>();
 
 
 }

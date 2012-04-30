@@ -4,7 +4,7 @@ import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.NamedObject;
 import com.netnumeri.shared.finance.finpojo.PortfolioItem;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
-import com.netnumeri.shared.finance.finpojo.derivative.equity.Vanilla;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 import java.util.ArrayList;
 
@@ -32,7 +32,7 @@ public class OptionStrategy extends NamedObject {
 
     // Add an option with amount
     // amount < 0 means taking short position (writing an option)
-    public void addOption(Vanilla option, int amount) {
+    public void addOption(Option option, int amount) {
         PortfolioItem entry = new PortfolioItem(option, amount);
         fOption.add(entry);
         this.option++;
@@ -54,8 +54,8 @@ public class OptionStrategy extends NamedObject {
     }
 
     // Return pointer to option i
-    public Vanilla getOption(int i) {
-        return (Vanilla) ((PortfolioItem) fOption.get(i)).getInstrument();
+    public Option getOption(int i) {
+        return (Option) ((PortfolioItem) fOption.get(i)).getInstrument();
     }
 
     // Return amount of i-th option

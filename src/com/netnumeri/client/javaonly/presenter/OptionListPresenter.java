@@ -8,7 +8,7 @@ import com.netnumeri.client.jsneeded.service.GetOptionServiceAsync;
 import com.netnumeri.client.jsneeded.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.jsneeded.view.NotificationView;
 import com.netnumeri.client.jsneeded.view.OptionListView;
-import com.netnumeri.shared.entity.Option;
+import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.service.GetEntitiesResponse;
 
 import java.util.List;
