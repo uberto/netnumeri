@@ -22,7 +22,7 @@ public class OptionTest {
 
         assertThat(option.name.get(), is("name"));
         assertThat(option.bourse.get(), is("NasdaqGs"));
-        assertThat(option.name.get(), is("ticket"));
+        assertThat(option.name.get(), is("name"));
         assertThat(option.expiry.get(), is(d));
         assertThat(option.strike.get(), is(1.1));
         assertThat(option.type.get(), is(OptionType.PUT));
@@ -32,14 +32,14 @@ public class OptionTest {
     public void representCompletelyAsString() throws Exception {
         Option option = new Option("1", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
 
-        assertThat(option.toString(), is("Option{{bourse:NasdaqGs}, {name:name}, {underlying:ticket}, {type:PUT}, {strike:1.1}, {expiry:4/01/70}}"));
+        assertThat(option.toString(), is("Option{{bourse:NasdaqGs}, {name:name}, {underlying:ticket}, {type:PUT}, {strike:1.1}, {expiry:2/21/2007}}"));
     }
 
     @Test
     public void entity() throws Exception {
         Entity entity = new Option("123", "NasdaqGs", "name", "ticket", OptionType.PUT, 1.1, d);
 
-        assertThat(entity.getFields().size(), is(7));
+        assertThat(entity.getFields().size(), is(15));
         assertThat(entity.getId(), is(new EntityId( "123")));
 
         assertTrue(entity.getFields().contains(((Option) entity).name));
