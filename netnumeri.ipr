@@ -239,6 +239,8 @@
         <w>dailyarray</w>
         <w>goog</w>
         <w>htlm</w>
+        <w>println</w>
+        <w>scholes</w>
       </words>
     </dictionary>
   </component>
