@@ -14,10 +14,6 @@ public interface GetOptionService extends RemoteService {
 
     GetEntityResponse<Option> getEntity(String query);
 
-    /**
-     * Utility/Convenience class.
-     * Use GetBugService.App.getInstance() to access static instance of getBugServiceAsync
-     */
     public static class App {
         private static final GetOptionServiceAsync ourInstance = (GetOptionServiceAsync) GWT.create(GetOptionService.class);
 

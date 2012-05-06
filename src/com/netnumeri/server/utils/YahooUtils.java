@@ -54,7 +54,6 @@ public class YahooUtils  {
     }
 
     // http://finance.yahoo.com/d/quotes.csv?s=EURUSD=X&f=sl1d1ba&e=.csv
-
     public static String getExchangeRate(String s) {
         try {
             String completeUrl = "http://download.finance.yahoo.com/d/quotes.csv";
@@ -657,81 +656,6 @@ public class YahooUtils  {
         return cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH);
     }
 
-    /*
-
-BearCallSpread
-BearPutSpread
-BoxSpreadLongBox
-BullCallSpread
-BullPutSpread
-ButterflySpread
-BuyingIndexCalls
-BuyingIndexPuts
-CalendarStraddle
-CallBackspread
-CondorOptions
-Conversion
-CostlessCollar
-CoveredCalls
-CoveredCombination
-CoveredPut
-CoveredStraddle
-InTheMoneyCovered Call
-InTheMoneyNaked Call
-IronButterfly
-IronCondors
-LongCall
-LongCallLadder
-LongCallSyntheticStraddle
-LongGuts
-LongPut
-PutButterfly
-LongPutLadder
-LongPutSyntheticStraddle
-MarriedPut
-NeutralCalendarSpread
-LongStraddle
-LongStrangle
-OutOfTheMoneyNakedCall
-PortfolioHedgingusingIndexOptions
-ProtectiveCall
-ProtectivePut
-PutBackspread
-PutRatioSpread
-RatioCallWrite
-RatioPutWrite
-RatioSpread
-Reversal
-ReverseIronButterfly
-ReverseIronCondor
-SellingIndexCalls
-SellingIndexPuts
-ShortBox
-ShortButterfly
-ShortCallLadder
-ShortCallSyntheticStraddle
-ShortCondor
-ShortGuts
-ShortPutButterfly
-ShortPutLadder
-ShortPutSyntheticStraddle
-ShortStraddleSellStraddle
-ShortStrangleSellStrangle
-StockRepairStrategy
-Strap
-Strip
-SyntheticLongCall
-SyntheticLongPut
-SyntheticLongStock
-SyntheticLongStockSplitStrikes
-SyntheticShortCall
-SyntheticShortPut
-SyntheticShortStock
-SyntheticShortStockSplitStrikes
-TheCollarStrategy
-UncoveredPutWrite
-VariableRatioWrite
-     */
 }
 
 

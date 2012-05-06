@@ -2,7 +2,9 @@ package com.netnumeri.client.javaonly.presenter;
 
 import com.netnumeri.client.javaonly.support.SupportDispatcher;
 import com.netnumeri.client.jsneeded.service.GetOptionService;
+import com.netnumeri.client.jsneeded.service.GetOptionServiceAsync;
 import com.netnumeri.client.jsneeded.service.MySampleApplicationService;
+import com.netnumeri.client.jsneeded.service.MySampleApplicationServiceAsync;
 import com.netnumeri.client.jsneeded.view.OptionListViewFlexTable;
 import com.netnumeri.client.jsneeded.view.SingleOptionViewForm;
 
@@ -30,7 +32,13 @@ public class PresentersProxy {
     }
 
     private Presenter createOptionListPresenter() {
-        return new OptionListPresenter(new OptionListViewFlexTable(), GetOptionService.App.getInstance(), MySampleApplicationService.App.getInstance());
+        OptionListViewFlexTable optionListViewFlexTable = new OptionListViewFlexTable();
+
+        GetOptionServiceAsync instance = GetOptionService.App.getInstance();
+
+        MySampleApplicationServiceAsync instance1 = MySampleApplicationService.App.getInstance();
+
+        return new OptionListPresenter(optionListViewFlexTable, instance, instance1);
     }
 
     public Presenter getPresenter(String presenterUrl) {
