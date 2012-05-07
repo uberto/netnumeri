@@ -41,7 +41,7 @@ public class InstrumentTest extends TestCase {
         TDay key = tDayDailyEntry.getKey();
 
         // 2009-04-09
-        assertEquals("9/4/2009", key.toString());
+        assertEquals("4/9/2009", key.toString());
 
         Daily daily = tDayDailyEntry.getValue();
         assertEquals(daily.getOpenprice(),16.35);

@@ -316,7 +316,8 @@ public class TimeSeries extends DateBound implements Serializable {
     }
 
     public int getIndex(TDay date) {
-        if (!inBounds(date)) throw new IllegalStateException("index not in bound");
+        if (!inBounds(date))
+            throw new IllegalStateException("index not in bound");
         TDay dt = getLowerBoundDate();
         return (int) DateUtils.diffDays(dt, date);
     }
@@ -663,7 +664,10 @@ public class TimeSeries extends DateBound implements Serializable {
         }
 
         // Expand left
-        if (date.isLess(getLowerBoundDate())) {
+
+        TDay lowerBoundDate = getLowerBoundDate();
+
+        if (date.isLess(lowerBoundDate)) {
 
             TDay lbdt = getLowerBoundDate();
             long addSize = Math.max(expansion, DateUtils.diffDays(lbdt, date));
@@ -752,10 +756,6 @@ public class TimeSeries extends DateBound implements Serializable {
 
         int Index = getIndex(date);
         if (isEmpty(Index, row)) lengthsArray[row]++;
-
-//        if (Index == 78)
-//            System.out.println("Index = " + Index);
-//        System.out.println("Index:" + Index + "==>  Date:" + date + "," + value);
 
         data.set(row, Index, value);
     }

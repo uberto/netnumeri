@@ -60,7 +60,7 @@ public class TDay implements Serializable, Comparable {
     private int year;
     private int month;
     private int date;
-    private int day;
+    private int weekday;
     private int parPos;
     private int parNum;
 
@@ -90,7 +90,7 @@ public class TDay implements Serializable, Comparable {
             week *= -1;
             dir = -1;
         }
-        for (; cd.getDay() != weekday; cd = cd.addDays(dir)) {
+        for (; cd.getWeekday() != weekday; cd = cd.addDays(dir)) {
         }
         cd = cd.addDays((week - 1) * 7 * dir);
         time = tolong(cd.getTime());
@@ -146,16 +146,16 @@ public class TDay implements Serializable, Comparable {
         return date;
     }
 
-    public int getDay() {
-        return day;
+    public int getWeekday() {
+        return weekday;
     }
 
-    public int day() {
-        return day;
+    public int weekday() {
+        return weekday;
     }
 
     public String getDayName() {
-        return DayNames[day];
+        return DayNames[weekday];
     }
 
     public int getDayOfYear() {
@@ -199,11 +199,7 @@ public class TDay implements Serializable, Comparable {
     }
 
     public String toString() {
-        return date + "/" + (month + 1) + "/" + year;
-    }
-
-    public String toFileString() {
-        return date + "-" + (month + 1) + "-" + year;
+        return (month + 1) + "/" + date + "/" + year;
     }
 
     public Object clone() {
@@ -227,7 +223,7 @@ public class TDay implements Serializable, Comparable {
     }
 
     public boolean isEqual(TDay d) {
-        return this.day == d.day && this.month == d.month && this.year == d.year;
+        return this.date == d.date && this.month == d.month && this.year == d.year;
     }
 
     public boolean isLess(TDay d) {
@@ -238,8 +234,8 @@ public class TDay implements Serializable, Comparable {
         if (this.month() > d.month())  return false;
         if (this.month() < d.month())  return true;
 
-        if (this.day() > d.day())  return false;
-        if (this.day() < d.day())  return true;
+        if (this.getDate() > d.getDate())  return false;
+        if (this.getDate() < d.getDate())  return true;
 
         return false;
     }
@@ -251,8 +247,8 @@ public class TDay implements Serializable, Comparable {
         if (this.month() < d.month())  return false;
         if (this.month() > d.month())  return true;
 
-        if (this.day() < d.day())  return false;
-        if (this.day() > d.day())  return true;
+        if (this.getDate() < d.getDate())  return false;
+        if (this.getDate() > d.getDate())  return true;
         return false;
     }
 
@@ -263,8 +259,8 @@ public class TDay implements Serializable, Comparable {
         if (this.month() > d.month())  return false;
         if (this.month() < d.month())  return true;
 
-        if (this.day() > d.day())  return false;
-        if (this.day() < d.day())  return true;
+        if (this.getDate() > d.getDate())  return false;
+        if (this.getDate() < d.getDate())  return true;
 
         return true;
     }
@@ -276,8 +272,8 @@ public class TDay implements Serializable, Comparable {
         if (this.month() < d.month())  return false;
         if (this.month() > d.month())  return true;
 
-        if (this.day() < d.day())  return false;
-        if (this.day() > d.day())  return true;
+        if (this.getDate() < d.getDate())  return false;
+        if (this.getDate() > d.getDate())  return true;
         return true;
     }
 
@@ -343,10 +339,10 @@ public class TDay implements Serializable, Comparable {
             dir = -1;
         }
         TDay cd = new TDay(getTime());
-        if (weeks == 0 && cd.getDay() > weekday) {
+        if (weeks == 0 && cd.getWeekday() > weekday) {
             dir = -1;
         }
-        for (; cd.getDay() != weekday; cd = cd.addDays(dir)) {
+        for (; cd.getWeekday() != weekday; cd = cd.addDays(dir)) {
             ;
         }
         cd = cd.addDays(weeks * 7 * dir);
@@ -447,7 +443,7 @@ public class TDay implements Serializable, Comparable {
     }
 
     public boolean isWeekend() {
-        boolean res = day == 0 || day == 6;
+        boolean res = weekday == 0 || weekday == 6;
         return res;
     }
 
@@ -504,7 +500,7 @@ public class TDay implements Serializable, Comparable {
         ta = (long) month / 11L;
         month = (month + 2) - 12 * (int) ta - 1;
         year = (int) ((long) 100 * (tb - 49L)) + year + (int) ta;
-        day = (int) ((time + 4L) % 7L);
+        weekday = (int) ((time + 4L) % 7L);
     }
 
     private long tolong(long theTime) {
@@ -656,9 +652,9 @@ public class TDay implements Serializable, Comparable {
 //    public Date toDate() {
 //        int year = this.year;
 //        int month = this.month;
-//        int day = this.date;
+//        int weekday = this.date;
 //        Calendar cal = Calendar.getInstance ();
-//        cal.set(year, month, day);
+//        cal.set(year, month, weekday);
 //        cal.set(Calendar.HOUR_OF_DAY, 0);
 //        cal.set(Calendar.MINUTE, 0);
 //        cal.set(Calendar.SECOND, 0);

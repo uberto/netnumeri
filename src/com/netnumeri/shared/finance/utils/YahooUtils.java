@@ -116,11 +116,11 @@ public class YahooUtils implements FinConstants {
                                           TDay to,
                                           String frequency) throws IOException, ParseException {
         int firstmonth = from.getMonth();
-        int firstday = from.getDay();
+        int firstday = from.getWeekday();
         int firstyear = from.getYear();
 
         int lastmonth = to.getMonth();
-        int lastday = to.getDay();
+        int lastday = to.getWeekday();
         int lastyear = to.getYear();
 
         //    http://ichart.finance.yahoo.com/table.csv?s=SSRI&a=07&b=1&c=2007&d=03&e=10&f=2009&g=d&ignore=.csv

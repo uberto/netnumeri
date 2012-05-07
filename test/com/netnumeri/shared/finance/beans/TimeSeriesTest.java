@@ -50,14 +50,14 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetUpperBoundIndex() throws Exception {
 
-        assertEquals(timeSeries.getUpperBoundIndex(),999);
+        assertEquals(timeSeries.getUpperBoundIndex(),499);
 
     }
 
     @Test
     public void testGetStdDev() throws Exception {
 
-        assertEquals(timeSeries.getStandardDeviation(),9.90288889291483);
+        assertEquals(9.90288889291483, timeSeries.getStandardDeviation());
 
     }
 
@@ -141,7 +141,7 @@ public class TimeSeriesTest extends TestCase {
     public void testGetNextIndex() throws Exception {
 
         int lastIndex = timeSeries.getLastIndex();
-        assertEquals(999, lastIndex);
+        assertEquals(499, lastIndex);
 
         double lastData = timeSeries.getLastData();
         assertEquals(Double.NaN, lastData);
@@ -163,12 +163,11 @@ public class TimeSeriesTest extends TestCase {
 
         TDay firstDate = timeSeries.getFirstDate();
 
+        assertTrue(timeSeries.getFirstDate().equals(new TDay("1/2/2008")));
 
-        assertTrue(timeSeries.getFirstDate().equals(new TDay("8/1/2007")));
+        TDay nextDate = timeSeries.getNextDate(new TDay("1/2/2008"));
 
-        TDay nextDate = timeSeries.getNextDate(new TDay("8/1/2007"));
-
-        assertTrue(nextDate.equals(new TDay("8/2/2007")));
+        assertTrue(nextDate.equals(new TDay("1/3/2008")));
 
     }
 

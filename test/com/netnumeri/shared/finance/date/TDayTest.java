@@ -15,6 +15,13 @@ public class TDayTest extends TestCase {
         assertTrue( d1.isLessEqual(d2));
         assertTrue( d1.isGreaterEqual(d2));
 
+        TDay date            = new TDay("1/7/2008");
+        TDay lowerBoundTDay  = new TDay("1/2/2008");
+        System.out.println("date = " + date);
+        System.out.println("lowerBoundTDay = " + lowerBoundTDay);
+
+        assertTrue(date.isGreaterEqual(lowerBoundTDay));
+
     }
 
     @Test

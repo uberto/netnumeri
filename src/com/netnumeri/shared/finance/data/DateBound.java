@@ -75,7 +75,22 @@ public abstract class DateBound  {
     }
 
     public boolean inBounds(TDay date) {
-        return date.isGreaterEqual(lowerBoundTDay) && date.isLessEqual(upperBoundTDay);
+
+        boolean b1 = date.isGreaterEqual(lowerBoundTDay);
+        boolean b2 = date.isLessEqual(upperBoundTDay);
+
+        boolean b3 =  b1 && b2;
+
+        if (!b3)  {
+            System.out.println("date            = " + date);
+            System.out.println("lowerBoundTDay  = " + lowerBoundTDay);
+            System.out.println("upperBoundTDay  = " + upperBoundTDay);
+
+            System.out.println("b1 = " + b1);
+            System.out.println("b2 = " + b2);
+            System.out.println("b3 = " + b3);
+        }
+            return b3;
     }
 
     public TDay getFirstDate() {

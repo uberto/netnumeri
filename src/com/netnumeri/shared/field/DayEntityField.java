@@ -17,6 +17,6 @@ public class DayEntityField extends ValuesEntityField<TDay>  {
 //        DateTimeFormat dtf = DateTimeFormat.getFormat(DateTimeFormat.PredefinedFormat.RFC_2822);
 //        return dtf.format(get());
 
-        return get().getDay() + "/" + get().getMonth() + 1 + "/" + get().getYear();
+        return get().getWeekday() + "/" + get().getMonth() + 1 + "/" + get().getYear();
     }
 }
