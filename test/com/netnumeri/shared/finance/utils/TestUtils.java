@@ -9,6 +9,5 @@ public class TestUtils {
 
             return StockUtils.getStock("./test/resources/SSRI.csv");
 
-
     }
 }
