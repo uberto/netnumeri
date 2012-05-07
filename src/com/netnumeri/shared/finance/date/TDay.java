@@ -1,9 +1,6 @@
 package com.netnumeri.shared.finance.date;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class TDay implements Serializable, Comparable {
 
@@ -230,25 +227,58 @@ public class TDay implements Serializable, Comparable {
     }
 
     public boolean isEqual(TDay d) {
-        return this.toDate().equals(d.toDate());
+        return this.day == d.day && this.month == d.month && this.year == d.year;
     }
 
     public boolean isLess(TDay d) {
-        return this.toDate().before(d.toDate());
+
+        if (this.year() > d.year()) return false;
+        if (this.year() < d.year()) return true;
+
+        if (this.month() > d.month())  return false;
+        if (this.month() < d.month())  return true;
+
+        if (this.day() > d.day())  return false;
+        if (this.day() < d.day())  return true;
+
+        return false;
     }
 
     public boolean isGreater(TDay d) {
-        return this.toDate().after(d.toDate());
+        if (this.year() < d.year()) return false;
+        if (this.year() > d.year()) return true;
+
+        if (this.month() < d.month())  return false;
+        if (this.month() > d.month())  return true;
+
+        if (this.day() < d.day())  return false;
+        if (this.day() > d.day())  return true;
+        return false;
     }
 
     public boolean isLessEqual(TDay d) {
-        return this.toDate().before(d.toDate()) ||
-                this.toDate().equals(d.toDate());
+        if (this.year() > d.year()) return false;
+        if (this.year() < d.year()) return true;
+
+        if (this.month() > d.month())  return false;
+        if (this.month() < d.month())  return true;
+
+        if (this.day() > d.day())  return false;
+        if (this.day() < d.day())  return true;
+
+        return true;
     }
 
     public boolean isGreaterEqual(TDay d) {
-        return this.toDate().after(d.toDate()) ||
-                this.toDate().equals(d.toDate());
+        if (this.year() < d.year()) return false;
+        if (this.year() > d.year()) return true;
+
+        if (this.month() < d.month())  return false;
+        if (this.month() > d.month())  return true;
+
+        if (this.day() < d.day())  return false;
+        if (this.day() > d.day())  return true;
+        return true;
     }
 
     public TDay addFreq(int freq) {
@@ -623,19 +653,19 @@ public class TDay implements Serializable, Comparable {
         return res;
     }
 
-    public Date toDate() {
-        int year = this.year;
-        int month = this.month;
-        int day = this.date;
-        GregorianCalendar cal = new GregorianCalendar();
-        cal.set(year, month, day);
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        java.util.Date dat = cal.getTime();
-        return dat;
-    }
+//    public Date toDate() {
+//        int year = this.year;
+//        int month = this.month;
+//        int day = this.date;
+//        Calendar cal = Calendar.getInstance ();
+//        cal.set(year, month, day);
+//        cal.set(Calendar.HOUR_OF_DAY, 0);
+//        cal.set(Calendar.MINUTE, 0);
+//        cal.set(Calendar.SECOND, 0);
+//        cal.set(Calendar.MILLISECOND, 0);
+//        java.util.Date dat = cal.getTime();
+//        return dat;
+//    }
 
     public static void main(String[] args) {
 

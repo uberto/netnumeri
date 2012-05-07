@@ -1,12 +1,8 @@
 package com.netnumeri.shared.finance.data;
 
 
-import com.netnumeri.shared.entity.Entity;
-import com.netnumeri.shared.field.FieldAttributes;
-import com.netnumeri.shared.field.StringEntityField;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
-import com.netnumeri.shared.field.*;
 
 public abstract class DateBound  {
 
