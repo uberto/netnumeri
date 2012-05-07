@@ -700,7 +700,7 @@ public abstract class Instrument extends DateBound implements Serializable {
             price = daily.getCloseprice();
             if (daily.valid() && price != 0) {
                 double logprice = Math.log(price / fLastPrice);
-                logReturnSeries.add(date, Math.log(price / fLastPrice));
+                logReturnSeries.add(date, logprice);
                 fLastPrice = price;
             }
         }

@@ -51,17 +51,12 @@ public class InstrumentTest extends TestCase {
         assertEquals(daily.getVolume(),863300);
 
 
-        // "2007-08-01,34.09,34.56,33.04,33.87,894200,33.87";
         tDayDailyEntry = dailyarray.firstEntry();
         key = tDayDailyEntry.getKey();
-        assertEquals("1/8/2007", key.toString());
+        assertEquals("2/1/2008", key.toString());
 
         daily = tDayDailyEntry.getValue();
-        assertEquals(daily.getOpenprice(),34.09);
-        assertEquals(daily.getHigh(),34.56);
-        assertEquals(daily.getLow(),33.04);
-        assertEquals(daily.getCloseprice(),33.87);
-        assertEquals(daily.getVolume(),894200);
+        assertEquals(daily.getOpenprice(),36.99);
     }
 
     @Test
@@ -316,7 +311,7 @@ public class InstrumentTest extends TestCase {
 
         TimeSeries closeSeries = stock.getCloseSeries();
         int numberOfData = closeSeries.getNData();
-        assertEquals(427,numberOfData);
+        assertEquals(316,numberOfData);
     }
 
     @Test
