@@ -72,12 +72,12 @@ public class OptionStrategy extends NamedObject {
     // If WithPremium is true, option premiums subtracted from profit value
     public double eval(double Price, boolean WithPremium) {
         double Payoff = 0;
-        if (item != null) {
-            Payoff += getAssetPosition() * getAssetAmount() * (Price - item.getInstrument().premium());
-        }
-        for (int i = 0; i < option; i++) {
-            Payoff += getOptionPosition(i) * getOptionAmount(i) * getOption(i).getPayoff(Price, WithPremium);
-        }
+//        if (item != null) {
+//            Payoff += getAssetPosition() * getAssetAmount() * (Price - item.getInstrument().premium());
+//        }
+//        for (int i = 0; i < option; i++) {
+//            Payoff += getOptionPosition(i) * getOptionAmount(i) * getOption(i).getPayoff(Price, WithPremium);
+//        }
         return Payoff;
     }
 

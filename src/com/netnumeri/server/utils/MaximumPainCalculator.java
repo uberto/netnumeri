@@ -22,8 +22,8 @@ public class MaximumPainCalculator {
         for (int i = 0; i < callsOptions.size(); i++) {
             Option option = callsOptions.get(i);
             MaximumPainBean bean = new MaximumPainBean();
-            double cumul = computeCumulativeValue(option.strike(), callsOptions);
-            bean.setStrike(option.strike());
+            double cumul = computeCumulativeValue(option.strike.get(), callsOptions);
+            bean.setStrike(option.strike.get());
             bean.setCumulative(cumul);
             callBeans.add(bean);
         }
@@ -38,8 +38,8 @@ public class MaximumPainCalculator {
         for (int i = 0; i < putsOptions.size(); i++) {
             Option option = putsOptions.get(i);
             MaximumPainBean bean = new MaximumPainBean();
-            double cumul = computeCumulativeValue(option.strike(), putsOptions);
-            bean.setStrike(option.strike());
+            double cumul = computeCumulativeValue(option.strike.get(), putsOptions);
+            bean.setStrike(option.strike.get());
             bean.setCumulative(cumul);
             putsBeans.add(bean);
         }
@@ -69,15 +69,15 @@ public class MaximumPainCalculator {
         if (options != null)
             for (int i = 0; i < options.size(); i++) {
                 Option option = options.get(i);
-                int openInt = option.openInterest();
+                int openInt = option.openInterest.get();
                 if (option.type.get().equals(OptionType.CALL)) {
-                    if (underSpotPrice > option.strike()) {
-                        double value = underSpotPrice - option.strike();
+                    if (underSpotPrice > option.strike.get()) {
+                        double value = underSpotPrice - option.strike.get();
                         cumulativeValue = cumulativeValue + (value * openInt);
                     }
                 } else if (option.type.get().equals(OptionType.PUT)) {
-                    if (underSpotPrice < option.strike()) {
-                        double value = option.strike() - underSpotPrice;
+                    if (underSpotPrice < option.strike.get()) {
+                        double value = option.strike.get() - underSpotPrice;
                         cumulativeValue = cumulativeValue + (value * openInt);
                     }
                 }

@@ -23,7 +23,6 @@ public class YahooUtils implements FinConstants {
 
     private static final Logger logger = Logger.getLogger(YahooUtils.class.getName());
 
-
     public static synchronized String getLineFromURL(InputStream myInputStream) {
         int ch = -1;
         StringBuffer sb = new StringBuffer(256);

@@ -1,14 +1,8 @@
 package com.netnumeri.shared.finance.utils;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.JsArrayString;
 import com.netnumeri.shared.finance.beans.Moment;
 import com.netnumeri.shared.finance.beans.NRError;
-import com.netnumeri.shared.finance.beans.ParseException;
-import com.netnumeri.shared.finance.date.SimpleDateFormat;
 import com.netnumeri.shared.finance.date.TDay;
-
-import java.util.Date;
 
 
 public class NumericalRecipesUtils {
@@ -183,16 +177,15 @@ public class NumericalRecipesUtils {
         return ar;
     }
 
-    public static TDay toYYmmDD(String date, String format) {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat(format);
-            Date da = sdf.parse(date);
-            SimpleDateFormat sdf2 = new SimpleDateFormat("MM/dd/yyyy");
-            return new TDay(sdf2.format(da));
-        } catch (ParseException e) {
-            GWT.log(e.toString(), e);
-        }
-        return null;
-    }
+//    public static TDay toYYmmDD(String date, String format) {
+//        try {
+//            SimpleDateFormat sdf = new SimpleDateFormat(format);
+//            Date da = sdf.parse(date);
+//            SimpleDateFormat sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+//            return new TDay(sdf2.format(da));
+//        } catch (ParseException e) {
+//        }
+//        return null;
+//    }
 
 }

@@ -31,8 +31,6 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     }
 
 
-
-
     @Override
     public void activate(RestUrl url) {
 

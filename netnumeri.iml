@@ -41,6 +41,7 @@
     <orderEntry type="library" name="gwt-user" level="project" />
     <orderEntry type="library" name="com.springsource.org.apache.commons.httpclient-3.1.0" level="project" />
     <orderEntry type="library" name="project-lib" level="project" />
+    <orderEntry type="library" name="gwt-2.4" level="project" />
   </component>
 </module>
 

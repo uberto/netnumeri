@@ -15,7 +15,7 @@ public interface GetOptionService extends RemoteService {
     GetEntityResponse<Option> getEntity(String query);
 
     public static class App {
-        private static final GetOptionServiceAsync ourInstance = (GetOptionServiceAsync) GWT.create(GetOptionService.class);
+        private static final GetOptionServiceAsync ourInstance =  GWT.create(GetOptionService.class);
 
         public static GetOptionServiceAsync getInstance() {
             return ourInstance;
