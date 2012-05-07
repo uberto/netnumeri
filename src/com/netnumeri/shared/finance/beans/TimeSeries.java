@@ -129,7 +129,7 @@ public class TimeSeries extends DateBound implements Serializable {
     }
 
     public int getUpperBoundIndex() {
-        return getIndex(getUpperBoundTDay());
+        return getIndex(getUpperBoundDate());
     }
 
     public double getStdDev(int FirstIndex, int LastIndex, int Row) {
@@ -192,7 +192,7 @@ public class TimeSeries extends DateBound implements Serializable {
     }
 
     /**
-     * Check if time xyseries data present for index
+     * Check if time series data present for index
      * If row == -1 return false if non-empty data entry exists for at
      * least one row associated with index
      */
@@ -272,7 +272,6 @@ public class TimeSeries extends DateBound implements Serializable {
     }
 
     // Return data of previous non empty entry
-
     public double getPrevData(int index, int row) {
         int PrevIndex = getPrevIndex(index);
         if (PrevIndex == -1) {
@@ -307,7 +306,6 @@ public class TimeSeries extends DateBound implements Serializable {
     }
 
     // Return data of next non empty entry
-
     public double getNextData(int index, int row) {
         int nextIndex = getNextIndex(index);
         if (nextIndex == -1) {
@@ -659,13 +657,12 @@ public class TimeSeries extends DateBound implements Serializable {
             }
             setLowerBoundDate(date);
             setLowerRangeDate(date);
-            setUpperRangeTDay(date);
+            setUpperRangeDate(date);
             TDay upperDate = getDate(size - 1);
-            setUpperBoundTDay(upperDate);
+            setUpperBoundDate(upperDate);
         }
 
         // Expand left
-
         if (date.isLess(getLowerBoundDate())) {
 
             TDay lbdt = getLowerBoundDate();
@@ -697,13 +694,13 @@ public class TimeSeries extends DateBound implements Serializable {
             setLowerRangeDate(date);
         }
 
-        if (date.isGreater(getUpperBoundTDay())) {
+        if (date.isGreater(getUpperBoundDate())) {
 
-            System.out.println("date " + date + " is after upper bound = " + getUpperBoundTDay());
+            System.out.println("date " + date + " is after upper bound = " + getUpperBoundDate());
 
             printWindow();
 
-            TDay dt = getUpperBoundTDay();
+            TDay dt = getUpperBoundDate();
             long addSize = Math.max(expansion, DateUtils.diffDays(date, dt));
 
             long newSize = size + addSize;
@@ -728,8 +725,8 @@ public class TimeSeries extends DateBound implements Serializable {
             dimension = newNRows;
             TDay upperDate = getDate((int) (newSize - 1));
 
-            setUpperBoundTDay(upperDate);
-            setUpperRangeTDay(date);
+            setUpperBoundDate(upperDate);
+            setUpperRangeDate(date);
         }
 
         // New Rowension
@@ -750,7 +747,7 @@ public class TimeSeries extends DateBound implements Serializable {
             dimension = NewNRows;
         }
 
-        if (date.isGreater(getUpperRangeTDay())) setUpperRangeTDay(date);
+        if (date.isGreater(getUpperRangeDate())) setUpperRangeDate(date);
         if (date.isLess(getLowerRangeDate())) setLowerRangeDate(date);
 
         int Index = getIndex(date);
@@ -769,7 +766,7 @@ public class TimeSeries extends DateBound implements Serializable {
         System.out.println("------------ window ------------------------------------------");
         System.out.println("getLowerBoundDate() = " + getLowerBoundDate().toString());
         System.out.println("getLowerBoundIndex() = " + getLowerBoundIndex());
-        System.out.println("getUpperBoundTDay() = " + getUpperBoundTDay().toString());
+        System.out.println("getUpperBoundTDay() = " + getUpperBoundDate().toString());
         System.out.println("getUpperBoundIndex() = " + getUpperBoundIndex());
         System.out.println("--------------------------------------------------------------");
 
@@ -1568,7 +1565,7 @@ public class TimeSeries extends DateBound implements Serializable {
         double Mean2 = series.getMean();
 
         TDay firstCalendarDate = DateUtils.max(getLowerBoundDate(), series.getLowerBoundDate());
-        TDay lastCalendarDate = DateUtils.min(getUpperBoundTDay(), series.getUpperBoundTDay());
+        TDay lastCalendarDate = DateUtils.min(getUpperBoundDate(), series.getUpperBoundDate());
 
         correlationPairs = 0;
         double Covariance = 0;
@@ -1839,9 +1836,9 @@ public class TimeSeries extends DateBound implements Serializable {
             for (int i = 0; i < size; i++) timeSeries.data.set(rowCount, i, data.get(rowCount, i));
         timeSeries.frequency = this.frequency;
         timeSeries.setLowerBoundDate(this.getLowerBoundDate());
-        timeSeries.setUpperBoundTDay(this.getUpperBoundTDay());
+        timeSeries.setUpperBoundDate(this.getUpperBoundDate());
         timeSeries.setLowerRangeDate(this.getLowerRangeDate());
-        timeSeries.setUpperRangeTDay(this.getUpperRangeTDay());
+        timeSeries.setUpperRangeDate(this.getUpperRangeDate());
         timeSeries.initialSize = this.initialSize;
         timeSeries.expansion = this.expansion;
         timeSeries.dimension = this.dimension;

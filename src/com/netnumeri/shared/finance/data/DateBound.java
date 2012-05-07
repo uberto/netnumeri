@@ -18,22 +18,6 @@ public abstract class DateBound  {
         disableRange();
     }
 
-    public TDay getLowerBoundTDay() {
-        return lowerBoundTDay;
-    }
-
-    public void setLowerBoundTDay(TDay lowerBoundTDay) {
-        this.lowerBoundTDay = lowerBoundTDay;
-    }
-
-    public TDay getLowerRangeTDay() {
-        return lowerRangeTDay;
-    }
-
-    public void setLowerRangeTDay(TDay lowerRangeTDay) {
-        this.lowerRangeTDay = lowerRangeTDay;
-    }
-
     public void enableRange() {
         rangeEnabled = true;
     }
@@ -61,11 +45,11 @@ public abstract class DateBound  {
         this.lowerBoundTDay = lowerBoundDate;
     }
 
-    public TDay getUpperBoundTDay() {
+    public TDay getUpperBoundDate() {
         return upperBoundTDay;
     }
 
-    public void setUpperBoundTDay(TDay upperBoundTDay) {
+    public void setUpperBoundDate(TDay upperBoundTDay) {
         this.upperBoundTDay = upperBoundTDay;
     }
 
@@ -77,11 +61,11 @@ public abstract class DateBound  {
         this.lowerRangeTDay = lowerRangeDate;
     }
 
-    public TDay getUpperRangeTDay() {
+    public TDay getUpperRangeDate() {
         return upperRangeTDay;
     }
 
-    public void setUpperRangeTDay(TDay upperRangeTDay) {
+    public void setUpperRangeDate(TDay upperRangeTDay) {
         this.upperRangeTDay = upperRangeTDay;
     }
 
@@ -106,7 +90,7 @@ public abstract class DateBound  {
     public TDay getLastDate() {
         if (upperBoundTDay == null) return null;
         if (isRangeEnabled()) {
-            TDay min = DateUtils.min(getUpperRangeTDay(), upperBoundTDay);
+            TDay min = DateUtils.min(getUpperRangeDate(), upperBoundTDay);
             System.out.println("min = " + min);
             return min;
         } else {

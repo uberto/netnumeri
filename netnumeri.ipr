@@ -242,6 +242,7 @@
         <w>netnumeri</w>
         <w>println</w>
         <w>scholes</w>
+        <w>xyseries</w>
       </words>
     </dictionary>
   </component>
