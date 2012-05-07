@@ -64,14 +64,12 @@ public class PortfolioTest extends TestCase {
 
         for (int i = 0; i < items.size(); i++) {
             PortfolioItem portfolioItem = items.get(i);
-
-            System.out.println("portfolioItem.getName() = " + portfolioItem.name);
         }
 
         Instrument instrument = portfolio.getInstrument(0);
 
         int nDaily = instrument.getNDaily();
-        assertEquals(nDaily, 427);
+        assertEquals(nDaily, 321);
 
     }
 

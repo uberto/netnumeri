@@ -37,7 +37,6 @@ public class GetOptionServiceImpl extends RemoteServiceServlet implements GetOpt
 
     @Override
     public GetEntitiesResponse<Option> getEntities(String query) {
-
         return new GetEntitiesResponseImmutable<>(fetcher.selectByCriteria(query));
     }
 

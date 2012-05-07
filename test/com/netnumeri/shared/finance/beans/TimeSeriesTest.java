@@ -102,14 +102,14 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetNData() throws Exception {
 
-        assertEquals(timeSeries.getNData(),427);
+        assertEquals(316,timeSeries.getNData());
 
     }
 
     @Test
     public void testGetNumberOfNotNullData() throws Exception {
 
-        assertEquals(timeSeries.getNumberOfNotNullData(0),427);
+        assertEquals(316, timeSeries.getNumberOfNotNullData(0));
 
     }
 

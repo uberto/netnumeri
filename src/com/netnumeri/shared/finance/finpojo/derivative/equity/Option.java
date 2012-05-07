@@ -11,6 +11,9 @@ import java.util.Collection;
 
 public class Option extends Instrument implements Entity {
 
+    public Option() {
+    }
+
     public Option(String id, String bourse, String optionName, String stockTicket, OptionType type, Double strike, TDay expiry) {
 
         this.id.setValue(new EntityId(id));
@@ -25,17 +28,17 @@ public class Option extends Instrument implements Entity {
 
     @Override
     public double modelPrice(int model) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return 0;
     }
 
     @Override
     public String getName() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return name.get();
     }
 
     @Override
     public void setName(String name) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        this.name.setValue(name);
     }
 
     public enum Field implements FieldName {

@@ -33,11 +33,8 @@ public class PresentersProxy {
 
     private Presenter createOptionListPresenter() {
         OptionListViewFlexTable optionListViewFlexTable = new OptionListViewFlexTable();
-
         GetOptionServiceAsync instance = GetOptionService.App.getInstance();
-
         MySampleApplicationServiceAsync instance1 = MySampleApplicationService.App.getInstance();
-
         return new OptionListPresenter(optionListViewFlexTable, instance, instance1);
     }
 
