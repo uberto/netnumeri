@@ -99,7 +99,7 @@ public class OptionListPresenterTest {
 
         context.checking(new Expectations() {{
             oneOf(service).getEntities(with(""), with(any(AsyncCallback.class)));will(makeAsyncRequest);
-            oneOf(view).clearBugGrid();
+            oneOf(view).clearGrid();
             exactly(2).of(view).addOption(with(any(Option.class)));
             oneOf(view).showGrid();
         }});

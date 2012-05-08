@@ -5,7 +5,7 @@ import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
 public interface OptionListView extends View, NotificationView {   //TODO remove NotificationView
 
-    void clearBugGrid();
+    void clearGrid();
 
 //    int getRowCount();
 //

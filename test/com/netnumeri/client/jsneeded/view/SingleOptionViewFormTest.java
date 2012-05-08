@@ -55,7 +55,7 @@ public class SingleOptionViewFormTest extends AppGwtTestCase {
 
                 assertEquals(1, RootPanel.get("wrapper").getWidgetCount());
 //                assertEquals(3, app.bugListview.getRowCount());
-//                app.bugListview.clearBugGrid();
+//                app.bugListview.clearGrid();
 //                assertEquals(1, app.bugListview.getRowCount());
 //
 //                app.bugListview.addBug(1, "aa", BugEnum.REJECTED, "u");

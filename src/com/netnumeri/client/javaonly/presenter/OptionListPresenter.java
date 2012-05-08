@@ -50,7 +50,7 @@ public class OptionListPresenter extends PresenterWithView<OptionListView> {
     }
 
     public void populateGrid(GetEntitiesResponse<Option> response) {
-        getView().clearBugGrid();
+        getView().clearGrid();
 
 
         List<Option> optionList = response.getEntityList();

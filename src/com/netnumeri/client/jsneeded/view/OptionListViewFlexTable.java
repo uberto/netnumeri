@@ -50,7 +50,7 @@ public class OptionListViewFlexTable extends ViewAbstractWrapper implements Opti
     }
 
 
-    public void clearBugGrid() {
+    public void clearGrid() {
 
         flexTable.clear();
         flexTable.removeAllRows();
