@@ -57,14 +57,14 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetStdDev() throws Exception {
 
-        assertEquals(9.90288889291483, timeSeries.getStandardDeviation());
+        assertEquals(9.008868745021829, timeSeries.getStandardDeviation());
 
     }
 
     @Test
     public void testGetStdErr() throws Exception {
 
-        assertEquals(timeSeries.getStdErr(),0.4792343826377079);
+        assertEquals(0.5028260200438308, timeSeries.getStdErr());
 
     }
 
@@ -91,42 +91,42 @@ public class TimeSeriesTest extends TestCase {
     @Test
     public void testGetLastIndex() throws Exception {
 
-        assertEquals(timeSeries.getLastIndex(),999);
+        assertEquals(499, timeSeries.getLastIndex());
 
     }
 
     @Test
     public void testGetNData() throws Exception {
 
-        assertEquals(316,timeSeries.getNData());
+        assertEquals(321,timeSeries.getNData());
 
     }
 
     @Test
     public void testGetNumberOfNotNullData() throws Exception {
 
-        assertEquals(316, timeSeries.getNumberOfNotNullData(0));
+        assertEquals(321, timeSeries.getNumberOfNotNullData(0));
 
     }
 
     @Test
     public void testGetPrevIndex() throws Exception {
 
-        assertEquals(timeSeries.getPrevIndex(316),315);
-        assertEquals(timeSeries.getPrevIndex(315),314);
-        assertEquals(timeSeries.getPrevIndex(314),313);
-        assertEquals(timeSeries.getPrevIndex(313),312);
-        assertEquals(timeSeries.getPrevIndex(312),311);
-        assertEquals(timeSeries.getPrevIndex(311),310);
-        assertEquals(timeSeries.getPrevIndex(310),309);
-        assertEquals(timeSeries.getPrevIndex(309),308);
+        assertEquals(315, timeSeries.getPrevIndex(316));
+        assertEquals(314, timeSeries.getPrevIndex(315));
+        assertEquals(313, timeSeries.getPrevIndex(314));
+        assertEquals(310, timeSeries.getPrevIndex(313));
+        assertEquals(309, timeSeries.getPrevIndex(310));
+        assertEquals(308, timeSeries.getPrevIndex(309));
+        assertEquals(307, timeSeries.getPrevIndex(308));
+        assertEquals(306, timeSeries.getPrevIndex(307));
 
     }
 
     @Test
     public void testGetPrevDate() throws Exception {
 
-        assertTrue(timeSeries.getLastDate().equals(new TDay("4/26/2010")));
+        assertTrue(timeSeries.getLastDate().equals(new TDay("5/15/2009")));
 
     }
 
@@ -150,10 +150,10 @@ public class TimeSeriesTest extends TestCase {
         assertEquals(16.11, lastValidData);
 
         int lastValidIndex = timeSeries.getLastValidIndex();
-        assertEquals(616, lastValidIndex);
+        assertEquals(462, lastValidIndex);
 
         int result = timeSeries.getPrevIndex(lastValidIndex);
-        assertEquals(615, result);
+        assertEquals(461, result);
 
     }
 
