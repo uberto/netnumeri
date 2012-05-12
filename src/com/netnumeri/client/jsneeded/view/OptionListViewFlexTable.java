@@ -20,7 +20,6 @@ public class OptionListViewFlexTable extends ViewAbstractWrapper implements Opti
 
     }
 
-
 //        addHeaders(flexTable);
 //
 //        flexTable.addRow("1", "button click doesn't work", "open", "uberto");
@@ -30,15 +29,36 @@ public class OptionListViewFlexTable extends ViewAbstractWrapper implements Opti
 //        return flexTable;
 
     private void addHeaders() {
-        flexTable.addHeaders("Name", "Stock", "Type", "Due to", "Strike");
+        flexTable.addHeaders("Name", "Stock", "Strike", "Ask", "Bid", "Type", "Due to");
     }
 
 
     @Override
     public void addOption(Option option) {
 
-//        flexTable.addRow(option.getOptionName(), option.getStockTicket(), option.getType().toString(), option.getDateDue().toString(), option.getStrike().toString());
+//        if (option != null){
+//        System.out.println("option.underlying = " + option.underlying);
+//        System.out.println("option.strike = " + option.strike);
+//        System.out.println("option.ask = " + option.ask);
+//        System.out.println("option.bid = " + option.bid);
+//        System.out.println("option.type = " + option.type);
+//        System.out.println("option.expiry = " + option.expiry);
 
+        flexTable.addRow(option.name.get()
+
+//                (option.underlying != null)?option.underlying.get():"n/a",
+//
+//                (option.strike != null)?option.strike.get().toString():"n/a",
+//
+//                (option.ask != null)?option.ask.get().toString():"n/a",
+//
+//                (option.bid != null)?option.bid.get().toString():"n/a",
+//
+//                (option.type != null)?option.type.get().toString():"n/a",
+//
+//                (option.expiry != null)?option.expiry.get().toString():"n/a"
+
+        );
     }
 
     @Override

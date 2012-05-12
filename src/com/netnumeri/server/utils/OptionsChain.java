@@ -10,8 +10,8 @@ public class OptionsChain{
 
     String ticker;
 
-    Map<String, List<Option>> calls = new HashMap<String, List<Option>>();
-    Map<String, List<Option>> puts = new HashMap<String, List<Option>>();
+    public Map<String, List<Option>> calls = new HashMap<String, List<Option>>();
+    public Map<String, List<Option>> puts = new HashMap<String, List<Option>>();
 
 
 }

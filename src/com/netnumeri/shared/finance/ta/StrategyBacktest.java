@@ -88,7 +88,7 @@ public class StrategyBacktest implements FinConstants, Serializable {
         super();
         initialWealth = InitialWealth;
 //        signalSeries = null;
-        transactionSerie = strategy.getTransactionSerie();
+        transactionSerie = strategy.getTransactionSeries();
         init();
     }
 

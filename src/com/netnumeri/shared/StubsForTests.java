@@ -1,11 +1,16 @@
 package com.netnumeri.shared;
 
+import com.netnumeri.server.utils.OptionsChain;
+import com.netnumeri.server.utils.YahooOptions;
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
+import org.dom4j.DocumentException;
+import org.xml.sax.SAXException;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.*;
 
 public class StubsForTests {
 
@@ -20,9 +25,33 @@ public class StubsForTests {
     }
 
     public static List<Option> createDummyOptionList() {
+
+
         List<Option> list = new ArrayList<Option>();
-        list.add(createDummyOption());
-        list.add(createDummyOption2());
+
+        try {
+            OptionsChain chain = YahooOptions.loadOptionChain("IBM");
+
+            Set<Map.Entry<String,List<Option>>> entries = chain.calls.entrySet();
+
+            for (Iterator<Map.Entry<String, List<Option>>> iterator = entries.iterator(); iterator.hasNext(); ) {
+                Map.Entry<String, List<Option>> listEntry = (Map.Entry<String, List<Option>>) iterator.next();
+
+                List<Option> lOptions = listEntry.getValue();
+                for (int i = 0; i < lOptions.size(); i++) {
+                    Option option = lOptions.get(i);
+                    list.add(option);
+                }
+
+            }
+
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+
+//        list.add(createDummyOption());
+//        list.add(createDummyOption2());
 
         return list;
 

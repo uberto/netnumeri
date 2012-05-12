@@ -24,7 +24,7 @@ public abstract class Strategy extends DateBound implements FinConstants {
 
     double wealth = 0;
 
-    private TransactionSeries transactionSerie = null;
+    private TransactionSeries transactionSeries = null;
 
     private Parameters parm = new Parameters();
 
@@ -32,9 +32,9 @@ public abstract class Strategy extends DateBound implements FinConstants {
     }
 
     public Strategy(String name, final Portfolio portfolio, TDay firstDate, TDay lastDate, double wealth) {
-        this.transactionSerie = new TransactionSeries(name);
+        this.transactionSeries = new TransactionSeries(name);
         this.wealth = wealth;
-        this.strategyPortfolio = (Portfolio) portfolio.clone();
+        this.strategyPortfolio = portfolio.clone();
         this.portfolio = portfolio;
         tester = new StrategyBacktest(this, wealth);
         setWindow(firstDate, lastDate);
@@ -58,7 +58,7 @@ public abstract class Strategy extends DateBound implements FinConstants {
     }
 
     public void add(Transaction transaction) {
-        transactionSerie.add(transaction);
+        transactionSeries.add(transaction);
         strategyPortfolio.add(transaction);
     }
 
@@ -107,12 +107,12 @@ public abstract class Strategy extends DateBound implements FinConstants {
         this.wealth = wealth;
     }
 
-    public TransactionSeries getTransactionSerie() {
-        return transactionSerie;
+    public TransactionSeries getTransactionSeries() {
+        return transactionSeries;
     }
 
-    public void setTransactionSerie(TransactionSeries transactionSerie) {
-        this.transactionSerie = transactionSerie;
+    public void setTransactionSeries(TransactionSeries transactionSeries) {
+        this.transactionSeries = transactionSeries;
     }
 
 }

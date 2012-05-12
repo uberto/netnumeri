@@ -236,6 +236,7 @@
     <dictionary name="antonio">
       <words>
         <w>async</w>
+        <w>backtest</w>
         <w>dailyarray</w>
         <w>goog</w>
         <w>htlm</w>
