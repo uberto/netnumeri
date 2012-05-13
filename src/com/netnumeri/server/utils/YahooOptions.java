@@ -4,6 +4,7 @@ import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import com.netnumeri.shared.finance.utils.NetUtils;
 import com.netnumeri.shared.finance.utils.YahooInstantSnapshot;
+import com.netnumeri.shared.finance.utils.YahooUtils;
 import org.dom4j.*;
 import org.xml.sax.SAXException;
 
@@ -102,7 +103,7 @@ public class YahooOptions {
     }
 
     public static OptionsDocuments getOptionsDocuments(String ticker, Date date)
-            throws IOException, SAXException, ParserConfigurationException, DocumentException {
+            throws Exception   {
 
         OptionsDocuments documents = null;
         StringBuilder sb = new StringBuilder();
@@ -136,7 +137,7 @@ public class YahooOptions {
         return "http://" + LOGON_SITE + ":" + LOGON_PORT + "/q/op?s=" + ticker + "&m=" + YahooUtils.mapKey(date);
     }
 
-    public static OptionsDocuments scrape(String ticker, String htlmScreen) throws IOException, SAXException, ParserConfigurationException, DocumentException {
+    public static OptionsDocuments scrape(String ticker, String htlmScreen) throws Exception {
         OptionsDocuments documents = new OptionsDocuments(ticker);
         int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = htlmScreen.substring(index);
@@ -175,7 +176,7 @@ public class YahooOptions {
         return callsTable;
     }
 
-    public static OptionsChain loadOptionChain (String ticker) throws IOException, DocumentException, SAXException, ParserConfigurationException {
+    public static OptionsChain loadOptionChain (String ticker) throws Exception {
         OptionsChain optionChain = new OptionsChain();
         Date date = new  Date();
         OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, date);

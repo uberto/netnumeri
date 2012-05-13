@@ -13,15 +13,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class YahooUtils implements FinConstants {
-
-    private static final Logger logger = Logger.getLogger(YahooUtils.class.getName());
 
     public static synchronized String getLineFromURL(InputStream myInputStream) {
         int ch = -1;
@@ -627,5 +623,41 @@ public class YahooUtils implements FinConstants {
         System.out.println("quote.toString() = " + sb.toString());
         return sb.toString();
     }
+
+    private static final Logger logger = Logger.getLogger(YahooUtils.class.getName());
+
+
+    public static Date toYYmmDD(String date, String format) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.parse(date);
+    }
+
+    /* toMilliseconds Yahoo date in StockEval chart date
+    */
+    public static Integer getCurrentMonth(){
+        Calendar cal = Calendar.getInstance();
+        int i = cal.get(Calendar.MONTH);
+        return i+1;
+    }
+
+    public static Integer getCurrentYear(){
+        Calendar cal = Calendar.getInstance();
+        return cal.get(Calendar.YEAR);
+    }
+
+    public static Date getNextMonth(Date date){
+        Calendar originalDate = Calendar.getInstance();
+        originalDate.setTime(date);
+        Calendar nextMonthDate = (Calendar) originalDate.clone();
+        nextMonthDate.add(Calendar.MONTH, 1);
+        return nextMonthDate.getTime();
+    }
+
+    public static String mapKey (Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH);
+    }
+
 
 }

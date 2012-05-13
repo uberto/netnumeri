@@ -29,7 +29,7 @@ public class YahooOptionsTest extends TestCase {
 
     @Test
     public void computeMaxpain () throws Exception {
-        Double aa = MaximumPainCalculator.calculate("IBM", new Date());
+        Double aa = MaximumPainCalculator.calculate("GOOG", new Date());
         System.out.println("aa = " + aa);
     }
 
@@ -49,13 +49,15 @@ public class YahooOptionsTest extends TestCase {
 //    }
 
     @Test
-    public void testLoadOptionChain() throws IOException, DocumentException, SAXException, ParserConfigurationException {
+    public void testLoadOptionChain() throws Exception{
 
-        OptionsChain chain = YahooOptions.loadOptionChain("IBM");
+        OptionsChain chain = YahooOptions.loadOptionChain("GOOG");
 
         System.out.println(" = "  + chain.calls.size());
 
     }
+
+
 
 }
 
