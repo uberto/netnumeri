@@ -20,7 +20,9 @@ public class YahooOptionsTest extends TestCase {
     @Override
     protected  void setUp(){
         try {
-            screen =  YahooOptions.getOptionsDocuments("IBM", new Date());
+//            String s  =  YahooOptions.getOptionsDocuments("IBM", new Date());
+
+            screen = YahooOptions.scrape("GOOG", YahooOptions.getOptionsDocuments("GOOG",new Date()));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,6 +56,9 @@ public class YahooOptionsTest extends TestCase {
         OptionsChain chain = YahooOptions.loadOptionChain("GOOG");
 
         System.out.println(" = "  + chain.calls.size());
+
+//        chain.calls
+
 
     }
 

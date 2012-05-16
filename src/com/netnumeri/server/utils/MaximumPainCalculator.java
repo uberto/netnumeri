@@ -11,7 +11,10 @@ public class MaximumPainCalculator {
 
     public static Double calculate(String ticker, Date date) throws Exception {
 
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
+//        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker,date);
+
+        OptionsDocuments optionsDocuments = YahooOptions.scrape(ticker, YahooOptions.getOptionsDocuments(ticker,date));
+
         List<Option> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
         List<Option> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
 

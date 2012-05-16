@@ -61,7 +61,7 @@ public class YahooOptions {
             Element strikeNode = (Element)ns.get(0);
             Element strong = strikeNode.element("a").element("strong");
             String strike = strong.getText();
-            option.strike.setValue(Double.parseDouble(strike));
+            option.strike.setValue(Double.parseDouble(strike.replaceAll(",", "")));
 
             Element isinNode = (Element)ns.get(1);
             Element a = isinNode.element("a");
@@ -137,9 +137,6 @@ public class YahooOptions {
     }
 
     public static OptionsDocuments scrape(String ticker, String htlmScreen) throws Exception {
-
-        System.out.println("htlmScreen = " + htlmScreen);
-
         OptionsDocuments documents = new OptionsDocuments(ticker);
         int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = htlmScreen.substring(index);
@@ -188,7 +185,8 @@ public class YahooOptions {
 
         while (true) {
             getOptions(ticker, optionChain, date);
-            if (optionChain.calls.size()==0 && optionChain.puts.size()==0) break;
+            if (optionChain.calls.get(YahooUtils.mapKey(date)).size()==0 &&
+                optionChain.puts.get(YahooUtils.mapKey(date)).size()==0) break;
             date = YahooUtils.getNextMonth(date);
         }
         return optionChain;
@@ -202,5 +200,6 @@ public class YahooOptions {
         optionChain.calls.put(YahooUtils.mapKey(date), callsOptions);
         optionChain.puts.put(YahooUtils.mapKey(date), putsOptions);
     }
+
 }
 

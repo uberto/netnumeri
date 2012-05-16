@@ -15,7 +15,7 @@
       </e:ValueBoxEditorDecorator>
       <br />
       Description:
-      <e:ValueBoxEditorDecorator ui:field="description"
+      <e:ValueBoxEditorDecorator ui:field="strategy"
         stylePrimaryName="{style.editField}">
         <e:valuebox>
           <g:TextBox stylePrimaryName="{style.editField}" />
