@@ -102,7 +102,7 @@ public class YahooOptions {
         return list;
     }
 
-    public static OptionsDocuments getOptionsDocuments(String ticker, Date date)
+    public static String getOptionsDocuments(String ticker, Date date)
             throws Exception   {
 
         OptionsDocuments documents = null;
@@ -125,12 +125,11 @@ public class YahooOptions {
                 break;
             }
             if (s3.contains("Call Options")) {
-                documents = scrape(ticker, s3);
-                break;
+                return s3;
             }
             s3 = NetUtils.getLineFromURL(is);
         }
-        return documents;
+        return null;
     }
 
     private static String getURL(String ticker, Date date) {
@@ -138,6 +137,9 @@ public class YahooOptions {
     }
 
     public static OptionsDocuments scrape(String ticker, String htlmScreen) throws Exception {
+
+        System.out.println("htlmScreen = " + htlmScreen);
+
         OptionsDocuments documents = new OptionsDocuments(ticker);
         int index = htlmScreen.indexOf("<table class=\"yfnc_datamodoutline1\"", 0);
         String s = htlmScreen.substring(index);
@@ -178,26 +180,27 @@ public class YahooOptions {
 
     public static OptionsChain loadOptionChain (String ticker) throws Exception {
         OptionsChain optionChain = new OptionsChain();
+
         Date date = new  Date();
-        OptionsDocuments optionsDocuments = YahooOptions.getOptionsDocuments(ticker, date);
+        getOptions(ticker, optionChain, date);
+
+        date = YahooUtils.getNextMonth(date);
+
+        while (true) {
+            getOptions(ticker, optionChain, date);
+            if (optionChain.calls.size()==0 && optionChain.puts.size()==0) break;
+            date = YahooUtils.getNextMonth(date);
+        }
+        return optionChain;
+    }
+
+    private static void getOptions(String ticker, OptionsChain optionChain, Date date) throws Exception {
+        String s =  YahooOptions.getOptionsDocuments(ticker, date);
+        OptionsDocuments optionsDocuments = scrape(ticker, s);
         List<Option> callsOptions = YahooOptions.getChain(optionsDocuments, OptionType.CALL);
         List<Option> putsOptions = YahooOptions.getChain(optionsDocuments, OptionType.PUT);
         optionChain.calls.put(YahooUtils.mapKey(date), callsOptions);
         optionChain.puts.put(YahooUtils.mapKey(date), putsOptions);
-
-        Date next = YahooUtils.getNextMonth(date);
-
-        while (true) {
-            OptionsDocuments docs = YahooOptions.getOptionsDocuments(ticker, next);
-            List<Option> calls = YahooOptions.getChain(docs, OptionType.CALL);
-            List<Option> puts = YahooOptions.getChain(docs, OptionType.PUT);
-            optionChain.calls.put(YahooUtils.mapKey(next), calls);
-            optionChain.puts.put(YahooUtils.mapKey(next), puts);
-            if (calls.size()==0 && puts.size()==0) break;
-            next = YahooUtils.getNextMonth(next);
-
-        }
-        return optionChain;
     }
 }
 
