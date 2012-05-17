@@ -179,7 +179,7 @@ public class OptionCalculator extends Derivative {
                 double price = (1 / (d3 * d3)) * ((getPrice("European Call", S() + d3, X(), r(), d(), s(), t()) - 2D * getPrice("European Call", S(), X(), r(), d(), s(), t())) + getPrice("European Call", S() - d3, X(), r(), d(), s(), t()));
                 return price;
             }
-        } else if (pricingModel == FinConstants.kCall) {
+        } else if (pricingModel == FinConstants.kAmerican) {
             double d4 = (1 / (d3 * d3)) * ((getPrice("American Put (BS)", S() + d3, X(), r(), d(), s(), t()) - 2D * getPrice("American Put (BS)", S(), X(), r(), d(), s(), t())) + getPrice("American Put (BS)", S() - d3, X(), r(), d(), s(), t()));
             return d4;
         } else {

@@ -52,7 +52,7 @@ public class FinMath implements FinConstants {
                             double time,
                             double volatility,
                             double rate) {
-        return BM(spot, strike, time, volatility, rate, 92, 1000);
+        return BM(spot, strike, time, volatility, rate, kCall, 1000);
     }
 
     public static double BM(double spot,
@@ -76,7 +76,7 @@ public class FinMath implements FinConstants {
 
     public static double MC(double S, double X, double t, double s,
                             double r) {
-        return MC(S, X, t, s, r, 92, 0x186a0);
+        return MC(S, X, t, s, r, kCall, 0x186a0);
     }
 
     public static double MC(double S, double X, double t, double s,
@@ -106,7 +106,7 @@ public class FinMath implements FinConstants {
                             double t,
                             double s,
                             double r) {
-        return BS(S, X, t, s, r, 92);
+        return BS(S, X, t, s, r, kCall);
     }
 
     public static double BS(double S,
@@ -115,10 +115,10 @@ public class FinMath implements FinConstants {
                             double s,
                             double r,
                             int Option) {
-        if (Option == 92 || Option == 94 || Option == 96) {
+        if (Option == kCall || Option == kEuropean || Option == kAmerican) {
             return S * N(d1(S, X, t, s, r)) - X * Math.exp(-r * t) * N(d2(S, X, t, s, r));
         }
-        if (Option == 93 || Option == 95 || Option == 97) {
+        if (Option == kPut || Option == kEuropeanPut || Option == kAmericanPut) {
             return -S * N(-d1(S, X, t, s, r)) + X * Math.exp(-r * t) * N(-d2(S, X, t, s, r));
         } else {
             throw new IllegalArgumentException("Error in < Black Scholes> Unknown Option type (%d)\n" + Option);
@@ -127,15 +127,15 @@ public class FinMath implements FinConstants {
 
     public static double Delta(double S, double X, double t, double s,
                                double r) {
-        return Delta(S, X, t, s, r, 92);
+        return Delta(S, X, t, s, r, kCall);
     }
 
     public static double Delta(double S, double X, double t, double s,
                                double r, int Option) {
-        if (Option == 92 || Option == 94 || Option == 96) {
+        if (Option == kCall || Option == kEuropean || Option == kAmerican) {
             return N(d1(S, X, t, s, r));
         }
-        if (Option == 93 || Option == 95 || Option == 97) {
+        if (Option == kPut || Option == kEuropeanPut || Option == kAmericanPut) {
             return N(d1(S, X, t, s, r)) - 1;
         } else {
             throw new IllegalArgumentException("Error in < Delta> Unknown Option type (%d)\n" + Option);
@@ -149,7 +149,7 @@ public class FinMath implements FinConstants {
 
     public static double Theta(double S, double X, double t, double s,
                                double r) {
-        return Theta(S, X, t, s, r, 92);
+        return Theta(S, X, t, s, r, kCall);
     }
 
     public static double Theta(double S,
@@ -158,10 +158,10 @@ public class FinMath implements FinConstants {
                                double s,
                                double r,
                                int Option) {
-        if (Option == 92 || Option == 94 || Option == 96) {
+        if (Option == kCall || Option == kEuropean || Option == kAmerican) {
             return (-S * n(d1(S, X, t, s, r)) * s) / (2D * Math.sqrt(t)) - r * X * Math.exp(-r * t) * N(d2(S, X, t, s, r));
         }
-        if (Option == 93 || Option == 95 || Option == 97) {
+        if (Option == kPut || Option == kEuropeanPut || Option == kAmericanPut) {
             return (-S * n(d1(S, X, t, s, r)) * s) / (2D * Math.sqrt(t)) + r * X * Math.exp(-r * t) * N(-d2(S, X, t, s, r));
         } else {
             throw new IllegalArgumentException("Error in < Theta> Unknown Option \n" + Option);
@@ -175,15 +175,15 @@ public class FinMath implements FinConstants {
 
     public static double Rho(double S, double X, double t, double s,
                              double r) {
-        return Rho(S, X, t, s, r, 92);
+        return Rho(S, X, t, s, r, kCall);
     }
 
     public static double Rho(double S, double X, double t, double s,
                              double r, int Option) {
-        if (Option == 92 || Option == 94 || Option == 96) {
+        if (Option == kCall || Option == kEuropean || Option == kAmerican) {
             return X * t * Math.exp(-r * t) * N(d2(S, X, t, s, r));
         }
-        if (Option == 93 || Option == 95 || Option == 97) {
+        if (Option == kPut || Option == kEuropeanPut || Option == kAmericanPut) {
             return -X * t * Math.exp(-r * t) * N(-d2(S, X, t, s, r));
         } else {
             throw new IllegalArgumentException("Error in < Rho> Unknown Option  (%d)\n" + Option);
@@ -192,7 +192,7 @@ public class FinMath implements FinConstants {
 
     public static double ImpliedVolatility(double S, double X, double t, double r,
                                            double P) {
-        return ImpliedVolatility(S, X, t, r, P, 92, 107, -1, 0.001D);
+        return ImpliedVolatility(S, X, t, r, P, kCall, kBlackScholes, -1, 0.001D);
     }
 
     public static double ImpliedVolatility(double S, double X, double t, double r,
@@ -203,9 +203,9 @@ public class FinMath implements FinConstants {
     public static double ImpliedVolatility(double S, double X, double t, double r,
                                            double P, int Option, int Method, int n, double Eps) {
         if (n == -1) {
-            if (Method == 103) {
+            if (Method == kBinomial) {
                 n = 100;
-            } else if (Method == 104) {
+            } else if (Method == kMonteCarlo) {
                 n = 0x186a0;
             }
         }
@@ -215,11 +215,11 @@ public class FinMath implements FinConstants {
         double s = 0;
         while (Math.abs(sMax - sMin) > Eps) {
             s = sMin + (sMax - sMin) / 2D;
-            if (Method == 107) {
+            if (Method == kBlackScholes) {
                 p = BS(S, X, t, s, r, Option);
-            } else if (Method == 103) {
+            } else if (Method == kBinomial) {
                 p = BM(S, X, t, s, r, Option, n);
-            } else if (Method == 104) {
+            } else if (Method == kMonteCarlo) {
                 p = MC(S, X, t, s, r, Option, n);
             } else {
                 throw new IllegalArgumentException("Error in < ImpliedVolatility> Unknown Method type (%d)\n" + Method);
@@ -235,10 +235,10 @@ public class FinMath implements FinConstants {
 
     public static double Parity(double P, double S, double X, double t,
                                 double r, int Option) {
-        if (Option == 92) {
+        if (Option == kCall) {
             return P - (S - X * Math.exp(-r * t));
         }
-        if (Option == 93) {
+        if (Option == kPut) {
             return P + (S - X * Math.exp(-r * t));
         } else {
             return -1D;
@@ -340,10 +340,10 @@ public class FinMath implements FinConstants {
     }
 
     public static double Payoff(double S, double X, int Option) {
-        if (Option == 92 || Option == 94 || Option == 96) {
+        if (Option == kCall || Option == kEuropean || Option == kAmerican) {
             return Call(S, X);
         }
-        if (Option == 93 || Option == 95 || Option == 97) {
+        if (Option == kPut || Option == kEuropeanPut || Option == kAmericanPut) {
             return Put(S, X);
         } else {
             throw new IllegalArgumentException("Error in < Payoff> Unknown option type (%d)\n" + Option);
