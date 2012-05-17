@@ -1,7 +1,6 @@
 package com.netnumeri.shared.finance.ta;
 
 import com.netnumeri.shared.finance.finpojo.Instrument;
-import com.netnumeri.shared.finance.finpojo.NamedObject;
 import com.netnumeri.shared.finance.finpojo.PortfolioItem;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;

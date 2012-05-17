@@ -8,7 +8,10 @@ import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.NamedObject;
 import com.netnumeri.shared.finance.utils.FormatUtils;
 
-public class Transaction extends NamedObject {
+public class Transaction {
+
+
+    private String name;
     private int action;
     private Instrument instrument;
     private int amount = 0;
@@ -24,7 +27,7 @@ public class Transaction extends NamedObject {
                        int amount,
                        double price,
                        TDay date) {
-        super(instrument.getName());
+        this.name = instrument.getName();
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         if (date == null) throw new IllegalArgumentException("date cannot be null");
         this.date = date;
@@ -41,7 +44,7 @@ public class Transaction extends NamedObject {
                        double price,
                        TDay date,
                        TransactionCost cost) {
-        super(instrument.getName());
+        this.name = instrument.getName();
         if (instrument == null)
             throw new IllegalArgumentException("instrument cannot be null");
         if (date == null)
@@ -61,7 +64,7 @@ public class Transaction extends NamedObject {
                        TDay d,
                        int t,
                        TransactionCost cost) {
-        super(instrument.getName());
+        this.name = instrument.getName();
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         if (d == null) throw new IllegalArgumentException("d cannot be null");
         if (cost == null) throw new IllegalArgumentException("cost cannot be null");
@@ -77,7 +80,7 @@ public class Transaction extends NamedObject {
                        int action,
                        int amount,
                        TDay date) {
-        super(instrument.getName());
+        this.name = instrument.getName();
         if (date == null) throw new IllegalArgumentException("date cannot be null");
 
         this.instrument = instrument;
@@ -101,7 +104,7 @@ public class Transaction extends NamedObject {
                        TDay date,
                        TransactionCost cost,
                        int Option) {
-        super(instrument.getName());
+        this.name = instrument.getName();
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         if (date == null) throw new IllegalArgumentException("date cannot be null");
         if (cost == null) throw new IllegalArgumentException("cost cannot be null");
