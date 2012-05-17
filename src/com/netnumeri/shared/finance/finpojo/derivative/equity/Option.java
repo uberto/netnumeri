@@ -4,6 +4,7 @@ import com.netnumeri.shared.entity.Entity;
 import com.netnumeri.shared.entity.EntityId;
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.field.*;
+import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 
@@ -115,6 +116,19 @@ public class Option extends Instrument implements Entity {
         return fieldMap.get(fieldname);
     }
 
+    public double getPayoff(double instrumentPrice, boolean withPremium) {
+        double payoff = 0;
+        if (type.get().equals(OptionType.CALL)) {
+            payoff = Math.max(0, instrumentPrice - strike.get());
+        } else {
+            payoff = Math.max(0, strike.get() - instrumentPrice);
+        }
+        if (withPremium) {
+            payoff -= premium.get();
+        }
+        return payoff;
+    }
+
     @Override
     public String toString() {
         return "Option{" +
@@ -126,5 +140,6 @@ public class Option extends Instrument implements Entity {
                 ", " + expiry +
                 '}';
     }
+
 
 }
