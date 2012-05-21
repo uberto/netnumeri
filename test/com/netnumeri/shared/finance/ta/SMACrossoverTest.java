@@ -5,15 +5,12 @@ import com.netnumeri.shared.finance.data.Transaction;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
-import com.netnumeri.shared.finance.finpojo.PortfolioHelper;
-import com.netnumeri.shared.finance.utils.DateUtils;
+import com.netnumeri.shared.finance.finpojo.PortfolioUtils;
 import com.netnumeri.shared.finance.utils.YahooUtils;
-import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Vector;
 
 public class SMACrossoverTest {
 
@@ -25,7 +22,7 @@ public class SMACrossoverTest {
             TDay a = new TDay();
 
             Instrument stock = YahooUtils.downloadYahooData("AAPL", da, a);
-            PortfolioHelper.add(portfolio, stock);
+            PortfolioUtils.add(portfolio, stock);
     //        FinGraph candle = stock.getGraph(2000, 600, 1), "/home/antonio/graphs/candle-" + stock.getName() + ".gif";
 
     //        GraphicsUtils.toGIF(stock.getGraph(2000, 600, 1), "/home/antonio/graphs/candle-" + stock.getName() + ".gif");
@@ -71,8 +68,8 @@ public class SMACrossoverTest {
 //            TimeSerieGraph maGraphWithSignals = GraphicsUtils.mergeGraphsWithSignals("SSA", v, 2000, 600, 4, strategy.getTransactionSerie());
 //            GraphicsUtils.toGIF(maGraphWithSignals, "/home/antonio/graphs/" + stock.getName() + "Withsignals.gif");
 
-            PortfolioHelper.clear(portfolio);
-            PortfolioHelper.add(portfolio, stock);
+            PortfolioUtils.clear(portfolio);
+            PortfolioUtils.add(portfolio, stock);
 
             StrategyBacktest trader = new StrategyBacktest(strategy.getTransactionSeries(), portfolio, 100000);
             double value = trader.test();

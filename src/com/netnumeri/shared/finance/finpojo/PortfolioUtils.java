@@ -12,7 +12,7 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 
 import java.util.List;
 
-public class PortfolioHelper {
+public class PortfolioUtils {
 
 
     public static void clear(Portfolio portfolio) {

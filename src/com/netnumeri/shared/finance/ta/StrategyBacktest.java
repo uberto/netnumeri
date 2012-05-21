@@ -9,7 +9,7 @@ import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
-import com.netnumeri.shared.finance.finpojo.PortfolioHelper;
+import com.netnumeri.shared.finance.finpojo.PortfolioUtils;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.utils.LogUtils;
 
@@ -351,7 +351,7 @@ public class StrategyBacktest implements FinConstants, Serializable {
     // usually an index
     public void setBenchmarkPortfolio(Asset benchmarkAsset) {
         benchmarkPortfolio = new Portfolio("Benchmark");
-        PortfolioHelper.add(benchmarkPortfolio,benchmarkAsset);
+        PortfolioUtils.add(benchmarkPortfolio, benchmarkAsset);
     }
 
     public double test() {
@@ -523,12 +523,12 @@ public class StrategyBacktest implements FinConstants, Serializable {
                         }
                         break;
                     }
-                    PortfolioHelper.add(portfolio, transaction);
+                    PortfolioUtils.add(portfolio, transaction);
                     cost += transaction.getCost();
                     firstIndex = index + 1;
 
                     double mark2market = 0;
-                    mark2market = PortfolioHelper.getValue(portfolio, date);
+                    mark2market = PortfolioUtils.getValue(portfolio, date);
 
                     CurrentWealth = currentAccount + mark2market;
                     wealthSeries.add(date, CurrentWealth);

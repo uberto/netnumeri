@@ -59,7 +59,7 @@ public abstract class Strategy extends DateBound implements FinConstants {
 
     public void add(Transaction transaction) {
         transactionSeries.add(transaction);
-        PortfolioHelper.add(strategyPortfolio, transaction);
+        PortfolioUtils.add(strategyPortfolio, transaction);
     }
 
     public void add(Instrument instrument, int action, int amount, double price, TDay date) {
