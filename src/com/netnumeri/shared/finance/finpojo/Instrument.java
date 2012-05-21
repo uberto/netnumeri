@@ -12,7 +12,7 @@ import java.util.TreeMap;
 
 public abstract class Instrument extends DateBound implements Serializable {
 
-    protected double delta = 1;
+    public double delta = 1;
 
     public abstract double modelPrice(int model);
     public abstract String getName();

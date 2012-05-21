@@ -10,6 +10,7 @@ import com.netnumeri.shared.finance.date.*;
 import com.netnumeri.shared.finance.finpojo.*;
 import com.netnumeri.shared.finance.finpojo.Parameters;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
+import com.netnumeri.shared.finance.utils.PortfolioUtils;
 
 import java.util.Map;
 

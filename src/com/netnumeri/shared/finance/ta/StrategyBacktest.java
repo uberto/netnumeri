@@ -9,7 +9,7 @@ import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
-import com.netnumeri.shared.finance.finpojo.PortfolioUtils;
+import com.netnumeri.shared.finance.utils.PortfolioUtils;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.utils.LogUtils;
 

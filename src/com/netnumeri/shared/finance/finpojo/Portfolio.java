@@ -27,6 +27,7 @@ import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.matrix.Matrix;
+import com.netnumeri.shared.finance.utils.PortfolioUtils;
 
 import java.util.ArrayList;
 import java.util.List;

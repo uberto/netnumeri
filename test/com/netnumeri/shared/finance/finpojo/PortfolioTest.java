@@ -2,6 +2,7 @@ package com.netnumeri.shared.finance.finpojo;
 
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
+import com.netnumeri.shared.finance.utils.PortfolioUtils;
 import com.netnumeri.shared.finance.utils.TestUtils;
 import junit.framework.TestCase;
 import org.junit.Test;
