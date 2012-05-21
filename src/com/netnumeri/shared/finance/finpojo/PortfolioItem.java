@@ -16,6 +16,7 @@ public class PortfolioItem implements Serializable, FinConstants {
     enum Field implements FieldName {
         name
     }
+
     private FieldMap fieldMap = new FieldMap();
     public StringEntityField name = new StringEntityField(fieldMap,Field.name, 5);
 
@@ -43,16 +44,18 @@ public class PortfolioItem implements Serializable, FinConstants {
         modelPrice = 0;
     }
 
-    public PortfolioItem(Instrument instrument) {
+    public PortfolioItem(Portfolio portfolio, Instrument instrument) {
         init();
+        this.portfolio = portfolio;
         this.instrument = instrument;
     }
 
     // amount < 0 means taking short position in instrument
-    public PortfolioItem(Instrument instrument, int amount) {
+    public PortfolioItem(Portfolio portfolio,Instrument instrument, int amount) {
         init();
         this.instrument = instrument;
         this.amount = amount;
+        this.portfolio = portfolio;
     }
 
     public double getModelPrice() {

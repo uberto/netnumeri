@@ -19,7 +19,7 @@ public class PortfolioTest extends TestCase {
     @Test(expected=PortfolioException.class)
     public void testBuildPortfolio() throws Exception {
         portfolio = new Portfolio();
-        portfolio.invest(1000000);
+        PortfolioHelper.invest(portfolio, 1000000);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class PortfolioTest extends TestCase {
 
         portfolio = new Portfolio();
         stock = TestUtils.buildStock();
-        portfolio.buy(stock, 1000);
+        PortfolioHelper.buy( portfolio, stock, 1000);
 
     }
 
@@ -54,19 +54,19 @@ public class PortfolioTest extends TestCase {
 
         stock = TestUtils.buildStock();
 
-        portfolio.buy(stock, 1000, new TDay("03/11/2009"));
+        PortfolioHelper.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
-        double value = portfolio.getValue();
+        double value = PortfolioHelper.getValue(portfolio);
         assertEquals(16110.0, value);
 
-        List<PortfolioItem> items = portfolio.getInstruments();
+        List<PortfolioItem> items = PortfolioHelper.getInstruments(portfolio);
         assertEquals(1, items.size());
 
         for (int i = 0; i < items.size(); i++) {
             PortfolioItem portfolioItem = items.get(i);
         }
 
-        Instrument instrument = portfolio.getInstrument(0);
+        Instrument instrument = PortfolioHelper.getInstrument(portfolio,0);
 
         int nDaily = instrument.getNDaily();
         assertEquals(nDaily, 321);

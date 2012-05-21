@@ -1,6 +1,7 @@
 package com.netnumeri.shared.finance.ta;
 
 import com.netnumeri.shared.finance.finpojo.Instrument;
+import com.netnumeri.shared.finance.finpojo.Portfolio;
 import com.netnumeri.shared.finance.finpojo.PortfolioItem;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
@@ -8,12 +9,14 @@ import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 import java.util.ArrayList;
 
 public class OptionStrategy {
+    private Portfolio portfolio;
     private String name;
     private ArrayList fOption;
     private PortfolioItem item;
     private int option;
 
-    public OptionStrategy() {
+    public OptionStrategy(Portfolio portfolio) {
+        this.portfolio = portfolio;
     }
 
     // Option strategy normal constructor
@@ -27,13 +30,13 @@ public class OptionStrategy {
     // Set tile and its amount
     // amount < 0 means taking short position in tile
     public void setAsset(Asset asset, int amount) {
-        this.item = new PortfolioItem(asset, amount);
+        this.item = new PortfolioItem(portfolio, asset, amount);
     }
 
     // Add an option with amount
     // amount < 0 means taking short position (writing an option)
     public void addOption(Option option, int amount) {
-        PortfolioItem entry = new PortfolioItem(option, amount);
+        PortfolioItem entry = new PortfolioItem(portfolio, option, amount);
         fOption.add(entry);
         this.option++;
     }

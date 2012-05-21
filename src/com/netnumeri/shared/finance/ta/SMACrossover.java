@@ -4,6 +4,7 @@ import com.netnumeri.shared.finance.data.Transaction;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
+import com.netnumeri.shared.finance.finpojo.PortfolioHelper;
 
 import java.util.Map;
 
@@ -27,8 +28,8 @@ public class SMACrossover extends Strategy {
     }
 
     public void evaluatePortfolioOnDate(TDay date, Map signals) {
-        for (int i = 0; i < getPortfolio().nentries(); i++) {
-            Instrument asset = getPortfolio().getInstrument(i);
+        for (int i = 0; i < getPortfolio().items.size(); i++) {
+            Instrument asset = PortfolioHelper.getInstrument(getPortfolio(),i);
             if (asset.isDataAvailable(date)) {
                 evaluateInstrumentOnDate(date, asset);
             }

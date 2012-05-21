@@ -21,6 +21,7 @@ public class StockUtilsTest extends TestCase {
     @Test
     public void testGetCloseSeries() throws Exception {
 
+
     }
 
 }

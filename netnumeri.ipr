@@ -240,9 +240,11 @@
         <w>dailyarray</w>
         <w>goog</w>
         <w>htlm</w>
+        <w>lowsum</w>
         <w>netnumeri</w>
         <w>println</w>
         <w>scholes</w>
+        <w>upsum</w>
         <w>xyseries</w>
       </words>
     </dictionary>
