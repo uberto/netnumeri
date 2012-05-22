@@ -1,4 +1,4 @@
-package com.netnumeri.shared.finance.ta;
+package com.netnumeri.shared.finance.math;
 
 import com.google.gwt.user.client.Random;
 import com.netnumeri.shared.finance.beans.FinConstants;

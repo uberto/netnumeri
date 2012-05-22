@@ -1,4 +1,4 @@
-package com.netnumeri.shared.finance.utils;
+package com.netnumeri.shared.finance.math;
 
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.beans.TimeSeries;
@@ -13,7 +13,7 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 
 import java.util.List;
 
-public class PortfolioUtils {
+public class PortfolioMath {
 
 
     public static void clear(Portfolio portfolio) {

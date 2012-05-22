@@ -7,7 +7,7 @@ import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 import com.netnumeri.shared.finance.finpojo.derivative.Derivative;
 import com.netnumeri.shared.finance.math.FinRecipes;
-import com.netnumeri.shared.finance.ta.FinMath;
+import com.netnumeri.shared.finance.math.FinMath;
 
 public class OptionCalculator extends Derivative {
 

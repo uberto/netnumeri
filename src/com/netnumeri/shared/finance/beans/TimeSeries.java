@@ -3,11 +3,11 @@ package com.netnumeri.shared.finance.beans;
 
 import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.date.TDay;
+import com.netnumeri.shared.finance.math.NumericalRecipes;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.ta.DateValue;
 import com.netnumeri.shared.finance.utils.DateUtils;
 import com.netnumeri.shared.finance.utils.LogUtils;
-import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 import java.io.Serializable;
 
@@ -1936,8 +1936,8 @@ public class TimeSeries extends DateBound implements Serializable {
     public NumericalRecipesSeries asRecipes() {
         NumericalRecipesSeries series = new NumericalRecipesSeries();
         int size = lengthsArray[0];
-        series.setData(NumericalRecipesUtils.vector(1, size));
-        series.setDates(NumericalRecipesUtils.datesvector(1, size));
+        series.setData(NumericalRecipes.vector(1, size));
+        series.setDates(NumericalRecipes.datesvector(1, size));
         int j = 1;
         for (int i = getLowerBoundIndex(); i <= getUpperBoundIndex(); i++) {
             if (!isEmpty(i)) {

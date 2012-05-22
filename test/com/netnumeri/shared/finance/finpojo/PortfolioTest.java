@@ -2,7 +2,7 @@ package com.netnumeri.shared.finance.finpojo;
 
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
-import com.netnumeri.shared.finance.utils.PortfolioUtils;
+import com.netnumeri.shared.finance.math.PortfolioMath;
 import com.netnumeri.shared.finance.utils.TestUtils;
 import junit.framework.TestCase;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class PortfolioTest extends TestCase {
     @Test(expected=PortfolioException.class)
     public void testBuildPortfolio() throws Exception {
         portfolio = new Portfolio();
-        PortfolioUtils.invest(portfolio, 1000000);
+        PortfolioMath.invest(portfolio, 1000000);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class PortfolioTest extends TestCase {
 
         portfolio = new Portfolio();
         stock = TestUtils.buildStock();
-        PortfolioUtils.buy(portfolio, stock, 1000);
+        PortfolioMath.buy(portfolio, stock, 1000);
 
     }
 
@@ -55,19 +55,19 @@ public class PortfolioTest extends TestCase {
 
         stock = TestUtils.buildStock();
 
-        PortfolioUtils.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
+        PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
-        double value = PortfolioUtils.getValue(portfolio);
+        double value = PortfolioMath.getValue(portfolio);
         assertEquals(16110.0, value);
 
-        List<PortfolioItem> items = PortfolioUtils.getInstruments(portfolio);
+        List<PortfolioItem> items = PortfolioMath.getInstruments(portfolio);
         assertEquals(1, items.size());
 
         for (int i = 0; i < items.size(); i++) {
             PortfolioItem portfolioItem = items.get(i);
         }
 
-        Instrument instrument = PortfolioUtils.getInstrument(portfolio, 0);
+        Instrument instrument = PortfolioMath.getInstrument(portfolio, 0);
 
         int nDaily = instrument.getNDaily();
         assertEquals(nDaily, 321);

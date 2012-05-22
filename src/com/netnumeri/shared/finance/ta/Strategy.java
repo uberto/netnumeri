@@ -10,7 +10,7 @@ import com.netnumeri.shared.finance.date.*;
 import com.netnumeri.shared.finance.finpojo.*;
 import com.netnumeri.shared.finance.finpojo.Parameters;
 import com.netnumeri.shared.finance.finpojo.Portfolio;
-import com.netnumeri.shared.finance.utils.PortfolioUtils;
+import com.netnumeri.shared.finance.math.PortfolioMath;
 
 import java.util.Map;
 
@@ -60,7 +60,7 @@ public abstract class Strategy extends DateBound implements FinConstants {
 
     public void add(Transaction transaction) {
         transactionSeries.add(transaction);
-        PortfolioUtils.add(strategyPortfolio, transaction);
+        PortfolioMath.add(strategyPortfolio, transaction);
     }
 
     public void add(Instrument instrument, int action, int amount, double price, TDay date) {

@@ -1,6 +1,6 @@
 package com.netnumeri.shared.finance.beans;
 
-import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
+import com.netnumeri.shared.finance.math.NumericalRecipes;
 
 public class Moment {
     public static class MomentResult {
@@ -19,7 +19,7 @@ public class Moment {
         float p;
         MomentResult res = new MomentResult();
         if (n <= 1) {
-            NumericalRecipesUtils.nrerror("n must be at least 2 in moment");
+            NumericalRecipes.nrerror("n must be at least 2 in moment");
         }
         s = 0.0F;
         for (j = 1; j <= n; j++) {
@@ -41,7 +41,7 @@ public class Moment {
             res.skew /= (n * (res.var) * (res.sdev));
             res.curt = (res.curt) / (n * (res.var) * (res.var)) - 3.0F;
         } else {
-            NumericalRecipesUtils.nrerror("No skew/kurtosis when variance = 0 (in moment)");
+            NumericalRecipes.nrerror("No skew/kurtosis when variance = 0 (in moment)");
         }
         return res;
     }

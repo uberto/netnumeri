@@ -1,11 +1,11 @@
-package com.netnumeri.shared.finance.utils;
+package com.netnumeri.shared.finance.math;
 
 import com.netnumeri.shared.finance.beans.Moment;
 import com.netnumeri.shared.finance.beans.NRError;
 import com.netnumeri.shared.finance.date.TDay;
 
 
-public class NumericalRecipesUtils {
+public class NumericalRecipes {
 
 //    private static native JsArrayString regExpMatch(String regEx, String target) /*-{
 //        var re = new RegExp();
@@ -89,7 +89,7 @@ public class NumericalRecipesUtils {
 
     public static float[] sumSeries(float[] s1, float[] s2) {
         int size = s1.length - 1;
-        float[] sum = NumericalRecipesUtils.vector(1, size);
+        float[] sum = NumericalRecipes.vector(1, size);
         for (int i = 1; i <= size; i++)
             sum[i] = s1[i] + s2[i];
         return sum;
@@ -97,7 +97,7 @@ public class NumericalRecipesUtils {
 
     public static float[] diffSeries(float[] s1, float[] s2) {
         int size = s1.length - 1;
-        float[] diff = NumericalRecipesUtils.vector(1, size);
+        float[] diff = NumericalRecipes.vector(1, size);
         for (int i = 1; i <= size; i++)
             diff[i] = s1[i] - s2[i];
         return diff;
@@ -105,15 +105,15 @@ public class NumericalRecipesUtils {
 
     public static float[] exponential(float[] s1) {
         int size = s1.length - 1;
-        float[] sum = NumericalRecipesUtils.vector(1, size);
+        float[] sum = NumericalRecipes.vector(1, size);
         for (int i = 1; i <= size; i++)
             sum[i] = (float) Math.exp(s1[i]);
         return sum;
     }
 
     public static float[] augmentByMovingAverage(float[] s1) throws NRError {
-        float[] aug = NumericalRecipesUtils.vector(1, size(s1));
-        float[] madata = NumericalRecipesUtils.vector(1, 10);
+        float[] aug = NumericalRecipes.vector(1, size(s1));
+        float[] madata = NumericalRecipes.vector(1, 10);
         Moment.MomentResult ma = null;
         for (int i = 1; i < size(s1); i++)
             aug[i] = s1[i + 1];
@@ -129,12 +129,12 @@ public class NumericalRecipesUtils {
     }
 
     public static float[] concatenateSeries(float[] s1, float[] s2) {
-        float[] totSerie = NumericalRecipesUtils.vector(1, NumericalRecipesUtils.size(s1) + NumericalRecipesUtils.size(s2));
+        float[] totSerie = NumericalRecipes.vector(1, NumericalRecipes.size(s1) + NumericalRecipes.size(s2));
         int i = -1;
-        for (i = 1; i <= NumericalRecipesUtils.size(s1); i++) {
+        for (i = 1; i <= NumericalRecipes.size(s1); i++) {
             totSerie[i] = s1[i];
         }
-        for (int j = 1; j <= NumericalRecipesUtils.size(s2); j++) {
+        for (int j = 1; j <= NumericalRecipes.size(s2); j++) {
             totSerie[i] = s2[j];
             i++;
         }
@@ -142,7 +142,7 @@ public class NumericalRecipesUtils {
     }
 
     public static float[] getPrevN(float[] series, int seriesSize, int today) {
-        float[] totSerie = NumericalRecipesUtils.vector(1, seriesSize);
+        float[] totSerie = NumericalRecipes.vector(1, seriesSize);
         int i = -1;
         for (i = 1; i <= seriesSize; i++)
             totSerie[i] = series[today - seriesSize + i];
@@ -150,7 +150,7 @@ public class NumericalRecipesUtils {
     }
 
     public static float[] getNextN(float[] series, int seriesSize, int today) {
-        float[] totSerie = NumericalRecipesUtils.vector(1, seriesSize);
+        float[] totSerie = NumericalRecipes.vector(1, seriesSize);
         int i = -1;
         for (i = 1; i <= seriesSize; i++)
             totSerie[i] = series[today + i];

@@ -3,7 +3,6 @@ package com.netnumeri.shared.finance.math;
 import com.google.gwt.user.client.Random;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.matrix.Matrix;
-import com.netnumeri.shared.finance.ta.FinMath;
 import com.netnumeri.shared.finance.utils.LogUtils;
 
 

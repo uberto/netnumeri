@@ -2,8 +2,8 @@ package com.netnumeri.shared.finance.ta;
 
 
 import com.netnumeri.shared.finance.beans.NRError;
+import com.netnumeri.shared.finance.math.NumericalRecipes;
 import com.netnumeri.shared.finance.utils.LogUtils;
-import com.netnumeri.shared.finance.utils.NumericalRecipesUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class Filter {
                               int derivative)
             throws NRError {
         int isign;
-        float[] respns = NumericalRecipesUtils.vector(1, n);
+        float[] respns = NumericalRecipes.vector(1, n);
         int np = nl + nr + 1;
         isign = 1;
         savgol(respns, np, nl, nr, derivative, m);
@@ -44,7 +44,7 @@ public class Filter {
         int i, no2;
         float dum, mag2;
         float[] fft;
-        fft = NumericalRecipesUtils.vector(1, n << 1);
+        fft = NumericalRecipes.vector(1, n << 1);
         for (i = 1; i <= (m - 1) / 2; i++) {
             respns[n + 1 - i] = respns[m + 1 - i];
         }
@@ -60,12 +60,12 @@ public class Filter {
                 ans[i] = (fft[i] * dum + fft[i - 1] * ans[i]) / no2;
             } else if (isign == -1) {
                 if ((mag2 = (ans[i - 1] * ans[i - 1]) + (ans[i] * ans[i])) == 0.0F) {
-                    NumericalRecipesUtils.nrerror("Deconvolving at response zero in convlv");
+                    NumericalRecipes.nrerror("Deconvolving at response zero in convlv");
                 }
                 ans[i - 1] = (fft[i - 1] * (dum = ans[i - 1]) + fft[i] * ans[i]) / mag2 / no2;
                 ans[i] = (fft[i] * dum - fft[i - 1] * ans[i]) / mag2 / no2;
             } else {
-                NumericalRecipesUtils.nrerror("No meaning for isign in convlv");
+                NumericalRecipes.nrerror("No meaning for isign in convlv");
             }
         }
         ans[2] = ans[n + 1];
@@ -82,8 +82,8 @@ public class Filter {
         j = 1;
         for (i = 1; i < n; i += 2) {
             if (j > i) {
-                NumericalRecipesUtils.swap(data, j, i);
-                NumericalRecipesUtils.swap(data, j + 1, i + 1);
+                NumericalRecipes.swap(data, j, i);
+                NumericalRecipes.swap(data, j + 1, i + 1);
             }
             m = n >> 1;
             while (m >= 2 && j > m) {
@@ -152,7 +152,7 @@ public class Filter {
         float[] vv;
         float d;
 
-        vv = NumericalRecipesUtils.vector(1, n);
+        vv = NumericalRecipes.vector(1, n);
         d = 1.0F;
         for (i = 1; i <= n; i++) {
             big = 0.0F;
@@ -162,7 +162,7 @@ public class Filter {
                 }
             }
             if (big == 0.0F) {
-                NumericalRecipesUtils.nrerror("Singular matrix in routine ludcmp");
+                NumericalRecipes.nrerror("Singular matrix in routine ludcmp");
             }
             vv[i] = 1.0F / big;
         }
@@ -261,11 +261,11 @@ public class Filter {
         float[] b;
 
         if (np < nl + nr + 1 || nl < 0 || nr < 0 || ld > m || nl + nr < m) {
-            NumericalRecipesUtils.nrerror("bad args in savgol");
+            NumericalRecipes.nrerror("bad args in savgol");
         }
-        a = NumericalRecipesUtils.matrix(1, m + 1, 1, m + 1);
-        indx = NumericalRecipesUtils.ivector(1, m + 1);
-        b = NumericalRecipesUtils.vector(1, m + 1);
+        a = NumericalRecipes.matrix(1, m + 1, 1, m + 1);
+        indx = NumericalRecipes.ivector(1, m + 1);
+        b = NumericalRecipes.vector(1, m + 1);
         for (ipj = 0; ipj <= (m << 1); ipj++) {
             sum = ((ipj != 0) ? 0.0F : 1.0F);
             for (k = 1; k <= nr; k++) {
@@ -274,7 +274,7 @@ public class Filter {
             for (k = 1; k <= nl; k++) {
                 sum += Math.pow((double) -k, (double) ipj);
             }
-            mm = NumericalRecipesUtils.imin(ipj, 2 * m - ipj);
+            mm = NumericalRecipes.imin(ipj, 2 * m - ipj);
             for (imj = -mm; imj <= mm; imj += 2) {
                 a[1 + (ipj + imj) / 2][1 + (ipj - imj) / 2] = sum;
             }
@@ -343,9 +343,9 @@ public class Filter {
         int N2 = 2 * N;
         //  int NPTS = 512;
 
-        respns = NumericalRecipesUtils.vector(1, N);
-        resp = NumericalRecipesUtils.vector(1, N);
-        ans = NumericalRecipesUtils.vector(1, N2);
+        respns = NumericalRecipes.vector(1, N);
+        resp = NumericalRecipes.vector(1, N);
+        ans = NumericalRecipes.vector(1, N2);
         isign = 1;
         savgol(respns, np, nl, nr, derivative, m);
 
@@ -381,10 +381,10 @@ public class Filter {
         int nr = 10;
         int np = 21;
         int m = 4;
-        int N = NumericalRecipesUtils.size(data);
+        int N = NumericalRecipes.size(data);
         int N2 = 2 * N;
-        respns = NumericalRecipesUtils.vector(1, N);
-        ans = NumericalRecipesUtils.vector(1, N2);
+        respns = NumericalRecipes.vector(1, N);
+        ans = NumericalRecipes.vector(1, N2);
         isign = 1;
         savgol(respns, np, nl, nr, 0, m);
         convlv(data, N, respns, np, isign, ans);
@@ -404,10 +404,10 @@ public class Filter {
         int M = 9;         /* response function dimension - must be odd */
         int N2 = 2 * N;
 
-        data = NumericalRecipesUtils.vector(1, N);
-        respns = NumericalRecipesUtils.vector(1, N);
-        resp = NumericalRecipesUtils.vector(1, N);
-        ans = NumericalRecipesUtils.vector(1, N2);
+        data = NumericalRecipes.vector(1, N);
+        respns = NumericalRecipes.vector(1, N);
+        resp = NumericalRecipes.vector(1, N);
+        ans = NumericalRecipes.vector(1, N2);
         for (i = 1; i <= N; i++) {
             if ((i >= N / 2 - N / 8) && (i <= N / 2 + N / 8)) {
                 data[i] = 1.0F;
@@ -460,7 +460,7 @@ public class Filter {
                 "  0.042 -0.105 -0.023  0.140  0.280  0.333  0.280  0.140 -0.023 -0.105  0.042"
         };
 
-        c = NumericalRecipesUtils.vector(1, NMAX);
+        c = NumericalRecipes.vector(1, NMAX);
         log("M nl nr");
         log("\t\t\tSample Savitzky-Golay Coefficients");
         for (i = 1; i <= NTEST; i++) {
@@ -503,7 +503,7 @@ public class Filter {
             int N = 512;
 
             LogUtils.debug("=====================================================================");
-            float[] data = NumericalRecipesUtils.vector(1, N);
+            float[] data = NumericalRecipes.vector(1, N);
             for (int i = 1; i <= N; i++) {
                 data[i] = (float) Math.random();
                 log(data[i]);

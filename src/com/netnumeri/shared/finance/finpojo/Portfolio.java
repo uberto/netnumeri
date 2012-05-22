@@ -27,7 +27,7 @@ import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.matrix.Matrix;
-import com.netnumeri.shared.finance.utils.PortfolioUtils;
+import com.netnumeri.shared.finance.math.PortfolioMath;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -163,7 +163,7 @@ public TDay firstDailyDate;
         for (int i = 0; i < items.size(); i++) {
             PortfolioItem portfolioItem = items.get(i);
             assert p != null;
-            PortfolioUtils.add(p, portfolioItem);
+            PortfolioMath.add(p, portfolioItem);
         }
 
         p.transactions = (TransactionSeries) transactions.clone();
