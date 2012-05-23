@@ -83,6 +83,17 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testSell() throws Exception {
 
+        portfolio = new Portfolio();
+
+        stock = TestUtils.buildStock();
+
+        PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
+        PortfolioMath.sell(portfolio, stock, 1000,new TDay("03/11/2009"));
+
+        List<PortfolioItem> instruments = PortfolioMath.getInstruments(portfolio);
+
+        assertEquals(0, instruments.size());
+
     }
 
     @Test
