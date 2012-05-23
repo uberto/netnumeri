@@ -57,6 +57,12 @@ public class PortfolioTest extends TestCase {
 
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
+
+        List<PortfolioItem> instruments = PortfolioMath.getInstruments(portfolio);
+
+        assertEquals(1, instruments.size());
+
+
         double value = PortfolioMath.getValue(portfolio);
         assertEquals(16110.0, value);
 
