@@ -47,7 +47,7 @@ public abstract class Instrument extends DateBound implements Serializable {
     private double marketSpotShift = 1.0;
     private double marketVolatilityShift = 1.0;
 
-    public TreeMap<TDay, Daily> dailyarray = new TreeMap<TDay, Daily>();
+    public TreeMap<TDay, Daily> dailyarray = new TreeMap<>();
     public TreeMap<TDay, Daily> getDailyarray() {
         return dailyarray;
     }
@@ -1440,6 +1440,9 @@ public abstract class Instrument extends DateBound implements Serializable {
     }
 
     public TDay firstDailyDate() {
+
+        if (dailyarray == null || dailyarray.isEmpty()) throw  new IllegalStateException("no daily values present for instrument: " + getName());
+
         Daily daily = (Daily) dailyarray.values().toArray()[0];
         if (daily != null)
             return daily.getDailydate();
@@ -1459,7 +1462,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         if (dailyarray == null) throw new IllegalArgumentException("dailyarray cannot be null");
         if (date == null) throw new IllegalArgumentException("date cannot be null");
         Daily daily = dailyarray.get(date);
-        if (daily == null) throw new InstrumentException("no price assoiated to this date");
+        if (daily == null) throw new InstrumentException("no price associated to this date");
         return daily.getArrayindex();
     }
 

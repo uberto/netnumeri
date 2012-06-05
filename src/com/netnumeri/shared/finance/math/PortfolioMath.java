@@ -15,7 +15,6 @@ import java.util.List;
 
 public class PortfolioMath {
 
-
     public static void clear(Portfolio portfolio) {
         portfolio.items.clear();
         portfolio.transactions.clear();
@@ -180,9 +179,7 @@ public class PortfolioMath {
     // add series of trade transactions
 
     public static void add(Portfolio portfolio,TransactionSeries series) {
-        if (series == null) {
-            throw new IllegalArgumentException("series cannot be null");
-        }
+        if (series == null) throw new IllegalArgumentException("series cannot be null");
         int N = series.getN();
         for (int i = 0; i < N; i++) {
             add(portfolio,series.getTransaction(i));
@@ -264,10 +261,10 @@ public class PortfolioMath {
     }
 
     public static Transaction sellShort(Portfolio portfolio,Instrument instrument, int amount) {
-        return sellShort(portfolio,instrument, amount, null, 0);
+        return sellShort(portfolio,instrument, amount, null);
     }
 
-    public static Transaction sellShort(Portfolio portfolio,Instrument instrument, int Amount, TDay date, int Time) {
+    public static Transaction sellShort(Portfolio portfolio,Instrument instrument, int Amount, TDay date) {
         if (date == null) date = new TDay();
         Transaction transaction = new Transaction(instrument, FinConstants.SELLSHORT, Amount, instrument.getPrice(date), date);
         add(portfolio, transaction);
@@ -309,6 +306,9 @@ public class PortfolioMath {
     public static void remove(Portfolio portfolio,Instrument instrument) {
         for (int i = 0; i < portfolio.items.size(); i++) {
             PortfolioItem entry = portfolio.items.get(i);
+
+            if (entry.getInstrument().getName() == null) throw  new RuntimeException("entry cannot have null name");
+
             if (entry.getInstrument().getName().equalsIgnoreCase(instrument.getName())) {
                 portfolio.items.remove(entry);
                 normalizeWeights(portfolio);
@@ -420,7 +420,6 @@ public class PortfolioMath {
         }
     }
 
-    // randomize portfolio weights
 //    public static void randomizeWeights() {
 //        for (int i = 0; i < items.size(); i++) {
 //            setWeight(i, dist.nextDouble());
@@ -1298,12 +1297,12 @@ public class PortfolioMath {
         for (int i = 0; i < entries.size(); i++) {
             PortfolioItem item = (PortfolioItem) entries.get(i);
             Instrument instrument = item.getInstrument();
-            double[] serie = instrument.logReturnSeries().toArray();
+            double[] series = instrument.logReturnSeries().toArray();
             if (ret == null) {
-                ret = new Matrix(dimension, serie.length);
+                ret = new Matrix(dimension, series.length);
             }
-            for (int x = 0; x < serie.length; x++) {
-                double v = serie[x];
+            for (int x = 0; x < series.length; x++) {
+                double v = series[x];
                 ret.set(i, x, v);
             }
         }

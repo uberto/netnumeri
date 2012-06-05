@@ -365,22 +365,6 @@ public class TDay implements Serializable, Comparable {
         return (int) res;
     }
 
-    public int diffSeconds(TDay d) {
-        long res = getTime() - d.getTime();
-        res /= SECONDS_DAY;
-        return (int) res;
-    }
-
-    public boolean equals(TDay d) {
-        boolean res = year == d.getYear() && month == d.getMonth() && date == d.getDate();
-        return res;
-    }
-
-    public boolean equalDates(TDay d) {
-        boolean res = month == d.getMonth() && date == d.getDate();
-        return res;
-    }
-
     public boolean before(TDay d) {
         return getTime() < d.getTime();
     }
@@ -649,20 +633,6 @@ public class TDay implements Serializable, Comparable {
         return res;
     }
 
-//    public Date toDate() {
-//        int year = this.year;
-//        int month = this.month;
-//        int weekday = this.date;
-//        Calendar cal = Calendar.getInstance ();
-//        cal.set(year, month, weekday);
-//        cal.set(Calendar.HOUR_OF_DAY, 0);
-//        cal.set(Calendar.MINUTE, 0);
-//        cal.set(Calendar.SECOND, 0);
-//        cal.set(Calendar.MILLISECOND, 0);
-//        java.util.Date dat = cal.getTime();
-//        return dat;
-//    }
-
     public static void main(String[] args) {
 
         TDay d = new TDay("3/27/2007");
@@ -673,7 +643,7 @@ public class TDay implements Serializable, Comparable {
 
     @Override
     public int compareTo(Object o) {
-        if (this.equals((TDay) o)) return 0;
+        if (this.isEqual((TDay) o)) return 0;
         if (this.after((TDay) o)) return 1;
         return -1;
     }

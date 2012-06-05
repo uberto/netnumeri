@@ -1,5 +1,6 @@
 package com.netnumeri.shared.finance.utils;
 
+import com.netnumeri.server.utils.StockUtils;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
 
 public class TestUtils {

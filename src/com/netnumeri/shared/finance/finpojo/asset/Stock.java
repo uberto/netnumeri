@@ -5,7 +5,6 @@ import com.netnumeri.shared.field.FieldName;
 import com.netnumeri.shared.field.StringEntityField;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Stock extends Asset implements Serializable {
 
@@ -16,12 +15,12 @@ public class Stock extends Asset implements Serializable {
 
     private StringEntityField ticker = new StringEntityField(fieldMap,Field.ticker, 5);
 
-    public Stock() {
-        super();
-    }
+//    public Stock() {
+//        super();
+//    }
 
     public Stock(String name) {
-        super(name);
+        this.ticker.setValue(name);
     }
 
     public double modelPrice(int model) {
@@ -35,7 +34,6 @@ public class Stock extends Asset implements Serializable {
 
     @Override
     public void setName(String name) {
-
         this.ticker.setValue(name);
     }
 

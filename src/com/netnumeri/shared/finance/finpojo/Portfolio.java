@@ -1,6 +1,5 @@
 package com.netnumeri.shared.finance.finpojo;
 
-
 // Portfolio
 // A portfolio holds a list of portfolio entries (see PortfolioItem class).
 // Portfolio can be seen as a
@@ -61,7 +60,7 @@ public class Portfolio extends Asset implements FinConstants {
     private int nPoints;
 
 //    private MonteCarlo monteCarlo;
-public TDay firstDailyDate;
+    public TDay firstDailyDate;
     public TDay lastDailyDate;
 
 //    private AbstractDistribution dist = null;

@@ -1,7 +1,8 @@
-package com.netnumeri.shared.finance.utils;
+package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.finpojo.asset.Stock;
+import com.netnumeri.shared.finance.utils.DateUtils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,7 +12,8 @@ import java.util.StringTokenizer;
 public class StockUtils {
 
     public static Stock getStock(String filePath) throws Exception {
-        Stock instrument = new Stock();
+
+        Stock instrument = new Stock("SSRI");
         Stack lines = new Stack();
 //        String filePath = ("./src/test/resources/SSRI.csv");
 

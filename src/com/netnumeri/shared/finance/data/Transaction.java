@@ -45,10 +45,8 @@ public class Transaction {
                        TDay date,
                        TransactionCost cost) {
         this.name = instrument.getName();
-        if (instrument == null)
-            throw new IllegalArgumentException("instrument cannot be null");
-        if (date == null)
-            throw new IllegalArgumentException("date cannot be null");
+        if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
+        if (date == null) throw new IllegalArgumentException("date cannot be null");
         this.instrument = instrument;
         this.date = date;
         this.action = action;
