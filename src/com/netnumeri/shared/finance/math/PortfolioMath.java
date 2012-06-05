@@ -103,9 +103,7 @@ public class PortfolioMath {
 */
 
     public static void add(Portfolio portfolio,Instrument instrument) {
-        if (instrument == null) {
-            throw new IllegalArgumentException("instrument cannot be null");
-        }
+        if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         add(portfolio,instrument, 0);
     }
 

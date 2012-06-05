@@ -1440,9 +1440,7 @@ public abstract class Instrument extends DateBound implements Serializable {
     }
 
     public TDay firstDailyDate() {
-
         if (dailyarray == null || dailyarray.isEmpty()) throw  new IllegalStateException("no daily values present for instrument: " + getName());
-
         Daily daily = (Daily) dailyarray.values().toArray()[0];
         if (daily != null)
             return daily.getDailydate();

@@ -111,7 +111,7 @@ public class PortfolioItem implements Serializable, FinConstants {
     }
 
     public void setWeight(double Weight) {
-        weight = Weight;
+        this.weight = Weight;
     }
 
     public void setAssetWeightLowerBound(double LowerBound) {

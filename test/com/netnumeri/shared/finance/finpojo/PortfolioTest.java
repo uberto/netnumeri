@@ -17,17 +17,25 @@ public class PortfolioTest extends TestCase {
     Stock stock;
     Portfolio portfolio;
 
-    @Test(expected=PortfolioException.class)
+    @Override
+    protected  void setUp(){
+        try {
+            portfolio = new Portfolio();
+            stock = TestUtils.buildStock();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void testBuildPortfolio() throws Exception {
-        portfolio = new Portfolio();
+
         PortfolioMath.invest(portfolio, 1000000);
+
     }
 
     @Test
     public void testGetFirstDay() throws Exception {
-
-        portfolio = new Portfolio();
-        stock = TestUtils.buildStock();
 
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
@@ -50,22 +58,26 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testInvest() throws Exception {
 
+        PortfolioMath.add(portfolio, stock);
+
+        PortfolioMath.invest(portfolio, 1000000, new TDay("03/11/2009"));
+
+        double value = PortfolioMath.getWealth(portfolio,new TDay("03/11/2009") );
+
+        System.out.println("value = " + value);
+
+
     }
 
     @Test(expected=InstrumentException.class)
     public void testBuyNoPriceForDate() throws Exception {
 
-        portfolio = new Portfolio();
-        stock = TestUtils.buildStock();
         PortfolioMath.buy(portfolio, stock, 1000);
 
     }
 
     @Test()
     public void testBuyPriceForDate() throws Exception {
-
-        portfolio = new Portfolio();
-        stock = TestUtils.buildStock();
 
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
@@ -88,10 +100,6 @@ public class PortfolioTest extends TestCase {
 
     @Test
     public void testSell() throws Exception {
-
-        portfolio = new Portfolio();
-
-        stock = TestUtils.buildStock();
 
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
         PortfolioMath.sell(portfolio, stock, 1000,new TDay("03/11/2009"));
@@ -120,11 +128,6 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testBuyShort() throws Exception {
 
-
-        portfolio = new Portfolio();
-
-        stock = TestUtils.buildStock();
-
         PortfolioMath.sellShort(portfolio, stock, 1000,new TDay("03/11/2009"));
 
         List<PortfolioItem> instruments = PortfolioMath.getInstruments(portfolio);
@@ -139,6 +142,7 @@ public class PortfolioTest extends TestCase {
 
     @Test
     public void testGetWeight() throws Exception {
+
 
     }
 
