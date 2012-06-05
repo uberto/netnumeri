@@ -28,16 +28,14 @@ public class PortfolioTest extends TestCase {
     }
 
     @Test
-    public void testBuildPortfolio() throws Exception {
-
-        PortfolioMath.invest(portfolio, 1000000);
-
-    }
-
-    @Test
     public void testGetFirstDay() throws Exception {
 
+        setUp();
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
+
+        TDay firstDay1 = portfolio.getFirstDay();
+        System.out.println("firstDay1 = " + firstDay1);
+
 
         List<PortfolioItem> items = portfolio.items;
         for (int i = 0; i < items.size(); i++) {
@@ -57,6 +55,8 @@ public class PortfolioTest extends TestCase {
 
     @Test
     public void testInvest() throws Exception {
+
+        setUp();
 
         PortfolioMath.add(portfolio, stock);
 
@@ -79,6 +79,7 @@ public class PortfolioTest extends TestCase {
     @Test()
     public void testBuyPriceForDate() throws Exception {
 
+        setUp();
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
 
         List<PortfolioItem> instruments = PortfolioMath.getInstruments(portfolio);
@@ -101,6 +102,7 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testSell() throws Exception {
 
+        setUp();
         PortfolioMath.buy(portfolio, stock, 1000, new TDay("03/11/2009"));
         PortfolioMath.sell(portfolio, stock, 1000,new TDay("03/11/2009"));
 
@@ -113,9 +115,7 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testSellShort() throws Exception {
 
-        portfolio = new Portfolio();
-
-        stock = TestUtils.buildStock();
+        setUp();
 
         PortfolioMath.sellShort(portfolio, stock, 1000, new TDay("03/11/2009"));
 
@@ -128,6 +128,7 @@ public class PortfolioTest extends TestCase {
     @Test
     public void testBuyShort() throws Exception {
 
+        setUp();
         PortfolioMath.sellShort(portfolio, stock, 1000,new TDay("03/11/2009"));
 
         List<PortfolioItem> instruments = PortfolioMath.getInstruments(portfolio);

@@ -27,6 +27,7 @@ import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.matrix.Matrix;
 import com.netnumeri.shared.finance.math.PortfolioMath;
+import com.netnumeri.shared.finance.utils.DateUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,11 +60,8 @@ public class Portfolio extends Asset implements FinConstants {
     private int objectiveOption;
     private int nPoints;
 
-//    private MonteCarlo monteCarlo;
     public TDay firstDailyDate;
     public TDay lastDailyDate;
-
-//    private AbstractDistribution dist = null;
 
     private Parameters parm = new Parameters();
 
@@ -90,6 +88,44 @@ public class Portfolio extends Asset implements FinConstants {
         this.wealth = wealth;
     }
 
+    public TDay getFirstDay() {
+        if (firstDailyDate != null) {
+            return firstDailyDate;
+        }
+        Instrument instrument = null;
+        for (int i = 0; i < items.size(); i++) {
+            instrument = PortfolioMath.getInstrument(this,i);
+            if (instrument instanceof Asset) {
+                if (instrument.getFirstDay() != null) {
+                    firstDailyDate = new TDay();
+                    firstDailyDate = DateUtils.max(firstDailyDate, instrument.getFirstDay());
+                }
+            }
+        }
+        return firstDailyDate;
+    }
+
+    public TDay getLastDay() {
+        Instrument instrument;
+        if (lastDailyDate != null) {
+            return lastDailyDate;
+        }
+        for (int i = 0; i < items.size(); i++) {
+            instrument = PortfolioMath.getInstrument(this,i);
+            if (instrument instanceof Asset) {
+                if (instrument.getLastDay() != null) {
+                    if (lastDailyDate == null) {
+                        lastDailyDate = new TDay();
+                        lastDailyDate = instrument.getLastDay();
+                    } else {
+                        lastDailyDate = DateUtils.min(lastDailyDate, instrument.getLastDay());
+                    }
+                }
+            }
+        }
+        return lastDailyDate;
+    }
+
     private void init(String name) {
         setName(name);
         assetsToHold = 0;
@@ -114,14 +150,6 @@ public class Portfolio extends Asset implements FinConstants {
         this.parm = parm;
     }
 
-//    public Optimizer getOptimizer() {
-//        return optimizer;
-//    }
-//
-//    public void setOptimizer(Optimizer optimizer) {
-//        this.optimizer = optimizer;
-//    }
-
     public PortfolioItem getPortfolioItemByName(String name) {
         PortfolioItem item = null;
         if (items != null)
@@ -132,30 +160,6 @@ public class Portfolio extends Asset implements FinConstants {
             }
         return item;
     }
-
-//    public Optimizer setOptimizer(int OptimizerType) {
-//        if (optimizer == null) {
-//            if (OptimizerType == kCoordinateDescent) {
-//                throw new IllegalArgumentException("impossible switch");
-//            } else if (OptimizerType == kGeneticAlgorithm) {
-//                throw new IllegalArgumentException("impossible switch");
-//            } else if (OptimizerType == kSimulatedAnnealing) {
-//                optimizer = new SimulatedAnnealing(this);
-//            }
-//        }
-//        optimizer.setNParam(parm.getNParam());
-//        for (int i = 0; i < parm.getNParam(); i++) {
-//            if (parm.getParamType(i) == kInt) {
-//                optimizer.setParam(i, (int) (parm.getParam(i)));
-//            } else {
-//                optimizer.setParam(i, parm.getParam(i));
-//            }
-//            optimizer.setLowerBound(i, parm.getLowerBound(i));
-//            optimizer.setUpperBound(i, parm.getUpperBound(i));
-//            optimizer.fixParam(i, parm.isParamFixed(i));
-//        }
-//        return optimizer;
-//    }
 
     public Portfolio clone() {
         Portfolio p = new Portfolio(getName());
