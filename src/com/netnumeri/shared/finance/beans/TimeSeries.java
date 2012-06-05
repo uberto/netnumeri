@@ -5,7 +5,6 @@ import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.math.NumericalRecipes;
 import com.netnumeri.shared.finance.matrix.Matrix;
-import com.netnumeri.shared.finance.ta.DateValue;
 import com.netnumeri.shared.finance.utils.DateUtils;
 import com.netnumeri.shared.finance.utils.LogUtils;
 
@@ -1959,21 +1958,21 @@ public class TimeSeries extends DateBound implements Serializable {
         return vals;
     }
 
-    public DateValue[] toDateValue() {
-        int size = lengthsArray[0];
-        DateValue[] vals = new DateValue[size];
-        int j = 0;
-        for (int i = getLowerBoundIndex(); i <= getUpperBoundIndex(); i++) {
-            if (!isEmpty(i)) {
-                DateValue dv = new DateValue();
-                dv.setValue(data.get(0, i));
-                dv.setDate(getDate(i));
-                vals[j++] = dv;
-                j++;
-            }
-        }
-        return vals;
-    }
+//    public DateValue[] toDateValue() {
+//        int size = lengthsArray[0];
+//        DateValue[] vals = new DateValue[size];
+//        int j = 0;
+//        for (int i = getLowerBoundIndex(); i <= getUpperBoundIndex(); i++) {
+//            if (!isEmpty(i)) {
+//                DateValue dv = new DateValue();
+//                dv.setValue(data.get(0, i));
+//                dv.setDate(getDate(i));
+//                vals[j++] = dv;
+//                j++;
+//            }
+//        }
+//        return vals;
+//    }
 
     public void toTimeSeries(double[] vals) {
         int j = 0;

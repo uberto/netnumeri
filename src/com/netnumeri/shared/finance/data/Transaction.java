@@ -5,7 +5,6 @@ import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Daily;
 import com.netnumeri.shared.finance.finpojo.Instrument;
-import com.netnumeri.shared.finance.finpojo.NamedObject;
 import com.netnumeri.shared.finance.utils.FormatUtils;
 
 public class Transaction {
