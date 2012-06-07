@@ -4,7 +4,6 @@ import com.netnumeri.shared.entity.Entity;
 import com.netnumeri.shared.entity.EntityId;
 import com.netnumeri.shared.entity.OptionType;
 import com.netnumeri.shared.field.*;
-import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Instrument;
 
@@ -77,29 +76,9 @@ public class Option extends Instrument implements Entity {
     public IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
     public IntegerEntityField openInterest = new IntegerEntityField(fieldMap,Field.openInterest);
 
-//    private MonteCarlo monteCarlo;
-
     public Option(String Name) {
         name.setValue(Name);
     }
-
-//    public Option(String name,
-//                  Instrument stock,
-//                  TDay expirationDate,
-//                  double strikePrice,
-//                  double interest,
-//                  OptionType optionType,
-//                  int model) {
-//        setName(name);
-//        underlying.setValue(stock.getName());
-//        expiry.setValue(expirationDate);
-//        strike.setValue(strikePrice);
-//        interestRate.setValue(interest);
-//
-//        this.type.setValue(optionType);
-//        this.pricingModel = model;
-//    }
-//
 
     @Override
     public EntityId getId() {
@@ -140,6 +119,5 @@ public class Option extends Instrument implements Entity {
                 ", " + expiry +
                 '}';
     }
-
 
 }
