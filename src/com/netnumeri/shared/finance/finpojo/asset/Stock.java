@@ -15,9 +15,9 @@ public class Stock extends Asset implements Serializable {
 
     private StringEntityField ticker = new StringEntityField(fieldMap,Field.ticker, 5);
 
-//    public Stock() {
-//        super();
-//    }
+    public Stock() {
+        super();
+    }
 
     public Stock(String name) {
         this.ticker.setValue(name);

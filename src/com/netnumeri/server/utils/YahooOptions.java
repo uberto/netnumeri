@@ -33,11 +33,6 @@ public class YahooOptions {
         return lastPrice;
     }
 
-    /*
-    ** According to the theory of maximum pain, the underlying stock or index will tend to move towards the price
-    ** where the greatest numbers of options contracts (in dollar value) will expire worthless.
-    ** It is the point where option owners feel the maximum pain and option sellers reap the most reward.
-     */
     public static List<Option> getChain(OptionsDocuments callsNode, OptionType direction) {
 
         XPath xpathSelector = DocumentHelper.createXPath("/table/tr/td/table/tr");
@@ -102,8 +97,7 @@ public class YahooOptions {
         return list;
     }
 
-    public static String getOptionsDocuments(String ticker, Date date)
-            throws Exception   {
+    public static String getOptionsDocuments(String ticker, Date date) throws Exception   {
 
         OptionsDocuments documents = null;
         StringBuilder sb = new StringBuilder();
