@@ -15,19 +15,10 @@ public abstract class DateBound  {
     private boolean rangeEnabled = false;
 
     public DateBound() {
-        disableRange();
-    }
-
-    public void enableRange() {
-        rangeEnabled = true;
-    }
-
-    public final void disableRange() {
-        rangeEnabled = false;
     }
 
     public void setRangeBounds(TDay lowerDate, TDay upperDate) {
-        enableRange();
+        rangeEnabled = true;
         lowerRangeTDay = lowerDate;
         upperRangeTDay = upperDate;
     }
