@@ -2,11 +2,12 @@ package com.netnumeri.server.utils;
 
 import com.netnumeri.shared.finance.finpojo.derivative.equity.Option;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class OptionsChain{
+public class OptionsChain implements Serializable {
 
     String ticker;
 

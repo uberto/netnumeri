@@ -153,9 +153,9 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testGetHistoricalVolatility() throws Exception {
 
-//        double historicalVolatility = stock.getHistoricalVolatility();
+        double historicalVolatility = stock.getHistoricalVolatility();
 //
-//        assertEquals (historicalVolatility,1.0567523108414614);
+        assertEquals (1.1498393718887852, historicalVolatility);
     }
 
     @Test
