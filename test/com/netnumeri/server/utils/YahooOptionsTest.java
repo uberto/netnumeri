@@ -1,6 +1,7 @@
 package com.netnumeri.server.utils;
 
 import junit.framework.TestCase;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.*;
@@ -9,6 +10,27 @@ import java.util.Date;
 public class YahooOptionsTest extends TestCase {
 
     OptionsDocuments screen;
+
+    private OptionsChain getTestChain() {
+        OptionsChain e = null;
+        try {
+            FileInputStream fileIn =
+                    new FileInputStream("./test/resources/GOOG.obj");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            e = (OptionsChain) in.readObject();
+            in.close();
+            fileIn.close();
+
+            System.out.println(" = " + e.calls.size());
+
+        } catch (IOException i) {
+            i.printStackTrace();
+            return null;
+        } catch (ClassNotFoundException c) {
+            c.printStackTrace();
+        }
+        return e;
+    }
 
     @Override
     protected void setUp() {
@@ -28,8 +50,10 @@ public class YahooOptionsTest extends TestCase {
         System.out.println("aa = " + aa);
     }
 
+
+    @Ignore
     @Test
-    public void testLoadOptionChain() throws Exception {
+    public void downloadOptionChain() throws Exception {
 
         OptionsChain chain = YahooOptions.loadOptionChain("GOOG");
 
@@ -47,26 +71,16 @@ public class YahooOptionsTest extends TestCase {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-        OptionsChain e = null;
-        try {
-            FileInputStream fileIn =
-                    new FileInputStream("./test/resources/GOOG.obj");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            e = (OptionsChain) in.readObject();
-            in.close();
-            fileIn.close();
-
-            System.out.println(" = " + e.calls.size());
+    }
 
 
-        } catch (IOException i) {
-            i.printStackTrace();
-            return;
-        } catch (ClassNotFoundException c) {
-            c.printStackTrace();
-            return;
-        }
+        @Test
+    public void testLoadOptionChain() throws Exception {
+
+        OptionsChain chain = YahooOptions.loadOptionChain("GOOG");
+
+        System.out.println(" = " + chain.calls.size());
+
 
     }
 
