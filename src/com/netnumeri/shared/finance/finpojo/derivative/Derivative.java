@@ -28,13 +28,8 @@ public abstract class Derivative extends Instrument {
     public abstract double rho(int model);
     public abstract double vega(int model);
 
-//    protected Derivative() {
-//    }
-//
-//    public Derivative(String name) {
-////        super(name);
-//        setName(name);
-//    }
+    public Derivative() {
+    }
 
     public double getInterestRate() {
         return interestRate() / 100;

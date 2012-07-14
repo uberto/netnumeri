@@ -1,28 +1,9 @@
 package com.netnumeri.shared.finance.finpojo;
 
-// Portfolio
-// A portfolio holds a list of portfolio entries (see PortfolioItem class).
-// Portfolio can be seen as a
-//   - collection of financial instruments (inherited from Instrument).
-//   - result of a sequence of trade transaction
-// Note that since Portfolio itself is derived from Instrument, a portfolio
-// can hold another portfolio, etc.
-// Portfolio provides a number of methods for risk calculations and management,
-// such as greeks, risk matrix, P&L (Profit and Loss) and VaR (Value at Risk).
-// Modern portfolio theory (Markovitz) and CAPM (Capital Asset Pricing Model)
-// are currently implemented in this class for portolio optimization.
-// A webuser-defined objective function can also be used for portfolio
-// optimization.
-// SimulatedAnnealing optimizer is designed to solve combinatorial optimization
-// tasks. Thus you can select an optimal sub-portfolio of N stock out of M
-// asset portfolio.
-
-
 import com.netnumeri.shared.field.FieldMap;
 import com.netnumeri.shared.field.FieldName;
 import com.netnumeri.shared.field.StringEntityField;
 import com.netnumeri.shared.finance.beans.FinConstants;
-import com.netnumeri.shared.finance.data.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
 import com.netnumeri.shared.finance.matrix.Matrix;
@@ -138,8 +119,8 @@ public class Portfolio extends Asset implements FinConstants {
 //        MersenneTwister engine = new MersenneTwister();
 //        dist = new Uniform(engine);
         //    items = new ArrayList<PortfolioItem>();
-        transactions = new TransactionSeries(name);
-        items = new ArrayList<PortfolioItem>();
+        transactions = new TransactionSeries();
+        items = new ArrayList<>();
     }
 
     public Parameters getParm() {

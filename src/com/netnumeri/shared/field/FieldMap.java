@@ -9,6 +9,8 @@ public class FieldMap implements Serializable {
 
     private Map<FieldName, EntityField<?>> map = new HashMap<FieldName, EntityField<?>>();
 
+    public FieldMap() {
+    }
 
     public EntityField<?> get(FieldName fieldName) {
         return map.get(fieldName);

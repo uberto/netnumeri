@@ -237,6 +237,7 @@
       <words>
         <w>async</w>
         <w>backtest</w>
+        <w>bourse</w>
         <w>dailyarray</w>
         <w>goog</w>
         <w>htlm</w>
@@ -254,9 +255,9 @@
       <entry facet-type="gwt">
         <default-facet-configuration>
           <configuration>
-            <setting name="compilerMaxHeapSize" value="128" />
-            <setting name="gwtScriptOutputStyle" value="DETAILED" />
-            <setting name="gwtSdkUrl" value="file://$PROJECT_DIR$/lib/gwt-2.4.0" />
+            <setting name="compilerMaxHeapSize" value="512" />
+            <setting name="gwtScriptOutputStyle" value="OBF" />
+            <setting name="gwtSdkUrl" value="file://$PROJECT_DIR$/lib/gwt-2.5.0.rc1" />
           </configuration>
         </default-facet-configuration>
       </entry>
@@ -370,6 +371,15 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/gwt-2.4.0/gwt-user.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="gwt-user (2)">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.5.0.rc1/gwt-user.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/gwt-2.5.0.rc1/gwt-user.jar!/" />
       </SOURCES>
     </library>
     <library name="project-lib">

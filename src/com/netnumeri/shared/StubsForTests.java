@@ -30,7 +30,7 @@ public class StubsForTests {
         List<Option> list = new ArrayList<Option>();
 
         try {
-            OptionsChain chain = YahooOptions.loadOptionChain("IBM");
+            OptionsChain chain = YahooOptions.loadOptionChain("GOOG");
 
             Set<Map.Entry<String,List<Option>>> entries = chain.calls.entrySet();
 

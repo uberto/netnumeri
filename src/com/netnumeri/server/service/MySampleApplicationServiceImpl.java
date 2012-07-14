@@ -5,7 +5,6 @@ import com.netnumeri.client.jsneeded.service.MySampleApplicationService;
 
 public class MySampleApplicationServiceImpl extends RemoteServiceServlet implements MySampleApplicationService {
 
-
     static int times = 0;
 
     public String getMessage(String msg) {

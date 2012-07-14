@@ -48,16 +48,17 @@ public abstract class Instrument extends DateBound implements Serializable {
     private double marketVolatilityShift = 1.0;
 
     public TreeMap<TDay, Daily> dailyarray = new TreeMap<>();
+
+    public Instrument() {
+        init();
+    }
+
     public TreeMap<TDay, Daily> getDailyarray() {
         return dailyarray;
     }
 
     public void setDailyarray(TreeMap<TDay, Daily> dailyarray) {
         this.dailyarray = dailyarray;
-    }
-
-    public Instrument() {
-        init();
     }
 
     private void init() {

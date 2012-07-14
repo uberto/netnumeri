@@ -9,7 +9,25 @@ import com.netnumeri.shared.finance.finpojo.Instrument;
 
 import java.util.Collection;
 
-public class Option extends Instrument implements Entity {
+public class Option  implements Entity {
+
+    private FieldMap fieldMap = new FieldMap();
+
+    public IdEntityField id= new IdEntityField(fieldMap, Field.id);
+    public StringEntityField bourse= new StringEntityField(fieldMap, Field.bourse, 12);
+    public StringEntityField name = new StringEntityField(fieldMap,Field.name, 32);
+    public StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
+    public DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
+    public DayEntityField expiry = new DayEntityField(fieldMap,Field.expiry);
+    public DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
+    public DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
+    public DoubleEntityField change = new DoubleEntityField(fieldMap,Field.change);
+    public DoubleEntityField ask = new DoubleEntityField(fieldMap,Field.ask);
+    public DoubleEntityField bid = new DoubleEntityField(fieldMap,Field.bid);
+    public DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
+    public EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
+    public IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
+    public IntegerEntityField openInterest = new IntegerEntityField(fieldMap,Field.openInterest);
 
     public Option() {
     }
@@ -26,17 +44,14 @@ public class Option extends Instrument implements Entity {
 
     }
 
-    @Override
     public double modelPrice(int model) {
         return 0;
     }
 
-    @Override
     public String getName() {
         return name.get();
     }
 
-    @Override
     public void setName(String name) {
         this.name.setValue(name);
     }
@@ -58,23 +73,7 @@ public class Option extends Instrument implements Entity {
         type,
         dividend
     }
-    private FieldMap fieldMap = new FieldMap();
 
-    public IdEntityField id= new IdEntityField(fieldMap, Field.id);
-    public StringEntityField bourse= new StringEntityField(fieldMap, Field.bourse, 12);
-    public StringEntityField name = new StringEntityField(fieldMap,Field.name, 32);
-    public StringEntityField underlying = new StringEntityField(fieldMap,Field.underlying, 5);
-    public DoubleEntityField interestRate = new DoubleEntityField(fieldMap,Field.interestRate);
-    public DayEntityField expiry = new DayEntityField(fieldMap,Field.expiry);
-    public DoubleEntityField strike = new DoubleEntityField(fieldMap,Field.strike);
-    public DoubleEntityField premium = new DoubleEntityField(fieldMap,Field.premium);
-    public DoubleEntityField change = new DoubleEntityField(fieldMap,Field.change);
-    public DoubleEntityField ask = new DoubleEntityField(fieldMap,Field.ask);
-    public DoubleEntityField bid = new DoubleEntityField(fieldMap,Field.bid);
-    public DoubleEntityField dividend = new DoubleEntityField(fieldMap,Field.dividend);
-    public EnumEntityField<OptionType> type  = new EnumEntityField<OptionType>(fieldMap, Field.type);
-    public IntegerEntityField contractSize = new IntegerEntityField(fieldMap,Field.contractSize);
-    public IntegerEntityField openInterest = new IntegerEntityField(fieldMap,Field.openInterest);
 
     public Option(String Name) {
         name.setValue(Name);

@@ -4,7 +4,7 @@ package com.netnumeri.shared.finance.data;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
 
-public abstract class DateBound  {
+public class DateBound  {
 
     private TDay lowerBoundTDay;
     private TDay upperBoundTDay;

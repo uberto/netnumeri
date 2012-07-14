@@ -3,7 +3,7 @@ package com.netnumeri.shared.finance.math;
 import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.beans.TimeSeries;
 import com.netnumeri.shared.finance.data.Transaction;
-import com.netnumeri.shared.finance.data.TransactionSeries;
+import com.netnumeri.shared.finance.finpojo.TransactionSeries;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.*;
 import com.netnumeri.shared.finance.finpojo.asset.Asset;
