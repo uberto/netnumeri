@@ -6,9 +6,9 @@ import com.netnumeri.shared.finance.data.DateBound;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.utils.DateUtils;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class Instrument extends DateBound implements Serializable {
@@ -48,18 +48,14 @@ public abstract class Instrument extends DateBound implements Serializable {
     private double marketSpotShift = 1.0;
     private double marketVolatilityShift = 1.0;
 
-    public Map<TDay, Daily> dailyarray = new TreeMap<>();
+    public final TreeMap<TDay, Daily> dailyarray = new TreeMap<TDay, Daily>();
 
     public Instrument() {
         init();
     }
 
-    public Map<TDay, Daily> getDailyarray() {
+    public TreeMap<TDay, Daily> getDailyarray() {
         return dailyarray;
-    }
-
-    public void setDailyarray(Map<TDay, Daily> dailyarray) {
-        this.dailyarray = dailyarray;
     }
 
     private void init() {

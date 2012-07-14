@@ -140,9 +140,9 @@ public class PortfolioItem implements Serializable, FinConstants {
 
     public double getPrice() {
         if (instrument instanceof Asset) {
-            return new InstrumentMath(instrument).getLast();
+            return instrument.getLast();
         } else if (instrument instanceof Derivative) {
-            return new InstrumentMath(instrument).premium();
+            return instrument.premium();
         }
         return 0;
     }

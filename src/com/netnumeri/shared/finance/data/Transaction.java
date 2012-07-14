@@ -5,7 +5,6 @@ import com.netnumeri.shared.finance.beans.FinConstants;
 import com.netnumeri.shared.finance.date.TDay;
 import com.netnumeri.shared.finance.finpojo.Daily;
 import com.netnumeri.shared.finance.finpojo.Instrument;
-import com.netnumeri.shared.finance.finpojo.InstrumentMath;
 import com.netnumeri.shared.finance.utils.FormatUtils;
 
 public class Transaction {
@@ -82,7 +81,7 @@ public class Transaction {
         if (date == null) throw new IllegalArgumentException("date cannot be null");
 
         this.instrument = instrument;
-        Daily daily = new InstrumentMath(instrument).getDaily(date);
+        Daily daily = instrument.getDaily(date);
         if (daily.valid()) {
             this.price = daily.get(FinConstants.CLOSE);
         } else {
@@ -107,7 +106,7 @@ public class Transaction {
         if (date == null) throw new IllegalArgumentException("date cannot be null");
         if (cost == null) throw new IllegalArgumentException("cost cannot be null");
         this.instrument = instrument;
-        Daily daily = new InstrumentMath(instrument).getDaily(date);
+        Daily daily = instrument.getDaily(date);
         if (daily.valid()) {
             this.price = daily.get(Option);
         } else {
