@@ -1,0 +1,2 @@
+serviceClass: com.google.gwt.sample.simplerpc.client.SimpleRPCService
+path: 004004C31487A2CB4CDED8547CC4730E.gwt.rpc

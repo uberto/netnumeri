@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+CommandExecutor (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="CommandExecutor (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/CommandExecutor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/user/client/CommandCanceledException.html" title="class in com.google.gwt.user.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/user/client/Cookies.html" title="class in com.google.gwt.user.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/user/client/CommandExecutor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CommandExecutor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.user.client</FONT>
+<BR>
+Class CommandExecutor</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.user.client.CommandExecutor</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE> class <B>CommandExecutor</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+Class which executes <A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client"><CODE>Command</CODE></A>s and <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client"><CODE>IncrementalCommand</CODE></A>s after
+ all currently pending event handlers have completed. This class attempts to
+ protect against slow script warnings by running commands in small time
+ increments.
+ 
+ <p>
+ It is still possible that a poorly written command could cause a slow script
+ warning which a user may choose to cancel. In that event, a
+ <A HREF="../../../../../com/google/gwt/user/client/CommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>CommandCanceledException</CODE></A> or an
+ <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>IncrementalCommandCanceledException</CODE></A> is reported through the current
+ <A HREF="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client"><CODE>GWT.UncaughtExceptionHandler</CODE></A> depending on the type of command which
+ caused the warning. All other commands will continue to be executed.
+ </p>
+ 
+ TODO(mmendez): Can an SSW be detected without using a timer? Currently, if a
+ <A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client"><CODE>Command</CODE></A> or an <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client"><CODE>IncrementalCommand</CODE></A> calls either
+ <A HREF="../../../../../com/google/gwt/user/client/Window.html#alert(java.lang.String)"><CODE>Window.alert(String)</CODE></A> or the JavaScript <code>alert(String)</code>
+ methods directly or indirectly then the  cancellation timer can fire,
+ resulting in a false SSW cancellation detection.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#CommandExecutor()">CommandExecutor</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#doCommandCanceled()">doCommandCanceled</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reports either a <A HREF="../../../../../com/google/gwt/user/client/CommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>CommandCanceledException</CODE></A> or an
+ <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>IncrementalCommandCanceledException</CODE></A> back through the
+ <A HREF="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client"><CODE>GWT.UncaughtExceptionHandler</CODE></A> if one is set.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#doExecuteCommands(double)">doExecuteCommands</A></B>(double&nbsp;startTimeMillis)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method will dispatch commands from the command queue.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) &nbsp;java.util.List&lt;java.lang.Object&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#getPendingCommands()">getPendingCommands</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is for testing only.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#maybeStartExecutionTimer()">maybeStartExecutionTimer</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starts the dispatch timer if there are commands to dispatch and we are not
+ waiting for a dispatch timer and we are not actively dispatching.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#setExecuting(boolean)">setExecuting</A></B>(boolean&nbsp;executing)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is for testing only.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#setLast(int)">setLast</A></B>(int&nbsp;last)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method is for testing only.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#submit(com.google.gwt.user.client.Command)">submit</A></B>(<A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client">Command</A>&nbsp;command)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submits a <A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client"><CODE>Command</CODE></A> for execution.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/user/client/CommandExecutor.html#submit(com.google.gwt.user.client.IncrementalCommand)">submit</A></B>(<A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client">IncrementalCommand</A>&nbsp;command)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submits an <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client"><CODE>IncrementalCommand</CODE></A> for execution.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="CommandExecutor()"><!-- --></A><H3>
+CommandExecutor</H3>
+<PRE>
+<B>CommandExecutor</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="submit(com.google.gwt.user.client.Command)"><!-- --></A><H3>
+submit</H3>
+<PRE>
+public void <B>submit</B>(<A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client">Command</A>&nbsp;command)</PRE>
+<DL>
+<DD>Submits a <A HREF="../../../../../com/google/gwt/user/client/Command.html" title="interface in com.google.gwt.user.client"><CODE>Command</CODE></A> for execution.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>command</CODE> - command to submit</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="submit(com.google.gwt.user.client.IncrementalCommand)"><!-- --></A><H3>
+submit</H3>
+<PRE>
+public void <B>submit</B>(<A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client">IncrementalCommand</A>&nbsp;command)</PRE>
+<DL>
+<DD>Submits an <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommand.html" title="interface in com.google.gwt.user.client"><CODE>IncrementalCommand</CODE></A> for execution.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>command</CODE> - command to submit</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doCommandCanceled()"><!-- --></A><H3>
+doCommandCanceled</H3>
+<PRE>
+protected void <B>doCommandCanceled</B>()</PRE>
+<DL>
+<DD>Reports either a <A HREF="../../../../../com/google/gwt/user/client/CommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>CommandCanceledException</CODE></A> or an
+ <A HREF="../../../../../com/google/gwt/user/client/IncrementalCommandCanceledException.html" title="class in com.google.gwt.user.client"><CODE>IncrementalCommandCanceledException</CODE></A> back through the
+ <A HREF="../../../../../com/google/gwt/core/client/GWT.UncaughtExceptionHandler.html" title="interface in com.google.gwt.core.client"><CODE>GWT.UncaughtExceptionHandler</CODE></A> if one is set.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doExecuteCommands(double)"><!-- --></A><H3>
+doExecuteCommands</H3>
+<PRE>
+protected void <B>doExecuteCommands</B>(double&nbsp;startTimeMillis)</PRE>
+<DL>
+<DD>This method will dispatch commands from the command queue. It will dispatch
+ commands until one of the following conditions is <code>true</code>:
+ <ul>
+ <li>It consumed its dispatching time slice
+ </li>
+ <li>It encounters a <code>null</code> in the command queue</li>
+ <li>All commands which were present at the start of the dispatching have
+ been removed from the command queue</li>
+ <li>The command that it was processing was canceled due to a false
+ cancellation -- in this case we exit without updating any state</li>
+ </ul>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>startTimeMillis</CODE> - the time when this method started</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="maybeStartExecutionTimer()"><!-- --></A><H3>
+maybeStartExecutionTimer</H3>
+<PRE>
+protected void <B>maybeStartExecutionTimer</B>()</PRE>
+<DL>
+<DD>Starts the dispatch timer if there are commands to dispatch and we are not
+ waiting for a dispatch timer and we are not actively dispatching.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getPendingCommands()"><!-- --></A><H3>
+getPendingCommands</H3>
+<PRE>
+java.util.List&lt;java.lang.Object&gt; <B>getPendingCommands</B>()</PRE>
+<DL>
+<DD>This method is for testing only.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setExecuting(boolean)"><!-- --></A><H3>
+setExecuting</H3>
+<PRE>
+void <B>setExecuting</B>(boolean&nbsp;executing)</PRE>
+<DL>
+<DD>This method is for testing only.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setLast(int)"><!-- --></A><H3>
+setLast</H3>
+<PRE>
+void <B>setLast</B>(int&nbsp;last)</PRE>
+<DL>
+<DD>This method is for testing only.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/CommandExecutor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/user/client/CommandCanceledException.html" title="class in com.google.gwt.user.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/user/client/Cookies.html" title="class in com.google.gwt.user.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/user/client/CommandExecutor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="CommandExecutor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

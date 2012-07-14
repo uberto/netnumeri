@@ -1,0 +1,1562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+SafeStylesBuilder (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SafeStylesBuilder (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SafeStylesBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesHostedModeUtils.html" title="class in com.google.gwt.safecss.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/safecss/shared/SafeStylesBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SafeStylesBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.safecss.shared</FONT>
+<BR>
+Class SafeStylesBuilder</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.safecss.shared.SafeStylesBuilder</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public final class <B>SafeStylesBuilder</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+A builder that facilitates the building up of XSS-safe CSS attribute strings
+ from <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>. It is used essentially like a <CODE>StringBuilder</CODE>,
+ but access <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instead of Strings.
+ 
+ <p>
+ The accumulated XSS-safe <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> can be obtained in the form of a
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> via the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#toSafeStyles()"><CODE>toSafeStyles()</CODE></A> method.
+ 
+ <p>
+ This class is not thread-safe.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#SafeStylesBuilder()">SafeStylesBuilder</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructs an empty <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared"><CODE>SafeStylesBuilder</CODE></A>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#append(com.google.gwt.safecss.shared.SafeStyles)">append</A></B>(<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A>&nbsp;styles)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Appends the contents of another <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> object, without applying
+ any escaping or sanitization to it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#appendTrustedString(java.lang.String)">appendTrustedString</A></B>(java.lang.String&nbsp;styles)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Appends <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted string, i.e., without
+ escaping the string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#backgroundImage(com.google.gwt.safehtml.shared.SafeUri)">backgroundImage</A></B>(<A HREF="../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</A>&nbsp;uri)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the background-image CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#borderStyle(com.google.gwt.dom.client.Style.BorderStyle)">borderStyle</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.BorderStyle.html" title="enum in com.google.gwt.dom.client">Style.BorderStyle</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the border-style CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#borderWidth(double, com.google.gwt.dom.client.Style.Unit)">borderWidth</A></B>(double&nbsp;value,
+            <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the border-width css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#bottom(double, com.google.gwt.dom.client.Style.Unit)">bottom</A></B>(double&nbsp;value,
+       <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#clear(com.google.gwt.dom.client.Style.Clear)">clear</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Clear.html" title="enum in com.google.gwt.dom.client">Style.Clear</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'clear' CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#cursor(com.google.gwt.dom.client.Style.Cursor)">cursor</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Cursor.html" title="enum in com.google.gwt.dom.client">Style.Cursor</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the cursor CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#display(com.google.gwt.dom.client.Style.Display)">display</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Display.html" title="enum in com.google.gwt.dom.client">Style.Display</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the display CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#floatprop(com.google.gwt.dom.client.Style.Float)">floatprop</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Float.html" title="enum in com.google.gwt.dom.client">Style.Float</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the float css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#fontSize(double, com.google.gwt.dom.client.Style.Unit)">fontSize</A></B>(double&nbsp;value,
+         <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the font-size css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#fontStyle(com.google.gwt.dom.client.Style.FontStyle)">fontStyle</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.FontStyle.html" title="enum in com.google.gwt.dom.client">Style.FontStyle</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the font-style CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#fontWeight(com.google.gwt.dom.client.Style.FontWeight)">fontWeight</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.FontWeight.html" title="enum in com.google.gwt.dom.client">Style.FontWeight</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the font-weight CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#height(double, com.google.gwt.dom.client.Style.Unit)">height</A></B>(double&nbsp;value,
+       <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the height css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#left(double, com.google.gwt.dom.client.Style.Unit)">left</A></B>(double&nbsp;value,
+     <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#listStyleType(com.google.gwt.dom.client.Style.ListStyleType)">listStyleType</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.ListStyleType.html" title="enum in com.google.gwt.dom.client">Style.ListStyleType</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the list-style-type CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#margin(double, com.google.gwt.dom.client.Style.Unit)">margin</A></B>(double&nbsp;value,
+       <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the margin css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#marginBottom(double, com.google.gwt.dom.client.Style.Unit)">marginBottom</A></B>(double&nbsp;value,
+             <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the margin-bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#marginLeft(double, com.google.gwt.dom.client.Style.Unit)">marginLeft</A></B>(double&nbsp;value,
+           <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the margin-left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#marginRight(double, com.google.gwt.dom.client.Style.Unit)">marginRight</A></B>(double&nbsp;value,
+            <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the margin-right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#marginTop(double, com.google.gwt.dom.client.Style.Unit)">marginTop</A></B>(double&nbsp;value,
+          <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the margin-top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#opacity(double)">opacity</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the opacity css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#overflow(com.google.gwt.dom.client.Style.Overflow)">overflow</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the overflow CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#overflowX(com.google.gwt.dom.client.Style.Overflow)">overflowX</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the overflow-x CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#overflowY(com.google.gwt.dom.client.Style.Overflow)">overflowY</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the overflow-y CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#padding(double, com.google.gwt.dom.client.Style.Unit)">padding</A></B>(double&nbsp;value,
+        <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the padding css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#paddingBottom(double, com.google.gwt.dom.client.Style.Unit)">paddingBottom</A></B>(double&nbsp;value,
+              <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the padding-bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#paddingLeft(double, com.google.gwt.dom.client.Style.Unit)">paddingLeft</A></B>(double&nbsp;value,
+            <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the padding-left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#paddingRight(double, com.google.gwt.dom.client.Style.Unit)">paddingRight</A></B>(double&nbsp;value,
+             <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the padding-right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#paddingTop(double, com.google.gwt.dom.client.Style.Unit)">paddingTop</A></B>(double&nbsp;value,
+           <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the padding-top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#position(com.google.gwt.dom.client.Style.Position)">position</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Position.html" title="enum in com.google.gwt.dom.client">Style.Position</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the position CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#right(double, com.google.gwt.dom.client.Style.Unit)">right</A></B>(double&nbsp;value,
+      <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#tableLayout(com.google.gwt.dom.client.Style.TableLayout)">tableLayout</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TableLayout.html" title="enum in com.google.gwt.dom.client">Style.TableLayout</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the table-layout CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textAlign(com.google.gwt.dom.client.Style.TextAlign)">textAlign</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextAlign.html" title="enum in com.google.gwt.dom.client">Style.TextAlign</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'text-align' CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textDecoration(com.google.gwt.dom.client.Style.TextDecoration)">textDecoration</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextDecoration.html" title="enum in com.google.gwt.dom.client">Style.TextDecoration</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the text-decoration CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textIndent(double, com.google.gwt.dom.client.Style.Unit)">textIndent</A></B>(double&nbsp;value,
+           <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'text-indent' CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textJustify(com.google.gwt.dom.client.Style.TextJustify)">textJustify</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextJustify.html" title="enum in com.google.gwt.dom.client">Style.TextJustify</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'text-justify' CSS3 property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textOverflow(com.google.gwt.dom.client.Style.TextOverflow)">textOverflow</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextOverflow.html" title="enum in com.google.gwt.dom.client">Style.TextOverflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'text-overflow' CSS3 property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#textTransform(com.google.gwt.dom.client.Style.TextTransform)">textTransform</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextTransform.html" title="enum in com.google.gwt.dom.client">Style.TextTransform</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'text-transform' CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#top(double, com.google.gwt.dom.client.Style.Unit)">top</A></B>(double&nbsp;value,
+    <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#toSafeStyles()">toSafeStyles</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the safe CSS properties accumulated in the builder as a
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedBackgroundColor(java.lang.String)">trustedBackgroundColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append the trusted background color, i.e., without escaping the value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedBackgroundImage(java.lang.String)">trustedBackgroundImage</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append the trusted background image, i.e., without escaping the value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedBorderColor(java.lang.String)">trustedBorderColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append the trusted border color, i.e., without escaping the value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedColor(java.lang.String)">trustedColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append the trusted font color, i.e., without escaping the value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedNameAndValue(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)">trustedNameAndValue</A></B>(java.lang.String&nbsp;name,
+                    double&nbsp;value,
+                    <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted name and a trusted
+ value, i.e., without escaping the name and value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedNameAndValue(java.lang.String, java.lang.String)">trustedNameAndValue</A></B>(java.lang.String&nbsp;name,
+                    java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Append a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted name and a trusted
+ value, i.e., without escaping the name and value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#verticalAlign(double, com.google.gwt.dom.client.Style.Unit)">verticalAlign</A></B>(double&nbsp;value,
+              <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the vertical-align CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)">verticalAlign</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.VerticalAlign.html" title="enum in com.google.gwt.dom.client">Style.VerticalAlign</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the vertical-align CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#visibility(com.google.gwt.dom.client.Style.Visibility)">visibility</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Visibility.html" title="enum in com.google.gwt.dom.client">Style.Visibility</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the visibility CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#whiteSpace(com.google.gwt.dom.client.Style.WhiteSpace)">whiteSpace</A></B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.WhiteSpace.html" title="enum in com.google.gwt.dom.client">Style.WhiteSpace</A>&nbsp;whiteSpace)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the 'white-space' CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#width(double, com.google.gwt.dom.client.Style.Unit)">width</A></B>(double&nbsp;value,
+      <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the width css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#zIndex(int)">zIndex</A></B>(int&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Append the z-index css property.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="SafeStylesBuilder()"><!-- --></A><H3>
+SafeStylesBuilder</H3>
+<PRE>
+public <B>SafeStylesBuilder</B>()</PRE>
+<DL>
+<DD>Constructs an empty <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared"><CODE>SafeStylesBuilder</CODE></A>.
+<P>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="append(com.google.gwt.safecss.shared.SafeStyles)"><!-- --></A><H3>
+append</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>append</B>(<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A>&nbsp;styles)</PRE>
+<DL>
+<DD>Appends the contents of another <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> object, without applying
+ any escaping or sanitization to it.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>styles</CODE> - the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> to append
+<DT><B>Returns:</B><DD>a reference to this object</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="appendTrustedString(java.lang.String)"><!-- --></A><H3>
+appendTrustedString</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>appendTrustedString</B>(java.lang.String&nbsp;styles)</PRE>
+<DL>
+<DD><p>
+ Appends <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted string, i.e., without
+ escaping the string. Only minimal checks are performed. The calling code
+ should be carefully reviewed to ensure the argument meets the
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract.
+ 
+ <p>
+ Generally, <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> should be of the form
+ <code>cssPropertyName:value;</code>, where neither the name nor the value
+ contain malicious scripts.
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+ 
+ <p>
+ The following example values comply with this type's contract:
+ <ul>
+ <li><code>width: 1em;</code></li>
+ <li><code>height:1em;</code></li>
+ <li><code>width: 1em;height: 1em;</code></li>
+ <li><code>background:url('http://url');</code></li>
+ </ul>
+ In addition, the empty string is safe for use in a CSS attribute.
+ 
+ <p>
+ The following example values do <em>not</em> comply with this type's
+ contract:
+ <ul>
+ <li><code>background: red</code> (missing a trailing semi-colon)</li>
+ <li><code>background:</code> (missing a value and a trailing semi-colon)</li>
+ <li><code>1em</code> (missing an attribute name, which provides context for
+ the value)</li>
+ </ul>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>styles</CODE> - the input String
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="backgroundImage(com.google.gwt.safehtml.shared.SafeUri)"><!-- --></A><H3>
+backgroundImage</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>backgroundImage</B>(<A HREF="../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</A>&nbsp;uri)</PRE>
+<DL>
+<DD>Append the background-image CSS property.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>uri</CODE> - the URI of the background image<DT><B>See Also:</B><DD><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#trustedBackgroundImage(java.lang.String)"><CODE>trustedBackgroundImage(String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="borderStyle(com.google.gwt.dom.client.Style.BorderStyle)"><!-- --></A><H3>
+borderStyle</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>borderStyle</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.BorderStyle.html" title="enum in com.google.gwt.dom.client">Style.BorderStyle</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the border-style CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="borderWidth(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+borderWidth</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>borderWidth</B>(double&nbsp;value,
+                                     <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the border-width css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="bottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+bottom</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>bottom</B>(double&nbsp;value,
+                                <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the bottom css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clear(com.google.gwt.dom.client.Style.Clear)"><!-- --></A><H3>
+clear</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>clear</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Clear.html" title="enum in com.google.gwt.dom.client">Style.Clear</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the 'clear' CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cursor(com.google.gwt.dom.client.Style.Cursor)"><!-- --></A><H3>
+cursor</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>cursor</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Cursor.html" title="enum in com.google.gwt.dom.client">Style.Cursor</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the cursor CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="display(com.google.gwt.dom.client.Style.Display)"><!-- --></A><H3>
+display</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>display</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Display.html" title="enum in com.google.gwt.dom.client">Style.Display</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the display CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="floatprop(com.google.gwt.dom.client.Style.Float)"><!-- --></A><H3>
+floatprop</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>floatprop</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Float.html" title="enum in com.google.gwt.dom.client">Style.Float</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the float css property.
+ 
+ <p>
+ Note: This method has the suffix "prop" to avoid Java compilation errors.
+ The term "float" is a reserved word in Java representing the primitive
+ float.
+ </p>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontSize(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+fontSize</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>fontSize</B>(double&nbsp;value,
+                                  <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the font-size css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontStyle(com.google.gwt.dom.client.Style.FontStyle)"><!-- --></A><H3>
+fontStyle</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>fontStyle</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.FontStyle.html" title="enum in com.google.gwt.dom.client">Style.FontStyle</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the font-style CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontWeight(com.google.gwt.dom.client.Style.FontWeight)"><!-- --></A><H3>
+fontWeight</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>fontWeight</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.FontWeight.html" title="enum in com.google.gwt.dom.client">Style.FontWeight</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the font-weight CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="height(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+height</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>height</B>(double&nbsp;value,
+                                <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the height css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="left(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+left</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>left</B>(double&nbsp;value,
+                              <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the left css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="listStyleType(com.google.gwt.dom.client.Style.ListStyleType)"><!-- --></A><H3>
+listStyleType</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>listStyleType</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.ListStyleType.html" title="enum in com.google.gwt.dom.client">Style.ListStyleType</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the list-style-type CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="margin(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+margin</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>margin</B>(double&nbsp;value,
+                                <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the margin css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginBottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginBottom</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>marginBottom</B>(double&nbsp;value,
+                                      <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the margin-bottom css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginLeft(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginLeft</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>marginLeft</B>(double&nbsp;value,
+                                    <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the margin-left css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginRight(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginRight</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>marginRight</B>(double&nbsp;value,
+                                     <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the margin-right css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginTop(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginTop</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>marginTop</B>(double&nbsp;value,
+                                   <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the margin-top css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="opacity(double)"><!-- --></A><H3>
+opacity</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>opacity</B>(double&nbsp;value)</PRE>
+<DL>
+<DD>Append the opacity css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflow(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflow</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>overflow</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the overflow CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflowX(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflowX</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>overflowX</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the overflow-x CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflowY(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflowY</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>overflowY</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the overflow-y CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="padding(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+padding</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>padding</B>(double&nbsp;value,
+                                 <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the padding css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingBottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingBottom</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>paddingBottom</B>(double&nbsp;value,
+                                       <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the padding-bottom css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingLeft(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingLeft</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>paddingLeft</B>(double&nbsp;value,
+                                     <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the padding-left css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingRight(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingRight</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>paddingRight</B>(double&nbsp;value,
+                                      <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the padding-right css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingTop(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingTop</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>paddingTop</B>(double&nbsp;value,
+                                    <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the padding-top css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="position(com.google.gwt.dom.client.Style.Position)"><!-- --></A><H3>
+position</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>position</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Position.html" title="enum in com.google.gwt.dom.client">Style.Position</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the position CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="right(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+right</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>right</B>(double&nbsp;value,
+                               <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the right css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="tableLayout(com.google.gwt.dom.client.Style.TableLayout)"><!-- --></A><H3>
+tableLayout</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>tableLayout</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TableLayout.html" title="enum in com.google.gwt.dom.client">Style.TableLayout</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the table-layout CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textAlign(com.google.gwt.dom.client.Style.TextAlign)"><!-- --></A><H3>
+textAlign</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textAlign</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextAlign.html" title="enum in com.google.gwt.dom.client">Style.TextAlign</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the 'text-align' CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textDecoration(com.google.gwt.dom.client.Style.TextDecoration)"><!-- --></A><H3>
+textDecoration</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textDecoration</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextDecoration.html" title="enum in com.google.gwt.dom.client">Style.TextDecoration</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the text-decoration CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textIndent(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+textIndent</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textIndent</B>(double&nbsp;value,
+                                    <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the 'text-indent' CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textJustify(com.google.gwt.dom.client.Style.TextJustify)"><!-- --></A><H3>
+textJustify</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textJustify</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextJustify.html" title="enum in com.google.gwt.dom.client">Style.TextJustify</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the 'text-justify' CSS3 property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textOverflow(com.google.gwt.dom.client.Style.TextOverflow)"><!-- --></A><H3>
+textOverflow</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textOverflow</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextOverflow.html" title="enum in com.google.gwt.dom.client">Style.TextOverflow</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the 'text-overflow' CSS3 property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textTransform(com.google.gwt.dom.client.Style.TextTransform)"><!-- --></A><H3>
+textTransform</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>textTransform</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.TextTransform.html" title="enum in com.google.gwt.dom.client">Style.TextTransform</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the 'text-transform' CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="top(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+top</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>top</B>(double&nbsp;value,
+                             <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the top css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toSafeStyles()"><!-- --></A><H3>
+toSafeStyles</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A> <B>toSafeStyles</B>()</PRE>
+<DL>
+<DD>Returns the safe CSS properties accumulated in the builder as a
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBackgroundColor(java.lang.String)"><!-- --></A><H3>
+trustedBackgroundColor</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedBackgroundColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><p>
+ Append the trusted background color, i.e., without escaping the value. No
+ checks are performed. The calling code should be carefully reviewed to
+ ensure the argument will satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they
+ are composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBackgroundImage(java.lang.String)"><!-- --></A><H3>
+trustedBackgroundImage</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedBackgroundImage</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><p>
+ Append the trusted background image, i.e., without escaping the value. No
+ checks are performed. The calling code should be carefully reviewed to
+ ensure the argument will satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they
+ are composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance<DT><B>See Also:</B><DD><A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html#backgroundImage(com.google.gwt.safehtml.shared.SafeUri)"><CODE>backgroundImage(SafeUri)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBorderColor(java.lang.String)"><!-- --></A><H3>
+trustedBorderColor</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedBorderColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><p>
+ Append the trusted border color, i.e., without escaping the value. No
+ checks are performed. The calling code should be carefully reviewed to
+ ensure the argument will satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they
+ are composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedColor(java.lang.String)"><!-- --></A><H3>
+trustedColor</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><p>
+ Append the trusted font color, i.e., without escaping the value. No checks
+ are performed. The calling code should be carefully reviewed to ensure the
+ argument will satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they are
+ composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedNameAndValue(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+trustedNameAndValue</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedNameAndValue</B>(java.lang.String&nbsp;name,
+                                             double&nbsp;value,
+                                             <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><p>
+ Append a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted name and a trusted
+ value, i.e., without escaping the name and value. No checks are performed.
+ The calling code should be carefully reviewed to ensure the argument will
+ satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they are composed into the
+ form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+ </p>
+ 
+ <p>
+ The name should be in hyphenated format, not camelCase format.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the property name<DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedNameAndValue(java.lang.String, java.lang.String)"><!-- --></A><H3>
+trustedNameAndValue</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>trustedNameAndValue</B>(java.lang.String&nbsp;name,
+                                             java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><p>
+ Append a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> constructed from a trusted name and a trusted
+ value, i.e., without escaping the name and value. No checks are performed.
+ The calling code should be carefully reviewed to ensure the argument will
+ satisfy the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they are composed into the
+ form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> may never contain literal angle brackets. Otherwise, it
+ could be unsafe to place a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> into a &lt;style&gt; tag
+ (where it can't be HTML escaped). For example, if the <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>
+ containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+ </p>
+ 
+ <p>
+ The name should be in hyphenated format, not camelCase format.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the property name<DD><CODE>value</CODE> - the property value
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> instance</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="verticalAlign(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+verticalAlign</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>verticalAlign</B>(double&nbsp;value,
+                                       <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the vertical-align CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)"><!-- --></A><H3>
+verticalAlign</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>verticalAlign</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.VerticalAlign.html" title="enum in com.google.gwt.dom.client">Style.VerticalAlign</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the vertical-align CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visibility(com.google.gwt.dom.client.Style.Visibility)"><!-- --></A><H3>
+visibility</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>visibility</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.Visibility.html" title="enum in com.google.gwt.dom.client">Style.Visibility</A>&nbsp;value)</PRE>
+<DL>
+<DD>Append the visibility CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="whiteSpace(com.google.gwt.dom.client.Style.WhiteSpace)"><!-- --></A><H3>
+whiteSpace</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>whiteSpace</B>(<A HREF="../../../../../com/google/gwt/dom/client/Style.WhiteSpace.html" title="enum in com.google.gwt.dom.client">Style.WhiteSpace</A>&nbsp;whiteSpace)</PRE>
+<DL>
+<DD>Append the 'white-space' CSS property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="width(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+width</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>width</B>(double&nbsp;value,
+                               <A HREF="../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD>Append the width css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="zIndex(int)"><!-- --></A><H3>
+zIndex</H3>
+<PRE>
+public <A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesBuilder.html" title="class in com.google.gwt.safecss.shared">SafeStylesBuilder</A> <B>zIndex</B>(int&nbsp;value)</PRE>
+<DL>
+<DD>Append the z-index css property.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SafeStylesBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/safecss/shared/SafeStylesHostedModeUtils.html" title="class in com.google.gwt.safecss.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/safecss/shared/SafeStylesBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SafeStylesBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

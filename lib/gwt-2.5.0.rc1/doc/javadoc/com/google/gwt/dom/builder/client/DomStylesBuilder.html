@@ -1,0 +1,1736 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+DomStylesBuilder (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="DomStylesBuilder (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DomStylesBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStyleBuilder.html" title="class in com.google.gwt.dom.builder.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomTableBuilder.html" title="class in com.google.gwt.dom.builder.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/client/DomStylesBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DomStylesBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.dom.builder.client</FONT>
+<BR>
+Class DomStylesBuilder</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.dom.builder.client.DomStylesBuilder</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE> class <B>DomStylesBuilder</B><DT>extends java.lang.Object<DT>implements <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></DL>
+</PRE>
+
+<P>
+Builds the style object.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#DomStylesBuilder(com.google.gwt.dom.builder.client.DomBuilderImpl)">DomStylesBuilder</A></B>(<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomBuilderImpl.html" title="class in com.google.gwt.dom.builder.client">DomBuilderImpl</A>&nbsp;delegate)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new <A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html" title="class in com.google.gwt.dom.builder.client"><CODE>DomStylesBuilder</CODE></A>.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#backgroundImage(com.google.gwt.safehtml.shared.SafeUri)">backgroundImage</A></B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</A>&nbsp;uri)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the background-image CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#borderStyle(com.google.gwt.dom.client.Style.BorderStyle)">borderStyle</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.BorderStyle.html" title="enum in com.google.gwt.dom.client">Style.BorderStyle</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the border-style CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#borderWidth(double, com.google.gwt.dom.client.Style.Unit)">borderWidth</A></B>(double&nbsp;value,
+            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the border-width css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#bottom(double, com.google.gwt.dom.client.Style.Unit)">bottom</A></B>(double&nbsp;value,
+       <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#cursor(com.google.gwt.dom.client.Style.Cursor)">cursor</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Cursor.html" title="enum in com.google.gwt.dom.client">Style.Cursor</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the cursor CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#display(com.google.gwt.dom.client.Style.Display)">display</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Display.html" title="enum in com.google.gwt.dom.client">Style.Display</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the display CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#endStyle()">endStyle</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End the current style attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#floatprop(com.google.gwt.dom.client.Style.Float)">floatprop</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Float.html" title="enum in com.google.gwt.dom.client">Style.Float</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the float css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#fontSize(double, com.google.gwt.dom.client.Style.Unit)">fontSize</A></B>(double&nbsp;value,
+         <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the font-size css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#fontStyle(com.google.gwt.dom.client.Style.FontStyle)">fontStyle</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.FontStyle.html" title="enum in com.google.gwt.dom.client">Style.FontStyle</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the font-style CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#fontWeight(com.google.gwt.dom.client.Style.FontWeight)">fontWeight</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.FontWeight.html" title="enum in com.google.gwt.dom.client">Style.FontWeight</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the font-weight CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#height(double, com.google.gwt.dom.client.Style.Unit)">height</A></B>(double&nbsp;value,
+       <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the height css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#left(double, com.google.gwt.dom.client.Style.Unit)">left</A></B>(double&nbsp;value,
+     <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#lineHeight(double, com.google.gwt.dom.client.Style.Unit)">lineHeight</A></B>(double&nbsp;value,
+           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the line-height css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#listStyleType(com.google.gwt.dom.client.Style.ListStyleType)">listStyleType</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.ListStyleType.html" title="enum in com.google.gwt.dom.client">Style.ListStyleType</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the list-style-type CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#margin(double, com.google.gwt.dom.client.Style.Unit)">margin</A></B>(double&nbsp;value,
+       <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the margin css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#marginBottom(double, com.google.gwt.dom.client.Style.Unit)">marginBottom</A></B>(double&nbsp;value,
+             <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the margin-bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#marginLeft(double, com.google.gwt.dom.client.Style.Unit)">marginLeft</A></B>(double&nbsp;value,
+           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the margin-left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#marginRight(double, com.google.gwt.dom.client.Style.Unit)">marginRight</A></B>(double&nbsp;value,
+            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the margin-right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#marginTop(double, com.google.gwt.dom.client.Style.Unit)">marginTop</A></B>(double&nbsp;value,
+          <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the margin-top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#opacity(double)">opacity</A></B>(double&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the opacity css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#outlineStyle(com.google.gwt.dom.client.Style.OutlineStyle)">outlineStyle</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.OutlineStyle.html" title="enum in com.google.gwt.dom.client">Style.OutlineStyle</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the outline-style CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#outlineWidth(double, com.google.gwt.dom.client.Style.Unit)">outlineWidth</A></B>(double&nbsp;value,
+             <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the outline-width css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#overflow(com.google.gwt.dom.client.Style.Overflow)">overflow</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the overflow CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#overflowX(com.google.gwt.dom.client.Style.Overflow)">overflowX</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the overflow-x CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#overflowY(com.google.gwt.dom.client.Style.Overflow)">overflowY</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the overflow-y CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#padding(double, com.google.gwt.dom.client.Style.Unit)">padding</A></B>(double&nbsp;value,
+        <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the padding css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#paddingBottom(double, com.google.gwt.dom.client.Style.Unit)">paddingBottom</A></B>(double&nbsp;value,
+              <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the padding-bottom css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#paddingLeft(double, com.google.gwt.dom.client.Style.Unit)">paddingLeft</A></B>(double&nbsp;value,
+            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the padding-left css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#paddingRight(double, com.google.gwt.dom.client.Style.Unit)">paddingRight</A></B>(double&nbsp;value,
+             <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the padding-right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#paddingTop(double, com.google.gwt.dom.client.Style.Unit)">paddingTop</A></B>(double&nbsp;value,
+           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the padding-top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#position(com.google.gwt.dom.client.Style.Position)">position</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Position.html" title="enum in com.google.gwt.dom.client">Style.Position</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the position CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#right(double, com.google.gwt.dom.client.Style.Unit)">right</A></B>(double&nbsp;value,
+      <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the right css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#tableLayout(com.google.gwt.dom.client.Style.TableLayout)">tableLayout</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TableLayout.html" title="enum in com.google.gwt.dom.client">Style.TableLayout</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the table-layout CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textAlign(com.google.gwt.dom.client.Style.TextAlign)">textAlign</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextAlign.html" title="enum in com.google.gwt.dom.client">Style.TextAlign</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-align CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textDecoration(com.google.gwt.dom.client.Style.TextDecoration)">textDecoration</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextDecoration.html" title="enum in com.google.gwt.dom.client">Style.TextDecoration</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-decoration CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textIndent(double, com.google.gwt.dom.client.Style.Unit)">textIndent</A></B>(double&nbsp;value,
+           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-indent CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textJustify(com.google.gwt.dom.client.Style.TextJustify)">textJustify</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextJustify.html" title="enum in com.google.gwt.dom.client">Style.TextJustify</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-justify CSS3 property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textOverflow(com.google.gwt.dom.client.Style.TextOverflow)">textOverflow</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextOverflow.html" title="enum in com.google.gwt.dom.client">Style.TextOverflow</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-overflow CSS3 property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#textTransform(com.google.gwt.dom.client.Style.TextTransform)">textTransform</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextTransform.html" title="enum in com.google.gwt.dom.client">Style.TextTransform</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the text-transform CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#toCamelCaseForm(java.lang.String)">toCamelCaseForm</A></B>(java.lang.String&nbsp;name)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convert a hyphenated or camelCase string to a camelCase string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#top(double, com.google.gwt.dom.client.Style.Unit)">top</A></B>(double&nbsp;value,
+    <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the top css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedBackgroundColor(java.lang.String)">trustedBackgroundColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Sets the "background-color" style property to the specified color string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedBackgroundImage(java.lang.String)">trustedBackgroundImage</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Sets the "background-image" style property to the specified value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedBorderColor(java.lang.String)">trustedBorderColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Sets the "border-color" style property to the specified color string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedColor(java.lang.String)">trustedColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Sets the "color" style property, which controls font color, to the
+ specified color string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedOutlineColor(java.lang.String)">trustedOutlineColor</A></B>(java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Sets the "outline-color" style property to the specified color string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedProperty(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)">trustedProperty</A></B>(java.lang.String&nbsp;name,
+                double&nbsp;value,
+                <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Set a style property from a trusted name and a trusted value, i.e., without
+ escaping the name and value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#trustedProperty(java.lang.String, java.lang.String)">trustedProperty</A></B>(java.lang.String&nbsp;name,
+                java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Set a style property from a trusted name and a trusted value, i.e., without
+ escaping the name and value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#verticalAlign(double, com.google.gwt.dom.client.Style.Unit)">verticalAlign</A></B>(double&nbsp;value,
+              <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the vertical-align CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)">verticalAlign</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.VerticalAlign.html" title="enum in com.google.gwt.dom.client">Style.VerticalAlign</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the vertical-align CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#visibility(com.google.gwt.dom.client.Style.Visibility)">visibility</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Visibility.html" title="enum in com.google.gwt.dom.client">Style.Visibility</A>&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the visibility CSS property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#width(double, com.google.gwt.dom.client.Style.Unit)">width</A></B>(double&nbsp;value,
+      <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the width css property.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html#zIndex(int)">zIndex</A></B>(int&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the z-index css property.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="DomStylesBuilder(com.google.gwt.dom.builder.client.DomBuilderImpl)"><!-- --></A><H3>
+DomStylesBuilder</H3>
+<PRE>
+<B>DomStylesBuilder</B>(<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomBuilderImpl.html" title="class in com.google.gwt.dom.builder.client">DomBuilderImpl</A>&nbsp;delegate)</PRE>
+<DL>
+<DD>Construct a new <A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStylesBuilder.html" title="class in com.google.gwt.dom.builder.client"><CODE>DomStylesBuilder</CODE></A>.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>delegate</CODE> - the delegate that builds the style</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="toCamelCaseForm(java.lang.String)"><!-- --></A><H3>
+toCamelCaseForm</H3>
+<PRE>
+static java.lang.String <B>toCamelCaseForm</B>(java.lang.String&nbsp;name)</PRE>
+<DL>
+<DD>Convert a hyphenated or camelCase string to a camelCase string.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>name</CODE> - the hyphenated or camelCase string to convert
+<DT><B>Returns:</B><DD>the hyphenated string</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="backgroundImage(com.google.gwt.safehtml.shared.SafeUri)"><!-- --></A><H3>
+backgroundImage</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>backgroundImage</B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeUri.html" title="interface in com.google.gwt.safehtml.shared">SafeUri</A>&nbsp;uri)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#backgroundImage(com.google.gwt.safehtml.shared.SafeUri)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the background-image CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#backgroundImage(com.google.gwt.safehtml.shared.SafeUri)">backgroundImage</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>uri</CODE> - the URI of the background image
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A><DT><B>See Also:</B><DD><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBackgroundImage(java.lang.String)"><CODE>StylesBuilder.trustedBackgroundImage(String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="borderStyle(com.google.gwt.dom.client.Style.BorderStyle)"><!-- --></A><H3>
+borderStyle</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>borderStyle</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.BorderStyle.html" title="enum in com.google.gwt.dom.client">Style.BorderStyle</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#borderStyle(com.google.gwt.dom.client.Style.BorderStyle)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the border-style CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#borderStyle(com.google.gwt.dom.client.Style.BorderStyle)">borderStyle</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="borderWidth(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+borderWidth</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>borderWidth</B>(double&nbsp;value,
+                                 <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#borderWidth(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the border-width css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#borderWidth(double, com.google.gwt.dom.client.Style.Unit)">borderWidth</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="bottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+bottom</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>bottom</B>(double&nbsp;value,
+                            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#bottom(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the bottom css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#bottom(double, com.google.gwt.dom.client.Style.Unit)">bottom</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="cursor(com.google.gwt.dom.client.Style.Cursor)"><!-- --></A><H3>
+cursor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>cursor</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Cursor.html" title="enum in com.google.gwt.dom.client">Style.Cursor</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#cursor(com.google.gwt.dom.client.Style.Cursor)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the cursor CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#cursor(com.google.gwt.dom.client.Style.Cursor)">cursor</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="display(com.google.gwt.dom.client.Style.Display)"><!-- --></A><H3>
+display</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>display</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Display.html" title="enum in com.google.gwt.dom.client">Style.Display</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#display(com.google.gwt.dom.client.Style.Display)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the display CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#display(com.google.gwt.dom.client.Style.Display)">display</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="endStyle()"><!-- --></A><H3>
+endStyle</H3>
+<PRE>
+public void <B>endStyle</B>()</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#endStyle()">StylesBuilder</A></CODE></B></DD>
+<DD>End the current style attribute.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#endStyle()">endStyle</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="floatprop(com.google.gwt.dom.client.Style.Float)"><!-- --></A><H3>
+floatprop</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>floatprop</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Float.html" title="enum in com.google.gwt.dom.client">Style.Float</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#floatprop(com.google.gwt.dom.client.Style.Float)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the float css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#floatprop(com.google.gwt.dom.client.Style.Float)">floatprop</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontSize(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+fontSize</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>fontSize</B>(double&nbsp;value,
+                              <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontSize(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the font-size css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontSize(double, com.google.gwt.dom.client.Style.Unit)">fontSize</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontStyle(com.google.gwt.dom.client.Style.FontStyle)"><!-- --></A><H3>
+fontStyle</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>fontStyle</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.FontStyle.html" title="enum in com.google.gwt.dom.client">Style.FontStyle</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontStyle(com.google.gwt.dom.client.Style.FontStyle)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the font-style CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontStyle(com.google.gwt.dom.client.Style.FontStyle)">fontStyle</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="fontWeight(com.google.gwt.dom.client.Style.FontWeight)"><!-- --></A><H3>
+fontWeight</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>fontWeight</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.FontWeight.html" title="enum in com.google.gwt.dom.client">Style.FontWeight</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontWeight(com.google.gwt.dom.client.Style.FontWeight)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the font-weight CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#fontWeight(com.google.gwt.dom.client.Style.FontWeight)">fontWeight</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="height(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+height</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>height</B>(double&nbsp;value,
+                            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#height(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the height css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#height(double, com.google.gwt.dom.client.Style.Unit)">height</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="left(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+left</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>left</B>(double&nbsp;value,
+                          <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#left(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the left css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#left(double, com.google.gwt.dom.client.Style.Unit)">left</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="lineHeight(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+lineHeight</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>lineHeight</B>(double&nbsp;value,
+                                <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#lineHeight(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the line-height css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#lineHeight(double, com.google.gwt.dom.client.Style.Unit)">lineHeight</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="listStyleType(com.google.gwt.dom.client.Style.ListStyleType)"><!-- --></A><H3>
+listStyleType</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>listStyleType</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.ListStyleType.html" title="enum in com.google.gwt.dom.client">Style.ListStyleType</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#listStyleType(com.google.gwt.dom.client.Style.ListStyleType)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the list-style-type CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#listStyleType(com.google.gwt.dom.client.Style.ListStyleType)">listStyleType</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="margin(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+margin</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>margin</B>(double&nbsp;value,
+                            <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#margin(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the margin css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#margin(double, com.google.gwt.dom.client.Style.Unit)">margin</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginBottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginBottom</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>marginBottom</B>(double&nbsp;value,
+                                  <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginBottom(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the margin-bottom css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginBottom(double, com.google.gwt.dom.client.Style.Unit)">marginBottom</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginLeft(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginLeft</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>marginLeft</B>(double&nbsp;value,
+                                <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginLeft(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the margin-left css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginLeft(double, com.google.gwt.dom.client.Style.Unit)">marginLeft</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginRight(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginRight</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>marginRight</B>(double&nbsp;value,
+                                 <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginRight(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the margin-right css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginRight(double, com.google.gwt.dom.client.Style.Unit)">marginRight</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="marginTop(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+marginTop</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>marginTop</B>(double&nbsp;value,
+                               <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginTop(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the margin-top css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#marginTop(double, com.google.gwt.dom.client.Style.Unit)">marginTop</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="opacity(double)"><!-- --></A><H3>
+opacity</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>opacity</B>(double&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#opacity(double)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the opacity css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#opacity(double)">opacity</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="outlineStyle(com.google.gwt.dom.client.Style.OutlineStyle)"><!-- --></A><H3>
+outlineStyle</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>outlineStyle</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.OutlineStyle.html" title="enum in com.google.gwt.dom.client">Style.OutlineStyle</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#outlineStyle(com.google.gwt.dom.client.Style.OutlineStyle)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the outline-style CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#outlineStyle(com.google.gwt.dom.client.Style.OutlineStyle)">outlineStyle</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="outlineWidth(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+outlineWidth</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>outlineWidth</B>(double&nbsp;value,
+                                  <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#outlineWidth(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the outline-width css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#outlineWidth(double, com.google.gwt.dom.client.Style.Unit)">outlineWidth</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflow(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflow</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>overflow</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflow(com.google.gwt.dom.client.Style.Overflow)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the overflow CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflow(com.google.gwt.dom.client.Style.Overflow)">overflow</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflowX(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflowX</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>overflowX</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflowX(com.google.gwt.dom.client.Style.Overflow)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the overflow-x CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflowX(com.google.gwt.dom.client.Style.Overflow)">overflowX</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="overflowY(com.google.gwt.dom.client.Style.Overflow)"><!-- --></A><H3>
+overflowY</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>overflowY</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Overflow.html" title="enum in com.google.gwt.dom.client">Style.Overflow</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflowY(com.google.gwt.dom.client.Style.Overflow)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the overflow-y CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#overflowY(com.google.gwt.dom.client.Style.Overflow)">overflowY</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="padding(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+padding</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>padding</B>(double&nbsp;value,
+                             <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#padding(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the padding css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#padding(double, com.google.gwt.dom.client.Style.Unit)">padding</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingBottom(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingBottom</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>paddingBottom</B>(double&nbsp;value,
+                                   <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingBottom(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the padding-bottom css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingBottom(double, com.google.gwt.dom.client.Style.Unit)">paddingBottom</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingLeft(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingLeft</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>paddingLeft</B>(double&nbsp;value,
+                                 <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingLeft(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the padding-left css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingLeft(double, com.google.gwt.dom.client.Style.Unit)">paddingLeft</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingRight(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingRight</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>paddingRight</B>(double&nbsp;value,
+                                  <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingRight(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the padding-right css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingRight(double, com.google.gwt.dom.client.Style.Unit)">paddingRight</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="paddingTop(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+paddingTop</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>paddingTop</B>(double&nbsp;value,
+                                <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingTop(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the padding-top css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#paddingTop(double, com.google.gwt.dom.client.Style.Unit)">paddingTop</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="position(com.google.gwt.dom.client.Style.Position)"><!-- --></A><H3>
+position</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>position</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Position.html" title="enum in com.google.gwt.dom.client">Style.Position</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#position(com.google.gwt.dom.client.Style.Position)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the position CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#position(com.google.gwt.dom.client.Style.Position)">position</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="right(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+right</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>right</B>(double&nbsp;value,
+                           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#right(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the right css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#right(double, com.google.gwt.dom.client.Style.Unit)">right</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="tableLayout(com.google.gwt.dom.client.Style.TableLayout)"><!-- --></A><H3>
+tableLayout</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>tableLayout</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TableLayout.html" title="enum in com.google.gwt.dom.client">Style.TableLayout</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#tableLayout(com.google.gwt.dom.client.Style.TableLayout)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the table-layout CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#tableLayout(com.google.gwt.dom.client.Style.TableLayout)">tableLayout</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textAlign(com.google.gwt.dom.client.Style.TextAlign)"><!-- --></A><H3>
+textAlign</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textAlign</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextAlign.html" title="enum in com.google.gwt.dom.client">Style.TextAlign</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textAlign(com.google.gwt.dom.client.Style.TextAlign)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-align CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textAlign(com.google.gwt.dom.client.Style.TextAlign)">textAlign</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textDecoration(com.google.gwt.dom.client.Style.TextDecoration)"><!-- --></A><H3>
+textDecoration</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textDecoration</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextDecoration.html" title="enum in com.google.gwt.dom.client">Style.TextDecoration</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textDecoration(com.google.gwt.dom.client.Style.TextDecoration)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-decoration CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textDecoration(com.google.gwt.dom.client.Style.TextDecoration)">textDecoration</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textIndent(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+textIndent</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textIndent</B>(double&nbsp;value,
+                                <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textIndent(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-indent CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textIndent(double, com.google.gwt.dom.client.Style.Unit)">textIndent</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textJustify(com.google.gwt.dom.client.Style.TextJustify)"><!-- --></A><H3>
+textJustify</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textJustify</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextJustify.html" title="enum in com.google.gwt.dom.client">Style.TextJustify</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textJustify(com.google.gwt.dom.client.Style.TextJustify)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-justify CSS3 property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textJustify(com.google.gwt.dom.client.Style.TextJustify)">textJustify</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textOverflow(com.google.gwt.dom.client.Style.TextOverflow)"><!-- --></A><H3>
+textOverflow</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textOverflow</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextOverflow.html" title="enum in com.google.gwt.dom.client">Style.TextOverflow</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textOverflow(com.google.gwt.dom.client.Style.TextOverflow)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-overflow CSS3 property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textOverflow(com.google.gwt.dom.client.Style.TextOverflow)">textOverflow</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="textTransform(com.google.gwt.dom.client.Style.TextTransform)"><!-- --></A><H3>
+textTransform</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>textTransform</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.TextTransform.html" title="enum in com.google.gwt.dom.client">Style.TextTransform</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textTransform(com.google.gwt.dom.client.Style.TextTransform)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the text-transform CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#textTransform(com.google.gwt.dom.client.Style.TextTransform)">textTransform</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="top(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+top</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>top</B>(double&nbsp;value,
+                         <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#top(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the top css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#top(double, com.google.gwt.dom.client.Style.Unit)">top</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBackgroundColor(java.lang.String)"><!-- --></A><H3>
+trustedBackgroundColor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedBackgroundColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBackgroundColor(java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Sets the "background-color" style property to the specified color string.
+ Does not check or escape the color string. The calling code should be
+ carefully reviewed to ensure that the provided color string won't cause a
+ security issue if included in a style attribute.
+ </p>
+ 
+ <p>
+ For details and constraints, see
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBackgroundColor(java.lang.String)">trustedBackgroundColor</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBackgroundImage(java.lang.String)"><!-- --></A><H3>
+trustedBackgroundImage</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedBackgroundImage</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBackgroundImage(java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Sets the "background-image" style property to the specified value. Does not
+ check or escape the value. The calling code should be carefully reviewed to
+ ensure that the provided value string won't cause a security issue if
+ included in a style attribute.
+ </p>
+ 
+ <p>
+ For details and constraints, see
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBackgroundImage(java.lang.String)">trustedBackgroundImage</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedBorderColor(java.lang.String)"><!-- --></A><H3>
+trustedBorderColor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedBorderColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBorderColor(java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Sets the "border-color" style property to the specified color string. Does
+ not check or escape the color string. The calling code should be carefully
+ reviewed to ensure that the provided color string won't cause a security
+ issue if included in a style attribute.
+ </p>
+ 
+ <p>
+ For details and constraints, see
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedBorderColor(java.lang.String)">trustedBorderColor</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedColor(java.lang.String)"><!-- --></A><H3>
+trustedColor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedColor(java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Sets the "color" style property, which controls font color, to the
+ specified color string. Does not check or escape the color string. The
+ calling code should be carefully reviewed to ensure that the provided color
+ string won't cause a security issue if included in a style attribute.
+ </p>
+ 
+ <p>
+ For details and constraints, see
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedColor(java.lang.String)">trustedColor</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedOutlineColor(java.lang.String)"><!-- --></A><H3>
+trustedOutlineColor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedOutlineColor</B>(java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedOutlineColor(java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Sets the "outline-color" style property to the specified color string. Does
+ not check or escape the color string. The calling code should be carefully
+ reviewed to ensure that the provided color string won't cause a security
+ issue if included in a style attribute.
+ </p>
+ 
+ <p>
+ For details and constraints, see
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A>.
+ </p>
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedOutlineColor(java.lang.String)">trustedOutlineColor</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedProperty(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+trustedProperty</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedProperty</B>(java.lang.String&nbsp;name,
+                                     double&nbsp;value,
+                                     <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedProperty(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Set a style property from a trusted name and a trusted value, i.e., without
+ escaping the name and value. No checks are performed. The calling code
+ should be carefully reviewed to ensure the argument will satisfy the
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they are
+ composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ SafeStyles may never contain literal angle brackets. Otherwise, it could be
+ unsafe to place a SafeStyles into a &lt;style&gt; tag (where it can't be
+ HTML escaped). For example, if the SafeStyles containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedProperty(java.lang.String, double, com.google.gwt.dom.client.Style.Unit)">trustedProperty</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+<DD><CODE>unit</CODE> - the units of the value
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedProperty(java.lang.String, java.lang.String)"><!-- --></A><H3>
+trustedProperty</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>trustedProperty</B>(java.lang.String&nbsp;name,
+                                     java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedProperty(java.lang.String, java.lang.String)">StylesBuilder</A></CODE></B></DD>
+<DD><p>
+ Set a style property from a trusted name and a trusted value, i.e., without
+ escaping the name and value. No checks are performed. The calling code
+ should be carefully reviewed to ensure the argument will satisfy the
+ <A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared"><CODE>SafeStyles</CODE></A> contract when they are
+ composed into the form: "&lt;name&gt;:&lt;value&gt;;".
+ 
+ <p>
+ SafeStyles may never contain literal angle brackets. Otherwise, it could be
+ unsafe to place a SafeStyles into a &lt;style&gt; tag (where it can't be
+ HTML escaped). For example, if the SafeStyles containing "
+ <code>font: 'foo &lt;style&gt;&lt;script&gt;evil&lt;/script&gt;</code>'" is
+ used in a style sheet in a &lt;style&gt; tag, this could then break out of
+ the style context into HTML.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#trustedProperty(java.lang.String, java.lang.String)">trustedProperty</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>this <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="verticalAlign(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+verticalAlign</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>verticalAlign</B>(double&nbsp;value,
+                                   <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#verticalAlign(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the vertical-align CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#verticalAlign(double, com.google.gwt.dom.client.Style.Unit)">verticalAlign</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)"><!-- --></A><H3>
+verticalAlign</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>verticalAlign</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.VerticalAlign.html" title="enum in com.google.gwt.dom.client">Style.VerticalAlign</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the vertical-align CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#verticalAlign(com.google.gwt.dom.client.Style.VerticalAlign)">verticalAlign</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visibility(com.google.gwt.dom.client.Style.Visibility)"><!-- --></A><H3>
+visibility</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>visibility</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Style.Visibility.html" title="enum in com.google.gwt.dom.client">Style.Visibility</A>&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#visibility(com.google.gwt.dom.client.Style.Visibility)">StylesBuilder</A></CODE></B></DD>
+<DD>Sets the visibility CSS property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#visibility(com.google.gwt.dom.client.Style.Visibility)">visibility</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="width(double, com.google.gwt.dom.client.Style.Unit)"><!-- --></A><H3>
+width</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>width</B>(double&nbsp;value,
+                           <A HREF="../../../../../../com/google/gwt/dom/client/Style.Unit.html" title="enum in com.google.gwt.dom.client">Style.Unit</A>&nbsp;unit)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#width(double, com.google.gwt.dom.client.Style.Unit)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the width css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#width(double, com.google.gwt.dom.client.Style.Unit)">width</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="zIndex(int)"><!-- --></A><H3>
+zIndex</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>zIndex</B>(int&nbsp;value)</PRE>
+<DL>
+<DD><B>Description copied from interface: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#zIndex(int)">StylesBuilder</A></CODE></B></DD>
+<DD>Set the z-index css property.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html#zIndex(int)">zIndex</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/DomStylesBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomStyleBuilder.html" title="class in com.google.gwt.dom.builder.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/client/DomTableBuilder.html" title="class in com.google.gwt.dom.builder.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/client/DomStylesBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="DomStylesBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

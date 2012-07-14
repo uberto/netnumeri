@@ -1,0 +1,716 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+ElementBuilderImpl (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ElementBuilderImpl (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ElementBuilderImpl.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderFactory.html" title="class in com.google.gwt.dom.builder.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/FieldSetBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ElementBuilderImpl.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.dom.builder.shared</FONT>
+<BR>
+Class ElementBuilderImpl</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.dom.builder.shared.ElementBuilderImpl</B>
+</PRE>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../../../com/google/gwt/dom/builder/client/DomBuilderImpl.html" title="class in com.google.gwt.dom.builder.client">DomBuilderImpl</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">HtmlBuilderImpl</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <B>ElementBuilderImpl</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+Base implementation of <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>ElementBuilderBase</CODE></A> that handles state, but
+ nothing else.
+ 
+ <p>
+ DO NOT USE THIS CLASS. This class is an implementation class and may change
+ in the future.
+ </p>
+ 
+ This class is used to ensure that the HTML and DOM implementations throw the
+ same exceptions, even if something is valid in one and not the other. For
+ example, the DOM implementation supports changing an attribute after setting
+ inner HTML, but the HTML version does not, so they should both throw an
+ error. Otherwise, they would not be swappable.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#ElementBuilderImpl()">ElementBuilderImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertCanAddAttributeImpl()">assertCanAddAttributeImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert that the builder is in a state where an attribute can be added.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertCanAddStylePropertyImpl()">assertCanAddStylePropertyImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert that a style property can be added, and setup the state as if one is
+ about to be added.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertValidTagName(java.lang.String)">assertValidTagName</A></B>(java.lang.String&nbsp;tagName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assert that the specified tag name is valid.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStartTagImpl()">doCloseStartTagImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close the start tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStyleAttributeImpl()">doCloseStyleAttributeImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close the style attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndStartTagImpl()">doEndStartTagImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-close the start tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndTagImpl(java.lang.String)">doEndTagImpl</A></B>(java.lang.String&nbsp;tagName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End the specified tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;<A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doFinishImpl()">doFinishImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the build element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)">doHtmlImpl</A></B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified html as the inner HTML of the current element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doOpenStyleImpl()">doOpenStyleImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open the style attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doTextImpl(java.lang.String)">doTextImpl</A></B>(java.lang.String&nbsp;text)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified text as the inner text of the current element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#end()">end</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#end(java.lang.String)">end</A></B>(java.lang.String&nbsp;tagName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#endAllTags()">endAllTags</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End all open tags, including the root element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#endStyle()">endStyle</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#finish()">finish</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the built DOM as an <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client"><CODE>Element</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#getDepth()">getDepth</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#html(com.google.gwt.safehtml.shared.SafeHtml)">html</A></B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#lockCurrentElement()">lockCurrentElement</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lock the current element, preventing any additional changes to it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#onStart(java.lang.String, com.google.gwt.dom.builder.shared.ElementBuilderBase)">onStart</A></B>(java.lang.String&nbsp;tagName,
+        <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared">ElementBuilderBase</A>&lt;?&gt;&nbsp;builder)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#style()">style</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A> used to add style properties to the current
+ element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#text(java.lang.String)">text</A></B>(java.lang.String&nbsp;text)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ElementBuilderImpl()"><!-- --></A><H3>
+ElementBuilderImpl</H3>
+<PRE>
+public <B>ElementBuilderImpl</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="end()"><!-- --></A><H3>
+end</H3>
+<PRE>
+public void <B>end</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="end(java.lang.String)"><!-- --></A><H3>
+end</H3>
+<PRE>
+public void <B>end</B>(java.lang.String&nbsp;tagName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="endStyle()"><!-- --></A><H3>
+endStyle</H3>
+<PRE>
+public void <B>endStyle</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="finish()"><!-- --></A><H3>
+finish</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A> <B>finish</B>()</PRE>
+<DL>
+<DD>Return the built DOM as an <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client"><CODE>Element</CODE></A>.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client"><CODE>Element</CODE></A> that was built</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getDepth()"><!-- --></A><H3>
+getDepth</H3>
+<PRE>
+public int <B>getDepth</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="html(com.google.gwt.safehtml.shared.SafeHtml)"><!-- --></A><H3>
+html</H3>
+<PRE>
+public void <B>html</B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="onStart(java.lang.String, com.google.gwt.dom.builder.shared.ElementBuilderBase)"><!-- --></A><H3>
+onStart</H3>
+<PRE>
+public void <B>onStart</B>(java.lang.String&nbsp;tagName,
+                    <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared">ElementBuilderBase</A>&lt;?&gt;&nbsp;builder)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="style()"><!-- --></A><H3>
+style</H3>
+<PRE>
+public abstract <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>style</B>()</PRE>
+<DL>
+<DD>Get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A> used to add style properties to the current
+ element.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="text(java.lang.String)"><!-- --></A><H3>
+text</H3>
+<PRE>
+public void <B>text</B>(java.lang.String&nbsp;text)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="assertCanAddAttributeImpl()"><!-- --></A><H3>
+assertCanAddAttributeImpl</H3>
+<PRE>
+protected void <B>assertCanAddAttributeImpl</B>()</PRE>
+<DL>
+<DD>Assert that the builder is in a state where an attribute can be added.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="assertCanAddStylePropertyImpl()"><!-- --></A><H3>
+assertCanAddStylePropertyImpl</H3>
+<PRE>
+protected void <B>assertCanAddStylePropertyImpl</B>()</PRE>
+<DL>
+<DD>Assert that a style property can be added, and setup the state as if one is
+ about to be added.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="assertValidTagName(java.lang.String)"><!-- --></A><H3>
+assertValidTagName</H3>
+<PRE>
+protected void <B>assertValidTagName</B>(java.lang.String&nbsp;tagName)</PRE>
+<DL>
+<DD>Assert that the specified tag name is valid.
+<P>
+<DD><DL>
+
+<DT><B>Throws:</B>
+<DD><CODE>java.lang.IllegalArgumentException</CODE> - if not valid</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doCloseStartTagImpl()"><!-- --></A><H3>
+doCloseStartTagImpl</H3>
+<PRE>
+protected abstract void <B>doCloseStartTagImpl</B>()</PRE>
+<DL>
+<DD>Close the start tag.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doCloseStyleAttributeImpl()"><!-- --></A><H3>
+doCloseStyleAttributeImpl</H3>
+<PRE>
+protected abstract void <B>doCloseStyleAttributeImpl</B>()</PRE>
+<DL>
+<DD>Close the style attribute.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doEndStartTagImpl()"><!-- --></A><H3>
+doEndStartTagImpl</H3>
+<PRE>
+protected abstract void <B>doEndStartTagImpl</B>()</PRE>
+<DL>
+<DD>Self-close the start tag. This method is called for elements that forbid
+ the end tag.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doEndTagImpl(java.lang.String)"><!-- --></A><H3>
+doEndTagImpl</H3>
+<PRE>
+protected abstract void <B>doEndTagImpl</B>(java.lang.String&nbsp;tagName)</PRE>
+<DL>
+<DD>End the specified tag.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>tagName</CODE> - the name of the tag to end</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doFinishImpl()"><!-- --></A><H3>
+doFinishImpl</H3>
+<PRE>
+protected abstract <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A> <B>doFinishImpl</B>()</PRE>
+<DL>
+<DD>Return the build element.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the element</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)"><!-- --></A><H3>
+doHtmlImpl</H3>
+<PRE>
+protected abstract void <B>doHtmlImpl</B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</PRE>
+<DL>
+<DD>Set the specified html as the inner HTML of the current element.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>html</CODE> - the HTML to set</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doOpenStyleImpl()"><!-- --></A><H3>
+doOpenStyleImpl</H3>
+<PRE>
+protected abstract void <B>doOpenStyleImpl</B>()</PRE>
+<DL>
+<DD>Open the style attribute.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doTextImpl(java.lang.String)"><!-- --></A><H3>
+doTextImpl</H3>
+<PRE>
+protected abstract void <B>doTextImpl</B>(java.lang.String&nbsp;text)</PRE>
+<DL>
+<DD>Set the specified text as the inner text of the current element.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>text</CODE> - the text to set</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="endAllTags()"><!-- --></A><H3>
+endAllTags</H3>
+<PRE>
+protected void <B>endAllTags</B>()</PRE>
+<DL>
+<DD>End all open tags, including the root element.
+ 
+ <p>
+ Doing so also ensures that all builder methods will throw an exception
+ because the stack is empty, and a new element cannot be started.
+ </p>
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="lockCurrentElement()"><!-- --></A><H3>
+lockCurrentElement</H3>
+<PRE>
+protected void <B>lockCurrentElement</B>()</PRE>
+<DL>
+<DD>Lock the current element, preventing any additional changes to it. The only
+ valid option is to call <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#end()"><CODE>end()</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ElementBuilderImpl.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderFactory.html" title="class in com.google.gwt.dom.builder.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/FieldSetBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ElementBuilderImpl.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

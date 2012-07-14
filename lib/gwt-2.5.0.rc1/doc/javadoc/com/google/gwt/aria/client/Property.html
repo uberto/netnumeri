@@ -1,0 +1,698 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Property (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="Property (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Property.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/ProgressbarRoleImpl.html" title="class in com.google.gwt.aria.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/RadiogroupRole.html" title="interface in com.google.gwt.aria.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/aria/client/Property.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Property.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_java.lang.Object">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.aria.client</FONT>
+<BR>
+Class Property</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.aria.client.Property</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public final class <B>Property</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+<p>Class that contains constants for all ARIA properties as defined by the W3C specification
+ <a href="http://www.w3.org/TR/wai-aria/">W3C ARIA specification</a>.</p>
+
+ <p>An ARIA property is a characteristic feature of a widget/control that can change over time but
+ more rare than the ARIA state and is often not changed as a result of user action.<p>
+
+ <p>The following groups of properties exist:
+ <ol>
+ <li>Widget properties -- specific to common user interface elements found on GUI systems or
+ in rich Internet applications which receive user input and process user actions</li>
+ <li>Live Region properties -- specific to live regions in rich Internet applications; may be
+ applied to any element; indicate that content changes may occur without the element having
+ focus, and provides assistive technologies with information on how to process those content
+ updates. </li>
+ <li>Drag-and-drop states -- indicates information about draggable elements and their drop
+ targets</li>
+ <li>Relationship properties -- indicates relationships or associations between elements which
+ cannot be readily determined from the document structure</li>
+ </ol>
+ </p>
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#ACTIVEDESCENDANT">ACTIVEDESCENDANT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#ATOMIC">ATOMIC</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/AutocompleteValue.html" title="enum in com.google.gwt.aria.client">AutocompleteValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#AUTOCOMPLETE">AUTOCOMPLETE</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#CONTROLS">CONTROLS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#DESCRIBEDBY">DESCRIBEDBY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/DropeffectValue.html" title="enum in com.google.gwt.aria.client">DropeffectValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#DROPEFFECT">DROPEFFECT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#FLOWTO">FLOWTO</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#HASPOPUP">HASPOPUP</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.String&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#LABEL">LABEL</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#LABELLEDBY">LABELLEDBY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#LEVEL">LEVEL</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/LiveValue.html" title="enum in com.google.gwt.aria.client">LiveValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#LIVE">LIVE</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#MULTILINE">MULTILINE</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#MULTISELECTABLE">MULTISELECTABLE</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/OrientationValue.html" title="enum in com.google.gwt.aria.client">OrientationValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#ORIENTATION">ORIENTATION</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#OWNS">OWNS</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#POSINSET">POSINSET</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#READONLY">READONLY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/RelevantValue.html" title="enum in com.google.gwt.aria.client">RelevantValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#RELEVANT">RELEVANT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#REQUIRED">REQUIRED</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#SETSIZE">SETSIZE</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/SortValue.html" title="enum in com.google.gwt.aria.client">SortValue</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#SORT">SORT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#VALUEMAX">VALUEMAX</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#VALUEMIN">VALUEMIN</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#VALUENOW">VALUENOW</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.String&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/aria/client/Property.html#VALUETEXT">VALUETEXT</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ACTIVEDESCENDANT"><!-- --></A><H3>
+ACTIVEDESCENDANT</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>ACTIVEDESCENDANT</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="ATOMIC"><!-- --></A><H3>
+ATOMIC</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>ATOMIC</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="AUTOCOMPLETE"><!-- --></A><H3>
+AUTOCOMPLETE</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/AutocompleteValue.html" title="enum in com.google.gwt.aria.client">AutocompleteValue</A>&gt; <B>AUTOCOMPLETE</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="CONTROLS"><!-- --></A><H3>
+CONTROLS</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>CONTROLS</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="DESCRIBEDBY"><!-- --></A><H3>
+DESCRIBEDBY</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>DESCRIBEDBY</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="DROPEFFECT"><!-- --></A><H3>
+DROPEFFECT</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/DropeffectValue.html" title="enum in com.google.gwt.aria.client">DropeffectValue</A>&gt; <B>DROPEFFECT</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="FLOWTO"><!-- --></A><H3>
+FLOWTO</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>FLOWTO</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="HASPOPUP"><!-- --></A><H3>
+HASPOPUP</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>HASPOPUP</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="LABEL"><!-- --></A><H3>
+LABEL</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.String&gt; <B>LABEL</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="LABELLEDBY"><!-- --></A><H3>
+LABELLEDBY</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>LABELLEDBY</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="LEVEL"><!-- --></A><H3>
+LEVEL</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt; <B>LEVEL</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="LIVE"><!-- --></A><H3>
+LIVE</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/LiveValue.html" title="enum in com.google.gwt.aria.client">LiveValue</A>&gt; <B>LIVE</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="MULTILINE"><!-- --></A><H3>
+MULTILINE</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>MULTILINE</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="MULTISELECTABLE"><!-- --></A><H3>
+MULTISELECTABLE</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>MULTISELECTABLE</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="ORIENTATION"><!-- --></A><H3>
+ORIENTATION</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/OrientationValue.html" title="enum in com.google.gwt.aria.client">OrientationValue</A>&gt; <B>ORIENTATION</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="OWNS"><!-- --></A><H3>
+OWNS</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/IdReference.html" title="class in com.google.gwt.aria.client">IdReference</A>&gt; <B>OWNS</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="POSINSET"><!-- --></A><H3>
+POSINSET</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt; <B>POSINSET</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="READONLY"><!-- --></A><H3>
+READONLY</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>READONLY</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="RELEVANT"><!-- --></A><H3>
+RELEVANT</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/RelevantValue.html" title="enum in com.google.gwt.aria.client">RelevantValue</A>&gt; <B>RELEVANT</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="REQUIRED"><!-- --></A><H3>
+REQUIRED</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Boolean&gt; <B>REQUIRED</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="SETSIZE"><!-- --></A><H3>
+SETSIZE</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Integer&gt; <B>SETSIZE</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="SORT"><!-- --></A><H3>
+SORT</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;<A HREF="../../../../../com/google/gwt/aria/client/SortValue.html" title="enum in com.google.gwt.aria.client">SortValue</A>&gt; <B>SORT</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="VALUEMAX"><!-- --></A><H3>
+VALUEMAX</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt; <B>VALUEMAX</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="VALUEMIN"><!-- --></A><H3>
+VALUEMIN</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt; <B>VALUEMIN</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="VALUENOW"><!-- --></A><H3>
+VALUENOW</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.Number&gt; <B>VALUENOW</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="VALUETEXT"><!-- --></A><H3>
+VALUETEXT</H3>
+<PRE>
+public static final <A HREF="../../../../../com/google/gwt/aria/client/Attribute.html" title="class in com.google.gwt.aria.client">Attribute</A>&lt;java.lang.String&gt; <B>VALUETEXT</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/Property.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/ProgressbarRoleImpl.html" title="class in com.google.gwt.aria.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/aria/client/RadiogroupRole.html" title="interface in com.google.gwt.aria.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/aria/client/Property.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="Property.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;<A HREF="#methods_inherited_from_class_java.lang.Object">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;CONSTR&nbsp;|&nbsp;METHOD</FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

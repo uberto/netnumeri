@@ -1,0 +1,1935 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+HtmlBuilderImpl (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="HtmlBuilderImpl (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/HtmlBuilderImpl.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderFactory.html" title="class in com.google.gwt.dom.builder.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="HtmlBuilderImpl.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.dom.builder.shared</FONT>
+<BR>
+Class HtmlBuilderImpl</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">com.google.gwt.dom.builder.shared.ElementBuilderImpl</A>
+      <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.dom.builder.shared.HtmlBuilderImpl</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE> class <B>HtmlBuilderImpl</B><DT>extends <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></DL>
+</PRE>
+
+<P>
+Implementation of methods in <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>ElementBuilderBase</CODE></A> used to render HTML
+ as a string, using innerHtml to generate an element.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#HtmlBuilderImpl()">HtmlBuilderImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#asSafeHtml()">asSafeHtml</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the HTML as a <A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared"><CODE>SafeHtml</CODE></A> string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#attribute(java.lang.String, int)">attribute</A></B>(java.lang.String&nbsp;name,
+          int&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#attribute(java.lang.String, java.lang.String)">attribute</A></B>(java.lang.String&nbsp;name,
+          java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doCloseStartTagImpl()">doCloseStartTagImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close the start tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doCloseStyleAttributeImpl()">doCloseStyleAttributeImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close the style attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doEndStartTagImpl()">doEndStartTagImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Self-close the start tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doEndTagImpl(java.lang.String)">doEndTagImpl</A></B>(java.lang.String&nbsp;tagName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End the specified tag.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doFinishImpl()">doFinishImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the build element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)">doHtmlImpl</A></B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified html as the inner HTML of the current element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doOpenStyleImpl()">doOpenStyleImpl</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open the style attribute.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#doTextImpl(java.lang.String)">doTextImpl</A></B>(java.lang.String&nbsp;text)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set the specified text as the inner text of the current element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAnchorBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startAnchor()">startAnchor</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAreaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAreaBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startArea()">startArea</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAudioBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAudioBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startAudio()">startAudio</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBaseBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBaseBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startBase()">startBase</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlQuoteBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlQuoteBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startBlockQuote()">startBlockQuote</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBodyBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBodyBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startBody()">startBody</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBRBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBRBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startBR()">startBR</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startButtonInput()">startButtonInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlCanvasBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlCanvasBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startCanvas()">startCanvas</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startCheckboxInput()">startCheckboxInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableColBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableColBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startCol()">startCol</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableColBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableColBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startColGroup()">startColGroup</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlDivBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlDivBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startDiv()">startDiv</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlDListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlDListBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startDList()">startDList</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFieldSetBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFieldSetBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startFieldSet()">startFieldSet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startFileInput()">startFileInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFormBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFormBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startForm()">startForm</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFrameBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFrameBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startFrame()">startFrame</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFrameSetBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFrameSetBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startFrameSet()">startFrameSet</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH1()">startH1</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH2()">startH2</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH3()">startH3</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH4()">startH4</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH5()">startH5</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startH6()">startH6</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startHead()">startHead</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startHiddenInput()">startHiddenInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHRBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHRBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startHR()">startHR</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlIFrameBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlIFrameBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startIFrame()">startIFrame</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlImageBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlImageBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startImage()">startImage</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startImageInput()">startImageInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLabelBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLabelBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startLabel()">startLabel</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLegendBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLegendBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startLegend()">startLegend</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLIBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLIBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startLI()">startLI</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLinkBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLinkBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startLink()">startLink</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlMapBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlMapBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startMap()">startMap</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlMetaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlMetaBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startMeta()">startMeta</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOListBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startOList()">startOList</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOptGroupBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOptGroupBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startOptGroup()">startOptGroup</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOptionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOptionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startOption()">startOption</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlParagraphBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlParagraphBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startParagraph()">startParagraph</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlParamBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlParamBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startParam()">startParam</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startPasswordInput()">startPasswordInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlPreBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlPreBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startPre()">startPre</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startPushButton()">startPushButton</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlQuoteBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlQuoteBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startQuote()">startQuote</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startRadioInput(java.lang.String)">startRadioInput</A></B>(java.lang.String&nbsp;name)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startResetButton()">startResetButton</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startResetInput()">startResetInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlScriptBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlScriptBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startScript()">startScript</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSelectBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSelectBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startSelect()">startSelect</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSourceBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSourceBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startSource()">startSource</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSpanBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSpanBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startSpan()">startSpan</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlStyleBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlStyleBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startStyle()">startStyle</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startSubmitButton()">startSubmitButton</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startSubmitInput()">startSubmitInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTable()">startTable</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCaptionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCaptionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTableCaption()">startTableCaption</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTBody()">startTBody</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCellBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCellBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTD()">startTD</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTextAreaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTextAreaBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTextArea()">startTextArea</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTextInput()">startTextInput</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTFoot()">startTFoot</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCellBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCellBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTH()">startTH</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTHead()">startTHead</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTitleBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTitleBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTitle()">startTitle</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableRowBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableRowBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startTR()">startTR</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlUListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlUListBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startUList()">startUList</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlVideoBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlVideoBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#startVideo()">startVideo</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#style()">style</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A> used to add style properties to the current
+ element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#styleProperty(com.google.gwt.safecss.shared.SafeStyles)">styleProperty</A></B>(<A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A>&nbsp;style)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#trustedAttribute(java.lang.String, int)">trustedAttribute</A></B>(java.lang.String&nbsp;name,
+                 int&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a trusted attribute without escaping the name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#trustedAttribute(java.lang.String, java.lang.String)">trustedAttribute</A></B>(java.lang.String&nbsp;name,
+                 java.lang.String&nbsp;value)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a trusted attribute without escaping the name.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlElementBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlElementBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html#trustedStart(java.lang.String)">trustedStart</A></B>(java.lang.String&nbsp;tagName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.gwt.dom.builder.shared.ElementBuilderImpl"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.gwt.dom.builder.shared.<A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertCanAddAttributeImpl()">assertCanAddAttributeImpl</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertCanAddStylePropertyImpl()">assertCanAddStylePropertyImpl</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#assertValidTagName(java.lang.String)">assertValidTagName</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#end()">end</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#end(java.lang.String)">end</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#endAllTags()">endAllTags</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#endStyle()">endStyle</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#finish()">finish</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#getDepth()">getDepth</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#html(com.google.gwt.safehtml.shared.SafeHtml)">html</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#lockCurrentElement()">lockCurrentElement</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#onStart(java.lang.String, com.google.gwt.dom.builder.shared.ElementBuilderBase)">onStart</A>, <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#text(java.lang.String)">text</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="HtmlBuilderImpl()"><!-- --></A><H3>
+HtmlBuilderImpl</H3>
+<PRE>
+<B>HtmlBuilderImpl</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="asSafeHtml()"><!-- --></A><H3>
+asSafeHtml</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A> <B>asSafeHtml</B>()</PRE>
+<DL>
+<DD>Return the HTML as a <A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared"><CODE>SafeHtml</CODE></A> string.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="attribute(java.lang.String, int)"><!-- --></A><H3>
+attribute</H3>
+<PRE>
+public void <B>attribute</B>(java.lang.String&nbsp;name,
+                      int&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="attribute(java.lang.String, java.lang.String)"><!-- --></A><H3>
+attribute</H3>
+<PRE>
+public void <B>attribute</B>(java.lang.String&nbsp;name,
+                      java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startAnchor()"><!-- --></A><H3>
+startAnchor</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAnchorBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAnchorBuilder</A> <B>startAnchor</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startArea()"><!-- --></A><H3>
+startArea</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAreaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAreaBuilder</A> <B>startArea</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startAudio()"><!-- --></A><H3>
+startAudio</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlAudioBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlAudioBuilder</A> <B>startAudio</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startBase()"><!-- --></A><H3>
+startBase</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBaseBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBaseBuilder</A> <B>startBase</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startBlockQuote()"><!-- --></A><H3>
+startBlockQuote</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlQuoteBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlQuoteBuilder</A> <B>startBlockQuote</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startBody()"><!-- --></A><H3>
+startBody</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBodyBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBodyBuilder</A> <B>startBody</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startBR()"><!-- --></A><H3>
+startBR</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBRBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlBRBuilder</A> <B>startBR</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startButtonInput()"><!-- --></A><H3>
+startButtonInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startButtonInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startCanvas()"><!-- --></A><H3>
+startCanvas</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlCanvasBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlCanvasBuilder</A> <B>startCanvas</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startCheckboxInput()"><!-- --></A><H3>
+startCheckboxInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startCheckboxInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startCol()"><!-- --></A><H3>
+startCol</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableColBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableColBuilder</A> <B>startCol</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startColGroup()"><!-- --></A><H3>
+startColGroup</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableColBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableColBuilder</A> <B>startColGroup</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startDiv()"><!-- --></A><H3>
+startDiv</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlDivBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlDivBuilder</A> <B>startDiv</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startDList()"><!-- --></A><H3>
+startDList</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlDListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlDListBuilder</A> <B>startDList</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startFieldSet()"><!-- --></A><H3>
+startFieldSet</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFieldSetBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFieldSetBuilder</A> <B>startFieldSet</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startFileInput()"><!-- --></A><H3>
+startFileInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startFileInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startForm()"><!-- --></A><H3>
+startForm</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFormBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFormBuilder</A> <B>startForm</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startFrame()"><!-- --></A><H3>
+startFrame</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFrameBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFrameBuilder</A> <B>startFrame</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startFrameSet()"><!-- --></A><H3>
+startFrameSet</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlFrameSetBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlFrameSetBuilder</A> <B>startFrameSet</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH1()"><!-- --></A><H3>
+startH1</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH1</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH2()"><!-- --></A><H3>
+startH2</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH2</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH3()"><!-- --></A><H3>
+startH3</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH3</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH4()"><!-- --></A><H3>
+startH4</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH4</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH5()"><!-- --></A><H3>
+startH5</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH5</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startH6()"><!-- --></A><H3>
+startH6</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadingBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadingBuilder</A> <B>startH6</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startHead()"><!-- --></A><H3>
+startHead</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHeadBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHeadBuilder</A> <B>startHead</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startHiddenInput()"><!-- --></A><H3>
+startHiddenInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startHiddenInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startHR()"><!-- --></A><H3>
+startHR</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlHRBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlHRBuilder</A> <B>startHR</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startIFrame()"><!-- --></A><H3>
+startIFrame</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlIFrameBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlIFrameBuilder</A> <B>startIFrame</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startImage()"><!-- --></A><H3>
+startImage</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlImageBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlImageBuilder</A> <B>startImage</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startImageInput()"><!-- --></A><H3>
+startImageInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startImageInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startLabel()"><!-- --></A><H3>
+startLabel</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLabelBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLabelBuilder</A> <B>startLabel</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startLegend()"><!-- --></A><H3>
+startLegend</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLegendBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLegendBuilder</A> <B>startLegend</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startLI()"><!-- --></A><H3>
+startLI</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLIBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLIBuilder</A> <B>startLI</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startLink()"><!-- --></A><H3>
+startLink</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlLinkBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlLinkBuilder</A> <B>startLink</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startMap()"><!-- --></A><H3>
+startMap</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlMapBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlMapBuilder</A> <B>startMap</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startMeta()"><!-- --></A><H3>
+startMeta</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlMetaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlMetaBuilder</A> <B>startMeta</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startOList()"><!-- --></A><H3>
+startOList</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOListBuilder</A> <B>startOList</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startOptGroup()"><!-- --></A><H3>
+startOptGroup</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOptGroupBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOptGroupBuilder</A> <B>startOptGroup</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startOption()"><!-- --></A><H3>
+startOption</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlOptionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlOptionBuilder</A> <B>startOption</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startParagraph()"><!-- --></A><H3>
+startParagraph</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlParagraphBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlParagraphBuilder</A> <B>startParagraph</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startParam()"><!-- --></A><H3>
+startParam</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlParamBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlParamBuilder</A> <B>startParam</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startPasswordInput()"><!-- --></A><H3>
+startPasswordInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startPasswordInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startPre()"><!-- --></A><H3>
+startPre</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlPreBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlPreBuilder</A> <B>startPre</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startPushButton()"><!-- --></A><H3>
+startPushButton</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A> <B>startPushButton</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startQuote()"><!-- --></A><H3>
+startQuote</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlQuoteBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlQuoteBuilder</A> <B>startQuote</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startRadioInput(java.lang.String)"><!-- --></A><H3>
+startRadioInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startRadioInput</B>(java.lang.String&nbsp;name)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startResetButton()"><!-- --></A><H3>
+startResetButton</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A> <B>startResetButton</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startResetInput()"><!-- --></A><H3>
+startResetInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startResetInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startScript()"><!-- --></A><H3>
+startScript</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlScriptBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlScriptBuilder</A> <B>startScript</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startSelect()"><!-- --></A><H3>
+startSelect</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSelectBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSelectBuilder</A> <B>startSelect</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startSource()"><!-- --></A><H3>
+startSource</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSourceBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSourceBuilder</A> <B>startSource</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startSpan()"><!-- --></A><H3>
+startSpan</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlSpanBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlSpanBuilder</A> <B>startSpan</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startStyle()"><!-- --></A><H3>
+startStyle</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlStyleBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlStyleBuilder</A> <B>startStyle</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startSubmitButton()"><!-- --></A><H3>
+startSubmitButton</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlButtonBuilder</A> <B>startSubmitButton</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startSubmitInput()"><!-- --></A><H3>
+startSubmitInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startSubmitInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTable()"><!-- --></A><H3>
+startTable</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableBuilder</A> <B>startTable</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTableCaption()"><!-- --></A><H3>
+startTableCaption</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCaptionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCaptionBuilder</A> <B>startTableCaption</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTBody()"><!-- --></A><H3>
+startTBody</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A> <B>startTBody</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTD()"><!-- --></A><H3>
+startTD</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCellBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCellBuilder</A> <B>startTD</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTextArea()"><!-- --></A><H3>
+startTextArea</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTextAreaBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTextAreaBuilder</A> <B>startTextArea</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTextInput()"><!-- --></A><H3>
+startTextInput</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/InputBuilder.html" title="interface in com.google.gwt.dom.builder.shared">InputBuilder</A> <B>startTextInput</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTFoot()"><!-- --></A><H3>
+startTFoot</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A> <B>startTFoot</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTH()"><!-- --></A><H3>
+startTH</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableCellBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableCellBuilder</A> <B>startTH</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTHead()"><!-- --></A><H3>
+startTHead</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableSectionBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableSectionBuilder</A> <B>startTHead</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTitle()"><!-- --></A><H3>
+startTitle</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTitleBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTitleBuilder</A> <B>startTitle</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startTR()"><!-- --></A><H3>
+startTR</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlTableRowBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlTableRowBuilder</A> <B>startTR</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startUList()"><!-- --></A><H3>
+startUList</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlUListBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlUListBuilder</A> <B>startUList</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startVideo()"><!-- --></A><H3>
+startVideo</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlVideoBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlVideoBuilder</A> <B>startVideo</B>()</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="style()"><!-- --></A><H3>
+style</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>style</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#style()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A> used to add style properties to the current
+ element.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#style()">style</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>StylesBuilder</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="styleProperty(com.google.gwt.safecss.shared.SafeStyles)"><!-- --></A><H3>
+styleProperty</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/StylesBuilder.html" title="interface in com.google.gwt.dom.builder.shared">StylesBuilder</A> <B>styleProperty</B>(<A HREF="../../../../../../com/google/gwt/safecss/shared/SafeStyles.html" title="interface in com.google.gwt.safecss.shared">SafeStyles</A>&nbsp;style)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedAttribute(java.lang.String, int)"><!-- --></A><H3>
+trustedAttribute</H3>
+<PRE>
+public void <B>trustedAttribute</B>(java.lang.String&nbsp;name,
+                             int&nbsp;value)</PRE>
+<DL>
+<DD>Add a trusted attribute without escaping the name.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedAttribute(java.lang.String, java.lang.String)"><!-- --></A><H3>
+trustedAttribute</H3>
+<PRE>
+public void <B>trustedAttribute</B>(java.lang.String&nbsp;name,
+                             java.lang.String&nbsp;value)</PRE>
+<DL>
+<DD>Add a trusted attribute without escaping the name. The value is still
+ escaped.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="trustedStart(java.lang.String)"><!-- --></A><H3>
+trustedStart</H3>
+<PRE>
+public <A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlElementBuilder.html" title="class in com.google.gwt.dom.builder.shared">HtmlElementBuilder</A> <B>trustedStart</B>(java.lang.String&nbsp;tagName)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doCloseStartTagImpl()"><!-- --></A><H3>
+doCloseStartTagImpl</H3>
+<PRE>
+protected void <B>doCloseStartTagImpl</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStartTagImpl()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Close the start tag.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStartTagImpl()">doCloseStartTagImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doCloseStyleAttributeImpl()"><!-- --></A><H3>
+doCloseStyleAttributeImpl</H3>
+<PRE>
+protected void <B>doCloseStyleAttributeImpl</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStyleAttributeImpl()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Close the style attribute.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doCloseStyleAttributeImpl()">doCloseStyleAttributeImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doEndStartTagImpl()"><!-- --></A><H3>
+doEndStartTagImpl</H3>
+<PRE>
+protected void <B>doEndStartTagImpl</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndStartTagImpl()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Self-close the start tag. This method is called for elements that forbid
+ the end tag.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndStartTagImpl()">doEndStartTagImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doEndTagImpl(java.lang.String)"><!-- --></A><H3>
+doEndTagImpl</H3>
+<PRE>
+protected void <B>doEndTagImpl</B>(java.lang.String&nbsp;tagName)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndTagImpl(java.lang.String)">ElementBuilderImpl</A></CODE></B></DD>
+<DD>End the specified tag.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doEndTagImpl(java.lang.String)">doEndTagImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>tagName</CODE> - the name of the tag to end</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doFinishImpl()"><!-- --></A><H3>
+doFinishImpl</H3>
+<PRE>
+protected <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A> <B>doFinishImpl</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doFinishImpl()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Return the build element.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doFinishImpl()">doFinishImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the element</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)"><!-- --></A><H3>
+doHtmlImpl</H3>
+<PRE>
+protected void <B>doHtmlImpl</B>(<A HREF="../../../../../../com/google/gwt/safehtml/shared/SafeHtml.html" title="interface in com.google.gwt.safehtml.shared">SafeHtml</A>&nbsp;html)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Set the specified html as the inner HTML of the current element.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doHtmlImpl(com.google.gwt.safehtml.shared.SafeHtml)">doHtmlImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>html</CODE> - the HTML to set</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doOpenStyleImpl()"><!-- --></A><H3>
+doOpenStyleImpl</H3>
+<PRE>
+protected void <B>doOpenStyleImpl</B>()</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doOpenStyleImpl()">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Open the style attribute.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doOpenStyleImpl()">doOpenStyleImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="doTextImpl(java.lang.String)"><!-- --></A><H3>
+doTextImpl</H3>
+<PRE>
+protected void <B>doTextImpl</B>(java.lang.String&nbsp;text)</PRE>
+<DL>
+<DD><B>Description copied from class: <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doTextImpl(java.lang.String)">ElementBuilderImpl</A></CODE></B></DD>
+<DD>Set the specified text as the inner text of the current element.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html#doTextImpl(java.lang.String)">doTextImpl</A></CODE> in class <CODE><A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderImpl.html" title="class in com.google.gwt.dom.builder.shared">ElementBuilderImpl</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>text</CODE> - the text to set</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/HtmlBuilderImpl.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlBuilderFactory.html" title="class in com.google.gwt.dom.builder.shared"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/HtmlButtonBuilder.html" title="class in com.google.gwt.dom.builder.shared"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/dom/builder/shared/HtmlBuilderImpl.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="HtmlBuilderImpl.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

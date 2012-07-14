@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+IncrementalGenerator (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="IncrementalGenerator (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/IncrementalGenerator.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/core/ext/Linker.html" title="class in com.google.gwt.core.ext"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/core/ext/IncrementalGenerator.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="IncrementalGenerator.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.core.ext</FONT>
+<BR>
+Class IncrementalGenerator</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">com.google.gwt.core.ext.Generator</A>
+      <IMG SRC="../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.core.ext.IncrementalGenerator</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public abstract class <B>IncrementalGenerator</B><DT>extends <A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">Generator</A></DL>
+</PRE>
+
+<P>
+An extension to the <A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext"><CODE>Generator</CODE></A> class which supports incremental
+ generation. It adds a <A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A> method.
+<P>
+
+<P>
+<HR>
+
+<P>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#IncrementalGenerator()">IncrementalGenerator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)">generate</A></B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+         <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+         java.lang.String&nbsp;typeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This method overrides <A HREF="../../../../../com/google/gwt/core/ext/Generator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>Generator.generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A>, and is included only for
+ backwards compatibility.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;<A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext">RebindResult</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)">generateIncrementally</A></B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+                      <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+                      java.lang.String&nbsp;typeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Incrementally generate a default constructible subclass of the requested
+ type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;<A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext">RebindResult</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#generateNonIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.Generator, com.google.gwt.core.ext.GeneratorContext, java.lang.String)">generateNonIncrementally</A></B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+                         <A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">Generator</A>&nbsp;generator,
+                         <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+                         java.lang.String&nbsp;typeName)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A static helper method to wrap a non-incremental generator's result.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>abstract &nbsp;long</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#getVersionId()">getVersionId</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns a version id for an IncrementalGenerator.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.gwt.core.ext.Generator"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.gwt.core.ext.<A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">Generator</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../com/google/gwt/core/ext/Generator.html#escape(java.lang.String)">escape</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="IncrementalGenerator()"><!-- --></A><H3>
+IncrementalGenerator</H3>
+<PRE>
+public <B>IncrementalGenerator</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="generateNonIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.Generator, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><!-- --></A><H3>
+generateNonIncrementally</H3>
+<PRE>
+public static <A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext">RebindResult</A> <B>generateNonIncrementally</B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+                                                    <A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">Generator</A>&nbsp;generator,
+                                                    <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+                                                    java.lang.String&nbsp;typeName)
+                                             throws <A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></PRE>
+<DL>
+<DD>A static helper method to wrap a non-incremental generator's result. It
+ calls the generator's <A HREF="../../../../../com/google/gwt/core/ext/Generator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>Generator.generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A> method, and synthesizes a
+ <A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext"><CODE>RebindResult</CODE></A> instance to be returned.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logger</CODE> - A TreeLogger<DD><CODE>generator</CODE> - A non-incremental generator<DD><CODE>context</CODE> - The generator context<DD><CODE>typeName</CODE> - The type for which a subclass will be generated
+<DT><B>Returns:</B><DD>a RebindResult
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></CODE></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><!-- --></A><H3>
+generate</H3>
+<PRE>
+public final java.lang.String <B>generate</B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+                                       <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+                                       java.lang.String&nbsp;typeName)
+                                throws <A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></PRE>
+<DL>
+<DD>This method overrides <A HREF="../../../../../com/google/gwt/core/ext/Generator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>Generator.generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A>, and is included only for
+ backwards compatibility. It wraps a call to <A HREF="../../../../../com/google/gwt/core/ext/IncrementalGenerator.html#generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A>.
+ This method won't normally be called by the gwt rebind process, and it is
+ declared final and can't be overridden. It is provided in support of
+ existing applications and other generators which call this method directly,
+ outside of the gwt framework.
+ <p>
+ The passed in context is wrapped with an instance of
+ <A HREF="../../../../../com/google/gwt/core/ext/NonIncrementalGeneratorContext.html" title="class in com.google.gwt.core.ext"><CODE>NonIncrementalGeneratorContext</CODE></A>, to ensure that no generator result
+ caching is attempted, since the cached result will be ignored by callers of
+ this method anyway.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../com/google/gwt/core/ext/Generator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)">generate</A></CODE> in class <CODE><A HREF="../../../../../com/google/gwt/core/ext/Generator.html" title="class in com.google.gwt.core.ext">Generator</A></CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logger</CODE> - A TreeLogger<DD><CODE>context</CODE> - The generator context<DD><CODE>typeName</CODE> - The type for which a subclass will be generated
+<DT><B>Returns:</B><DD>the name of a subclass to substitute for the requested class, or
+         return <code>null</code> to cause the requested type itself to be
+         used
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></CODE><DT><B>See Also:</B><DD><A HREF="../../../../../com/google/gwt/core/ext/Generator.html#generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><CODE>Generator.generate(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="generateIncrementally(com.google.gwt.core.ext.TreeLogger, com.google.gwt.core.ext.GeneratorContext, java.lang.String)"><!-- --></A><H3>
+generateIncrementally</H3>
+<PRE>
+public abstract <A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext">RebindResult</A> <B>generateIncrementally</B>(<A HREF="../../../../../com/google/gwt/core/ext/TreeLogger.html" title="class in com.google.gwt.core.ext">TreeLogger</A>&nbsp;logger,
+                                                   <A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext">GeneratorContext</A>&nbsp;context,
+                                                   java.lang.String&nbsp;typeName)
+                                            throws <A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></PRE>
+<DL>
+<DD>Incrementally generate a default constructible subclass of the requested
+ type. The generator can use information from the context to make decisions
+ on whether to incrementally reuse cached output from previous invocations.
+ <p>
+ It returns a <A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext"><CODE>RebindResult</CODE></A>, which contains a <A HREF="../../../../../com/google/gwt/core/ext/RebindMode.html" title="enum in com.google.gwt.core.ext"><CODE>RebindMode</CODE></A>
+ field, which indicates whether to use previously cached output, newly
+ generated output, or a partial mixture of both cached and newly generated
+ output.
+ <p>
+ The result also includes a field for the name of the subclass to substitute
+ for the requested class. It may also contain extra client data added by
+ specific generator implementations.
+ <p>
+ This method throws an <code>UnableToCompleteException</code> if for any
+ reason it cannot complete successfully.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>logger</CODE> - A TreeLogger<DD><CODE>context</CODE> - The generator context<DD><CODE>typeName</CODE> - The type for which a subclass will be generated
+<DT><B>Returns:</B><DD>a RebindResult
+<DT><B>Throws:</B>
+<DD><CODE><A HREF="../../../../../com/google/gwt/core/ext/UnableToCompleteException.html" title="class in com.google.gwt.core.ext">UnableToCompleteException</A></CODE><DT><B>See Also:</B><DD><A HREF="../../../../../com/google/gwt/core/ext/RebindResult.html" title="class in com.google.gwt.core.ext"><CODE>RebindResult</CODE></A>, 
+<A HREF="../../../../../com/google/gwt/core/ext/RebindMode.html" title="enum in com.google.gwt.core.ext"><CODE>RebindMode</CODE></A></DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getVersionId()"><!-- --></A><H3>
+getVersionId</H3>
+<PRE>
+public abstract long <B>getVersionId</B>()</PRE>
+<DL>
+<DD>Returns a version id for an IncrementalGenerator. It is used by the system
+ to invalidate <A HREF="../../../../../com/google/gwt/core/ext/CachedGeneratorResult.html" title="interface in com.google.gwt.core.ext"><CODE>CachedGeneratorResult</CODE></A>'s that were generated by a
+ different version of this generator. This is useful when new versions of a
+ generator are developed, which might alter the structure of generated
+ output, or alter semantics for cache reusability checking.
+ <p>
+ It is the responsibility of the developer to maintain this version id
+ consistently.
+<P>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>a version id</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/IncrementalGenerator.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../com/google/gwt/core/ext/GeneratorContext.html" title="interface in com.google.gwt.core.ext"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../com/google/gwt/core/ext/Linker.html" title="class in com.google.gwt.core.ext"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../index.html?com/google/gwt/core/ext/IncrementalGenerator.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="IncrementalGenerator.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

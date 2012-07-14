@@ -1,0 +1,476 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+SimpleRequestProcessor (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="SimpleRequestProcessor (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SimpleRequestProcessor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SignatureAdapter.html" title="class in com.google.web.bindery.requestfactory.server"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.IdToEntityMap.html" title="class in com.google.web.bindery.requestfactory.server"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SimpleRequestProcessor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.web.bindery.requestfactory.server</FONT>
+<BR>
+Class SimpleRequestProcessor</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.web.bindery.requestfactory.server.SimpleRequestProcessor</B>
+</PRE>
+<HR>
+<DL>
+<DT><PRE>public class <B>SimpleRequestProcessor</B><DT>extends java.lang.Object</DL>
+</PRE>
+
+<P>
+Processes request payloads from a RequestFactory client. This implementation
+ is stateless. A single instance may be reused and is thread-safe.
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.IdToEntityMap.html" title="class in com.google.web.bindery.requestfactory.server">SimpleRequestProcessor.IdToEntityMap</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This parameterization is so long, it improves readability to have a
+ specific type.</TD>
+</TR>
+</TABLE>
+&nbsp;<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;<A HREF="../../../../../../com/google/web/bindery/autobean/vm/Configuration.html" title="class in com.google.web.bindery.autobean.vm">Configuration</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#CONFIGURATION">CONFIGURATION</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Allows the creation of properly-configured AutoBeans without having to
+ create an AutoBeanFactory with the desired annotations.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/MessageFactory.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">MessageFactory</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#FACTORY">FACTORY</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vends message objects.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#SimpleRequestProcessor(com.google.web.bindery.requestfactory.server.ServiceLayer)">SimpleRequestProcessor</A></B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</A>&nbsp;serviceLayer)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; <A HREF="../../../../../../com/google/web/bindery/autobean/shared/Splittable.html" title="interface in com.google.web.bindery.autobean.shared">Splittable</A></CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#createOobMessage(java.util.List)">createOobMessage</A></B>(java.util.List&lt;T&gt;&nbsp;domainValues)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encode a list of objects into a self-contained message that can be used for
+ out-of-band communication.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) 
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;T&gt; java.util.List&lt;T&gt;</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#decodeOobMessage(java.lang.Class, com.google.web.bindery.autobean.shared.Splittable)">decodeOobMessage</A></B>(java.lang.Class&lt;T&gt;&nbsp;domainClass,
+                 <A HREF="../../../../../../com/google/web/bindery/autobean/shared/Splittable.html" title="interface in com.google.web.bindery.autobean.shared">Splittable</A>&nbsp;payload)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Decode an out-of-band message.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#fromBase64(java.lang.String)">fromBase64</A></B>(java.lang.String&nbsp;encoded)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#process(com.google.web.bindery.requestfactory.shared.messages.RequestMessage, com.google.web.bindery.requestfactory.shared.messages.ResponseMessage)">process</A></B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/RequestMessage.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">RequestMessage</A>&nbsp;req,
+        <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/ResponseMessage.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">ResponseMessage</A>&nbsp;resp)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Main processing method.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#process(java.lang.String)">process</A></B>(java.lang.String&nbsp;payload)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process a payload sent by a RequestFactory client.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#setExceptionHandler(com.google.web.bindery.requestfactory.server.ExceptionHandler)">setExceptionHandler</A></B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ExceptionHandler.html" title="interface in com.google.web.bindery.requestfactory.server">ExceptionHandler</A>&nbsp;exceptionHandler)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>(package private) static&nbsp;java.lang.String</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html#toBase64(java.lang.String)">toBase64</A></B>(java.lang.String&nbsp;data)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="CONFIGURATION"><!-- --></A><H3>
+CONFIGURATION</H3>
+<PRE>
+static final <A HREF="../../../../../../com/google/web/bindery/autobean/vm/Configuration.html" title="class in com.google.web.bindery.autobean.vm">Configuration</A> <B>CONFIGURATION</B></PRE>
+<DL>
+<DD>Allows the creation of properly-configured AutoBeans without having to
+ create an AutoBeanFactory with the desired annotations.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="FACTORY"><!-- --></A><H3>
+FACTORY</H3>
+<PRE>
+static final <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/MessageFactory.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">MessageFactory</A> <B>FACTORY</B></PRE>
+<DL>
+<DD>Vends message objects.
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="SimpleRequestProcessor(com.google.web.bindery.requestfactory.server.ServiceLayer)"><!-- --></A><H3>
+SimpleRequestProcessor</H3>
+<PRE>
+public <B>SimpleRequestProcessor</B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ServiceLayer.html" title="class in com.google.web.bindery.requestfactory.server">ServiceLayer</A>&nbsp;serviceLayer)</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="fromBase64(java.lang.String)"><!-- --></A><H3>
+fromBase64</H3>
+<PRE>
+static java.lang.String <B>fromBase64</B>(java.lang.String&nbsp;encoded)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="toBase64(java.lang.String)"><!-- --></A><H3>
+toBase64</H3>
+<PRE>
+static java.lang.String <B>toBase64</B>(java.lang.String&nbsp;data)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="process(java.lang.String)"><!-- --></A><H3>
+process</H3>
+<PRE>
+public java.lang.String <B>process</B>(java.lang.String&nbsp;payload)</PRE>
+<DL>
+<DD>Process a payload sent by a RequestFactory client.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>payload</CODE> - the payload sent by the client
+<DT><B>Returns:</B><DD>a payload to return to the client</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="setExceptionHandler(com.google.web.bindery.requestfactory.server.ExceptionHandler)"><!-- --></A><H3>
+setExceptionHandler</H3>
+<PRE>
+public void <B>setExceptionHandler</B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/ExceptionHandler.html" title="interface in com.google.web.bindery.requestfactory.server">ExceptionHandler</A>&nbsp;exceptionHandler)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createOobMessage(java.util.List)"><!-- --></A><H3>
+createOobMessage</H3>
+<PRE>
+&lt;T&gt; <A HREF="../../../../../../com/google/web/bindery/autobean/shared/Splittable.html" title="interface in com.google.web.bindery.autobean.shared">Splittable</A> <B>createOobMessage</B>(java.util.List&lt;T&gt;&nbsp;domainValues)</PRE>
+<DL>
+<DD>Encode a list of objects into a self-contained message that can be used for
+ out-of-band communication.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="decodeOobMessage(java.lang.Class, com.google.web.bindery.autobean.shared.Splittable)"><!-- --></A><H3>
+decodeOobMessage</H3>
+<PRE>
+&lt;T&gt; java.util.List&lt;T&gt; <B>decodeOobMessage</B>(java.lang.Class&lt;T&gt;&nbsp;domainClass,
+                                       <A HREF="../../../../../../com/google/web/bindery/autobean/shared/Splittable.html" title="interface in com.google.web.bindery.autobean.shared">Splittable</A>&nbsp;payload)</PRE>
+<DL>
+<DD>Decode an out-of-band message.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="process(com.google.web.bindery.requestfactory.shared.messages.RequestMessage, com.google.web.bindery.requestfactory.shared.messages.ResponseMessage)"><!-- --></A><H3>
+process</H3>
+<PRE>
+void <B>process</B>(<A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/RequestMessage.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">RequestMessage</A>&nbsp;req,
+             <A HREF="../../../../../../com/google/web/bindery/requestfactory/shared/messages/ResponseMessage.html" title="interface in com.google.web.bindery.requestfactory.shared.messages">ResponseMessage</A>&nbsp;resp)</PRE>
+<DL>
+<DD>Main processing method.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/SimpleRequestProcessor.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SignatureAdapter.html" title="class in com.google.web.bindery.requestfactory.server"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.IdToEntityMap.html" title="class in com.google.web.bindery.requestfactory.server"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/server/SimpleRequestProcessor.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="SimpleRequestProcessor.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

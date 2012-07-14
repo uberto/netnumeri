@@ -1,0 +1,632 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+PrefixTree (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="PrefixTree (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/PrefixTree.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/client/ui/PotentialElement.html" title="class in com.google.gwt.user.client.ui"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/client/ui/ProvidesResize.html" title="interface in com.google.gwt.user.client.ui"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/client/ui/PrefixTree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PrefixTree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.user.client.ui</FONT>
+<BR>
+Class PrefixTree</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by ">java.util.AbstractCollection&lt;java.lang.String&gt;
+      <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.user.client.ui.PrefixTree</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>java.lang.Iterable&lt;java.lang.String&gt;, java.util.Collection&lt;java.lang.String&gt;</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE> class <B>PrefixTree</B><DT>extends java.util.AbstractCollection&lt;java.lang.String&gt;</DL>
+</PRE>
+
+<P>
+A prefix tree (aka trie).
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#prefixLength">prefixLength</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stores the requested prefix length.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#size">size</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store the number of elements contained by this PrefixTree and its
+ sub-trees.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#subtrees">subtrees</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field to store subtrees in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#suffixes">suffixes</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field to store terminal nodes in.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#PrefixTree()">PrefixTree</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#PrefixTree(java.util.Collection)">PrefixTree</A></B>(java.util.Collection&lt;java.lang.String&gt;&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#PrefixTree(int)">PrefixTree</A></B>(int&nbsp;prefixLength)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#PrefixTree(int, java.util.Collection)">PrefixTree</A></B>(int&nbsp;prefixLength,
+           java.util.Collection&lt;java.lang.String&gt;&nbsp;source)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Constructor.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#add(java.lang.String)">add</A></B>(java.lang.String&nbsp;s)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a String to the PrefixTree.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#clear()">clear</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Initialize native state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#contains(java.lang.Object)">contains</A></B>(java.lang.Object&nbsp;o)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#contains(java.lang.String)">contains</A></B>(java.lang.String&nbsp;s)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected static&nbsp;<A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html" title="class in com.google.gwt.user.client.ui">PrefixTree</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#createPrefixTree(int)">createPrefixTree</A></B>(int&nbsp;prefixLength)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Used by native methods to create an appropriately blessed PrefixTree.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.List&lt;java.lang.String&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#getSuggestions(java.lang.String, int)">getSuggestions</A></B>(java.lang.String&nbsp;search,
+               int&nbsp;limit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Retrieve suggestions from the PrefixTree.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.Iterator&lt;java.lang.String&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#iterator()">iterator</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#size()">size</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the number of all elements contained within the PrefixTree.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html#suggestImpl(java.lang.String, java.lang.String, java.util.Collection, int)">suggestImpl</A></B>(java.lang.String&nbsp;search,
+            java.lang.String&nbsp;prefix,
+            java.util.Collection&lt;java.lang.String&gt;&nbsp;output,
+            int&nbsp;limit)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.util.AbstractCollection"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.util.AbstractCollection</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>addAll, containsAll, isEmpty, remove, removeAll, retainAll, toArray, toArray, toString</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.util.Collection"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from interface java.util.Collection</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>equals, hashCode</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="prefixLength"><!-- --></A><H3>
+prefixLength</H3>
+<PRE>
+protected final int <B>prefixLength</B></PRE>
+<DL>
+<DD>Stores the requested prefix length.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="suffixes"><!-- --></A><H3>
+suffixes</H3>
+<PRE>
+protected <A HREF="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</A> <B>suffixes</B></PRE>
+<DL>
+<DD>Field to store terminal nodes in.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="subtrees"><!-- --></A><H3>
+subtrees</H3>
+<PRE>
+protected <A HREF="../../../../../../com/google/gwt/core/client/JavaScriptObject.html" title="class in com.google.gwt.core.client">JavaScriptObject</A> <B>subtrees</B></PRE>
+<DL>
+<DD>Field to store subtrees in.
+<P>
+<DL>
+</DL>
+</DL>
+<HR>
+
+<A NAME="size"><!-- --></A><H3>
+size</H3>
+<PRE>
+protected int <B>size</B></PRE>
+<DL>
+<DD>Store the number of elements contained by this PrefixTree and its
+ sub-trees.
+<P>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="PrefixTree()"><!-- --></A><H3>
+PrefixTree</H3>
+<PRE>
+public <B>PrefixTree</B>()</PRE>
+<DL>
+<DD>Constructor.
+<P>
+</DL>
+<HR>
+
+<A NAME="PrefixTree(java.util.Collection)"><!-- --></A><H3>
+PrefixTree</H3>
+<PRE>
+public <B>PrefixTree</B>(java.util.Collection&lt;java.lang.String&gt;&nbsp;source)</PRE>
+<DL>
+<DD>Constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>source</CODE> - Initialize from another collection</DL>
+</DL>
+<HR>
+
+<A NAME="PrefixTree(int)"><!-- --></A><H3>
+PrefixTree</H3>
+<PRE>
+public <B>PrefixTree</B>(int&nbsp;prefixLength)</PRE>
+<DL>
+<DD>Constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>prefixLength</CODE> - Smaller prefix length equals faster, more direct
+          searches, at a cost of setup time.</DL>
+</DL>
+<HR>
+
+<A NAME="PrefixTree(int, java.util.Collection)"><!-- --></A><H3>
+PrefixTree</H3>
+<PRE>
+public <B>PrefixTree</B>(int&nbsp;prefixLength,
+                  java.util.Collection&lt;java.lang.String&gt;&nbsp;source)</PRE>
+<DL>
+<DD>Constructor.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>prefixLength</CODE> - Smaller prefix length equals faster, more direct
+          searches, at a cost of setup time.<DD><CODE>source</CODE> - Initialize from another collection</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="createPrefixTree(int)"><!-- --></A><H3>
+createPrefixTree</H3>
+<PRE>
+protected static <A HREF="../../../../../../com/google/gwt/user/client/ui/PrefixTree.html" title="class in com.google.gwt.user.client.ui">PrefixTree</A> <B>createPrefixTree</B>(int&nbsp;prefixLength)</PRE>
+<DL>
+<DD>Used by native methods to create an appropriately blessed PrefixTree.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>prefixLength</CODE> - Smaller prefix length equals faster, more direct
+          searches, at a cost of setup time
+<DT><B>Returns:</B><DD>a newly constructed prefix tree</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="add(java.lang.String)"><!-- --></A><H3>
+add</H3>
+<PRE>
+public boolean <B>add</B>(java.lang.String&nbsp;s)</PRE>
+<DL>
+<DD>Add a String to the PrefixTree.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>add</CODE> in interface <CODE>java.util.Collection&lt;java.lang.String&gt;</CODE><DT><B>Overrides:</B><DD><CODE>add</CODE> in class <CODE>java.util.AbstractCollection&lt;java.lang.String&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>s</CODE> - The data to add
+<DT><B>Returns:</B><DD><code>true</code> if the string was added, <code>false</code>
+         otherwise</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="clear()"><!-- --></A><H3>
+clear</H3>
+<PRE>
+public void <B>clear</B>()</PRE>
+<DL>
+<DD>Initialize native state.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>clear</CODE> in interface <CODE>java.util.Collection&lt;java.lang.String&gt;</CODE><DT><B>Overrides:</B><DD><CODE>clear</CODE> in class <CODE>java.util.AbstractCollection&lt;java.lang.String&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="contains(java.lang.Object)"><!-- --></A><H3>
+contains</H3>
+<PRE>
+public boolean <B>contains</B>(java.lang.Object&nbsp;o)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>contains</CODE> in interface <CODE>java.util.Collection&lt;java.lang.String&gt;</CODE><DT><B>Overrides:</B><DD><CODE>contains</CODE> in class <CODE>java.util.AbstractCollection&lt;java.lang.String&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="contains(java.lang.String)"><!-- --></A><H3>
+contains</H3>
+<PRE>
+public boolean <B>contains</B>(java.lang.String&nbsp;s)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getSuggestions(java.lang.String, int)"><!-- --></A><H3>
+getSuggestions</H3>
+<PRE>
+public java.util.List&lt;java.lang.String&gt; <B>getSuggestions</B>(java.lang.String&nbsp;search,
+                                                       int&nbsp;limit)</PRE>
+<DL>
+<DD>Retrieve suggestions from the PrefixTree. The number of items returned from
+ getSuggesstions may slightly exceed <code>limit</code> so that all
+ suffixes and partial stems will be returned. This prevents the search space
+ from changing size if the PrefixTree is used in an interactive manner.
+ <br/> The returned List is guaranteed to be safe; changing its contents
+ will not affect the PrefixTree.
+<P>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>search</CODE> - The prefix to search for<DD><CODE>limit</CODE> - The desired number of results to retrieve
+<DT><B>Returns:</B><DD>A List of suggestions</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="iterator()"><!-- --></A><H3>
+iterator</H3>
+<PRE>
+public java.util.Iterator&lt;java.lang.String&gt; <B>iterator</B>()</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>iterator</CODE> in interface <CODE>java.lang.Iterable&lt;java.lang.String&gt;</CODE><DT><B>Specified by:</B><DD><CODE>iterator</CODE> in interface <CODE>java.util.Collection&lt;java.lang.String&gt;</CODE><DT><B>Specified by:</B><DD><CODE>iterator</CODE> in class <CODE>java.util.AbstractCollection&lt;java.lang.String&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="size()"><!-- --></A><H3>
+size</H3>
+<PRE>
+public int <B>size</B>()</PRE>
+<DL>
+<DD>Get the number of all elements contained within the PrefixTree.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>size</CODE> in interface <CODE>java.util.Collection&lt;java.lang.String&gt;</CODE><DT><B>Specified by:</B><DD><CODE>size</CODE> in class <CODE>java.util.AbstractCollection&lt;java.lang.String&gt;</CODE></DL>
+</DD>
+<DD><DL>
+
+<DT><B>Returns:</B><DD>the size of the prefix tree</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="suggestImpl(java.lang.String, java.lang.String, java.util.Collection, int)"><!-- --></A><H3>
+suggestImpl</H3>
+<PRE>
+protected void <B>suggestImpl</B>(java.lang.String&nbsp;search,
+                           java.lang.String&nbsp;prefix,
+                           java.util.Collection&lt;java.lang.String&gt;&nbsp;output,
+                           int&nbsp;limit)</PRE>
+<DL>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/PrefixTree.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/client/ui/PotentialElement.html" title="class in com.google.gwt.user.client.ui"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/client/ui/ProvidesResize.html" title="interface in com.google.gwt.user.client.ui"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/client/ui/PrefixTree.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="PrefixTree.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

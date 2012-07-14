@@ -1,0 +1,478 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+ClientToDomainMapper (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="ClientToDomainMapper (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ClientToDomainMapper.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.UnmappedTypeException.html" title="class in com.google.web.bindery.requestfactory.apt"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ClientToDomainMapper.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_javax.lang.model.util.SimpleTypeVisitor6">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.web.bindery.requestfactory.apt</FONT>
+<BR>
+Class ClientToDomainMapper</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by ">javax.lang.model.util.AbstractTypeVisitor6&lt;R,P&gt;
+      <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by ">javax.lang.model.util.SimpleTypeVisitor6&lt;T,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;
+          <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/TypeVisitorBase.html" title="class in com.google.web.bindery.requestfactory.apt">com.google.web.bindery.requestfactory.apt.TypeVisitorBase</A>&lt;javax.lang.model.type.TypeMirror&gt;
+              <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.web.bindery.requestfactory.apt.ClientToDomainMapper</B>
+</PRE>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE> class <B>ClientToDomainMapper</B><DT>extends <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/TypeVisitorBase.html" title="class in com.google.web.bindery.requestfactory.apt">TypeVisitorBase</A>&lt;javax.lang.model.type.TypeMirror&gt;</DL>
+</PRE>
+
+<P>
+Uses information in a State object to convert client types to their domain
+ equivalents. This types assumes that any incoming type has already been
+ determined to be a transportable type.
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+
+<A NAME="nested_class_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Nested Class Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>static&nbsp;class</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.UnmappedTypeException.html" title="class in com.google.web.bindery.requestfactory.apt">ClientToDomainMapper.UnmappedTypeException</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+</TABLE>
+&nbsp;<A NAME="fields_inherited_from_class_javax.lang.model.util.SimpleTypeVisitor6"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Fields inherited from class javax.lang.model.util.SimpleTypeVisitor6</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>DEFAULT_VALUE</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#ClientToDomainMapper()">ClientToDomainMapper</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#convertSingleParamType(javax.lang.model.type.DeclaredType, javax.lang.model.type.DeclaredType, int, com.google.web.bindery.requestfactory.apt.State)">convertSingleParamType</A></B>(javax.lang.model.type.DeclaredType&nbsp;x,
+                       javax.lang.model.type.DeclaredType&nbsp;convertTo,
+                       int&nbsp;param,
+                       <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utility method to convert a <code>Foo&lt;BarProxy&gt; -&gt; BarDomain</code>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#defaultAction(javax.lang.model.type.TypeMirror, com.google.web.bindery.requestfactory.apt.State)">defaultAction</A></B>(javax.lang.model.type.TypeMirror&nbsp;x,
+              <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#visitDeclared(javax.lang.model.type.DeclaredType, com.google.web.bindery.requestfactory.apt.State)">visitDeclared</A></B>(javax.lang.model.type.DeclaredType&nbsp;x,
+              <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#visitNoType(javax.lang.model.type.NoType, com.google.web.bindery.requestfactory.apt.State)">visitNoType</A></B>(javax.lang.model.type.NoType&nbsp;x,
+            <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#visitPrimitive(javax.lang.model.type.PrimitiveType, com.google.web.bindery.requestfactory.apt.State)">visitPrimitive</A></B>(javax.lang.model.type.PrimitiveType&nbsp;x,
+               <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#visitTypeVariable(javax.lang.model.type.TypeVariable, com.google.web.bindery.requestfactory.apt.State)">visitTypeVariable</A></B>(javax.lang.model.type.TypeVariable&nbsp;x,
+                  <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;javax.lang.model.type.TypeMirror</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html#visitWildcard(javax.lang.model.type.WildcardType, com.google.web.bindery.requestfactory.apt.State)">visitWildcard</A></B>(javax.lang.model.type.WildcardType&nbsp;x,
+              <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_com.google.web.bindery.requestfactory.apt.TypeVisitorBase"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class com.google.web.bindery.requestfactory.apt.<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/TypeVisitorBase.html" title="class in com.google.web.bindery.requestfactory.apt">TypeVisitorBase</A></B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/TypeVisitorBase.html#getValueTypes(com.google.web.bindery.requestfactory.apt.State)">getValueTypes</A></CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.lang.model.util.SimpleTypeVisitor6"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.lang.model.util.SimpleTypeVisitor6</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>visitArray, visitError, visitExecutable, visitNull</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_javax.lang.model.util.AbstractTypeVisitor6"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class javax.lang.model.util.AbstractTypeVisitor6</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>visit, visit, visitUnknown</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="ClientToDomainMapper()"><!-- --></A><H3>
+ClientToDomainMapper</H3>
+<PRE>
+<B>ClientToDomainMapper</B>()</PRE>
+<DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="visitDeclared(javax.lang.model.type.DeclaredType, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+visitDeclared</H3>
+<PRE>
+public javax.lang.model.type.TypeMirror <B>visitDeclared</B>(javax.lang.model.type.DeclaredType&nbsp;x,
+                                                      <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>visitDeclared</CODE> in interface <CODE>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE><DT><B>Overrides:</B><DD><CODE>visitDeclared</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visitNoType(javax.lang.model.type.NoType, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+visitNoType</H3>
+<PRE>
+public javax.lang.model.type.TypeMirror <B>visitNoType</B>(javax.lang.model.type.NoType&nbsp;x,
+                                                    <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>visitNoType</CODE> in interface <CODE>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE><DT><B>Overrides:</B><DD><CODE>visitNoType</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visitPrimitive(javax.lang.model.type.PrimitiveType, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+visitPrimitive</H3>
+<PRE>
+public javax.lang.model.type.TypeMirror <B>visitPrimitive</B>(javax.lang.model.type.PrimitiveType&nbsp;x,
+                                                       <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>visitPrimitive</CODE> in interface <CODE>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE><DT><B>Overrides:</B><DD><CODE>visitPrimitive</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visitTypeVariable(javax.lang.model.type.TypeVariable, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+visitTypeVariable</H3>
+<PRE>
+public javax.lang.model.type.TypeMirror <B>visitTypeVariable</B>(javax.lang.model.type.TypeVariable&nbsp;x,
+                                                          <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>visitTypeVariable</CODE> in interface <CODE>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE><DT><B>Overrides:</B><DD><CODE>visitTypeVariable</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="visitWildcard(javax.lang.model.type.WildcardType, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+visitWildcard</H3>
+<PRE>
+public javax.lang.model.type.TypeMirror <B>visitWildcard</B>(javax.lang.model.type.WildcardType&nbsp;x,
+                                                      <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE>visitWildcard</CODE> in interface <CODE>javax.lang.model.type.TypeVisitor&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE><DT><B>Overrides:</B><DD><CODE>visitWildcard</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="convertSingleParamType(javax.lang.model.type.DeclaredType, javax.lang.model.type.DeclaredType, int, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+convertSingleParamType</H3>
+<PRE>
+protected javax.lang.model.type.TypeMirror <B>convertSingleParamType</B>(javax.lang.model.type.DeclaredType&nbsp;x,
+                                                                  javax.lang.model.type.DeclaredType&nbsp;convertTo,
+                                                                  int&nbsp;param,
+                                                                  <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD>Utility method to convert a <code>Foo&lt;BarProxy&gt; -&gt; BarDomain</code>. The
+ <code>param</code> parameter specifies the index of the type paramater to
+ extract.
+<P>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="defaultAction(javax.lang.model.type.TypeMirror, com.google.web.bindery.requestfactory.apt.State)"><!-- --></A><H3>
+defaultAction</H3>
+<PRE>
+protected javax.lang.model.type.TypeMirror <B>defaultAction</B>(javax.lang.model.type.TypeMirror&nbsp;x,
+                                                         <A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&nbsp;state)</PRE>
+<DL>
+<DD><DL>
+<DT><B>Overrides:</B><DD><CODE>defaultAction</CODE> in class <CODE>javax.lang.model.util.SimpleTypeVisitor6&lt;javax.lang.model.type.TypeMirror,<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/State.html" title="class in com.google.web.bindery.requestfactory.apt">State</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/ClientToDomainMapper.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;PREV CLASS&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.UnmappedTypeException.html" title="class in com.google.web.bindery.requestfactory.apt"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/web/bindery/requestfactory/apt/ClientToDomainMapper.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="ClientToDomainMapper.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#nested_class_summary">NESTED</A>&nbsp;|&nbsp;<A HREF="#fields_inherited_from_class_javax.lang.model.util.SimpleTypeVisitor6">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;FIELD&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,600 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+AbstractCellTableBuilder (Google Web Toolkit Javadoc)
+</TITLE>
+
+
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../../../../../stylesheet.css" TITLE="Style">
+
+<SCRIPT type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="AbstractCellTableBuilder (Google Web Toolkit Javadoc)";
+    }
+}
+</SCRIPT>
+<NOSCRIPT>
+</NOSCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="white" onload="windowTitle();">
+<HR>
+
+
+<!-- ========= START OF TOP NAVBAR ======= -->
+<A NAME="navbar_top"><!-- --></A>
+<A HREF="#skip-navbar_top" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_top_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractCellTableBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.Template.html" title="interface in com.google.gwt.user.cellview.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTree.html" title="class in com.google.gwt.user.cellview.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AbstractCellTableBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_top"></A>
+<!-- ========= END OF TOP NAVBAR ========= -->
+
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>
+<FONT SIZE="-1">
+com.google.gwt.user.cellview.client</FONT>
+<BR>
+Class AbstractCellTableBuilder&lt;T&gt;</H2>
+<PRE>
+java.lang.Object
+  <IMG SRC="../../../../../../resources/inherit.gif" ALT="extended by "><B>com.google.gwt.user.cellview.client.AbstractCellTableBuilder&lt;T&gt;</B>
+</PRE>
+<DL>
+<DT><DT><B>Type Parameters:</B><DD><CODE>T</CODE> - the row data type</DL>
+<DL>
+<DT><B>All Implemented Interfaces:</B> <DD><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;T&gt;</DD>
+</DL>
+<DL>
+<DT><B>Direct Known Subclasses:</B> <DD><A HREF="../../../../../../com/google/gwt/user/cellview/client/DefaultCellTableBuilder.html" title="class in com.google.gwt.user.cellview.client">DefaultCellTableBuilder</A></DD>
+</DL>
+<HR>
+<DL>
+<DT><PRE>public abstract class <B>AbstractCellTableBuilder&lt;T&gt;</B><DT>extends java.lang.Object<DT>implements <A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;T&gt;</DL>
+</PRE>
+
+<P>
+Builder used to construct a CellTable.
+<P>
+
+<P>
+<HR>
+
+<P>
+<!-- =========== FIELD SUMMARY =========== -->
+
+<A NAME="field_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Field Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected &nbsp;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.html" title="class in com.google.gwt.user.cellview.client">AbstractCellTable</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#cellTable">cellTable</A></B></CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#AbstractCellTableBuilder(com.google.gwt.user.cellview.client.AbstractCellTable)">AbstractCellTableBuilder</A></B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.html" title="class in com.google.gwt.user.cellview.client">AbstractCellTable</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;&nbsp;cellTable)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Construct a new table builder.</TD>
+</TR>
+</TABLE>
+&nbsp;
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2">
+<B>Method Summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#buildRow(T, int)">buildRow</A></B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+         int&nbsp;absRowIndex)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build zero or more table rows for the specified row value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>protected abstract &nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#buildRowImpl(T, int)">buildRowImpl</A></B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+             int&nbsp;absRowIndex)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Build zero or more table rows for the specified row value.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#createContext(int)">createContext</A></B>(int&nbsp;column)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create the context for a column based on the current table building state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableSectionBuilder.html" title="interface in com.google.gwt.dom.builder.shared">TableSectionBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#finish()">finish</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Finish the building and get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableSectionBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>TableSectionBuilder</CODE></A> containing the children.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,?&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#getColumn(com.google.gwt.cell.client.Cell.Context, T, com.google.gwt.dom.client.Element)">getColumn</A></B>(<A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A>&nbsp;context,
+          <A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+          <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A>&nbsp;elem)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return the column containing an element.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;java.util.Collection&lt;<A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,?&gt;&gt;</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#getColumns()">getColumns</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return all the columns that this table builder has renderred.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#getRowValueIndex(com.google.gwt.dom.client.TableRowElement)">getRowValueIndex</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client">TableRowElement</A>&nbsp;row)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the index of the row value from the associated <A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client"><CODE>TableRowElement</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;int</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#getSubrowValueIndex(com.google.gwt.dom.client.TableRowElement)">getSubrowValueIndex</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client">TableRowElement</A>&nbsp;row)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get the index of the subrow value from the associated
+ <A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client"><CODE>TableRowElement</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;boolean</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#isColumn(com.google.gwt.dom.client.Element)">isColumn</A></B>(<A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A>&nbsp;elem)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return if an element contains a cell.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" SUMMARY="">
+<TR ALIGN="right" VALIGN="">
+<TD NOWRAP><FONT SIZE="-1">
+<CODE>&lt;C&gt; void</CODE></FONT></TD>
+</TR>
+</TABLE>
+</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#renderCell(com.google.gwt.dom.builder.shared.ElementBuilderBase, com.google.gwt.cell.client.Cell.Context, com.google.gwt.cell.client.HasCell, T)">renderCell</A></B>(<A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared">ElementBuilderBase</A>&lt;?&gt;&nbsp;builder,
+           <A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A>&nbsp;context,
+           <A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,C&gt;&nbsp;column,
+           <A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Render the cell into an <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>ElementBuilderBase</CODE></A>.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;void</CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#start(boolean)">start</A></B>(boolean&nbsp;isRebuildingAllRows)</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start building rows.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+<CODE>&nbsp;<A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableRowBuilder.html" title="interface in com.google.gwt.dom.builder.shared">TableRowBuilder</A></CODE></FONT></TD>
+<TD><CODE><B><A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html#startRow()">startRow</A></B>()</CODE>
+
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start a row and return the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableRowBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>TableRowBuilder</CODE></A> for this row.</TD>
+</TR>
+</TABLE>
+&nbsp;<A NAME="methods_inherited_from_class_java.lang.Object"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#EEEEFF" CLASS="TableSubHeadingColor">
+<TH ALIGN="left"><B>Methods inherited from class java.lang.Object</B></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</CODE></TD>
+</TR>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ============ FIELD DETAIL =========== -->
+
+<A NAME="field_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Field Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="cellTable"><!-- --></A><H3>
+cellTable</H3>
+<PRE>
+protected final <A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.html" title="class in com.google.gwt.user.cellview.client">AbstractCellTable</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt; <B>cellTable</B></PRE>
+<DL>
+<DL>
+</DL>
+</DL>
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Constructor Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="AbstractCellTableBuilder(com.google.gwt.user.cellview.client.AbstractCellTable)"><!-- --></A><H3>
+AbstractCellTableBuilder</H3>
+<PRE>
+public <B>AbstractCellTableBuilder</B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.html" title="class in com.google.gwt.user.cellview.client">AbstractCellTable</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;&nbsp;cellTable)</PRE>
+<DL>
+<DD>Construct a new table builder.
+<P>
+<DL>
+<DT><B>Parameters:</B><DD><CODE>cellTable</CODE> - the table this builder will build rows for</DL>
+</DL>
+
+<!-- ============ METHOD DETAIL ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2">
+<B>Method Detail</B></FONT></TH>
+</TR>
+</TABLE>
+
+<A NAME="buildRow(java.lang.Object,int)"><!-- --></A><A NAME="buildRow(T, int)"><!-- --></A><H3>
+buildRow</H3>
+<PRE>
+public final void <B>buildRow</B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+                           int&nbsp;absRowIndex)</PRE>
+<DL>
+<DD>Build zero or more table rows for the specified row value.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#buildRow(T, int)">buildRow</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>rowValue</CODE> - the value for the row to render<DD><CODE>absRowIndex</CODE> - the absolute row index</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="createContext(int)"><!-- --></A><H3>
+createContext</H3>
+<PRE>
+public final <A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A> <B>createContext</B>(int&nbsp;column)</PRE>
+<DL>
+<DD>Create the context for a column based on the current table building state.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>column</CODE> - the column id
+<DT><B>Returns:</B><DD>the context that contains the column index, row/subrow indexes, and the row value key</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="finish()"><!-- --></A><H3>
+finish</H3>
+<PRE>
+public final <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableSectionBuilder.html" title="interface in com.google.gwt.dom.builder.shared">TableSectionBuilder</A> <B>finish</B>()</PRE>
+<DL>
+<DD>Finish the building and get the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableSectionBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>TableSectionBuilder</CODE></A> containing the children.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#finish()">finish</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getColumn(com.google.gwt.cell.client.Cell.Context,java.lang.Object,com.google.gwt.dom.client.Element)"><!-- --></A><A NAME="getColumn(com.google.gwt.cell.client.Cell.Context, T, com.google.gwt.dom.client.Element)"><!-- --></A><H3>
+getColumn</H3>
+<PRE>
+public final <A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,?&gt; <B>getColumn</B>(<A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A>&nbsp;context,
+                                    <A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+                                    <A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A>&nbsp;elem)</PRE>
+<DL>
+<DD>Return the column containing an element.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#getColumn(com.google.gwt.cell.client.Cell.Context, T, com.google.gwt.dom.client.Element)">getColumn</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>context</CODE> - the context for the element<DD><CODE>rowValue</CODE> - the value for the row corresponding to the element<DD><CODE>elem</CODE> - the element that the column contains
+<DT><B>Returns:</B><DD>the immediate column containing the element</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getColumns()"><!-- --></A><H3>
+getColumns</H3>
+<PRE>
+public final java.util.Collection&lt;<A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,?&gt;&gt; <B>getColumns</B>()</PRE>
+<DL>
+<DD>Return all the columns that this table builder has renderred.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#getColumns()">getColumns</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getRowValueIndex(com.google.gwt.dom.client.TableRowElement)"><!-- --></A><H3>
+getRowValueIndex</H3>
+<PRE>
+public final int <B>getRowValueIndex</B>(<A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client">TableRowElement</A>&nbsp;row)</PRE>
+<DL>
+<DD>Get the index of the row value from the associated <A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client"><CODE>TableRowElement</CODE></A>.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#getRowValueIndex(com.google.gwt.dom.client.TableRowElement)">getRowValueIndex</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>row</CODE> - the row element
+<DT><B>Returns:</B><DD>the row value index</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="getSubrowValueIndex(com.google.gwt.dom.client.TableRowElement)"><!-- --></A><H3>
+getSubrowValueIndex</H3>
+<PRE>
+public final int <B>getSubrowValueIndex</B>(<A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client">TableRowElement</A>&nbsp;row)</PRE>
+<DL>
+<DD>Get the index of the subrow value from the associated
+ <A HREF="../../../../../../com/google/gwt/dom/client/TableRowElement.html" title="class in com.google.gwt.dom.client"><CODE>TableRowElement</CODE></A>. The sub row value starts at 0 for the first row
+ that represents a row value.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#getSubrowValueIndex(com.google.gwt.dom.client.TableRowElement)">getSubrowValueIndex</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>row</CODE> - the row element
+<DT><B>Returns:</B><DD>the subrow value index, or 0 if not found</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="isColumn(com.google.gwt.dom.client.Element)"><!-- --></A><H3>
+isColumn</H3>
+<PRE>
+public final boolean <B>isColumn</B>(<A HREF="../../../../../../com/google/gwt/dom/client/Element.html" title="class in com.google.gwt.dom.client">Element</A>&nbsp;elem)</PRE>
+<DL>
+<DD>Return if an element contains a cell. This may be faster to execute than <CODE>getColumn</CODE>.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#isColumn(com.google.gwt.dom.client.Element)">isColumn</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>elem</CODE> - the element of interest</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="renderCell(com.google.gwt.dom.builder.shared.ElementBuilderBase,com.google.gwt.cell.client.Cell.Context,com.google.gwt.cell.client.HasCell,java.lang.Object)"><!-- --></A><A NAME="renderCell(com.google.gwt.dom.builder.shared.ElementBuilderBase, com.google.gwt.cell.client.Cell.Context, com.google.gwt.cell.client.HasCell, T)"><!-- --></A><H3>
+renderCell</H3>
+<PRE>
+public final &lt;C&gt; void <B>renderCell</B>(<A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared">ElementBuilderBase</A>&lt;?&gt;&nbsp;builder,
+                                 <A HREF="../../../../../../com/google/gwt/cell/client/Cell.Context.html" title="class in com.google.gwt.cell.client">Cell.Context</A>&nbsp;context,
+                                 <A HREF="../../../../../../com/google/gwt/cell/client/HasCell.html" title="interface in com.google.gwt.cell.client">HasCell</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>,C&gt;&nbsp;column,
+                                 <A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue)</PRE>
+<DL>
+<DD>Render the cell into an <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>ElementBuilderBase</CODE></A>.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>builder</CODE> - the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/ElementBuilderBase.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>ElementBuilderBase</CODE></A> that cell contents append to<DD><CODE>context</CODE> - the context for the element<DD><CODE>column</CODE> - the column containing the cell<DD><CODE>rowValue</CODE> - the value for the row corresponding to the element</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="start(boolean)"><!-- --></A><H3>
+start</H3>
+<PRE>
+public final void <B>start</B>(boolean&nbsp;isRebuildingAllRows)</PRE>
+<DL>
+<DD>Start building rows. Reset the internal table section builder. If the table builder is going
+ to re-build all rows, the internal the maps associating the cells and ids will be cleared.
+<P>
+<DD><DL>
+<DT><B>Specified by:</B><DD><CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html#start(boolean)">start</A></CODE> in interface <CODE><A HREF="../../../../../../com/google/gwt/user/cellview/client/CellTableBuilder.html" title="interface in com.google.gwt.user.cellview.client">CellTableBuilder</A>&lt;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&gt;</CODE></DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>isRebuildingAllRows</CODE> - is this start intended for rebuilding all rows</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="startRow()"><!-- --></A><H3>
+startRow</H3>
+<PRE>
+public final <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableRowBuilder.html" title="interface in com.google.gwt.dom.builder.shared">TableRowBuilder</A> <B>startRow</B>()</PRE>
+<DL>
+<DD>Start a row and return the <A HREF="../../../../../../com/google/gwt/dom/builder/shared/TableRowBuilder.html" title="interface in com.google.gwt.dom.builder.shared"><CODE>TableRowBuilder</CODE></A> for this row.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+</DL>
+</DD>
+</DL>
+<HR>
+
+<A NAME="buildRowImpl(java.lang.Object,int)"><!-- --></A><A NAME="buildRowImpl(T, int)"><!-- --></A><H3>
+buildRowImpl</H3>
+<PRE>
+protected abstract void <B>buildRowImpl</B>(<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" title="type parameter in AbstractCellTableBuilder">T</A>&nbsp;rowValue,
+                                     int&nbsp;absRowIndex)</PRE>
+<DL>
+<DD>Build zero or more table rows for the specified row value.
+<P>
+<DD><DL>
+</DL>
+</DD>
+<DD><DL>
+<DT><B>Parameters:</B><DD><CODE>rowValue</CODE> - the value for the row to render<DD><CODE>absRowIndex</CODE> - the absolute row index</DL>
+</DD>
+</DL>
+<!-- ========= END OF CLASS DATA ========= -->
+<HR>
+
+
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<A HREF="#skip-navbar_bottom" title="Skip navigation links"></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN=2 BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<A NAME="navbar_bottom_firstrow"><!-- --></A>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+  <TR ALIGN="center" VALIGN="top">
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<FONT CLASS="NavBarFont1Rev"><B>Class</B></FONT>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="class-use/AbstractCellTableBuilder.html"><FONT CLASS="NavBarFont1"><B>Use</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="package-tree.html"><FONT CLASS="NavBarFont1"><B>Tree</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../index-all.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A>&nbsp;</TD>
+  <TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    <A HREF="../../../../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT></A>&nbsp;</TD>
+  </TR>
+</TABLE>
+</TD>
+<TD ALIGN="right" VALIGN="top" ROWSPAN=3><EM>
+GWT 2.5.0.rc1</EM>
+</TD>
+</TR>
+
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTable.Template.html" title="interface in com.google.gwt.user.cellview.client"><B>PREV CLASS</B></A>&nbsp;
+&nbsp;<A HREF="../../../../../../com/google/gwt/user/cellview/client/AbstractCellTree.html" title="class in com.google.gwt.user.cellview.client"><B>NEXT CLASS</B></A></FONT></TD>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2">
+  <A HREF="../../../../../../index.html?com/google/gwt/user/cellview/client/AbstractCellTableBuilder.html" target="_top"><B>FRAMES</B></A>  &nbsp;
+&nbsp;<A HREF="AbstractCellTableBuilder.html" target="_top"><B>NO FRAMES</B></A>  &nbsp;
+&nbsp;<SCRIPT type="text/javascript">
+  <!--
+  if(window==top) {
+    document.writeln('<A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>');
+  }
+  //-->
+</SCRIPT>
+<NOSCRIPT>
+  <A HREF="../../../../../../allclasses-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+
+
+</FONT></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;NESTED&nbsp;|&nbsp;<A HREF="#field_summary">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_summary">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_summary">METHOD</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#field_detail">FIELD</A>&nbsp;|&nbsp;<A HREF="#constructor_detail">CONSTR</A>&nbsp;|&nbsp;<A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="skip-navbar_bottom"></A>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+
+<HR>
+
+</BODY>
+</HTML>

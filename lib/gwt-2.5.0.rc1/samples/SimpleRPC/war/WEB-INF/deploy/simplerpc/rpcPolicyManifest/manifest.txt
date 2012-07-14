@@ -1,0 +1,3 @@
+# Module simplerpc
+# RPC service class, partial path of RPC policy file
+com.google.gwt.sample.simplerpc.client.SimpleRPCService, 004004C31487A2CB4CDED8547CC4730E.gwt.rpc
