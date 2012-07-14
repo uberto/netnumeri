@@ -8,6 +8,7 @@ import com.netnumeri.shared.finance.utils.DateUtils;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class Instrument extends DateBound implements Serializable {
@@ -47,17 +48,17 @@ public abstract class Instrument extends DateBound implements Serializable {
     private double marketSpotShift = 1.0;
     private double marketVolatilityShift = 1.0;
 
-    public TreeMap<TDay, Daily> dailyarray = new TreeMap<>();
+    public Map<TDay, Daily> dailyarray = new TreeMap<>();
 
     public Instrument() {
         init();
     }
 
-    public TreeMap<TDay, Daily> getDailyarray() {
+    public Map<TDay, Daily> getDailyarray() {
         return dailyarray;
     }
 
-    public void setDailyarray(TreeMap<TDay, Daily> dailyarray) {
+    public void setDailyarray(Map<TDay, Daily> dailyarray) {
         this.dailyarray = dailyarray;
     }
 
@@ -375,7 +376,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return close(index);
     }
 
-    
+
     public double getReturn() {
         return getReturn(-1);
     }
@@ -497,7 +498,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         }
     }
 
-    
+
     public double getLast() {
         TDay lastDailyDate = getLastDay();
         return getLast(lastDailyDate);
@@ -508,7 +509,7 @@ public abstract class Instrument extends DateBound implements Serializable {
     }
 
 
-    
+
     public TimeSeries getPriceSeries() {
 //        if (priceSeriesChanged)
         {
@@ -555,7 +556,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return null;
     }
 
-    
+
     public TimeSeries getHighSeries() {
         return getHighSeries(null, null);
     }
@@ -578,7 +579,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return highSeries;
     }
 
-    
+
     public TimeSeries getLowSeries() {
         return getLowSeries(null, null);
     }
@@ -600,7 +601,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return lowSeries;
     }
 
-    
+
     public TimeSeries getOpenSeries() {
         return getOpenSeries(null, null);
     }
@@ -622,7 +623,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return openSeries;
     }
 
-    
+
     public TimeSeries getCloseSeries() {
         return getCloseSeries(null, null);
     }
@@ -634,7 +635,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return closeSeries;
     }
 
-    
+
     public TimeSeries getVolumeSeries() {
         return getVolumeSeries(null, null);
     }
@@ -708,7 +709,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return logReturnSeries;
     }
 
-    
+
     public TimeSeries getVolumeReturnSeries() {
         //    if (volumeReturnSeriesChanged)
         {
@@ -874,7 +875,7 @@ public abstract class Instrument extends DateBound implements Serializable {
         return lastDailyDate();
     }
 
-    
+
     public int getNDaily() {
         return lenght();
     }

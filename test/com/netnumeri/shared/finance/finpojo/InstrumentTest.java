@@ -34,7 +34,7 @@ public class InstrumentTest extends TestCase {
     @Test
     public void testGetDailyarray() throws Exception {
 
-        TreeMap<TDay,Daily> dailyarray = stock.getDailyarray();
+        TreeMap<TDay,Daily> dailyarray = null;
 
         Map.Entry<TDay, Daily> tDayDailyEntry = dailyarray.lastEntry();
 
